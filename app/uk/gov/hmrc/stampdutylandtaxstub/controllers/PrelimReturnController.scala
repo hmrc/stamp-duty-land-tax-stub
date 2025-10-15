@@ -18,15 +18,26 @@ package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
+import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
 
 import javax.inject.{Inject, Singleton}
+import scala.concurrent.ExecutionContext
 
 @Singleton()
-class MicroserviceHelloWorldController @Inject()(
-  cc: ControllerComponents
-) extends BackendController(cc):
+class PrelimReturnController @Inject()(cc: ControllerComponents, override val executionContext: ExecutionContext)
+  extends BackendController(cc) with StubResource:
 
-  val hello: Action[AnyContent] =
-    Action:
-      implicit request =>
-        Ok("Hello world")
+  val basePath = "/resources.data.filing.prelim"
+
+  def prelimReturnDetails(returnId: Option[String]): Action[AnyContent] = Action {
+    returnId match {
+      case Some(id) => {
+        findResource(s"$basePath/$id/prelimReturnDetails.json") match {
+          case Some(content) => jsonResourceAsResponse(s"$basePath/$id/prelimReturnDetails.json")
+          case _ => NotFound
+        }
+      }
+      case _ => NotFound
+    }
+
+  }
