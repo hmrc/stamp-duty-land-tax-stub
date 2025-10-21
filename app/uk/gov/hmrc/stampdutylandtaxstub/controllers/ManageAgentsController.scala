@@ -17,7 +17,8 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.AgentDetails
-import play.api.libs.json.{JsError, JsSuccess, Json}
+import models.requests.StornRequest
+import play.api.libs.json.{JsError, JsSuccess, JsValue, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
@@ -29,14 +30,19 @@ import scala.concurrent.{ExecutionContext, Future}
 class ManageAgentsController @Inject()(cc: ControllerComponents, override val executionContext: ExecutionContext)
   extends BackendController(cc) with StubResource:
 
-  def getAgentDetails(storn: String): Action[AnyContent] = Action {
+  def getAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[StornRequest].fold(
+      invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      storn   => {
 
-    val basePath = "/resources.manage.agents"
-    
-    val fullPath = s"$basePath/$storn/manageAgentDetails.json"
-    
-    findResource(fullPath) match {
-      case Some(content) => jsonResourceAsResponse(fullPath)
-      case _             => NotFound
-    }
+        val basePath = "/resources.manage.agents"
+
+        val fullPath = s"$basePath/${storn.storn}/manageAgentDetails.json"
+
+        findResource(fullPath) match {
+          case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
+          case _             => Future.successful(NotFound)
+        }
+      }
+    )
   }
