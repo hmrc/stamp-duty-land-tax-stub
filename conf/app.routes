@@ -3,3 +3,5 @@
 GET        /hello-world             uk.gov.hmrc.stampdutylandtaxstub.controllers.MicroserviceHelloWorldController.hello
 
 GET        /prelim/returns          uk.gov.hmrc.stampdutylandtaxstub.controllers.PrelimReturnController.prelimReturnDetails(returnId: Option[String] ?= None)
+
+GET        /manage-agents/agent-details/storn/:storn          uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAgentDetails(storn: String)
