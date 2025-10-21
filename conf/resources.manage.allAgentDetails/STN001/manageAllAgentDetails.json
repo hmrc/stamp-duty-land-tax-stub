@@ -1,0 +1,28 @@
+[
+  {
+    "storn": "STN001",
+    "name": "Acme Property Agents Ltd",
+    "houseNumber": "42",
+    "addressLine1": "High Street",
+    "addressLine2": "Westminster",
+    "addressLine3": "London",
+    "addressLine4": "Greater London",
+    "postcode": "SW1A 2AA",
+    "phoneNumber": "02079460000",
+    "emailAddress": "info@acmeagents.co.uk",
+    "agentId": "AGT001",
+    "isAuthorised": 1
+  },
+  {
+    "storn": "STN001",
+    "name": "Harborview Estates",
+    "houseNumber": "22A",
+    "addressLine1": "Queensway",
+    "addressLine3": "Birmingham",
+    "postcode": "B2 4ND",
+    "phoneNumber": "01214567890",
+    "emailAddress": "info@harborviewestates.co.uk",
+    "agentId": "AGT001",
+    "isAuthorised": 1
+  }
+]

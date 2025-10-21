@@ -1,0 +1,14 @@
+{
+  "storn": "STN54363",
+  "name": "Acme Property Agents Ltd",
+  "houseNumber": "42",
+  "addressLine1": "High Street",
+  "addressLine2": "Westminster",
+  "addressLine3": "London",
+  "addressLine4": "Greater London",
+  "postcode": "SW1A 2AA",
+  "phoneNumber": "02079460000",
+  "emailAddress": "info@acmeagents.co.uk",
+  "agentId": "123467",
+  "isAuthorised": 1
+}
