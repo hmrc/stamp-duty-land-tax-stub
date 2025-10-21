@@ -17,7 +17,7 @@
 package models
 
 import play.api.libs.functional.syntax.toFunctionalBuilderOps
-import play.api.libs.json.{Json, Reads, Writes, __}
+import play.api.libs.json.{Json, OFormat, Reads, Writes, __}
 
 case class AgentDetails(
                          storn        : String,
@@ -35,19 +35,5 @@ case class AgentDetails(
                        )
 
 object AgentDetails {
-  implicit val writes: Writes[AgentDetails] = Json.writes[AgentDetails]
-  implicit val reads: Reads[AgentDetails] = (
-      (__ \ "p_storn")          .read[String]         and
-      (__ \ "p_name")           .read[String]         and
-      (__ \ "p_house_number")   .read[String]         and
-      (__ \ "p_address_1")      .read[String]         and
-      (__ \ "p_address_2")      .readNullable[String] and
-      (__ \ "p_address_3")      .read[String]         and
-      (__ \ "p_address_4")      .readNullable[String] and
-      (__ \ "p_postcode")       .readNullable[String] and
-      (__ \ "p_phone")          .read[String]         and
-      (__ \ "p_email")          .read[String]         and
-      (__ \ "p_reference")      .read[String]         and
-      (__ \ "p_is_authorised")  .read[BigInt]
-    )(AgentDetails.apply _)
+  implicit val format: OFormat[AgentDetails] = Json.format[AgentDetails]
 }

@@ -4,6 +4,8 @@ GET        /hello-world             uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 GET        /prelim/returns          uk.gov.hmrc.stampdutylandtaxstub.controllers.PrelimReturnController.prelimReturnDetails(returnId: Option[String] ?= None)
 
-POST       /manage-agents/agent-details                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAgentDetails
+POST       /manage-agents/agent-details/get                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAgentDetails
 
-POST       /manage-agents/agent-details/get-all-agents   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllAgents
+POST       /manage-agents/agent-details/submit               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.submitAgentDetails
+
+POST       /manage-agents/agent-details/get-all-agents       uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllAgents

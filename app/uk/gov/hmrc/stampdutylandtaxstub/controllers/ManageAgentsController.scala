@@ -16,12 +16,15 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
+import models.AgentDetails
 import models.requests.{AgentIdRequest, StornRequest}
+import models.response.SubmitAgentDetailsResponse
 import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
 
+import java.util.UUID
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -42,6 +45,19 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
           case _             => Future.successful(NotFound)
         }
+      }
+    )
+  }
+
+  def submitAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[AgentDetails].fold(
+      invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      _ => {
+        Future.successful(Ok(Json.toJson(
+          SubmitAgentDetailsResponse(
+            UUID.randomUUID().toString
+          )
+        )))
       }
     )
   }
