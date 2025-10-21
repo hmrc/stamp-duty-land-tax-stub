@@ -16,8 +16,7 @@
 
 package models
 
-import play.api.libs.functional.syntax.toFunctionalBuilderOps
-import play.api.libs.json.{Json, OFormat, Reads, Writes, __}
+import play.api.libs.json.{Json, OFormat, Reads, Writes}
 
 case class AgentDetails(
                          storn        : String,
