@@ -1,5 +1,5 @@
 {
-  "storn": "123467",
+  "storn": "STN54363",
   "name": "Acme Property Agents Ltd",
   "houseNumber": "42",
   "addressLine1": "High Street",
@@ -9,6 +9,6 @@
   "postcode": "SW1A 2AA",
   "phoneNumber": "02079460000",
   "emailAddress": "info@acmeagents.co.uk",
-  "agentId": "AGT001",
+  "agentId": "123467",
   "isAuthorised": 1
 }

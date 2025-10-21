@@ -16,10 +16,9 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import models.AgentDetails
-import models.requests.StornRequest
-import play.api.libs.json.{JsError, JsSuccess, JsValue, Json}
-import play.api.mvc.{Action, AnyContent, ControllerComponents}
+import models.requests.{AgentIdRequest, StornRequest}
+import play.api.libs.json.{JsValue, Json}
+import play.api.mvc.{Action, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
 
@@ -31,17 +30,34 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
   extends BackendController(cc) with StubResource:
 
   def getAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
-    request.body.validate[StornRequest].fold(
+    request.body.validate[AgentIdRequest].fold(
       invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
-      storn   => {
+      agentId => {
 
-        val basePath = "/resources.manage.agents"
+        val basePath = "/resources.manage.agentDetails"
 
-        val fullPath = s"$basePath/${storn.storn}/manageAgentDetails.json"
+        val fullPath = s"$basePath/${agentId.agentId}/manageAgentDetails.json"
 
         findResource(fullPath) match {
           case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
           case _             => Future.successful(NotFound)
+        }
+      }
+    )
+  }
+
+  def getAllAgents: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[StornRequest].fold(
+      invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      storn => {
+
+        val basePath = "/resources.manage.allAgentDetails"
+
+        val fullPath = s"$basePath/${storn.storn}/manageAllAgentDetails.json"
+
+        findResource(fullPath) match {
+          case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
+          case _ => Future.successful(NotFound)
         }
       }
     )
