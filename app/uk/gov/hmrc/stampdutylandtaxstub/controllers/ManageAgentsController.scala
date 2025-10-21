@@ -17,7 +17,7 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.AgentDetails
-import models.requests.{AgentIdRequest, StornRequest}
+import models.requests.StornRequest
 import models.response.SubmitAgentDetailsResponse
 import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, ControllerComponents}
@@ -33,13 +33,13 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
   extends BackendController(cc) with StubResource:
 
   def getAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
-    request.body.validate[AgentIdRequest].fold(
+    request.body.validate[StornRequest].fold(
       invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
-      agentId => {
+      storn => {
 
         val basePath = "/resources.manage.agentDetails"
 
-        val fullPath = s"$basePath/${agentId.agentId}/manageAgentDetails.json"
+        val fullPath = s"$basePath/${storn.storn}/manageAgentDetails.json"
 
         findResource(fullPath) match {
           case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
