@@ -1,6 +1,7 @@
 {
   "storn": "123467",
   "name": "Acme Property Agents Ltd",
+  "agentReferenceNumber": "ARN001",
   "houseNumber": "42",
   "addressLine1": "High Street",
   "addressLine2": "Westminster",

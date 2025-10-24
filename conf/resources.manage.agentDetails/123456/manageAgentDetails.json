@@ -1,6 +1,7 @@
 {
   "storn": "123456",
   "name": "Sunrise Realty",
+  "agentReferenceNumber": "ARN001",
   "houseNumber": "8B",
   "addressLine1": "Baker Street",
   "addressLine3": "Manchester",

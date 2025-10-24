@@ -17,7 +17,7 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.AgentDetails
-import models.requests.StornRequest
+import models.requests.{StornAndArnRequest, StornRequest}
 import models.response.SubmitAgentDetailsResponse
 import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, ControllerComponents}
@@ -44,6 +44,23 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         findResource(fullPath) match {
           case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
           case _             => Future.successful(NotFound)
+        }
+      }
+    )
+  }
+
+  def removeAgent: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[StornAndArnRequest].fold(
+      invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      request => {
+
+        val basePath = "/resources.manage.agentDetails"
+
+        val fullPath = s"$basePath/${request.storn}/manageAgentDetails.json"
+
+        findResource(fullPath) match {
+          case Some(content) => Future.successful(Ok(Json.toJson(true)))
+          case _ => Future.successful(NotFound)
         }
       }
     )
