@@ -1,6 +1,6 @@
 [
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Harborview Estates",
     "houseNumber": "22A",
     "addressLine1": "Queensway",
@@ -12,7 +12,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Sunrise Realty",
     "houseNumber": "8B",
     "addressLine1": "Baker Street",
@@ -24,7 +24,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Willow Property Group",
     "houseNumber": "14",
     "addressLine1": "Church Road",
@@ -36,7 +36,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Elm Street Agents",
     "houseNumber": "77",
     "addressLine1": "Elm Street",
@@ -48,7 +48,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Parkview Property Consultants",
     "houseNumber": "33",
     "addressLine1": "High Street",
@@ -60,7 +60,7 @@
     "isAuthorised": 0
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Riverside Homes Ltd",
     "houseNumber": "101",
     "addressLine1": "Bridge Street",
@@ -72,7 +72,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Maple Estates",
     "houseNumber": "9",
     "addressLine1": "King’s Road",
@@ -84,7 +84,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Northpoint Property Group",
     "houseNumber": "42",
     "addressLine1": "Abbey Lane",
@@ -96,7 +96,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Lakeside Realty",
     "houseNumber": "5",
     "addressLine1": "Lake View Road",
@@ -108,7 +108,7 @@
     "isAuthorised": 0
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Oakwood Property Management",
     "houseNumber": "18",
     "addressLine1": "Station Road",
@@ -120,7 +120,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Skyline Estates",
     "houseNumber": "24",
     "addressLine1": "Hilltop Drive",
@@ -132,7 +132,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Westfield Properties",
     "houseNumber": "19C",
     "addressLine1": "Oxford Street",
@@ -144,7 +144,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Cedar Grove Agents",
     "houseNumber": "11",
     "addressLine1": "Victoria Avenue",
@@ -156,7 +156,7 @@
     "isAuthorised": 0
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Ashworth Realty",
     "houseNumber": "6",
     "addressLine1": "Queens Park Road",
@@ -168,7 +168,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Southgate Homes",
     "houseNumber": "55",
     "addressLine1": "London Road",
@@ -180,7 +180,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Bridgeview Property Partners",
     "houseNumber": "29",
     "addressLine1": "Mill Lane",
@@ -192,7 +192,7 @@
     "isAuthorised": 0
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Granite Estates",
     "houseNumber": "10",
     "addressLine1": "Union Street",
@@ -204,7 +204,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Seaview Property Group",
     "houseNumber": "72",
     "addressLine1": "Marine Parade",
@@ -216,7 +216,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Cathedral Estates",
     "houseNumber": "4",
     "addressLine1": "Priory Road",
@@ -228,7 +228,7 @@
     "isAuthorised": 0
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Midland Property Services",
     "houseNumber": "88",
     "addressLine1": "New Street",
@@ -240,7 +240,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Horizon Lettings",
     "houseNumber": "30",
     "addressLine1": "Broadway",
@@ -252,7 +252,7 @@
     "isAuthorised": 1
   },
   {
-    "storn": "STN001",
+    "storn": "STN005",
     "name": "Central Property Hub",
     "houseNumber": "2",
     "addressLine1": "Market Square",
@@ -261,6 +261,42 @@
     "phoneNumber": "01223456780",
     "emailAddress": "admin@centralph.co.uk",
     "agentId": "AGT022",
+    "isAuthorised": 1
+  },
+  {
+    "storn": "STN005",
+    "name": "Fairview Residential",
+    "houseNumber": "45",
+    "addressLine1": "Meadow Lane",
+    "addressLine3": "Oxford",
+    "postcode": "OX1 2JD",
+    "phoneNumber": "01865223344",
+    "emailAddress": "info@fairviewres.co.uk",
+    "agentId": "AGT023",
+    "isAuthorised": 1
+  },
+  {
+    "storn": "STN005",
+    "name": "Stonebridge Lettings",
+    "houseNumber": "7",
+    "addressLine1": "Bridge Close",
+    "addressLine3": "Exeter",
+    "postcode": "EX1 1AA",
+    "phoneNumber": "01392223344",
+    "emailAddress": "team@stonebridgelettings.co.uk",
+    "agentId": "AGT024",
+    "isAuthorised": 0
+  },
+  {
+    "storn": "STN005",
+    "name": "Hillcrest Realty",
+    "houseNumber": "9",
+    "addressLine1": "Cedar Avenue",
+    "addressLine3": "Plymouth",
+    "postcode": "PL1 2TG",
+    "phoneNumber": "01752678900",
+    "emailAddress": "contact@hillcrestre.co.uk",
+    "agentId": "AGT025",
     "isAuthorised": 1
   }
 ]
