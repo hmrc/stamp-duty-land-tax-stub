@@ -1,7 +1,9 @@
 
 # stamp-duty-land-tax-stub
 
-This is a placeholder README.md for a new repository
+This is a repository used to stub https://github.com/hmrc/formp-proxy
+
+To start the server locally on `port 10914`: `sbt 'run 10914'`
 
 ### License
 
