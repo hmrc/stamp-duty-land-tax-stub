@@ -19,13 +19,14 @@ package models
 import play.api.libs.json.{Json, OFormat}
 
 case class AgentDetailsBeforeCreation(
-                                       storn                 : String,
+                                       agentName             : String,
                                        name                  : String,
                                        houseNumber           : String,
                                        addressLine1          : String,
                                        addressLine2          : Option[String],
                                        addressLine3          : String,
                                        addressLine4          : Option[String],
+                                       postcode              : Option[String],
                                        phone                 : Option[String],
                                        email                 : String,
                                        agentId               : String
