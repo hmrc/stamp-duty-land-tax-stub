@@ -33,16 +33,19 @@ class VendorReturnControllerSpec
   lazy val testController: VendorReturnController = app.injector.instanceOf[VendorReturnController]
   val testJson: JsValue = Json.parse(
     """{
-      "stornId": "12435",
-      "purchaserIsCompany": "YES",
-      "surNameOrCompanyName": "Test Name",
-      "houseNumber": 23,
-      "addressLine1": "Test road name",
-      "addressLine2": null,
-      "addressLine3": null,
-      "addressLine4": null,
-      "postcode": "TE23 5TT",
-      "transactionType": "O"
+        "stornId": "12435",
+        "returnResourceRef": "124",
+        "title": "Mr",
+        "forename1": "Test",
+        "forename2": "Man",
+        "surName": "Test",
+        "houseNumber": 1,
+        "addressLine1": "Test Street",
+        "addressLine2": "Apartment 5",
+        "addressLine3": null,
+        "addressLine4": null,
+        "postcode": "TE23 5TT",
+        "isRepresentedByAgent": "No"
     }"""
   )
 
