@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import models.AgentDetails
+import models.AgentDetailsBeforeCreation
 import models.requests.{StornAndArnRequest, StornRequest}
 import models.response.SubmitAgentDetailsResponse
 import play.api.libs.json.{JsValue, Json}
@@ -33,13 +33,13 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
   extends BackendController(cc) with StubResource:
 
   def getAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
-    request.body.validate[StornRequest].fold(
+    request.body.validate[StornAndArnRequest].fold(
       invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
-      storn => {
+      response => {
 
         val basePath = "/resources.manage.agentDetails"
 
-        val fullPath = s"$basePath/${storn.storn}/manageAgentDetails.json"
+        val fullPath = s"$basePath/${response.storn}/${response.agentReferenceNumber}/manageAgentDetails.json"
 
         findResource(fullPath) match {
           case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
@@ -52,11 +52,11 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
   def removeAgent: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornAndArnRequest].fold(
       invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
-      request => {
+      response => {
 
         val basePath = "/resources.manage.agentDetails"
 
-        val fullPath = s"$basePath/${request.storn}/manageAgentDetails.json"
+        val fullPath = s"$basePath/${response.storn}/${response.agentReferenceNumber}/manageAgentDetails.json"
 
         findResource(fullPath) match {
           case Some(content) => Future.successful(Ok(Json.toJson(true)))
@@ -67,7 +67,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
   }
 
   def submitAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
-    request.body.validate[AgentDetails].fold(
+    request.body.validate[AgentDetailsBeforeCreation].fold(
       invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       _ => {
         Future.successful(Ok(Json.toJson(
@@ -82,11 +82,11 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
   def getAllAgents: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
-      storn => {
+      response => {
 
         val basePath = "/resources.manage.allAgentDetails"
 
-        val fullPath = s"$basePath/${storn.storn}/manageAllAgentDetails.json"
+        val fullPath = s"$basePath/${response.storn}/manageAllAgentDetails.json"
 
         findResource(fullPath) match {
           case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))

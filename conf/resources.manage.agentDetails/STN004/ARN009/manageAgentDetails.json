@@ -1,0 +1,13 @@
+{
+  "storn": "STN004",
+  "agentReferenceNumber": "ARN009",
+  "agentName": "Lakeside Realty",
+  "houseNumber": "5",
+  "addressLine1": "Lake View Road",
+  "addressLine3": "Nottingham",
+  "postcode": "NG1 3DF",
+  "phone": "01159876543",
+  "email": "info@lakesiderealty.co.uk",
+  "agentId": "AGT009",
+  "isAuthorised": 0
+}

@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN008",
+  "agentName": "Northpoint Property Group",
+  "houseNumber": "42",
+  "addressLine1": "Abbey Lane",
+  "addressLine3": "Sheffield",
+  "postcode": "S7 2QE",
+  "phone": "01142345678",
+  "email": "contact@northpointpg.co.uk",
+  "agentId": "AGT008",
+  "isAuthorised": 1
+}

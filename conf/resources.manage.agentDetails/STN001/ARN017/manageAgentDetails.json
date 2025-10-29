@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN017",
+  "agentName": "Granite Estates",
+  "houseNumber": "10",
+  "addressLine1": "Union Street",
+  "addressLine3": "Aberdeen",
+  "postcode": "AB10 1TL",
+  "phone": "01224567890",
+  "email": "info@graniteestates.co.uk",
+  "agentId": "AGT017",
+  "isAuthorised": 1
+}

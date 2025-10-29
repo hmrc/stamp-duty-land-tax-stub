@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN015",
+  "agentName": "Southgate Homes",
+  "houseNumber": "55",
+  "addressLine1": "London Road",
+  "addressLine3": "Derby",
+  "postcode": "DE1 1XX",
+  "phone": "01332233445",
+  "email": "sales@southgatehomes.co.uk",
+  "agentId": "AGT015",
+  "isAuthorised": 1
+}

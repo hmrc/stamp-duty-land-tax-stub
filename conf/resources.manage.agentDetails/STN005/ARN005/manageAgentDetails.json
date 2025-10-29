@@ -1,0 +1,13 @@
+{
+  "storn": "STN005",
+  "agentReferenceNumber": "ARN005",
+  "agentName": "Parkview Property Consultants",
+  "houseNumber": "33",
+  "addressLine1": "High Street",
+  "addressLine3": "Bristol",
+  "postcode": "BS1 4AA",
+  "phone": "01179876543",
+  "email": "info@parkviewpc.co.uk",
+  "agentId": "AGT005",
+  "isAuthorised": 0
+}

@@ -1,0 +1,13 @@
+{
+  "storn": "STN004",
+  "agentReferenceNumber": "ARN006",
+  "agentName": "Riverside Homes Ltd",
+  "houseNumber": "101",
+  "addressLine1": "Bridge Street",
+  "addressLine3": "Newcastle",
+  "postcode": "NE1 6BN",
+  "phone": "01911234567",
+  "email": "office@riversidehomes.co.uk",
+  "agentId": "AGT006",
+  "isAuthorised": 1
+}

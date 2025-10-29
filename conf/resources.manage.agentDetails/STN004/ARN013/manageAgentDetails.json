@@ -1,0 +1,13 @@
+{
+  "storn": "STN004",
+  "agentReferenceNumber": "ARN013",
+  "agentName": "Cedar Grove Agents",
+  "houseNumber": "11",
+  "addressLine1": "Victoria Avenue",
+  "addressLine3": "Leeds",
+  "postcode": "LS1 3AJ",
+  "phone": "01134445566",
+  "email": "support@cedargrove.co.uk",
+  "agentId": "AGT013",
+  "isAuthorised": 0
+}

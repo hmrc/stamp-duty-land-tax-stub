@@ -1,0 +1,13 @@
+{
+  "storn": "STN004",
+  "agentReferenceNumber": "ARN020",
+  "agentName": "Midland Property Services",
+  "houseNumber": "88",
+  "addressLine1": "New Street",
+  "addressLine3": "Coventry",
+  "postcode": "CV1 5EQ",
+  "phone": "02476678910",
+  "email": "contact@midlandps.co.uk",
+  "agentId": "AGT020",
+  "isAuthorised": 1
+}

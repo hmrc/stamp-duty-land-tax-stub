@@ -1,0 +1,13 @@
+{
+  "storn": "STN004",
+  "agentReferenceNumber": "ARN022",
+  "agentName": "Central Property Hub",
+  "houseNumber": "2",
+  "addressLine1": "Market Square",
+  "addressLine3": "Cambridge",
+  "postcode": "CB2 3QA",
+  "phone": "01223456780",
+  "email": "admin@centralph.co.uk",
+  "agentId": "AGT022",
+  "isAuthorised": 1
+}

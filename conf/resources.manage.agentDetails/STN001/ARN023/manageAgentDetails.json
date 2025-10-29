@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN023",
+  "agentName": "Oakridge Estates Ltd",
+  "houseNumber": "14B",
+  "addressLine1": "Kingsway",
+  "addressLine3": "Leeds",
+  "postcode": "LS2 8DL",
+  "phone": "01132457890",
+  "email": "contact@oakridgeestates.co.uk",
+  "agentId": "AGT023",
+  "isAuthorised": 1
+}

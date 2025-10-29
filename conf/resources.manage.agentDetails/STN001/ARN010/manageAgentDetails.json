@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN010",
+  "agentName": "Oakwood Property Management",
+  "houseNumber": "18",
+  "addressLine1": "Station Road",
+  "addressLine3": "Reading",
+  "postcode": "RG1 8AB",
+  "phone": "01189223344",
+  "email": "enquiries@oakwoodpm.co.uk",
+  "agentId": "AGT010",
+  "isAuthorised": 1
+}

@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN021",
+  "agentName": "Horizon Lettings",
+  "houseNumber": "30",
+  "addressLine1": "Broadway",
+  "addressLine3": "Cardiff",
+  "postcode": "CF10 1AA",
+  "phone": "02920334455",
+  "email": "info@horizonlettings.co.uk",
+  "agentId": "AGT021",
+  "isAuthorised": 1
+}

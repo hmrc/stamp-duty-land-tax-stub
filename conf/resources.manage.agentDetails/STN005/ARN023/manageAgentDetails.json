@@ -1,0 +1,13 @@
+{
+  "storn": "STN005",
+  "agentReferenceNumber": "ARN023",
+  "agentName": "Fairview Residential",
+  "houseNumber": "45",
+  "addressLine1": "Meadow Lane",
+  "addressLine3": "Oxford",
+  "postcode": "OX1 2JD",
+  "phone": "01865223344",
+  "email": "info@fairviewres.co.uk",
+  "agentId": "AGT023",
+  "isAuthorised": 1
+}

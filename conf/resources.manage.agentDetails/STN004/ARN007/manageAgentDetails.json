@@ -1,0 +1,13 @@
+{
+  "storn": "STN004",
+  "agentReferenceNumber": "ARN007",
+  "agentName": "Maple Estates",
+  "houseNumber": "9",
+  "addressLine1": "King\u2019s Road",
+  "addressLine3": "London",
+  "postcode": "SW3 4QP",
+  "phone": "02071234567",
+  "email": "admin@mapleestates.co.uk",
+  "agentId": "AGT007",
+  "isAuthorised": 1
+}
