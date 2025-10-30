@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN024",
+  "agentName": "Riverside Lettings Group",
+  "houseNumber": "87",
+  "addressLine1": "High Street",
+  "addressLine3": "Nottingham",
+  "postcode": "NG1 6AA",
+  "phone": "01158463221",
+  "email": "info@riversidelettings.co.uk",
+  "agentId": "AGT024",
+  "isAuthorised": 1
+}

@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN004",
+  "agentName": "Elm Street Agents",
+  "houseNumber": "77",
+  "addressLine1": "Elm Street",
+  "addressLine3": "Liverpool",
+  "postcode": "L1 3DF",
+  "phone": "01517991234",
+  "email": "hello@elmstreetagents.co.uk",
+  "agentId": "AGT004",
+  "isAuthorised": 1
+}

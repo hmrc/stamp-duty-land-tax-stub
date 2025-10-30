@@ -1,0 +1,13 @@
+{
+  "storn": "STN001",
+  "agentReferenceNumber": "ARN001",
+  "agentName": "Harborview Estates",
+  "houseNumber": "22A",
+  "addressLine1": "Queensway",
+  "addressLine3": "Birmingham",
+  "postcode": "B2 4ND",
+  "phone": "01214567890",
+  "email": "info@harborviewestates.co.uk",
+  "agentId": "AGT001",
+  "isAuthorised": 1
+}

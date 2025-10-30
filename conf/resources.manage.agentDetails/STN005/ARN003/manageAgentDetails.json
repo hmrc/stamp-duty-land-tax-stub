@@ -1,0 +1,13 @@
+{
+  "storn": "STN005",
+  "agentReferenceNumber": "ARN003",
+  "agentName": "Willow Property Group",
+  "houseNumber": "14",
+  "addressLine1": "Church Road",
+  "addressLine3": "Leeds",
+  "postcode": "LS2 7BT",
+  "phone": "01134561234",
+  "email": "support@willowpg.co.uk",
+  "agentId": "AGT003",
+  "isAuthorised": 1
+}

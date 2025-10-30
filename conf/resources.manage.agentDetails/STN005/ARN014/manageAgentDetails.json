@@ -1,0 +1,13 @@
+{
+  "storn": "STN005",
+  "agentReferenceNumber": "ARN014",
+  "agentName": "Ashworth Realty",
+  "houseNumber": "6",
+  "addressLine1": "Queens Park Road",
+  "addressLine3": "Brighton",
+  "postcode": "BN2 0GH",
+  "phone": "01273456789",
+  "email": "hello@ashworthrealty.co.uk",
+  "agentId": "AGT014",
+  "isAuthorised": 1
+}

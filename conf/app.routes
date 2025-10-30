@@ -1,7 +1,5 @@
 # microservice specific routes
 
-GET        /hello-world             uk.gov.hmrc.stampdutylandtaxstub.controllers.MicroserviceHelloWorldController.hello
-
 GET        /prelim/returns          uk.gov.hmrc.stampdutylandtaxstub.controllers.PrelimReturnController.prelimReturnDetails(returnId: Option[String] ?= None)
 
 POST       /manage-agents/agent-details                      uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAgentDetails

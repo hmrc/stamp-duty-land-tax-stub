@@ -1,0 +1,13 @@
+{
+  "storn": "STN005",
+  "agentReferenceNumber": "ARN012",
+  "agentName": "Westfield Properties",
+  "houseNumber": "19C",
+  "addressLine1": "Oxford Street",
+  "addressLine3": "London",
+  "postcode": "W1D 2AN",
+  "phone": "02075556677",
+  "email": "info@westfieldprops.co.uk",
+  "agentId": "AGT012",
+  "isAuthorised": 1
+}

@@ -1,0 +1,13 @@
+{
+  "storn": "STN004",
+  "agentReferenceNumber": "ARN002",
+  "agentName": "Sunrise Realty",
+  "houseNumber": "8B",
+  "addressLine1": "Baker Street",
+  "addressLine3": "Manchester",
+  "postcode": "M1 2AB",
+  "phone": "01611234567",
+  "email": "contact@sunriserealty.co.uk",
+  "agentId": "AGT002",
+  "isAuthorised": 1
+}

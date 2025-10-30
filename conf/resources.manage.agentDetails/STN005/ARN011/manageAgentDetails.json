@@ -1,0 +1,13 @@
+{
+  "storn": "STN005",
+  "agentReferenceNumber": "ARN011",
+  "agentName": "Skyline Estates",
+  "houseNumber": "24",
+  "addressLine1": "Hilltop Drive",
+  "addressLine3": "Leicester",
+  "postcode": "LE2 1DF",
+  "phone": "01162224455",
+  "email": "team@skylineestates.co.uk",
+  "agentId": "AGT011",
+  "isAuthorised": 1
+}
