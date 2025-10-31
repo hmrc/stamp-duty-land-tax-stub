@@ -16,12 +16,14 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
+import models.PrelimReturn
+import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
 
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.ExecutionContext
+import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton()
 class PrelimReturnController @Inject()(cc: ControllerComponents, override val executionContext: ExecutionContext)
@@ -39,5 +41,18 @@ class PrelimReturnController @Inject()(cc: ControllerComponents, override val ex
       }
       case _ => NotFound
     }
+  }
 
+  def submitPrelimReturns: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[PrelimReturn].fold(
+      invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      _ => {
+        Future.successful(
+          findResource(s"$basePath/returnId.json") match {
+            case Some(content) => jsonResourceAsResponse(s"$basePath/returnId.json")
+            case _ => NotFound
+          }
+        )
+      }
+    )
   }
