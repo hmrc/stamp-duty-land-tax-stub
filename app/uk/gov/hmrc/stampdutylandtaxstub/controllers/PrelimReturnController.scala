@@ -28,12 +28,27 @@ class PrelimReturnController @Inject()(cc: ControllerComponents, override val ex
   extends BackendController(cc) with StubResource:
 
   val basePath = "/resources.data.filing.prelim"
+  val basePathFull = "/resources/data/filing.full"
 
   def prelimReturnDetails(returnId: Option[String]): Action[AnyContent] = Action {
     returnId match {
       case Some(id) => {
         findResource(s"$basePath/$id/prelimReturnDetails.json") match {
           case Some(content) => jsonResourceAsResponse(s"$basePath/$id/prelimReturnDetails.json")
+          case _ => NotFound
+        }
+      }
+      case _ => NotFound
+    }
+
+  }
+
+
+  def getFullReturn(returnId: Option[String]): Action[AnyContent] = Action {
+    returnId match {
+      case Some(id) => {
+        findResource(s"$basePathFull/$id/fullReturnDetails.json") match {
+          case Some(content) => jsonResourceAsResponse(s"$basePathFull/$id/fullReturnDetails.json")
           case _ => NotFound
         }
       }
