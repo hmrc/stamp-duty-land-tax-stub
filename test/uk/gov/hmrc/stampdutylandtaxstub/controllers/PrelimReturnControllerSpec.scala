@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
+import models.PrelimReturn
+import org.apache.pekko.actor.ActorSystem
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.mockito.MockitoSugar
@@ -29,7 +31,28 @@ class PrelimReturnControllerSpec
   extends AnyWordSpec
      with Matchers with GuiceOneServerPerSuite with MockitoSugar :
 
-  private val fakeRequest = FakeRequest("GET", "/")
+  implicit val system: ActorSystem = app.actorSystem
+
+  private val fakeGETRequest = FakeRequest("GET", "/")
+  private val fakePrelimReturnPOSTRequest =
+    FakeRequest("POST", "/")
+    .withHeaders()
+    .withBody(Json.toJson(PrelimReturn(
+    stornId = "12345",
+    purchaserIsCompany = "YES",
+    surNameOrCompanyName = "Test Company",
+    houseNumber = Some(23),
+    addressLine1 = "Test Street",
+    addressLine2 = Some("Apartment 5"),
+    addressLine3 = Some("Building A"),
+    addressLine4 = Some("District B"),
+    postcode = Some("TE23 5TT"),
+    transactionType = "O"
+  )))
+  private val invalidFakePrelimReturnPOSTRequest =
+    FakeRequest("POST", "/")
+    .withBody(Json.toJson(""))
+
   lazy val testController: PrelimReturnController = app.injector.instanceOf[PrelimReturnController]
   val testJson: JsValue = Json.parse(
     """{
@@ -45,18 +68,32 @@ class PrelimReturnControllerSpec
       "transactionType": "O"
     }"""
   )
+  val returnIdJson: JsValue = Json.parse(
+    """{
+      |"returnId":"123456"
+      |}
+      |""".stripMargin)
 
-  "GET /" should:
+  ".prelimReturnDetails" should:
     "return 404 when no return id is found" in:
-      val result = testController.prelimReturnDetails(None)(fakeRequest)
+      val result = testController.prelimReturnDetails(None)(fakeGETRequest)
       status(result) shouldBe Status.NOT_FOUND
 
     "return 404 when invalid return id is sent" in :
-      val result = testController.prelimReturnDetails(Some("55555"))(fakeRequest)
+      val result = testController.prelimReturnDetails(Some("55555"))(fakeGETRequest)
       status(result) shouldBe Status.NOT_FOUND
 
     "return 200 when a valid return id has been found" in :
-      val result = testController.prelimReturnDetails(Some("123456"))(fakeRequest)
+      val result = testController.prelimReturnDetails(Some("123456"))(fakeGETRequest)
       status(result) shouldBe Status.OK
       contentAsJson(result) shouldBe testJson
 
+  ".submitPrelimReturns" should:
+    "return 200 when payload is valid" in:
+      val result = testController.submitPrelimReturns(fakePrelimReturnPOSTRequest)
+      status(result) shouldBe Status.OK
+      contentAsJson(result) shouldBe returnIdJson
+
+    "return 400 when payload is invalid" in:
+      val result = testController.submitPrelimReturns(invalidFakePrelimReturnPOSTRequest)
+      status(result) shouldBe Status.BAD_REQUEST
