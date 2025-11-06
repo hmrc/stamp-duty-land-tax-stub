@@ -95,3 +95,20 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
       }
     )
   }
+
+  def getAllReturns: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[StornRequest].fold(
+      invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+
+        val basePath = "/resources.manage.allReturns"
+
+        val fullPath = s"$basePath/${response.storn}/returnResponse.json"
+
+        findResource(fullPath) match {
+          case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
+          case _ => Future.successful(NotFound)
+        }
+      }
+    )
+  }
