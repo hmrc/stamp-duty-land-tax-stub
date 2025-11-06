@@ -1,0 +1,861 @@
+{
+  "storn": "STN001",
+  "returnSummaryCount": 95,
+  "returnSummaryList": [
+    {
+      "returnReference": "RET20251101001",
+      "utrn": "UTRN000001",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-02",
+      "purchaserName": "Purchaser 1",
+      "address": "1 Market Street, London",
+      "agentReference": "Agent & Co 1"
+    },
+    {
+      "returnReference": "RET20251101002",
+      "utrn": "UTRN000002",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-03",
+      "purchaserName": "Purchaser 2",
+      "address": "2 Market Street, London",
+      "agentReference": "Agent & Co 2"
+    },
+    {
+      "returnReference": "RET20251101003",
+      "utrn": "UTRN000003",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-04",
+      "purchaserName": "Purchaser 3",
+      "address": "3 Market Street, London",
+      "agentReference": "Agent & Co 3"
+    },
+    {
+      "returnReference": "RET20251101004",
+      "utrn": "UTRN000004",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-05",
+      "purchaserName": "Purchaser 4",
+      "address": "4 Market Street, London",
+      "agentReference": "Agent & Co 4"
+    },
+    {
+      "returnReference": "RET20251101005",
+      "utrn": "UTRN000005",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-06",
+      "purchaserName": "Purchaser 5",
+      "address": "5 Market Street, London",
+      "agentReference": "Agent & Co 5"
+    },
+    {
+      "returnReference": "RET20251101006",
+      "utrn": "UTRN000006",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-07",
+      "purchaserName": "Purchaser 6",
+      "address": "6 Market Street, London",
+      "agentReference": "Agent & Co 6"
+    },
+    {
+      "returnReference": "RET20251101007",
+      "utrn": "UTRN000007",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-08",
+      "purchaserName": "Purchaser 7",
+      "address": "7 Market Street, London",
+      "agentReference": "Agent & Co 7"
+    },
+    {
+      "returnReference": "RET20251101008",
+      "utrn": "UTRN000008",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-09",
+      "purchaserName": "Purchaser 8",
+      "address": "8 Market Street, London",
+      "agentReference": "Agent & Co 8"
+    },
+    {
+      "returnReference": "RET20251101009",
+      "utrn": "UTRN000009",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-10",
+      "purchaserName": "Purchaser 9",
+      "address": "9 Market Street, London",
+      "agentReference": "Agent & Co 9"
+    },
+    {
+      "returnReference": "RET20251101010",
+      "utrn": "UTRN000010",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-11",
+      "purchaserName": "Purchaser 10",
+      "address": "10 Market Street, London",
+      "agentReference": "Agent & Co 10"
+    },
+    {
+      "returnReference": "RET20251101011",
+      "utrn": "UTRN000011",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-12",
+      "purchaserName": "Purchaser 11",
+      "address": "11 Market Street, London",
+      "agentReference": "Agent & Co 11"
+    },
+    {
+      "returnReference": "RET20251101012",
+      "utrn": "UTRN000012",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-13",
+      "purchaserName": "Purchaser 12",
+      "address": "12 Market Street, London",
+      "agentReference": "Agent & Co 12"
+    },
+    {
+      "returnReference": "RET20251101013",
+      "utrn": "UTRN000013",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-14",
+      "purchaserName": "Purchaser 13",
+      "address": "13 Market Street, London",
+      "agentReference": "Agent & Co 13"
+    },
+    {
+      "returnReference": "RET20251101014",
+      "utrn": "UTRN000014",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-15",
+      "purchaserName": "Purchaser 14",
+      "address": "14 Market Street, London",
+      "agentReference": "Agent & Co 14"
+    },
+    {
+      "returnReference": "RET20251101015",
+      "utrn": "UTRN000015",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-16",
+      "purchaserName": "Purchaser 15",
+      "address": "15 Market Street, London",
+      "agentReference": "Agent & Co 15"
+    },
+    {
+      "returnReference": "RET20251101016",
+      "utrn": "UTRN000016",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-17",
+      "purchaserName": "Purchaser 16",
+      "address": "16 Market Street, London",
+      "agentReference": "Agent & Co 16"
+    },
+    {
+      "returnReference": "RET20251101017",
+      "utrn": "UTRN000017",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-18",
+      "purchaserName": "Purchaser 17",
+      "address": "17 Market Street, London",
+      "agentReference": "Agent & Co 17"
+    },
+    {
+      "returnReference": "RET20251101018",
+      "utrn": "UTRN000018",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-19",
+      "purchaserName": "Purchaser 18",
+      "address": "18 Market Street, London",
+      "agentReference": "Agent & Co 18"
+    },
+    {
+      "returnReference": "RET20251101019",
+      "utrn": "UTRN000019",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-20",
+      "purchaserName": "Purchaser 19",
+      "address": "19 Market Street, London",
+      "agentReference": "Agent & Co 19"
+    },
+    {
+      "returnReference": "RET20251101020",
+      "utrn": "UTRN000020",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-21",
+      "purchaserName": "Purchaser 20",
+      "address": "20 Market Street, London",
+      "agentReference": "Agent & Co 20"
+    },
+    {
+      "returnReference": "RET20251101021",
+      "utrn": "UTRN000021",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-22",
+      "purchaserName": "Purchaser 21",
+      "address": "21 Market Street, London",
+      "agentReference": "Agent & Co 21"
+    },
+    {
+      "returnReference": "RET20251101022",
+      "utrn": "UTRN000022",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-23",
+      "purchaserName": "Purchaser 22",
+      "address": "22 Market Street, London",
+      "agentReference": "Agent & Co 22"
+    },
+    {
+      "returnReference": "RET20251101023",
+      "utrn": "UTRN000023",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-24",
+      "purchaserName": "Purchaser 23",
+      "address": "23 Market Street, London",
+      "agentReference": "Agent & Co 23"
+    },
+    {
+      "returnReference": "RET20251101024",
+      "utrn": "UTRN000024",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-25",
+      "purchaserName": "Purchaser 24",
+      "address": "24 Market Street, London",
+      "agentReference": "Agent & Co 24"
+    },
+    {
+      "returnReference": "RET20251101025",
+      "utrn": "UTRN000025",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-26",
+      "purchaserName": "Purchaser 25",
+      "address": "25 Market Street, London",
+      "agentReference": "Agent & Co 25"
+    },
+    {
+      "returnReference": "RET20251101026",
+      "utrn": "UTRN000026",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-27",
+      "purchaserName": "Purchaser 26",
+      "address": "26 Market Street, London",
+      "agentReference": "Agent & Co 26"
+    },
+    {
+      "returnReference": "RET20251101027",
+      "utrn": "UTRN000027",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-28",
+      "purchaserName": "Purchaser 27",
+      "address": "27 Market Street, London",
+      "agentReference": "Agent & Co 27"
+    },
+    {
+      "returnReference": "RET20251101028",
+      "utrn": "UTRN000028",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-29",
+      "purchaserName": "Purchaser 28",
+      "address": "28 Market Street, London",
+      "agentReference": "Agent & Co 28"
+    },
+    {
+      "returnReference": "RET20251101029",
+      "utrn": "UTRN000029",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-30",
+      "purchaserName": "Purchaser 29",
+      "address": "29 Market Street, London",
+      "agentReference": "Agent & Co 29"
+    },
+    {
+      "returnReference": "RET20251101030",
+      "utrn": "UTRN000030",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-01",
+      "purchaserName": "Purchaser 30",
+      "address": "30 Market Street, London",
+      "agentReference": "Agent & Co 30"
+    },
+    {
+      "returnReference": "RET20251101031",
+      "utrn": "UTRN000031",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-02",
+      "purchaserName": "Purchaser 31",
+      "address": "31 Market Street, London",
+      "agentReference": "Agent & Co 31"
+    },
+    {
+      "returnReference": "RET20251101032",
+      "utrn": "UTRN000032",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-03",
+      "purchaserName": "Purchaser 32",
+      "address": "32 Market Street, London",
+      "agentReference": "Agent & Co 32"
+    },
+    {
+      "returnReference": "RET20251101033",
+      "utrn": "UTRN000033",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-04",
+      "purchaserName": "Purchaser 33",
+      "address": "33 Market Street, London",
+      "agentReference": "Agent & Co 33"
+    },
+    {
+      "returnReference": "RET20251101034",
+      "utrn": "UTRN000034",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-05",
+      "purchaserName": "Purchaser 34",
+      "address": "34 Market Street, London",
+      "agentReference": "Agent & Co 34"
+    },
+    {
+      "returnReference": "RET20251101035",
+      "utrn": "UTRN000035",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-06",
+      "purchaserName": "Purchaser 35",
+      "address": "35 Market Street, London",
+      "agentReference": "Agent & Co 35"
+    },
+    {
+      "returnReference": "RET20251101036",
+      "utrn": "UTRN000036",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-07",
+      "purchaserName": "Purchaser 36",
+      "address": "36 Market Street, London",
+      "agentReference": "Agent & Co 36"
+    },
+    {
+      "returnReference": "RET20251101037",
+      "utrn": "UTRN000037",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-08",
+      "purchaserName": "Purchaser 37",
+      "address": "37 Market Street, London",
+      "agentReference": "Agent & Co 37"
+    },
+    {
+      "returnReference": "RET20251101038",
+      "utrn": "UTRN000038",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-09",
+      "purchaserName": "Purchaser 38",
+      "address": "38 Market Street, London",
+      "agentReference": "Agent & Co 38"
+    },
+    {
+      "returnReference": "RET20251101039",
+      "utrn": "UTRN000039",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-10",
+      "purchaserName": "Purchaser 39",
+      "address": "39 Market Street, London",
+      "agentReference": "Agent & Co 39"
+    },
+    {
+      "returnReference": "RET20251101040",
+      "utrn": "UTRN000040",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-11",
+      "purchaserName": "Purchaser 40",
+      "address": "40 Market Street, London",
+      "agentReference": "Agent & Co 40"
+    },
+    {
+      "returnReference": "RET20251101041",
+      "utrn": "UTRN000041",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-12",
+      "purchaserName": "Purchaser 41",
+      "address": "41 Market Street, London",
+      "agentReference": "Agent & Co 41"
+    },
+    {
+      "returnReference": "RET20251101042",
+      "utrn": "UTRN000042",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-13",
+      "purchaserName": "Purchaser 42",
+      "address": "42 Market Street, London",
+      "agentReference": "Agent & Co 42"
+    },
+    {
+      "returnReference": "RET20251101043",
+      "utrn": "UTRN000043",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-14",
+      "purchaserName": "Purchaser 43",
+      "address": "43 Market Street, London",
+      "agentReference": "Agent & Co 43"
+    },
+    {
+      "returnReference": "RET20251101044",
+      "utrn": "UTRN000044",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-15",
+      "purchaserName": "Purchaser 44",
+      "address": "44 Market Street, London",
+      "agentReference": "Agent & Co 44"
+    },
+    {
+      "returnReference": "RET20251101045",
+      "utrn": "UTRN000045",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-16",
+      "purchaserName": "Purchaser 45",
+      "address": "45 Market Street, London",
+      "agentReference": "Agent & Co 45"
+    },
+    {
+      "returnReference": "RET20251101046",
+      "utrn": "UTRN000046",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-17",
+      "purchaserName": "Purchaser 46",
+      "address": "46 Market Street, London",
+      "agentReference": "Agent & Co 46"
+    },
+    {
+      "returnReference": "RET20251101047",
+      "utrn": "UTRN000047",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-18",
+      "purchaserName": "Purchaser 47",
+      "address": "47 Market Street, London",
+      "agentReference": "Agent & Co 47"
+    },
+    {
+      "returnReference": "RET20251101048",
+      "utrn": "UTRN000048",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-19",
+      "purchaserName": "Purchaser 48",
+      "address": "48 Market Street, London",
+      "agentReference": "Agent & Co 48"
+    },
+    {
+      "returnReference": "RET20251101049",
+      "utrn": "UTRN000049",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-20",
+      "purchaserName": "Purchaser 49",
+      "address": "49 Market Street, London",
+      "agentReference": "Agent & Co 49"
+    },
+    {
+      "returnReference": "RET20251101050",
+      "utrn": "UTRN000050",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-21",
+      "purchaserName": "Purchaser 50",
+      "address": "50 Market Street, London",
+      "agentReference": "Agent & Co 50"
+    },
+    {
+      "returnReference": "RET20251101051",
+      "utrn": "UTRN000051",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-22",
+      "purchaserName": "Purchaser 51",
+      "address": "51 Market Street, London",
+      "agentReference": "Agent & Co 51"
+    },
+    {
+      "returnReference": "RET20251101052",
+      "utrn": "UTRN000052",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-23",
+      "purchaserName": "Purchaser 52",
+      "address": "52 Market Street, London",
+      "agentReference": "Agent & Co 52"
+    },
+    {
+      "returnReference": "RET20251101053",
+      "utrn": "UTRN000053",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-24",
+      "purchaserName": "Purchaser 53",
+      "address": "53 Market Street, London",
+      "agentReference": "Agent & Co 53"
+    },
+    {
+      "returnReference": "RET20251101054",
+      "utrn": "UTRN000054",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-25",
+      "purchaserName": "Purchaser 54",
+      "address": "54 Market Street, London",
+      "agentReference": "Agent & Co 54"
+    },
+    {
+      "returnReference": "RET20251101055",
+      "utrn": "UTRN000055",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-26",
+      "purchaserName": "Purchaser 55",
+      "address": "55 Market Street, London",
+      "agentReference": "Agent & Co 55"
+    },
+    {
+      "returnReference": "RET20251101056",
+      "utrn": "UTRN000056",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-27",
+      "purchaserName": "Purchaser 56",
+      "address": "56 Market Street, London",
+      "agentReference": "Agent & Co 56"
+    },
+    {
+      "returnReference": "RET20251101057",
+      "utrn": "UTRN000057",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-28",
+      "purchaserName": "Purchaser 57",
+      "address": "57 Market Street, London",
+      "agentReference": "Agent & Co 57"
+    },
+    {
+      "returnReference": "RET20251101058",
+      "utrn": "UTRN000058",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-29",
+      "purchaserName": "Purchaser 58",
+      "address": "58 Market Street, London",
+      "agentReference": "Agent & Co 58"
+    },
+    {
+      "returnReference": "RET20251101059",
+      "utrn": "UTRN000059",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-30",
+      "purchaserName": "Purchaser 59",
+      "address": "59 Market Street, London",
+      "agentReference": "Agent & Co 59"
+    },
+    {
+      "returnReference": "RET20251101060",
+      "utrn": "UTRN000060",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-01",
+      "purchaserName": "Purchaser 60",
+      "address": "60 Market Street, London",
+      "agentReference": "Agent & Co 60"
+    },
+    {
+      "returnReference": "RET20251101061",
+      "utrn": "UTRN000061",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-02",
+      "purchaserName": "Purchaser 61",
+      "address": "61 Market Street, London",
+      "agentReference": "Agent & Co 61"
+    },
+    {
+      "returnReference": "RET20251101062",
+      "utrn": "UTRN000062",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-03",
+      "purchaserName": "Purchaser 62",
+      "address": "62 Market Street, London",
+      "agentReference": "Agent & Co 62"
+    },
+    {
+      "returnReference": "RET20251101063",
+      "utrn": "UTRN000063",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-04",
+      "purchaserName": "Purchaser 63",
+      "address": "63 Market Street, London",
+      "agentReference": "Agent & Co 63"
+    },
+    {
+      "returnReference": "RET20251101064",
+      "utrn": "UTRN000064",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-05",
+      "purchaserName": "Purchaser 64",
+      "address": "64 Market Street, London",
+      "agentReference": "Agent & Co 64"
+    },
+    {
+      "returnReference": "RET20251101065",
+      "utrn": "UTRN000065",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-06",
+      "purchaserName": "Purchaser 65",
+      "address": "65 Market Street, London",
+      "agentReference": "Agent & Co 65"
+    },
+    {
+      "returnReference": "RET20251101066",
+      "utrn": "UTRN000066",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-07",
+      "purchaserName": "Purchaser 66",
+      "address": "66 Market Street, London",
+      "agentReference": "Agent & Co 66"
+    },
+    {
+      "returnReference": "RET20251101067",
+      "utrn": "UTRN000067",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-08",
+      "purchaserName": "Purchaser 67",
+      "address": "67 Market Street, London",
+      "agentReference": "Agent & Co 67"
+    },
+    {
+      "returnReference": "RET20251101068",
+      "utrn": "UTRN000068",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-09",
+      "purchaserName": "Purchaser 68",
+      "address": "68 Market Street, London",
+      "agentReference": "Agent & Co 68"
+    },
+    {
+      "returnReference": "RET20251101069",
+      "utrn": "UTRN000069",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-10",
+      "purchaserName": "Purchaser 69",
+      "address": "69 Market Street, London",
+      "agentReference": "Agent & Co 69"
+    },
+    {
+      "returnReference": "RET20251101070",
+      "utrn": "UTRN000070",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-11",
+      "purchaserName": "Purchaser 70",
+      "address": "70 Market Street, London",
+      "agentReference": "Agent & Co 70"
+    },
+    {
+      "returnReference": "RET20251101071",
+      "utrn": "UTRN000071",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-12",
+      "purchaserName": "Purchaser 71",
+      "address": "71 Market Street, London",
+      "agentReference": "Agent & Co 71"
+    },
+    {
+      "returnReference": "RET20251101072",
+      "utrn": "UTRN000072",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-13",
+      "purchaserName": "Purchaser 72",
+      "address": "72 Market Street, London",
+      "agentReference": "Agent & Co 72"
+    },
+    {
+      "returnReference": "RET20251101073",
+      "utrn": "UTRN000073",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-14",
+      "purchaserName": "Purchaser 73",
+      "address": "73 Market Street, London",
+      "agentReference": "Agent & Co 73"
+    },
+    {
+      "returnReference": "RET20251101074",
+      "utrn": "UTRN000074",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-15",
+      "purchaserName": "Purchaser 74",
+      "address": "74 Market Street, London",
+      "agentReference": "Agent & Co 74"
+    },
+    {
+      "returnReference": "RET20251101075",
+      "utrn": "UTRN000075",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-16",
+      "purchaserName": "Purchaser 75",
+      "address": "75 Market Street, London",
+      "agentReference": "Agent & Co 75"
+    },
+    {
+      "returnReference": "RET20251101076",
+      "utrn": "UTRN000076",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-17",
+      "purchaserName": "Purchaser 76",
+      "address": "76 Market Street, London",
+      "agentReference": "Agent & Co 76"
+    },
+    {
+      "returnReference": "RET20251101077",
+      "utrn": "UTRN000077",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-18",
+      "purchaserName": "Purchaser 77",
+      "address": "77 Market Street, London",
+      "agentReference": "Agent & Co 77"
+    },
+    {
+      "returnReference": "RET20251101078",
+      "utrn": "UTRN000078",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-19",
+      "purchaserName": "Purchaser 78",
+      "address": "78 Market Street, London",
+      "agentReference": "Agent & Co 78"
+    },
+    {
+      "returnReference": "RET20251101079",
+      "utrn": "UTRN000079",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-20",
+      "purchaserName": "Purchaser 79",
+      "address": "79 Market Street, London",
+      "agentReference": "Agent & Co 79"
+    },
+    {
+      "returnReference": "RET20251101080",
+      "utrn": "UTRN000080",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-21",
+      "purchaserName": "Purchaser 80",
+      "address": "80 Market Street, London",
+      "agentReference": "Agent & Co 80"
+    },
+    {
+      "returnReference": "RET20251101081",
+      "utrn": "UTRN000081",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-22",
+      "purchaserName": "Purchaser 81",
+      "address": "81 Market Street, London",
+      "agentReference": "Agent & Co 81"
+    },
+    {
+      "returnReference": "RET20251101082",
+      "utrn": "UTRN000082",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-23",
+      "purchaserName": "Purchaser 82",
+      "address": "82 Market Street, London",
+      "agentReference": "Agent & Co 82"
+    },
+    {
+      "returnReference": "RET20251101083",
+      "utrn": "UTRN000083",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-24",
+      "purchaserName": "Purchaser 83",
+      "address": "83 Market Street, London",
+      "agentReference": "Agent & Co 83"
+    },
+    {
+      "returnReference": "RET20251101084",
+      "utrn": "UTRN000084",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-25",
+      "purchaserName": "Purchaser 84",
+      "address": "84 Market Street, London",
+      "agentReference": "Agent & Co 84"
+    },
+    {
+      "returnReference": "RET20251101085",
+      "utrn": "UTRN000085",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-26",
+      "purchaserName": "Purchaser 85",
+      "address": "85 Market Street, London",
+      "agentReference": "Agent & Co 85"
+    },
+    {
+      "returnReference": "RET20251101086",
+      "utrn": "UTRN000086",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-27",
+      "purchaserName": "Purchaser 86",
+      "address": "86 Market Street, London",
+      "agentReference": "Agent & Co 86"
+    },
+    {
+      "returnReference": "RET20251101087",
+      "utrn": "UTRN000087",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-28",
+      "purchaserName": "Purchaser 87",
+      "address": "87 Market Street, London",
+      "agentReference": "Agent & Co 87"
+    },
+    {
+      "returnReference": "RET20251101088",
+      "utrn": "UTRN000088",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-29",
+      "purchaserName": "Purchaser 88",
+      "address": "88 Market Street, London",
+      "agentReference": "Agent & Co 88"
+    },
+    {
+      "returnReference": "RET20251101089",
+      "utrn": "UTRN000089",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-30",
+      "purchaserName": "Purchaser 89",
+      "address": "89 Market Street, London",
+      "agentReference": "Agent & Co 89"
+    },
+    {
+      "returnReference": "RET20251101090",
+      "utrn": "UTRN000090",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-01",
+      "purchaserName": "Purchaser 90",
+      "address": "90 Market Street, London",
+      "agentReference": "Agent & Co 90"
+    },
+    {
+      "returnReference": "RET20251101091",
+      "utrn": "UTRN000091",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-02",
+      "purchaserName": "Purchaser 91",
+      "address": "91 Market Street, London",
+      "agentReference": "Agent & Co 91"
+    },
+    {
+      "returnReference": "RET20251101092",
+      "utrn": "UTRN000092",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-03",
+      "purchaserName": "Purchaser 92",
+      "address": "92 Market Street, London",
+      "agentReference": "Agent & Co 92"
+    },
+    {
+      "returnReference": "RET20251101093",
+      "utrn": "UTRN000093",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-04",
+      "purchaserName": "Purchaser 93",
+      "address": "93 Market Street, London",
+      "agentReference": "Agent & Co 93"
+    },
+    {
+      "returnReference": "RET20251101094",
+      "utrn": "UTRN000094",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-05",
+      "purchaserName": "Purchaser 94",
+      "address": "94 Market Street, London",
+      "agentReference": "Agent & Co 94"
+    },
+    {
+      "returnReference": "RET20251101095",
+      "utrn": "UTRN000095",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-06",
+      "purchaserName": "Purchaser 95",
+      "address": "95 Market Street, London",
+      "agentReference": "Agent & Co 95"
+    }
+  ]
+}
