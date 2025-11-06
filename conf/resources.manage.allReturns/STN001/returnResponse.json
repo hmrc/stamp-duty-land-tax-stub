@@ -14,7 +14,7 @@
     {
       "returnReference": "RET20251101002",
       "utrn": "UTRN000002",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-25",
       "purchaserName": "Jane Doe",
       "address": "221B Baker Street, London",
@@ -23,7 +23,7 @@
     {
       "returnReference": "RET20251101003",
       "utrn": "UTRN000003",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-29",
       "purchaserName": "Michael Brown",
       "address": "15 Kensington Road, London",
@@ -41,7 +41,7 @@
     {
       "returnReference": "RET20251101005",
       "utrn": "UTRN000005",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-30",
       "purchaserName": "Oliver Jones",
       "address": "33 Regent Street, London",
@@ -50,7 +50,7 @@
     {
       "returnReference": "RET20251101006",
       "utrn": "UTRN000006",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-27",
       "purchaserName": "Sophia Patel",
       "address": "5 Baker Court, Croydon",
@@ -68,7 +68,7 @@
     {
       "returnReference": "RET20251101008",
       "utrn": "UTRN000008",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-11-01",
       "purchaserName": "Emily White",
       "address": "44 Queen’s Drive, Birmingham",
@@ -77,7 +77,7 @@
     {
       "returnReference": "RET20251101009",
       "utrn": "UTRN000009",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-22",
       "purchaserName": "James Turner",
       "address": "19 King’s Road, Leeds",
@@ -95,7 +95,7 @@
     {
       "returnReference": "RET20251101011",
       "utrn": "UTRN000011",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-11-02",
       "purchaserName": "Noah Evans",
       "address": "27 Elm Street, Bristol",
@@ -113,7 +113,7 @@
     {
       "returnReference": "RET20251101013",
       "utrn": "UTRN000013",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-19",
       "purchaserName": "Benjamin Scott",
       "address": "56 Rose Lane, Liverpool",
@@ -122,7 +122,7 @@
     {
       "returnReference": "RET20251101014",
       "utrn": "UTRN000014",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-11-03",
       "purchaserName": "Charlotte King",
       "address": "8 Victoria Avenue, Cambridge",
@@ -149,7 +149,7 @@
     {
       "returnReference": "RET20251101017",
       "utrn": "UTRN000017",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-23",
       "purchaserName": "Henry Carter",
       "address": "23 Market Street, Sheffield",
@@ -158,7 +158,7 @@
     {
       "returnReference": "RET20251101018",
       "utrn": "UTRN000018",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-11-04",
       "purchaserName": "Mia Wilson",
       "address": "50 Pine Grove, Reading",
@@ -185,7 +185,7 @@
     {
       "returnReference": "RET20251101021",
       "utrn": "UTRN000021",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-11-05",
       "purchaserName": "William Edwards",
       "address": "31 Oak Avenue, Nottingham",
@@ -203,7 +203,7 @@
     {
       "returnReference": "RET20251101023",
       "utrn": "UTRN000023",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-20",
       "purchaserName": "Ethan Roberts",
       "address": "72 Highfield Road, Oxford",
@@ -221,7 +221,7 @@
     {
       "returnReference": "RET20251101025",
       "utrn": "UTRN000025",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-11-06",
       "purchaserName": "George Walker",
       "address": "13 Mill Lane, Cambridge",
@@ -239,7 +239,7 @@
     {
       "returnReference": "RET20251101027",
       "utrn": "UTRN000027",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-19",
       "purchaserName": "Logan Wood",
       "address": "22 Elm Grove, Birmingham",
@@ -248,7 +248,7 @@
     {
       "returnReference": "RET20251101028",
       "utrn": "UTRN000028",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-11-02",
       "purchaserName": "Scarlett Murphy",
       "address": "99 Prince Street, London",
@@ -275,7 +275,7 @@
     {
       "returnReference": "RET20251101031",
       "utrn": "UTRN000031",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-24",
       "purchaserName": "Daniel Hill",
       "address": "28 Market Square, Norwich",
@@ -284,7 +284,7 @@
     {
       "returnReference": "RET20251101032",
       "utrn": "UTRN000032",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-11-03",
       "purchaserName": "Ella Adams",
       "address": "77 Bridge Street, York",
@@ -311,7 +311,7 @@
     {
       "returnReference": "RET20251101035",
       "utrn": "UTRN000035",
-      "status": "DRAFT",
+      "status": "PENDING",
       "dateSubmitted": "2025-10-26",
       "purchaserName": "Matthew Green",
       "address": "12 Rosewood Drive, Bristol",
