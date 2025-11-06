@@ -1,0 +1,321 @@
+{
+  "storn": "STN001",
+  "returnSummaryCount": 35,
+  "returnSummaryList": [
+    {
+      "returnReference": "RET20251101001",
+      "utrn": "UTRN000001",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-28",
+      "purchaserName": "John Smith",
+      "address": "10 Downing Street, London",
+      "agentReference": "Smith & Co Solicitors"
+    },
+    {
+      "returnReference": "RET20251101002",
+      "utrn": "UTRN000002",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-25",
+      "purchaserName": "Jane Doe",
+      "address": "221B Baker Street, London",
+      "agentReference": "Anderson Legal LLP"
+    },
+    {
+      "returnReference": "RET20251101003",
+      "utrn": "UTRN000003",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-29",
+      "purchaserName": "Michael Brown",
+      "address": "15 Kensington Road, London",
+      "agentReference": "Harrison & Greene"
+    },
+    {
+      "returnReference": "RET20251101004",
+      "utrn": "UTRN000004",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-20",
+      "purchaserName": "Amelia Clarke",
+      "address": "78 Oxford Street, London",
+      "agentReference": "Carter Legal"
+    },
+    {
+      "returnReference": "RET20251101005",
+      "utrn": "UTRN000005",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-30",
+      "purchaserName": "Oliver Jones",
+      "address": "33 Regent Street, London",
+      "agentReference": "Wellington Law Associates"
+    },
+    {
+      "returnReference": "RET20251101006",
+      "utrn": "UTRN000006",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-27",
+      "purchaserName": "Sophia Patel",
+      "address": "5 Baker Court, Croydon",
+      "agentReference": "Hughes & Morris LLP"
+    },
+    {
+      "returnReference": "RET20251101007",
+      "utrn": "UTRN000007",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-31",
+      "purchaserName": "Liam Johnson",
+      "address": "12 Victoria Road, Manchester",
+      "agentReference": "Brightstone Legal"
+    },
+    {
+      "returnReference": "RET20251101008",
+      "utrn": "UTRN000008",
+      "status": "PENDING",
+      "dateSubmitted": "2025-11-01",
+      "purchaserName": "Emily White",
+      "address": "44 Queen’s Drive, Birmingham",
+      "agentReference": "Andrews & Patel Solicitors"
+    },
+    {
+      "returnReference": "RET20251101009",
+      "utrn": "UTRN000009",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-22",
+      "purchaserName": "James Turner",
+      "address": "19 King’s Road, Leeds",
+      "agentReference": "Turner Legal Chambers"
+    },
+    {
+      "returnReference": "RET20251101010",
+      "utrn": "UTRN000010",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-26",
+      "purchaserName": "Grace Hall",
+      "address": "10 Parliament Street, London",
+      "agentReference": "Crown Law LLP"
+    },
+    {
+      "returnReference": "RET20251101011",
+      "utrn": "UTRN000011",
+      "status": "PENDING",
+      "dateSubmitted": "2025-11-02",
+      "purchaserName": "Noah Evans",
+      "address": "27 Elm Street, Bristol",
+      "agentReference": "Evans & Clarke Solicitors"
+    },
+    {
+      "returnReference": "RET20251101012",
+      "utrn": "UTRN000012",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-24",
+      "purchaserName": "Isabella Wright",
+      "address": "90 Camden High Street, London",
+      "agentReference": "Wright Legal Consultancy"
+    },
+    {
+      "returnReference": "RET20251101013",
+      "utrn": "UTRN000013",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-19",
+      "purchaserName": "Benjamin Scott",
+      "address": "56 Rose Lane, Liverpool",
+      "agentReference": "Scott & Partners LLP"
+    },
+    {
+      "returnReference": "RET20251101014",
+      "utrn": "UTRN000014",
+      "status": "PENDING",
+      "dateSubmitted": "2025-11-03",
+      "purchaserName": "Charlotte King",
+      "address": "8 Victoria Avenue, Cambridge",
+      "agentReference": "King Legal Group"
+    },
+    {
+      "returnReference": "RET20251101015",
+      "utrn": "UTRN000015",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-18",
+      "purchaserName": "Lucas Bennett",
+      "address": "21 St. George’s Square, London",
+      "agentReference": "Bennett & Rowe Solicitors"
+    },
+    {
+      "returnReference": "RET20251101016",
+      "utrn": "UTRN000016",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-28",
+      "purchaserName": "Ella Richardson",
+      "address": "1 Trafalgar Square, London",
+      "agentReference": "Richardson Legal"
+    },
+    {
+      "returnReference": "RET20251101017",
+      "utrn": "UTRN000017",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-23",
+      "purchaserName": "Henry Carter",
+      "address": "23 Market Street, Sheffield",
+      "agentReference": "Carter Law Partners"
+    },
+    {
+      "returnReference": "RET20251101018",
+      "utrn": "UTRN000018",
+      "status": "PENDING",
+      "dateSubmitted": "2025-11-04",
+      "purchaserName": "Mia Wilson",
+      "address": "50 Pine Grove, Reading",
+      "agentReference": "Wilson & Bailey Solicitors"
+    },
+    {
+      "returnReference": "RET20251101019",
+      "utrn": "UTRN000019",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-16",
+      "purchaserName": "Jack Harris",
+      "address": "9 Long Lane, Glasgow",
+      "agentReference": "Harris Legal LLP"
+    },
+    {
+      "returnReference": "RET20251101020",
+      "utrn": "UTRN000020",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-27",
+      "purchaserName": "Ava Davies",
+      "address": "67 St. John’s Road, London",
+      "agentReference": "Davies & Shah"
+    },
+    {
+      "returnReference": "RET20251101021",
+      "utrn": "UTRN000021",
+      "status": "PENDING",
+      "dateSubmitted": "2025-11-05",
+      "purchaserName": "William Edwards",
+      "address": "31 Oak Avenue, Nottingham",
+      "agentReference": "Edwards Legal Advisory"
+    },
+    {
+      "returnReference": "RET20251101022",
+      "utrn": "UTRN000022",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-21",
+      "purchaserName": "Harper Lewis",
+      "address": "18 Maple Street, Cardiff",
+      "agentReference": "Lewis & Khan LLP"
+    },
+    {
+      "returnReference": "RET20251101023",
+      "utrn": "UTRN000023",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-20",
+      "purchaserName": "Ethan Roberts",
+      "address": "72 Highfield Road, Oxford",
+      "agentReference": "Roberts Legal Consultants"
+    },
+    {
+      "returnReference": "RET20251101024",
+      "utrn": "UTRN000024",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-17",
+      "purchaserName": "Aria Thompson",
+      "address": "40 Richmond Avenue, London",
+      "agentReference": "Thompson & Blake"
+    },
+    {
+      "returnReference": "RET20251101025",
+      "utrn": "UTRN000025",
+      "status": "PENDING",
+      "dateSubmitted": "2025-11-06",
+      "purchaserName": "George Walker",
+      "address": "13 Mill Lane, Cambridge",
+      "agentReference": "Walker Legal Group"
+    },
+    {
+      "returnReference": "RET20251101026",
+      "utrn": "UTRN000026",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-30",
+      "purchaserName": "Evelyn Parker",
+      "address": "8 Brook Street, Reading",
+      "agentReference": "Parker & Hudson"
+    },
+    {
+      "returnReference": "RET20251101027",
+      "utrn": "UTRN000027",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-19",
+      "purchaserName": "Logan Wood",
+      "address": "22 Elm Grove, Birmingham",
+      "agentReference": "Wood Legal Services"
+    },
+    {
+      "returnReference": "RET20251101028",
+      "utrn": "UTRN000028",
+      "status": "PENDING",
+      "dateSubmitted": "2025-11-02",
+      "purchaserName": "Scarlett Murphy",
+      "address": "99 Prince Street, London",
+      "agentReference": "Murphy & Steele LLP"
+    },
+    {
+      "returnReference": "RET20251101029",
+      "utrn": "UTRN000029",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-14",
+      "purchaserName": "Sebastian Hughes",
+      "address": "4 Albert Road, London",
+      "agentReference": "Hughes Law Practice"
+    },
+    {
+      "returnReference": "RET20251101030",
+      "utrn": "UTRN000030",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-29",
+      "purchaserName": "Abigail Foster",
+      "address": "60 Station Road, Manchester",
+      "agentReference": "Foster & Webb"
+    },
+    {
+      "returnReference": "RET20251101031",
+      "utrn": "UTRN000031",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-24",
+      "purchaserName": "Daniel Hill",
+      "address": "28 Market Square, Norwich",
+      "agentReference": "Hill Legal Partners"
+    },
+    {
+      "returnReference": "RET20251101032",
+      "utrn": "UTRN000032",
+      "status": "PENDING",
+      "dateSubmitted": "2025-11-03",
+      "purchaserName": "Ella Adams",
+      "address": "77 Bridge Street, York",
+      "agentReference": "Adams Law LLP"
+    },
+    {
+      "returnReference": "RET20251101033",
+      "utrn": "UTRN000033",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-12",
+      "purchaserName": "Jacob Baker",
+      "address": "3 Hilltop Road, London",
+      "agentReference": "Baker Legal Consulting"
+    },
+    {
+      "returnReference": "RET20251101034",
+      "utrn": "UTRN000034",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-31",
+      "purchaserName": "Chloe Mitchell",
+      "address": "46 Park Crescent, London",
+      "agentReference": "Mitchell & Co Solicitors"
+    },
+    {
+      "returnReference": "RET20251101035",
+      "utrn": "UTRN000035",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-26",
+      "purchaserName": "Matthew Green",
+      "address": "12 Rosewood Drive, Bristol",
+      "agentReference": "Green & Knight LLP"
+    }
+  ]
+}

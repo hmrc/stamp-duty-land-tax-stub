@@ -12,4 +12,6 @@ POST       /manage-agents/agent-details/get-all-agents       uk.gov.hmrc.stampdu
 
 POST       /manage-agents/agent-details/remove               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.removeAgent
 
+POST       /manage-returns/get-all                           uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllReturns
+
 GET        /full-return/returns          uk.gov.hmrc.stampdutylandtaxstub.controllers.PrelimReturnController.getFullReturn(returnId: Option[String] ?= None)
