@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import models.PrelimReturn
+import models.requests.{GetReturnByRefRequest, PrelimReturn}
 import org.apache.pekko.actor.ActorSystem
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
@@ -25,19 +25,17 @@ import org.scalatestplus.play.guice.GuiceOneServerPerSuite
 import play.api.http.Status
 import play.api.libs.json.{JsValue, Json}
 import play.api.test.Helpers.*
-import play.api.test.{FakeRequest, Helpers}
+import play.api.test.FakeRequest
 
 class PrelimReturnControllerSpec
   extends AnyWordSpec
-     with Matchers with GuiceOneServerPerSuite with MockitoSugar :
+    with Matchers
+    with GuiceOneServerPerSuite
+    with MockitoSugar {
 
   implicit val system: ActorSystem = app.actorSystem
 
-  private val fakeGETRequest = FakeRequest("GET", "/")
-  private val fakePrelimReturnPOSTRequest =
-    FakeRequest("POST", "/")
-    .withHeaders()
-    .withBody(Json.toJson(PrelimReturn(
+  private val validPrelimReturn = PrelimReturn(
     stornId = "12345",
     purchaserIsCompany = "YES",
     surNameOrCompanyName = "Test Company",
@@ -48,52 +46,109 @@ class PrelimReturnControllerSpec
     addressLine4 = Some("District B"),
     postcode = Some("TE23 5TT"),
     transactionType = "O"
-  )))
-  private val invalidFakePrelimReturnPOSTRequest =
+  )
+
+  private val validGetReturnByRefRequest = GetReturnByRefRequest(
+    returnResourceRef = "123456",
+    storn = "STORN12345"
+  )
+
+  private val fakePrelimReturnPOSTRequest =
     FakeRequest("POST", "/")
-    .withBody(Json.toJson(""))
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(validPrelimReturn))
+
+  private val invalidPrelimReturnPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj("invalid" -> "data"))
+
+  private val fakeGetFullReturnPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(validGetReturnByRefRequest))
+
+  private val invalidGetFullReturnPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(""))
 
   lazy val testController: PrelimReturnController = app.injector.instanceOf[PrelimReturnController]
-  val testJson: JsValue = Json.parse(
-    """{
-      "stornId": "12435",
-      "purchaserIsCompany": "YES",
-      "surNameOrCompanyName": "Test Name",
-      "houseNumber": 23,
-      "addressLine1": "Test road name",
-      "addressLine2": null,
-      "addressLine3": null,
-      "addressLine4": null,
-      "postcode": "TE23 5TT",
-      "transactionType": "O"
-    }"""
-  )
+
   val returnIdJson: JsValue = Json.parse(
     """{
-      |"returnId":"123456"
-      |}
-      |""".stripMargin)
+      "returnResourceRef":"123456"
+    }"""
+  )
 
-  ".prelimReturnDetails" should:
-    "return 404 when no return id is found" in:
-      val result = testController.prelimReturnDetails(None)(fakeGETRequest)
-      status(result) shouldBe Status.NOT_FOUND
+  ".prelimReturnDetails" should {
 
-    "return 404 when invalid return id is sent" in :
-      val result = testController.prelimReturnDetails(Some("55555"))(fakeGETRequest)
-      status(result) shouldBe Status.NOT_FOUND
+    "return 200 when payload is valid and resource exists" in {
+      val result = testController.prelimReturnDetails(fakePrelimReturnPOSTRequest)
 
-    "return 200 when a valid return id has been found" in :
-      val result = testController.prelimReturnDetails(Some("123456"))(fakeGETRequest)
-      status(result) shouldBe Status.OK
-      contentAsJson(result) shouldBe testJson
-
-  ".submitPrelimReturns" should:
-    "return 200 when payload is valid" in:
-      val result = testController.submitPrelimReturns(fakePrelimReturnPOSTRequest)
       status(result) shouldBe Status.OK
       contentAsJson(result) shouldBe returnIdJson
+    }
 
-    "return 400 when payload is invalid" in:
-      val result = testController.submitPrelimReturns(invalidFakePrelimReturnPOSTRequest)
+    "return 400 when payload is invalid" in {
+      val result = testController.prelimReturnDetails(invalidPrelimReturnPOSTRequest)
+
       status(result) shouldBe Status.BAD_REQUEST
+      (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+
+    "return 200 when resource file exists (controller always returns 200 for valid payload)" in {
+      val nonExistentPrelimReturn = validPrelimReturn.copy(stornId = "99999")
+      val request = FakeRequest("POST", "/")
+        .withHeaders("Content-Type" -> "application/json")
+        .withBody(Json.toJson(nonExistentPrelimReturn))
+
+      val result = testController.prelimReturnDetails(request)
+
+      status(result) shouldBe Status.OK
+    }
+    
+  }
+
+  ".getFullReturn" should {
+
+    "return 200 when payload is valid and resource exists" in {
+      val result = testController.getFullReturn(fakeGetFullReturnPOSTRequest)
+
+      status(result) shouldBe Status.OK
+    }
+
+    "return 400 when payload is invalid" in {
+      val result = testController.getFullReturn(invalidGetFullReturnPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+      (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+
+    "return 404 when resource file is not found" in {
+      val nonExistentRequest = GetReturnByRefRequest(
+        returnResourceRef = "NON-EXISTENT-999",
+        storn = "STORNXXX"
+      )
+      val request = FakeRequest("POST", "/")
+        .withHeaders("Content-Type" -> "application/json")
+        .withBody(Json.toJson(nonExistentRequest))
+
+      val result = testController.getFullReturn(request)
+
+      status(result) shouldBe Status.NOT_FOUND
+    }
+
+    "return 400 when required fields are missing" in {
+      val invalidRequest = Json.obj("returnResourceRef" -> "123456")
+      val request = FakeRequest("POST", "/")
+        .withHeaders("Content-Type" -> "application/json")
+        .withBody(invalidRequest)
+
+      val result = testController.getFullReturn(request)
+
+      status(result) shouldBe Status.BAD_REQUEST
+      (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+  }
+}

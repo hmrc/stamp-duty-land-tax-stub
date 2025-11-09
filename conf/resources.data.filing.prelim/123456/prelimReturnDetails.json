@@ -1,12 +1,3 @@
 {
-  "stornId": "12435",
-  "purchaserIsCompany": "YES",
-  "surNameOrCompanyName": "Test Name",
-  "houseNumber": 23,
-  "addressLine1": "Test road name",
-  "addressLine2": null,
-  "addressLine3": null,
-  "addressLine4": null,
-  "postcode": "TE23 5TT",
-  "transactionType": "O"
+  "returnResourceRef": "123456"
 }
