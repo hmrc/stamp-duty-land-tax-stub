@@ -1,0 +1,60 @@
+{
+  "taxCalculation": {
+    "taxCalculationID": "221110174",
+    "returnID": "221110168"
+  },
+  "stornId": "XARN123456",
+  "sdltOrganisation": {
+    "storn": "XARN123456",
+    "version": "0"
+  },
+  "returnInfo": {
+    "storn": "XARN123456",
+    "vendorCounter": "0",
+    "purgeDate": "2026-02-07 19:53:34",
+    "mainLandID": "221110171",
+    "mainPurchaserID": "221110169",
+    "purchaserCounter": "1",
+    "version": "0",
+    "returnID": "221110168",
+    "status": "STARTED",
+    "landCounter": "1",
+    "returnResourceRef": "4"
+  },
+  "returnResourceRef": "4",
+  "residency": {
+    "residencyID": "221110173"
+  },
+  "transaction": {
+    "transactionID": "221110172",
+    "returnID": "221110168",
+    "transactionDescription": "transferOfRights",
+    "newTransactionDescription": "transferOfRights"
+  },
+  "purchaser": [
+    {
+      "createDate": "2025-11-09 19:53:34",
+      "companyName": "test",
+      "isCompany": "YES",
+      "lastUpdateDate": "2025-11-09 19:53:34",
+      "purchaserResourceRef": "1",
+      "returnID": "221110168",
+      "purchaserID": "221110169"
+    }
+  ],
+  "companyDetails": {
+    "companyDetailsID": "221110170",
+    "returnID": "221110168",
+    "purchaserID": "221110169"
+  },
+  "land": [
+    {
+      "postcode": "TE11 7HE",
+      "address2": "stafford",
+      "landResourceRef": "1",
+      "returnID": "221110168",
+      "landID": "221110171",
+      "address1": "test"
+    }
+  ]
+}
