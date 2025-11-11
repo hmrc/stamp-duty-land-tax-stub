@@ -24,6 +24,10 @@ var userProfiles = '[' +
     '{ "divider":"Filing Returns" }, ' +
     '{ "description":"No Return ID", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "" }, ' +
     '{ "description":"No Vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-no-vendor" }, ' +
+    '{ "description":"No Return Agent, Main Vendor is Represented by Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-no-return-agent-and-vendor-represented-by-agent" }, ' +
+    '{ "description":"Non Vendor Agent, Main Vendor is Represented by Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-non-vendor-agent-and-main-vendor-represented-by-agent" }, ' +
+    '{ "description":"Vendor agent, Main Vendor is Represented by Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-vendor-agent-and-main-vendor-represented-by-agent" }, ' +
+    '{ "description":"Vendor agent, Main Vendor is not Represented by Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-vendor-agent-and-main-vendor-not-represented-by-agent" }, ' +
     '{ "description":"Prelim Questions Submitted - Skip to ReturnTaskList - ORG", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456" }' +
     ']';
 
