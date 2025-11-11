@@ -16,7 +16,7 @@
     "purgeDate": "2026-12-31",
     "version": "1.0",
     "mainPurchaserID": "PUR001",
-    "mainVendorID": "VEN002",
+    "mainVendorID": "VEN001",
     "mainLandID": "LND001",
     "IRMarkGenerated": "true",
     "landCertForEachProp": "false",
