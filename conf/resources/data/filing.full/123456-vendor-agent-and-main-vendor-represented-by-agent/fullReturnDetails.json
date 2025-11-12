@@ -93,7 +93,7 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "NO",
+      "isRepresentedByAgent": "false",
       "vendorResourceRef": "VEN-REF-001",
       "nextVendorID": null
     },
@@ -110,7 +110,7 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LA",
-      "isRepresentedByAgent": "YES",
+      "isRepresentedByAgent": "true",
       "vendorResourceRef": "VEN-REF-002",
       "nextVendorID": null
     },
@@ -127,7 +127,7 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LC",
-      "isRepresentedByAgent": "YES",
+      "isRepresentedByAgent": "true",
       "vendorResourceRef": "VEN-REF-003",
       "nextVendorID": null
     }
