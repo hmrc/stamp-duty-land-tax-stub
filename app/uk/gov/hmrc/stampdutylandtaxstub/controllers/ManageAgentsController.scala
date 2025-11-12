@@ -40,7 +40,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
 
-        val basePath = "/resources.manage.agentDetails"
+        val basePath = "/legacy.resources.manage.agentDetails"
 
         val fullPath = s"$basePath/${response.storn}/${response.agentReferenceNumber}/manageAgentDetails.json"
 
@@ -63,7 +63,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
 
-        val basePath = "/resources.manage.agentDetails"
+        val basePath = "/legacy.resources.manage.agentDetails"
 
         val fullPath = s"$basePath/${response.storn}/${response.agentReferenceNumber}/manageAgentDetails.json"
 
@@ -95,6 +95,8 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
     )
   }
 
+  // TODO: OLD METHOD - REMOVE
+  @deprecated
   def getAllAgentsLegacy: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
@@ -102,7 +104,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
 
-        val basePath = "/resources.manage.allAgentDetails"
+        val basePath = "/legacy.resources.manage.allAgentDetails"
 
         val fullPath = s"$basePath/${response.storn}/manageAllAgentDetails.json"
 
@@ -118,6 +120,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
     )
   }
 
+  // TODO: CORRECT WAY TO RETRIEVE ALL AGENTS
   def getSdltOrganisation: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
@@ -141,6 +144,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
     )
   }
 
+  // TODO: NEEDS TO BE CORRECTED
   def getAllReturns: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
