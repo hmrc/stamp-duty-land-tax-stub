@@ -175,7 +175,7 @@
     "isPartOfSaleOfBusiness": "false",
     "totalConsiderationBusiness": null
   },
-  "returnAgent": [ ],
+  "returnAgent": [],
   "agent": {
     "agentId": "AGT001",
     "storn": "STORN123456",
