@@ -6,7 +6,7 @@
   "agents": [
     {
       "agentReferenceNumber": "ARN001",
-      "name": "Oak & Rowan Legal LLP",
+      "agentName": "Oak & Rowan Legal LLP",
       "agentId": "AGT001",
       "addressLine1": "11 High Holborn",
       "addressLine2": "Bloomsbury",
@@ -18,7 +18,7 @@
     },
     {
       "agentReferenceNumber": "ARN002",
-      "name": "Riverstone Chambers",
+      "agentName": "Riverstone Chambers",
       "agentId": "AGT002",
       "addressLine1": "12 King Street",
       "addressLine2": "Hammersmith",
@@ -30,7 +30,7 @@
     },
     {
       "agentReferenceNumber": "ARN003",
-      "name": "Beacon Law Associates",
+      "agentName": "Beacon Law Associates",
       "agentId": "AGT003",
       "addressLine1": "13 Victoria Embankment",
       "addressLine2": "Westminster",
@@ -42,7 +42,7 @@
     },
     {
       "agentReferenceNumber": "ARN004",
-      "name": "Chancery Lane Partners",
+      "agentName": "Chancery Lane Partners",
       "agentId": "AGT004",
       "addressLine1": "14 Chancery Lane",
       "addressLine2": "Holborn",
@@ -54,7 +54,7 @@
     },
     {
       "agentReferenceNumber": "ARN005",
-      "name": "Thamesbridge Legal Group",
+      "agentName": "Thamesbridge Legal Group",
       "agentId": "AGT005",
       "addressLine1": "15 Southwark Street",
       "addressLine2": "Bankside",
@@ -66,7 +66,7 @@
     },
     {
       "agentReferenceNumber": "ARN006",
-      "name": "Kensington Legal & Trust",
+      "agentName": "Kensington Legal & Trust",
       "agentId": "AGT006",
       "addressLine1": "16 Gloucester Road",
       "addressLine2": "Kensington",
@@ -78,7 +78,7 @@
     },
     {
       "agentReferenceNumber": "ARN007",
-      "name": "Harper & Finch Solicitors",
+      "agentName": "Harper & Finch Solicitors",
       "agentId": "AGT007",
       "addressLine1": "17 Upper Street",
       "addressLine2": "Islington",
@@ -90,7 +90,7 @@
     },
     {
       "agentReferenceNumber": "ARN008",
-      "name": "Marble Arch Legal Advisors",
+      "agentName": "Marble Arch Legal Advisors",
       "agentId": "AGT008",
       "addressLine1": "18 Oxford Street",
       "addressLine2": "Marylebone",
@@ -102,7 +102,7 @@
     },
     {
       "agentReferenceNumber": "ARN009",
-      "name": "Camden Law Collective",
+      "agentName": "Camden Law Collective",
       "agentId": "AGT009",
       "addressLine1": "19 Camden High Street",
       "addressLine2": "Camden Town",
@@ -114,7 +114,7 @@
     },
     {
       "agentReferenceNumber": "ARN010",
-      "name": "Eastcourt Legal Practice",
+      "agentName": "Eastcourt Legal Practice",
       "agentId": "AGT010",
       "addressLine1": "20 Commercial Road",
       "addressLine2": "Whitechapel",
@@ -126,7 +126,7 @@
     },
     {
       "agentReferenceNumber": "ARN011",
-      "name": "Blackfriars Legal LLP",
+      "agentName": "Blackfriars Legal LLP",
       "agentId": "AGT011",
       "addressLine1": "21 Ludgate Hill",
       "addressLine2": "City of London",
@@ -138,7 +138,7 @@
     },
     {
       "agentReferenceNumber": "ARN012",
-      "name": "Primrose Chambers",
+      "agentName": "Primrose Chambers",
       "agentId": "AGT012",
       "addressLine1": "22 Regent’s Park Road",
       "addressLine2": "Primrose Hill",
@@ -150,7 +150,7 @@
     },
     {
       "agentReferenceNumber": "ARN013",
-      "name": "Fleet Street Law Offices",
+      "agentName": "Fleet Street Law Offices",
       "agentId": "AGT013",
       "addressLine1": "23 Fleet Street",
       "addressLine2": "Temple",
@@ -162,7 +162,7 @@
     },
     {
       "agentReferenceNumber": "ARN014",
-      "name": "Greenpark Legal Group",
+      "agentName": "Greenpark Legal Group",
       "agentId": "AGT014",
       "addressLine1": "24 Piccadilly",
       "addressLine2": "Mayfair",
@@ -174,7 +174,7 @@
     },
     {
       "agentReferenceNumber": "ARN015",
-      "name": "Clerkenwell Law Partners",
+      "agentName": "Clerkenwell Law Partners",
       "agentId": "AGT015",
       "addressLine1": "25 Clerkenwell Road",
       "addressLine2": "Farringdon",
@@ -186,7 +186,7 @@
     },
     {
       "agentReferenceNumber": "ARN016",
-      "name": "Notting Hill Legal Studio",
+      "agentName": "Notting Hill Legal Studio",
       "agentId": "AGT016",
       "addressLine1": "26 Portobello Road",
       "addressLine2": "Notting Hill",
@@ -198,7 +198,7 @@
     },
     {
       "agentReferenceNumber": "ARN017",
-      "name": "Harrowgate Solicitors",
+      "agentName": "Harrowgate Solicitors",
       "agentId": "AGT017",
       "addressLine1": "27 Edgware Road",
       "addressLine2": "Paddington",
@@ -210,7 +210,7 @@
     },
     {
       "agentReferenceNumber": "ARN018",
-      "name": "Bayswater Legal Council",
+      "agentName": "Bayswater Legal Council",
       "agentId": "AGT018",
       "addressLine1": "28 Queensway",
       "addressLine2": "Bayswater",
@@ -222,7 +222,7 @@
     },
     {
       "agentReferenceNumber": "ARN019",
-      "name": "Canary Wharf Legal Ltd",
+      "agentName": "Canary Wharf Legal Ltd",
       "agentId": "AGT019",
       "addressLine1": "29 Canada Square",
       "addressLine2": "Canary Wharf",
@@ -234,7 +234,7 @@
     },
     {
       "agentReferenceNumber": "ARN020",
-      "name": "Shoreditch Law Collective",
+      "agentName": "Shoreditch Law Collective",
       "agentId": "AGT020",
       "addressLine1": "30 Old Street",
       "addressLine2": "Shoreditch",
@@ -246,7 +246,7 @@
     },
     {
       "agentReferenceNumber": "ARN021",
-      "name": "Richmond Chambers",
+      "agentName": "Richmond Chambers",
       "agentId": "AGT021",
       "addressLine1": "31 Hill Rise",
       "addressLine2": "Richmond",
@@ -258,7 +258,7 @@
     },
     {
       "agentReferenceNumber": "ARN022",
-      "name": "Hampstead Legal Associates",
+      "agentName": "Hampstead Legal Associates",
       "agentId": "AGT022",
       "addressLine1": "32 Hampstead High Street",
       "addressLine2": "Hampstead",
@@ -270,7 +270,7 @@
     },
     {
       "agentReferenceNumber": "ARN023",
-      "name": "Brixton Legal Partnership",
+      "agentName": "Brixton Legal Partnership",
       "agentId": "AGT023",
       "addressLine1": "33 Brixton Road",
       "addressLine2": "Brixton",
@@ -282,7 +282,7 @@
     },
     {
       "agentReferenceNumber": "ARN024",
-      "name": "Chelsea & Fulham Law Group",
+      "agentName": "Chelsea & Fulham Law Group",
       "agentId": "AGT024",
       "addressLine1": "34 Fulham Road",
       "addressLine2": "Chelsea",
