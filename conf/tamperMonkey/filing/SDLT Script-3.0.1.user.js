@@ -30,6 +30,9 @@ var userProfiles = '[' +
     '{ "description":"Vendor agent, Main Vendor is Represented by Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-vendor-agent-and-main-vendor-represented-by-agent" }, ' +
     '{ "description":"Vendor agent, Main Vendor is not Represented by Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-vendor-agent-and-main-vendor-not-represented-by-agent" }, ' +
     '{ "description":"Prelim Questions Submitted - Skip to ReturnTaskList - ORG", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456" }' +
+    '{ "description":"No return agent and no main vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-return-agent-and-no-main-vendor" }' +
+    '{ "description":"No return,no agent and  main vendor not represented by agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-no-return-no-agent-main-vendor-not-represented-by-agent" }' +
+    '{ "description":"Vendor Agent and no main vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456-vendor-agent-and-no-main-vendor" }' +
     ']';
 
 var submitFormVal = true;
