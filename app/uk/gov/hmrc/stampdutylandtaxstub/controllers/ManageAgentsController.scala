@@ -95,7 +95,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
     )
   }
 
-  def getAllAgents: Action[JsValue] = Action.async(parse.json) { implicit request =>
+  def getAllAgentsLegacy: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
         logger.error(s"[ManageAgentsController][getAllAgents]: Failed to validate payload, errors: $invalid")
@@ -108,10 +108,33 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
 
         findResource(fullPath) match {
           case Some(content) =>
-            logger.info("[ManageAgentsController][getAllAgents]: Successfully retrieved json resource")
+            logger.info("[ManageAgentsController][getAllAgentsLegacy]: Successfully retrieved json resource")
             Future.successful(jsonResourceAsResponse(fullPath))
           case _ =>
-            logger.error("[ManageAgentsController][getAllAgents]: Json resource not found")
+            logger.error("[ManageAgentsController][getAllAgentsLegacy]: Json resource not found")
+            Future.successful(NotFound)
+        }
+      }
+    )
+  }
+
+  def getSdltOrganisation: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[StornRequest].fold(
+      invalid =>
+        logger.error(s"[ManageAgentsController][getSdltOrganisation]: Failed to validate payload, errors: $invalid")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+
+        val basePath = "/resources.manage.getSdltOrganisation"
+
+        val fullPath = s"$basePath/${response.storn}/returnResponse.json"
+
+        findResource(fullPath) match {
+          case Some(content) =>
+            logger.info("[ManageAgentsController][getSdltOrganisation]: Successfully retrieved json resource")
+            Future.successful(jsonResourceAsResponse(fullPath))
+          case _ =>
+            logger.error("[ManageAgentsController][getSdltOrganisation]: Json resource not found")
             Future.successful(NotFound)
         }
       }
