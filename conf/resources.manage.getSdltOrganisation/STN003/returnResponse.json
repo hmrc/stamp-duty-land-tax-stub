@@ -5,7 +5,7 @@
   "doNotDisplayWelcomePage": "No",
   "agents": [
     {
-      "agentReference": "ARN001",
+      "agentReferenceNumber": "ARN001",
       "name": "Agent 1 Legal LLP",
       "agentId": "AGT001",
       "houseNumber": "11",
@@ -18,7 +18,7 @@
       "email": "contact.agent1@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN002",
+      "agentReferenceNumber": "ARN002",
       "name": "Agent 2 Legal LLP",
       "agentId": "AGT002",
       "houseNumber": "12",
@@ -31,7 +31,7 @@
       "email": "contact.agent2@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN003",
+      "agentReferenceNumber": "ARN003",
       "name": "Agent 3 Legal LLP",
       "agentId": "AGT003",
       "houseNumber": "13",
@@ -44,7 +44,7 @@
       "email": "contact.agent3@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN004",
+      "agentReferenceNumber": "ARN004",
       "name": "Agent 4 Legal LLP",
       "agentId": "AGT004",
       "houseNumber": "14",
@@ -57,7 +57,7 @@
       "email": "contact.agent4@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN005",
+      "agentReferenceNumber": "ARN005",
       "name": "Agent 5 Legal LLP",
       "agentId": "AGT005",
       "houseNumber": "15",
@@ -70,7 +70,7 @@
       "email": "contact.agent5@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN006",
+      "agentReferenceNumber": "ARN006",
       "name": "Agent 6 Legal LLP",
       "agentId": "AGT006",
       "houseNumber": "16",
@@ -83,7 +83,7 @@
       "email": "contact.agent6@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN007",
+      "agentReferenceNumber": "ARN007",
       "name": "Agent 7 Legal LLP",
       "agentId": "AGT007",
       "houseNumber": "17",
@@ -96,7 +96,7 @@
       "email": "contact.agent7@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN008",
+      "agentReferenceNumber": "ARN008",
       "name": "Agent 8 Legal LLP",
       "agentId": "AGT008",
       "houseNumber": "18",
@@ -109,7 +109,7 @@
       "email": "contact.agent8@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN009",
+      "agentReferenceNumber": "ARN009",
       "name": "Agent 9 Legal LLP",
       "agentId": "AGT009",
       "houseNumber": "19",
@@ -122,7 +122,7 @@
       "email": "contact.agent9@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN010",
+      "agentReferenceNumber": "ARN010",
       "name": "Agent 10 Legal LLP",
       "agentId": "AGT010",
       "houseNumber": "20",
@@ -135,7 +135,7 @@
       "email": "contact.agent10@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN011",
+      "agentReferenceNumber": "ARN011",
       "name": "Agent 11 Legal LLP",
       "agentId": "AGT011",
       "houseNumber": "21",
@@ -148,7 +148,7 @@
       "email": "contact.agent11@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN012",
+      "agentReferenceNumber": "ARN012",
       "name": "Agent 12 Legal LLP",
       "agentId": "AGT012",
       "houseNumber": "22",
@@ -161,7 +161,7 @@
       "email": "contact.agent12@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN013",
+      "agentReferenceNumber": "ARN013",
       "name": "Agent 13 Legal LLP",
       "agentId": "AGT013",
       "houseNumber": "23",
@@ -174,7 +174,7 @@
       "email": "contact.agent13@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN014",
+      "agentReferenceNumber": "ARN014",
       "name": "Agent 14 Legal LLP",
       "agentId": "AGT014",
       "houseNumber": "24",
@@ -187,7 +187,7 @@
       "email": "contact.agent14@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN015",
+      "agentReferenceNumber": "ARN015",
       "name": "Agent 15 Legal LLP",
       "agentId": "AGT015",
       "houseNumber": "25",
@@ -200,7 +200,7 @@
       "email": "contact.agent15@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN016",
+      "agentReferenceNumber": "ARN016",
       "name": "Agent 16 Legal LLP",
       "agentId": "AGT016",
       "houseNumber": "26",
@@ -213,7 +213,7 @@
       "email": "contact.agent16@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN017",
+      "agentReferenceNumber": "ARN017",
       "name": "Agent 17 Legal LLP",
       "agentId": "AGT017",
       "houseNumber": "27",
@@ -226,7 +226,7 @@
       "email": "contact.agent17@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN018",
+      "agentReferenceNumber": "ARN018",
       "name": "Agent 18 Legal LLP",
       "agentId": "AGT018",
       "houseNumber": "28",
@@ -239,7 +239,7 @@
       "email": "contact.agent18@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN019",
+      "agentReferenceNumber": "ARN019",
       "name": "Agent 19 Legal LLP",
       "agentId": "AGT019",
       "houseNumber": "29",
@@ -252,7 +252,7 @@
       "email": "contact.agent19@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN020",
+      "agentReferenceNumber": "ARN020",
       "name": "Agent 20 Legal LLP",
       "agentId": "AGT020",
       "houseNumber": "30",
@@ -265,7 +265,7 @@
       "email": "contact.agent20@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN021",
+      "agentReferenceNumber": "ARN021",
       "name": "Agent 21 Legal LLP",
       "agentId": "AGT021",
       "houseNumber": "31",
@@ -278,7 +278,7 @@
       "email": "contact.agent21@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN022",
+      "agentReferenceNumber": "ARN022",
       "name": "Agent 22 Legal LLP",
       "agentId": "AGT022",
       "houseNumber": "32",
@@ -291,7 +291,7 @@
       "email": "contact.agent22@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN023",
+      "agentReferenceNumber": "ARN023",
       "name": "Agent 23 Legal LLP",
       "agentId": "AGT023",
       "houseNumber": "33",
@@ -304,7 +304,7 @@
       "email": "contact.agent23@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN024",
+      "agentReferenceNumber": "ARN024",
       "name": "Agent 24 Legal LLP",
       "agentId": "AGT024",
       "houseNumber": "34",
@@ -317,7 +317,7 @@
       "email": "contact.agent24@examplelaw.co.uk"
     },
     {
-      "agentReference": "ARN025",
+      "agentReferenceNumber": "ARN025",
       "name": "Agent 25 Legal LLP",
       "agentId": "AGT025",
       "houseNumber": "35",
