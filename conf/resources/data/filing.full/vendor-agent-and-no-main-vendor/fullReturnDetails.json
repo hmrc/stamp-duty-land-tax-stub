@@ -16,7 +16,6 @@
     "purgeDate": "2026-12-31",
     "version": "1.0",
     "mainPurchaserID": "PUR001",
-    "mainVendorID": "VEN001",
     "mainLandID": "LND001",
     "IRMarkGenerated": "true",
     "landCertForEachProp": "false",
@@ -79,25 +78,7 @@
     "companyTypeSoletrader": "false",
     "companyTypePensionfund": "false"
   },
-  "vendor": [
-    {
-      "vendorID": "VEN001",
-      "returnID": "RET123456789",
-      "title": "Mrs",
-      "forename1": "Jane",
-      "forename2": "Elizabeth",
-      "name": "Johnson",
-      "houseNumber": "15",
-      "address1": "Park Lane",
-      "address2": "Mayfair",
-      "address3": "London",
-      "address4": null,
-      "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "false",
-      "vendorResourceRef": "VEN-REF-001",
-      "nextVendorID": null
-    }
-  ],
+  "vendor": [],
   "land": [
     {
       "landID": "LND001",
@@ -179,7 +160,7 @@
     {
       "returnAgentID": "RA001",
       "returnID": "RET123456789",
-      "agentType": "SOLICITOR",
+      "agentType": "VENDOR",
       "name": "Smith & Partners LLP",
       "houseNumber": "100",
       "address1": "Fleet Street",

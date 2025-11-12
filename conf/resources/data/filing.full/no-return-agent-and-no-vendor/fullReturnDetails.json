@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "123456",
+  "returnResourceRef": "RRF-2024-001",
   "sdltOrganisation": {
     "isReturnUser": "true",
     "doNotDisplayWelcomePage": "false",
@@ -16,11 +16,10 @@
     "purgeDate": "2026-12-31",
     "version": "1.0",
     "mainPurchaserID": "PUR001",
-    "mainVendorID": "VEN001",
     "mainLandID": "LND001",
     "IRMarkGenerated": "true",
     "landCertForEachProp": "false",
-    "returnResourceRef": "123456",
+    "returnResourceRef": "RRF-2024-001",
     "declaration": "true",
     "status": "SUBMITTED"
   },
@@ -79,25 +78,7 @@
     "companyTypeSoletrader": "false",
     "companyTypePensionfund": "false"
   },
-  "vendor": [
-    {
-      "vendorID": "VEN001",
-      "returnID": "RET123456789",
-      "title": "Mrs",
-      "forename1": "Jane",
-      "forename2": "Elizabeth",
-      "name": "Johnson",
-      "houseNumber": "15",
-      "address1": "Park Lane",
-      "address2": "Mayfair",
-      "address3": "London",
-      "address4": null,
-      "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "false",
-      "vendorResourceRef": "VEN-REF-001",
-      "nextVendorID": null
-    }
-  ],
+  "vendor": [],
   "land": [
     {
       "landID": "LND001",
@@ -175,25 +156,7 @@
     "isPartOfSaleOfBusiness": "false",
     "totalConsiderationBusiness": null
   },
-  "returnAgent": [
-    {
-      "returnAgentID": "RA001",
-      "returnID": "RET123456789",
-      "agentType": "SOLICITOR",
-      "name": "Smith & Partners LLP",
-      "houseNumber": "100",
-      "address1": "Fleet Street",
-      "address2": "City of London",
-      "address3": "London",
-      "address4": null,
-      "postcode": "EC4A 2DQ",
-      "phone": "020 7123 4567",
-      "email": "info@smithpartners.co.uk",
-      "DXAddress": "DX 123 London",
-      "reference": "SP/2024/001",
-      "isAuthorised": "true"
-    }
-  ],
+  "returnAgent": [],
   "agent": {
     "agentId": "AGT001",
     "storn": "STORN123456",

@@ -179,7 +179,7 @@
     {
       "returnAgentID": "RA001",
       "returnID": "RET123456789",
-      "agentType": "SOLICITOR",
+      "agentType": "VENDOR",
       "name": "Smith & Partners LLP",
       "houseNumber": "100",
       "address1": "Fleet Street",

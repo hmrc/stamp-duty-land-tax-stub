@@ -93,7 +93,7 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "false",
+      "isRepresentedByAgent": "true",
       "vendorResourceRef": "VEN-REF-001",
       "nextVendorID": null
     }

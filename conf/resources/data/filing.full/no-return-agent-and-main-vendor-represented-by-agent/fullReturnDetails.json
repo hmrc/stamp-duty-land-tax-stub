@@ -93,7 +93,7 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "false",
+      "isRepresentedByAgent": "true",
       "vendorResourceRef": "VEN-REF-001",
       "nextVendorID": null
     }
@@ -175,25 +175,7 @@
     "isPartOfSaleOfBusiness": "false",
     "totalConsiderationBusiness": null
   },
-  "returnAgent": [
-    {
-      "returnAgentID": "RA001",
-      "returnID": "RET123456789",
-      "agentType": "SOLICITOR",
-      "name": "Smith & Partners LLP",
-      "houseNumber": "100",
-      "address1": "Fleet Street",
-      "address2": "City of London",
-      "address3": "London",
-      "address4": null,
-      "postcode": "EC4A 2DQ",
-      "phone": "020 7123 4567",
-      "email": "info@smithpartners.co.uk",
-      "DXAddress": "DX 123 London",
-      "reference": "SP/2024/001",
-      "isAuthorised": "true"
-    }
-  ],
+  "returnAgent": [],
   "agent": {
     "agentId": "AGT001",
     "storn": "STORN123456",
