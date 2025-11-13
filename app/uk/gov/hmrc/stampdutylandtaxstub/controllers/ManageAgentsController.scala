@@ -46,10 +46,10 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
 
         findResource(fullPath) match {
           case Some(content) =>
-            logger.info("[ManageAgentsController][getAgentDetails]: Json resource not found")
+            logger.info("[ManageAgentsController][getAgentDetails]: Json resource successfully found")
             Future.successful(jsonResourceAsResponse(fullPath))
-          case _             =>
-            logger.error("[ManageAgentsController][getAgentDetails]: Json resource not found")
+          case err            =>
+            logger.error(s"[ManageAgentsController][getAgentDetails]: Json resource not found: $err")
             Future.successful(NotFound)
         }
       }
@@ -71,8 +71,8 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case Some(content) =>
             logger.info("[ManageAgentsController][removeAgent]: Successfully retrieved agent - sending dummy true delete")
             Future.successful(Ok(Json.toJson(true)))
-          case _ =>
-            logger.error("[ManageAgentsController][removeAgent]: Json resource not found")
+          case err =>
+            logger.error(s"[ManageAgentsController][removeAgent]: Json resource not found: $err")
             Future.successful(NotFound)
         }
       }
@@ -112,8 +112,8 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case Some(content) =>
             logger.info("[ManageAgentsController][getAllAgentsLegacy]: Successfully retrieved json resource")
             Future.successful(jsonResourceAsResponse(fullPath))
-          case _ =>
-            logger.error("[ManageAgentsController][getAllAgentsLegacy]: Json resource not found")
+          case err =>
+            logger.error(s"[ManageAgentsController][getAllAgentsLegacy]: Json resource not found: $err")
             Future.successful(NotFound)
         }
       }
@@ -136,8 +136,8 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case Some(content) =>
             logger.info("[ManageAgentsController][getSdltOrganisation]: Successfully retrieved json resource")
             Future.successful(jsonResourceAsResponse(fullPath))
-          case _ =>
-            logger.error("[ManageAgentsController][getSdltOrganisation]: Json resource not found")
+          case err =>
+            logger.error(s"[ManageAgentsController][getSdltOrganisation]: Json resource not found: $err")
             Future.successful(NotFound)
         }
       }
@@ -160,8 +160,8 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case Some(content) =>
             logger.info("[ManageAgentsController][getAllReturns]: Successfully retrieved json resource")
             Future.successful(jsonResourceAsResponse(fullPath))
-          case _ =>
-            logger.error("[ManageAgentsController][getAllReturns]: Json resource not found")
+          case err =>
+            logger.error(s"[ManageAgentsController][getAllReturns]: Json resource not found: $err")
             Future.successful(NotFound)
         }
       }
