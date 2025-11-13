@@ -4,7 +4,9 @@ POST       /manage-agents/agent-details                      uk.gov.hmrc.stampdu
 
 POST       /manage-agents/agent-details/submit               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.submitAgentDetails
 
-POST       /manage-agents/agent-details/get-all-agents       uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllAgents
+POST       /manage-agents/agent-details/get-all-agents-legacy       uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllAgentsLegacy
+
+POST       /organisation                                     uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getSdltOrganisation
 
 POST       /manage-agents/agent-details/remove               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.removeAgent
 
