@@ -24,7 +24,8 @@ package uk.gov.hmrc.stampdutylandtaxstub.util
 import play.api.Logging
 import play.api.http.{ContentTypes, Status}
 import play.api.mvc.Results.UnprocessableEntity
-import play.api.mvc._
+import play.api.mvc.*
+import uk.gov.hmrc.stampdutylandtaxstub.ResourceVerification.resourceSchemaValidationMacros
 
 import java.io.InputStream
 import scala.concurrent.ExecutionContext
@@ -67,4 +68,8 @@ trait StubResource extends Results with ContentTypes with Status with Logging {
     try Source.fromInputStream(is).mkString
     finally is.close()
 
+}
+
+object StubResource {
+  resourceSchemaValidationMacros("/Users/hmrc/devcore/sdlt/stamp-duty-land-tax-stub/conf/resources.manage.getSdltOrganisation/STN003/returnResponse.json")
 }
