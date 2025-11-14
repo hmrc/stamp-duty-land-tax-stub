@@ -25,9 +25,10 @@ import play.api.Logging
 import play.api.http.{ContentTypes, Status}
 import play.api.mvc.Results.UnprocessableEntity
 import play.api.mvc.*
-import uk.gov.hmrc.stampdutylandtaxstub.ResourceVerification.resourceSchemaValidationMacros
+import uk.gov.hmrc.stampdutylandtaxstub.ResourceVerification.jsonFilesSchemaValidationMacros
 
-import java.io.InputStream
+import java.io.{File, InputStream}
+import java.nio.file.FileSystems
 import scala.concurrent.ExecutionContext
 import scala.io.Source
 
@@ -71,7 +72,7 @@ trait StubResource extends Results with ContentTypes with Status with Logging {
 }
 
 object StubResource {
-  resourceSchemaValidationMacros(
-    "/Users/hmrc/devcore/sdlt/stamp-duty-land-tax-stub/conf/resources.manage.allReturns/"
-  )
+
+  jsonFilesSchemaValidationMacros("empty")
+
 }

@@ -17,7 +17,6 @@
 package uk.gov.hmrc.stampdutylandtaxstub
 
 import models.response.SdltReturnRecordResponse
-import org.apache.pekko.http.scaladsl.model.Uri.Path
 import play.api.libs.json.{JsError, JsSuccess, Json}
 
 import java.nio.file.{FileSystems, Files}
@@ -28,7 +27,7 @@ object ResourceVerification  {
   import quoted._
 
   // Step 1:: -> quoting 'exp => AST
-  inline def resourceSchemaValidationMacros(path: String): String = {
+  inline def jsonFilesSchemaValidationMacros(path: String): String = {
     ${ resourceSchemaValidationMacrosImp('path) }
   }
 
@@ -40,11 +39,17 @@ object ResourceVerification  {
 
   import scala.jdk.CollectionConverters._
 
-  // TODO: instead of passing concrete file path we need to pass folder path
-  // and check each file in the folder for schema correctness
   def resourceSchemaValidationMacrosImp(pathExpr: Expr[String])(using Quotes): Expr[String] = {
-    val path: String = pathExpr.valueOrAbort
-    val dir = FileSystems.getDefault.getPath(path)
+  // Input params not in use at the moment
+
+    val currentPath = FileSystems.getDefault()
+      .getPath("")
+      .toAbsolutePath()
+      .toString()
+    val dirPath: String = s"$currentPath/conf/resources.manage.allReturns/"
+
+    //val path: String = pathExpr.valueOrAbort
+    val dir = FileSystems.getDefault.getPath(dirPath)
     val files = Files.walk(dir).iterator().asScala
 
     files
@@ -64,10 +69,10 @@ object ResourceVerification  {
               throw new Error(s"Invalid json in file: ${file.toFile.getPath} / error: $errors")
           }
         case None =>
-          throw new Error(s"File not found: $path")
+          throw new Error(s"File not found: $dirPath")
       }
     } else {
-        throw new Error(s"File not found: $path")
+        throw new Error(s"File not found: $dirPath")
       }
     }.toList.head
   }
