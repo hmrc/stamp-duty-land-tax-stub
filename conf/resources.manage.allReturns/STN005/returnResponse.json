@@ -1,0 +1,87 @@
+{
+  "storn": "STN005",
+  "returnSummaryCount": 9,
+  "returnSummaryList": [
+    {
+      "returnReference": "RET20251101001",
+      "utrn": "UTRN000001",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-02",
+      "purchaserName": "Purchaser 1",
+      "address": "1 Market Street, London",
+      "agentReference": "4T5HYG8C5"
+    },
+    {
+      "returnReference": "RET20251101002",
+      "utrn": "UTRN000002",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-03",
+      "purchaserName": "Purchaser 2",
+      "address": "2 Market Street, London",
+      "agentReference": "5G8TC4H5Y"
+    },
+    {
+      "returnReference": "RET20251101003",
+      "utrn": "UTRN000003",
+      "status": "PENDING",
+      "dateSubmitted": "2025-10-04",
+      "purchaserName": "Purchaser 3",
+      "address": "3 Market Street, London",
+      "agentReference": "G85YT5HC4"
+    },
+    {
+      "returnReference": "RET20251101004",
+      "utrn": "UTRN000004",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-05",
+      "purchaserName": "Purchaser 4",
+      "address": "4 Market Street, London",
+      "agentReference": "Y58G45TCH"
+    },
+    {
+      "returnReference": "RET20251101005",
+      "utrn": "UTRN000005",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-06",
+      "purchaserName": "Purchaser 5",
+      "address": "5 Market Street, London",
+      "agentReference": "HG55YTC84"
+    },
+    {
+      "returnReference": "RET20251101008",
+      "utrn": "UTRN000008",
+      "status": "SUBMITTED_NO_RECEIPT",
+      "dateSubmitted": "2025-10-09",
+      "purchaserName": "Purchaser 8",
+      "address": "8 Market Street, London",
+      "agentReference": "TH45GY8C5"
+    },
+    {
+      "returnReference": "RET20251101009",
+      "utrn": "UTRN000009",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-10",
+      "purchaserName": "Purchaser 9",
+      "address": "9 Market Street, London",
+      "agentReference": "C5Y5G84HT"
+    },
+    {
+      "returnReference": "RET20251101016",
+      "utrn": "UTRN000016",
+      "status": "SUBMITTED",
+      "dateSubmitted": "2025-10-17",
+      "purchaserName": "Purchaser 16",
+      "address": "16 Market Street, London",
+      "agentReference": "H5TC4Y8G5"
+    },
+    {
+      "returnReference": "RET20251101017",
+      "utrn": "UTRN000017",
+      "status": "ACCEPTED",
+      "dateSubmitted": "2025-10-18",
+      "purchaserName": "Purchaser 17",
+      "address": "17 Market Street, London",
+      "agentReference": "T54G8CYH5"
+    }
+  ]
+}
