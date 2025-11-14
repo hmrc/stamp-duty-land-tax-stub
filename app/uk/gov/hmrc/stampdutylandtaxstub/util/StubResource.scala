@@ -71,5 +71,7 @@ trait StubResource extends Results with ContentTypes with Status with Logging {
 }
 
 object StubResource {
-  resourceSchemaValidationMacros("/Users/hmrc/devcore/sdlt/stamp-duty-land-tax-stub/conf/resources.manage.getSdltOrganisation/STN003/returnResponse.json")
+  resourceSchemaValidationMacros(
+    "/Users/hmrc/devcore/sdlt/stamp-duty-land-tax-stub/conf/resources.manage.allReturns/"
+  )
 }
