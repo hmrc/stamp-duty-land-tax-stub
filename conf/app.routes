@@ -1,17 +1,17 @@
 # microservice specific routes
 
-POST       /manage-agents/agent-details                      uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAgentDetails
-
 POST       /manage-agents/agent-details/submit               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.submitAgentDetails
-
-POST       /manage-agents/agent-details/get-all-agents-legacy       uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllAgentsLegacy
-
-POST       /organisation                                     uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getSdltOrganisation
-
 POST       /manage-agents/agent-details/remove               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.removeAgent
 
-POST       /manage-returns/get-all                           uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllReturns
+# to be removed
+POST       /manage-returns/get-all                           uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllReturnsLegacy
+POST       /manage-agents/agent-details/get-all-agents-legacy       uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllAgentsLegacy
+POST       /manage-agents/agent-details                      uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAgentDetails
 
-POST        /filing/create/return                uk.gov.hmrc.stampdutylandtaxstub.controllers.PrelimReturnController.prelimReturnDetails()
 
-POST        /filing/receive/full-return          uk.gov.hmrc.stampdutylandtaxstub.controllers.PrelimReturnController.getFullReturn()
+# formp ready
+
+POST       /organisation                         uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getSdltOrganisation
+POST       /returns                              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getReturns
+POST       /filing/create/return                 uk.gov.hmrc.stampdutylandtaxstub.controllers.PrelimReturnController.prelimReturnDetails()
+POST       /filing/receive/full-return           uk.gov.hmrc.stampdutylandtaxstub.controllers.PrelimReturnController.getFullReturn()

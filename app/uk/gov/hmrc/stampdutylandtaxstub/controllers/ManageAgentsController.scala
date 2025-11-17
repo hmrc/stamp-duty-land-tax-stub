@@ -17,7 +17,7 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.AgentDetailsBeforeCreation
-import models.requests.{StornAndArnRequest, StornRequest}
+import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest}
 import models.response.SubmitAgentDetailsResponse
 import play.api.Logging
 import play.api.libs.json.{JsValue, Json}
@@ -33,6 +33,7 @@ import scala.concurrent.{ExecutionContext, Future}
 class ManageAgentsController @Inject()(cc: ControllerComponents, override val executionContext: ExecutionContext)
   extends BackendController(cc) with StubResource with Logging:
 
+  @deprecated("Use ManageAgentsController.getSdltOrganisation")
   def getAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornAndArnRequest].fold(
       invalid =>
@@ -95,8 +96,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
     )
   }
 
-  // TODO: OLD METHOD - REMOVE
-  @deprecated
+  @deprecated("Use ManageAgentsController.getSdltOrganisation")
   def getAllAgentsLegacy: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
@@ -120,7 +120,6 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
     )
   }
 
-  // TODO: CORRECT WAY TO RETRIEVE ALL AGENTS
   def getSdltOrganisation: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
@@ -130,7 +129,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
 
         val basePath = "/resources.manage.getSdltOrganisation"
 
-        val fullPath = s"$basePath/${response.storn}/returnResponse.json"
+        val fullPath = s"$basePath/${response.storn}/deletedReturns.json"
 
         findResource(fullPath) match {
           case Some(content) =>
@@ -144,17 +143,17 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
     )
   }
 
-  // TODO: NEEDS TO BE CORRECTED
-  def getAllReturns: Action[JsValue] = Action.async(parse.json) { implicit request =>
+  @deprecated("Use ManageAgentsController.getReturns")
+  def getAllReturnsLegacy: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
         logger.error(s"[ManageAgentsController][getAllReturns]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
 
-        val basePath = "/resources.manage.allReturns"
+        val basePath = "/legacy.resources.manage.allReturns"
 
-        val fullPath = s"$basePath/${response.storn}/returnResponse.json"
+        val fullPath = s"$basePath/${response.storn}/deletedReturns.json"
 
         findResource(fullPath) match {
           case Some(content) =>
@@ -162,6 +161,31 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
             Future.successful(jsonResourceAsResponse(fullPath))
           case err =>
             logger.error(s"[ManageAgentsController][getAllReturns]: Json resource not found: $err")
+            Future.successful(NotFound)
+        }
+      }
+    )
+  }
+
+  def getReturns: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[SdltReturnRecordRequest].fold(
+      invalid =>
+        logger.error(s"[ManageAgentsController][getReturns]: Failed to validate payload, errors: $invalid")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+
+        val fullPath = response match {
+          case SdltReturnRecordRequest(storn, status, true,  pageType,            _) => s"/resources.manage.allReturns/${response.storn}/deletedReturns.json"
+          case SdltReturnRecordRequest(storn, status, false, Some("IN-PROGRESS"), _) => s"/resources.manage.allReturns/${response.storn}/inProgressReturns.json"
+          case SdltReturnRecordRequest(storn, status, false, Some("SUBMITTED"),   _) => s"/resources.manage.allReturns/${response.storn}/submittedReturns.json"
+        }
+
+        findResource(fullPath) match {
+          case Some(content) =>
+            logger.info("[ManageAgentsController][getReturns]: Successfully retrieved json resource")
+            Future.successful(jsonResourceAsResponse(fullPath))
+          case err =>
+            logger.error(s"[ManageAgentsController][getReturns]: Json resource not found: $err")
             Future.successful(NotFound)
         }
       }
