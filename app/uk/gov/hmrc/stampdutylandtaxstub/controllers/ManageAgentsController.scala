@@ -175,9 +175,17 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
       response => {
 
         val fullPath = response match {
-          case SdltReturnRecordRequest(storn, status, true,  pageType,            _) => s"/resources.manage.getReturns/${response.storn}/deletedReturns.json"
-          case SdltReturnRecordRequest(storn, status, false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgressReturns.json"
-          case SdltReturnRecordRequest(storn, status, false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submittedReturns.json"
+          case SdltReturnRecordRequest(_,     Some("ACCEPTED"),             true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/acceptedReturns.json"
+          case SdltReturnRecordRequest(_,     Some("DEPARTMENTAL_ERROR"),   true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/departmentalErrorReturns.json"
+          case SdltReturnRecordRequest(_,     Some("FATAL_ERROR"),          true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/fatalErrorReturns.json"
+          case SdltReturnRecordRequest(_,     Some("PENDING "),             true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/pendingReturns.json"
+          case SdltReturnRecordRequest(_,     Some("STARTED"),              true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/startedReturns.json"
+          case SdltReturnRecordRequest(_,     Some("SUBMITTED_NO_RECEIPT"), true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/submittedNoReceiptReturns.json"
+          case SdltReturnRecordRequest(_,     Some("SUBMITTED"),            true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/submittedReturns.json"
+          case SdltReturnRecordRequest(storn, Some("ACCEPTED"),             false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
+          case SdltReturnRecordRequest(storn, Some("STARTED"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
+          case SdltReturnRecordRequest(storn, Some("SUBMITTED"),            false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedReturns.json"
+          case SdltReturnRecordRequest(storn, Some("SUBMITTED_NO_RECEIPT"), false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedNoReceiptReturns.json"
         }
 
         findResource(fullPath) match {

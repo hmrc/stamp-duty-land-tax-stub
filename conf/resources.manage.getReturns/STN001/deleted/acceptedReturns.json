@@ -1,0 +1,16 @@
+{
+  "returnSummaryCount": 11,
+  "returnSummaryList": [
+    { "returnReference": "RET0003",  "status": "ACCEPTED", "purchaserName": "Buyer 003", "address": "3 Example Road, City" },
+    { "returnReference": "RET0006",  "status": "ACCEPTED", "purchaserName": "Buyer 006", "address": "6 Example Road, City", "agentReference": "Agent C" },
+    { "returnReference": "RET0009",  "status": "ACCEPTED", "purchaserName": "Buyer 009", "address": "9 Example Road, City" },
+    { "returnReference": "RET0012",  "status": "ACCEPTED", "purchaserName": "Buyer 012", "address": "18 Green Lane, Reading" },
+    { "returnReference": "RET0015",  "status": "ACCEPTED", "purchaserName": "Buyer 015", "address": "10 Wharf Road, Newcastle", "agentReference": "Oakridge Law" },
+    { "returnReference": "RET0018",  "status": "ACCEPTED", "purchaserName": "Buyer 018", "address": "14 North Road, Cardiff" },
+    { "returnReference": "RET0023",  "status": "ACCEPTED", "purchaserName": "Buyer 023", "address": "5 Silver Street, Bath" },
+    { "returnReference": "RET0027",  "status": "ACCEPTED", "purchaserName": "Buyer 027", "address": "33 Bridge Street, Kent" },
+    { "returnReference": "RET0030",  "status": "ACCEPTED", "purchaserName": "Buyer 030", "address": "60 Elm Road, Southampton" },
+    { "returnReference": "RET0033",  "status": "ACCEPTED", "purchaserName": "Buyer 033", "address": "42 Church Lane, Canterbury" },
+    { "returnReference": "RET0036",  "status": "ACCEPTED", "purchaserName": "Buyer 036", "address": "99 Station Road, Reading", "agentReference": "Redwood Property Legal" }
+  ]
+}

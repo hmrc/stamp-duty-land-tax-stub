@@ -1,0 +1,23 @@
+{
+  "returnSummaryCount": 18,
+  "returnSummaryList": [
+    { "returnReference": "RET000001", "status": "STARTED", "purchaserName": "John Smith", "address": "12 Baker Street, London", "agentReference": "Smith & Co Solicitors" },
+    { "returnReference": "RET000004", "status": "STARTED", "purchaserName": "Emily Davis", "address": "8 Queensway, Birmingham" },
+    { "returnReference": "RET000008", "status": "STARTED", "purchaserName": "Matthew White", "address": "3 Station Road, Liverpool", "agentReference": "Carter & Sons Legal" },
+    { "returnReference": "RET000011", "status": "STARTED", "purchaserName": "James Lee", "address": "4 Long Road, Cambridge", "agentReference": "Hamilton Property Group" },
+    { "returnReference": "RET000014", "status": "STARTED", "purchaserName": "Amelia Allen", "address": "28 Station Parade, Harrow" },
+    { "returnReference": "RET000016", "status": "STARTED", "purchaserName": "Ella King", "address": "6 Chapel Street, Coventry" },
+    { "returnReference": "RET000019", "status": "STARTED", "purchaserName": "Samuel Green", "address": "22 Kingsway, Swansea", "agentReference": "West Coast Legal" },
+    { "returnReference": "RET000021", "status": "STARTED", "purchaserName": "Benjamin Carter", "address": "19 Brookside, Derby" },
+    { "returnReference": "RET000024", "status": "STARTED", "purchaserName": "Nathan Rogers", "address": "46 Marine Drive, Brighton", "agentReference": "Southshore Conveyancing" },
+    { "returnReference": "RET000026", "status": "STARTED", "purchaserName": "Ethan Lewis", "address": "24 Meadow Way, Oxford" },
+    { "returnReference": "RET000029", "status": "STARTED", "purchaserName": "Harper Foster", "address": "12 Regent Street, Plymouth", "agentReference": "Falcon Legal" },
+    { "returnReference": "RET000031", "status": "STARTED", "purchaserName": "Layla Ward", "address": "21 Oak Avenue, Portsmouth" },
+    { "returnReference": "RET000034", "status": "STARTED", "purchaserName": "Riley Cox", "address": "55 Trinity Road, Cambridge" },
+    { "returnReference": "RET000037", "status": "STARTED", "purchaserName": "Eva Simpson", "address": "62 Rose Lane, Chelmsford" },
+    { "returnReference": "RET000040", "status": "STARTED", "purchaserName": "Ellie Barker", "address": "17 Westfield Road, Bolton" },
+    { "returnReference": "RET000043", "status": "STARTED", "purchaserName": "Daisy Summers", "address": "29 Field Road, Telford" },
+    { "returnReference": "RET000046", "status": "STARTED", "purchaserName": "Aiden Fox", "address": "14 River Street, Ipswich" },
+    { "returnReference": "RET000049", "status": "STARTED", "purchaserName": "Millie Andrews", "address": "51 Park Road, Watford", "agentReference": "Silverline Conveyancing" }
+  ]
+}

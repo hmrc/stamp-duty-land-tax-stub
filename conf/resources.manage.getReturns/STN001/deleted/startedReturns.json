@@ -1,0 +1,15 @@
+{
+  "returnSummaryCount": 10,
+  "returnSummaryList": [
+    { "returnReference": "RET0001",  "status": "STARTED", "purchaserName": "Buyer 001", "address": "1 Example Road, City" },
+    { "returnReference": "RET0004",  "status": "STARTED", "purchaserName": "Buyer 004", "address": "4 Example Road, City",  "agentReference": "Agent B" },
+    { "returnReference": "RET0007",  "status": "STARTED", "purchaserName": "Buyer 007", "address": "7 Example Road, City" },
+    { "returnReference": "RET0010",  "status": "STARTED", "purchaserName": "Buyer 010", "address": "10 Example Road, City", "agentReference": "Agent E" },
+    { "returnReference": "RET0021",  "status": "STARTED", "purchaserName": "Buyer 021", "address": "21 Example Road, City", "agentReference": "Agent G" },
+    { "returnReference": "RET0024",  "status": "STARTED", "purchaserName": "Buyer 024", "address": "24 Example Road, City" },
+    { "returnReference": "RET0027",  "status": "STARTED", "purchaserName": "Buyer 027", "address": "27 Example Road, City", "agentReference": "Agent J" },
+    { "returnReference": "RET0030",  "status": "STARTED", "purchaserName": "Buyer 030", "address": "30 Example Road, City" },
+    { "returnReference": "RET0041",  "status": "STARTED", "purchaserName": "Buyer 041", "address": "41 Example Road, City", "agentReference": "Agent Q" },
+    { "returnReference": "RET0044",  "status": "STARTED", "purchaserName": "Buyer 044", "address": "44 Example Road, City" }
+  ]
+}
