@@ -17,7 +17,7 @@
 package uk.gov.hmrc.stampdutylandtaxstub
 
 import models.response.{AgentDetailsResponse, SdltReturnRecordResponse, SubmitAgentDetailsResponse}
-import play.api.libs.json.{JsError, JsSuccess, Json}
+import play.api.libs.json.{JsError, JsPath, JsSuccess, Json, JsonValidationError}
 
 import java.nio.file.{FileSystems, Files}
 import scala.util.Try
@@ -52,6 +52,12 @@ object ResourceVerification {
       .map(_.toFile.getPath)
   }
 
+  val readFiles = (folderPath: String) => {
+    getFilesList(folderPath)
+      .map(fileName => (fileName, readFile(fileName)))
+      .filter(p => p._2.nonEmpty)
+  }
+
   def resourceSchemaValidationMacrosImp()(using Quotes): Expr[String] = {
     val folderToVerifyFilesSchema: Seq[String] = Seq(
       "resources.manage.allReturns",
@@ -59,50 +65,32 @@ object ResourceVerification {
 
     val errors = folderToVerifyFilesSchema.flatMap {
       case folderPath if folderPath.endsWith("allReturns") =>
-        val files: List[String] = getFilesList(folderPath)
-        files
-          .map(fileName => (fileName, readFile(fileName)))
-          .filter(p => p._2.nonEmpty)
+        readFiles(folderPath)
           .collect {
             case (fileName, Some(content)) =>
               Json.parse(content).validate[SdltReturnRecordResponse] match {
                 case JsSuccess(value, path) =>
                   None
                 case JsError(errors) =>
-                    val e = errors
-                      .toList
-                      .map(p => s"${p._1.toString} = ${p._2}")
-                      .mkString(" ")
-                    Some(
-                      s"\nFolder: $folderPath \n:: File name: $fileName \n=> $e"
-                    )
+                    getFormattedError(folderPath, fileName, errors)
               }
             case (fileName, None) =>
               Some(s"File with Empty content found: $fileName")
           }
       case folderPath if folderPath.endsWith("agentDetails") =>
-        val files: List[String] = getFilesList(folderPath)
-        files
-          .map(fileName => (fileName, readFile(fileName)))
-          .filter(p => p._2.nonEmpty)
+        readFiles(folderPath)
           .collect {
             case (fileName, Some(content)) =>
               Json.parse(content).validate[AgentDetailsResponse] match {
                 case JsSuccess(value, path) =>
                   None
                 case JsError(errors) =>
-                  val e = errors
-                    .toList
-                    .map(p => s"${p._1.toString} = ${p._2}")
-                    .mkString(" ")
-                  Some(
-                    s"\nFolder: $folderPath \n:: File name: $fileName \n=> $e"
-                  )
+                  getFormattedError(folderPath, fileName, errors)
               }
             case (fileName, None) =>
               Some(s"File with Empty content found: $fileName")
           }
-
+      // TODO: extend schema validation for other json folders
       case _ =>
         List.empty
     }.flatten
@@ -116,5 +104,15 @@ object ResourceVerification {
       println(s"This json file is valid:")
       res
     }
+  }
+
+  private def getFormattedError(folderPath: String, fileName: String, errors: collection.Seq[(JsPath, collection.Seq[JsonValidationError])]) = {
+    val e = errors
+      .toList
+      .map(p => s"${p._1.toString} = ${p._2}")
+      .mkString(" ")
+    Some(
+      s"\nFolder: $folderPath \n:: File name: $fileName \n=> $e"
+    )
   }
 }
