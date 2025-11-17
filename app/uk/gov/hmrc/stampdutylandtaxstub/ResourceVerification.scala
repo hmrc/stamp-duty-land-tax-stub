@@ -22,13 +22,13 @@ import play.api.libs.json.{JsError, JsSuccess, Json}
 import java.nio.file.{FileSystems, Files}
 import scala.util.Try
 
-object ResourceVerification  {
+object ResourceVerification {
 
   import quoted._
 
   // Step 1:: -> quoting 'exp => AST
-  inline def jsonFilesSchemaValidationMacros(path: String): String = {
-    ${ resourceSchemaValidationMacrosImp('path) }
+  inline def jsonFilesSchemaValidationMacros(): String = {
+    ${ resourceSchemaValidationMacrosImp() }
   }
 
   def readFile(filePath: String): Option[String] = {
@@ -39,41 +39,57 @@ object ResourceVerification  {
 
   import scala.jdk.CollectionConverters._
 
-  def resourceSchemaValidationMacrosImp(pathExpr: Expr[String])(using Quotes): Expr[String] = {
-  // Input params not in use at the moment
-
-    val currentPath = FileSystems.getDefault()
+  def getFilesList(prefix: String): List[String] = {
+    val currentPath = FileSystems.getDefault
       .getPath("")
-      .toAbsolutePath()
-      .toString()
-    val dirPath: String = s"$currentPath/conf/resources.manage.allReturns/"
-
-    //val path: String = pathExpr.valueOrAbort
+      .toAbsolutePath
+      .toString
+    val dirPath: String = s"$currentPath/conf/resources.manage.$prefix/"
     val dir = FileSystems.getDefault.getPath(dirPath)
-    val files = Files.walk(dir).iterator().asScala
-
+    val files = Files.walk(dir).iterator().asScala.toList
     files
       .filter(f => f.toFile.isFile)
-      .map { file =>
-      val fileReadRes: Option[String] = readFile(file.toFile.getPath)
-      if (fileReadRes.nonEmpty) {
-      fileReadRes match {
-        case Some(content) =>
-          // TODO: we need to have a check if json valid at all
-          Json.parse(content).validate[SdltReturnRecordResponse] match {
-            case JsSuccess(value, path) =>
-              val res = Expr(s"File name: ${pathExpr}")
-              println(s"This json file is valid: ${file.toFile.getPath}")
-              res
-            case JsError(errors) =>
-              throw new Error(s"Invalid json in file: ${file.toFile.getPath} / error: $errors")
+      .map(_.toFile.getPath)
+  }
+
+  def resourceSchemaValidationMacrosImp()(using Quotes): Expr[String] = {
+    val inFolders: Seq[String] = Seq("allReturns")
+
+    val errors = inFolders.flatMap {
+      case folderPath@"allReturns" =>
+        val files: List[String] = getFilesList(folderPath)
+        files
+          .map(fileName => (fileName, readFile(fileName)))
+          .filter(p => p._2.nonEmpty)
+          .collect {
+            case (fileName, Some(content)) =>
+              Json.parse(content).validate[SdltReturnRecordResponse] match {
+                case JsSuccess(value, path) =>
+                  None
+                case JsError(errors) =>
+                    val e = errors
+                      .toList
+                      .map(p => s"${p._1.toString} = ${p._2}")
+                      .mkString(" ")
+                    Some(
+                      s"\nFolder: $folderPath \n:: File name: $fileName \n=> $e"
+                    )
+              }
+            case (fileName, None) =>
+              Some(s"File with Empty content found: $fileName")
           }
-        case None =>
-          throw new Error(s"File not found: $dirPath")
-      }
+      case _ =>
+        List.empty
+    }.flatten
+
+
+    val firstErrorFound = errors.find(e => e.nonEmpty)
+    if (firstErrorFound.isDefined) {
+      throw new Error(firstErrorFound.get)
     } else {
-        throw new Error(s"File not found: $dirPath")
-      }
-    }.toList.head
+      val res = Expr(s"File name: ???")
+      println(s"This json file is valid:")
+      res
+    }
   }
 }

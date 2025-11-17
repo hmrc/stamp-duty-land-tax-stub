@@ -73,6 +73,6 @@ trait StubResource extends Results with ContentTypes with Status with Logging {
 
 object StubResource {
 
-  jsonFilesSchemaValidationMacros("empty")
+  jsonFilesSchemaValidationMacros()
 
 }
