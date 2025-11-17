@@ -2,7 +2,7 @@
   "returnSummaryCount": 62,
   "returnSummaryList": [
     { "returnReference": "RET100001", "utrn": "UTRN000001", "status": "SUBMITTED",             "dateSubmitted": "2025-10-01", "purchaserName": "John Smith",        "address": "12 Baker Street, London",       "agentReference": "Smith & Co Solicitors"   },
-    { "returnReference": "RET100002", "utrn": "UTRN000002", "status": "SUBMITTED_NO_RECEIPT", "dateSubmitted": "2025-10-01", "purchaserName": "Emily Davis",       "address": "44 Oxford Road, Manchester"                                                  },
+    { "returnReference": "RET100002", "utrn": "UTRN000002", "status": "SUBMITTED_NO_RECEIPT",  "dateSubmitted": "2025-10-01", "purchaserName": "Emily Davis",       "address": "44 Oxford Road, Manchester"                                                 },
     { "returnReference": "RET100003", "utrn": "UTRN000003", "status": "SUBMITTED",             "dateSubmitted": "2025-10-02", "purchaserName": "Alex Johnson",      "address": "221B Baker Street, London",     "agentReference": "Anderson Legal LLP"      },
     { "returnReference": "RET100004", "utrn": "UTRN000004", "status": "SUBMITTED_NO_RECEIPT",  "dateSubmitted": "2025-10-02", "purchaserName": "Sophia Wilson",     "address": "15 High Street, Leeds"                                                      },
     { "returnReference": "RET100005", "utrn": "UTRN000005", "status": "SUBMITTED",             "dateSubmitted": "2025-10-02", "purchaserName": "Michael Brown",     "address": "72 King Street, Glasgow",       "agentReference": "Harborview Estates"      },

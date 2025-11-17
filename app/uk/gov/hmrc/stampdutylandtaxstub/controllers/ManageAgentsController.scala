@@ -129,7 +129,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
 
         val basePath = "/resources.manage.getSdltOrganisation"
 
-        val fullPath = s"$basePath/${response.storn}/deletedReturns.json"
+        val fullPath = s"$basePath/${response.storn}/returnResponse.json"
 
         findResource(fullPath) match {
           case Some(content) =>
@@ -175,9 +175,9 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
       response => {
 
         val fullPath = response match {
-          case SdltReturnRecordRequest(storn, status, true,  pageType,            _) => s"/resources.manage.allReturns/${response.storn}/deletedReturns.json"
-          case SdltReturnRecordRequest(storn, status, false, Some("IN-PROGRESS"), _) => s"/resources.manage.allReturns/${response.storn}/inProgressReturns.json"
-          case SdltReturnRecordRequest(storn, status, false, Some("SUBMITTED"),   _) => s"/resources.manage.allReturns/${response.storn}/submittedReturns.json"
+          case SdltReturnRecordRequest(storn, status, true,  pageType,            _) => s"/resources.manage.getReturns/${response.storn}/deletedReturns.json"
+          case SdltReturnRecordRequest(storn, status, false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgressReturns.json"
+          case SdltReturnRecordRequest(storn, status, false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submittedReturns.json"
         }
 
         findResource(fullPath) match {
