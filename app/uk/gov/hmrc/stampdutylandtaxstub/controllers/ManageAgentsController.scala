@@ -182,10 +182,12 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case SdltReturnRecordRequest(_,     Some("STARTED"),              true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/startedReturns.json"
           case SdltReturnRecordRequest(_,     Some("SUBMITTED_NO_RECEIPT"), true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/submittedNoReceiptReturns.json"
           case SdltReturnRecordRequest(_,     Some("SUBMITTED"),            true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/submittedReturns.json"
-          case SdltReturnRecordRequest(storn, Some("ACCEPTED"),             false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
-          case SdltReturnRecordRequest(storn, Some("STARTED"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
-          case SdltReturnRecordRequest(storn, Some("SUBMITTED"),            false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedReturns.json"
-          case SdltReturnRecordRequest(storn, Some("SUBMITTED_NO_RECEIPT"), false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedNoReceiptReturns.json"
+          case SdltReturnRecordRequest(_,     _,                            true,  _,                   _) => s"/resources.manage.getReturns/${response.storn}/deleted/acceptedReturns.json"
+          case SdltReturnRecordRequest(_,     Some("ACCEPTED"),             false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
+          case SdltReturnRecordRequest(_,     Some("STARTED"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
+          case SdltReturnRecordRequest(_,     Some("PENDING"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/deleted/pendingReturns.json"
+          case SdltReturnRecordRequest(_,     Some("SUBMITTED"),            false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedReturns.json"
+          case SdltReturnRecordRequest(_,     Some("SUBMITTED_NO_RECEIPT"), false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedNoReceiptReturns.json"
         }
 
         findResource(fullPath) match {
