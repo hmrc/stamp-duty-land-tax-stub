@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub
 
-import models.response.SdltReturnRecordResponse
+import models.response.{AgentDetailsResponse, SdltReturnRecordResponse, SubmitAgentDetailsResponse}
 import play.api.libs.json.{JsError, JsSuccess, Json}
 
 import java.nio.file.{FileSystems, Files}
@@ -44,7 +44,7 @@ object ResourceVerification {
       .getPath("")
       .toAbsolutePath
       .toString
-    val dirPath: String = s"$currentPath/conf/resources.manage.$prefix/"
+    val dirPath: String = s"$currentPath/conf/$prefix/"
     val dir = FileSystems.getDefault.getPath(dirPath)
     val files = Files.walk(dir).iterator().asScala.toList
     files
@@ -53,10 +53,12 @@ object ResourceVerification {
   }
 
   def resourceSchemaValidationMacrosImp()(using Quotes): Expr[String] = {
-    val inFolders: Seq[String] = Seq("allReturns")
+    val folderToVerifyFilesSchema: Seq[String] = Seq(
+      "resources.manage.allReturns",
+      "legacy.resources.manage.agentDetails")
 
-    val errors = inFolders.flatMap {
-      case folderPath@"allReturns" =>
+    val errors = folderToVerifyFilesSchema.flatMap {
+      case folderPath if folderPath.endsWith("allReturns") =>
         val files: List[String] = getFilesList(folderPath)
         files
           .map(fileName => (fileName, readFile(fileName)))
@@ -78,6 +80,29 @@ object ResourceVerification {
             case (fileName, None) =>
               Some(s"File with Empty content found: $fileName")
           }
+      case folderPath if folderPath.endsWith("agentDetails") =>
+        val files: List[String] = getFilesList(folderPath)
+        files
+          .map(fileName => (fileName, readFile(fileName)))
+          .filter(p => p._2.nonEmpty)
+          .collect {
+            case (fileName, Some(content)) =>
+              Json.parse(content).validate[AgentDetailsResponse] match {
+                case JsSuccess(value, path) =>
+                  None
+                case JsError(errors) =>
+                  val e = errors
+                    .toList
+                    .map(p => s"${p._1.toString} = ${p._2}")
+                    .mkString(" ")
+                  Some(
+                    s"\nFolder: $folderPath \n:: File name: $fileName \n=> $e"
+                  )
+              }
+            case (fileName, None) =>
+              Some(s"File with Empty content found: $fileName")
+          }
+
       case _ =>
         List.empty
     }.flatten
