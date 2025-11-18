@@ -95,15 +95,14 @@ object ResourceVerification {
         List.empty
     }.flatten
 
-
+    // Compile time evaluation: DATA COMPILATION
     val firstErrorFound = errors.find(e => e.nonEmpty)
     if (firstErrorFound.isDefined) {
       throw new Error(firstErrorFound.get)
     } else {
-      val res = Expr(s"File name: ???")
-      println(s"This json file is valid:")
-      res
+      Expr(s"All files in the provided folder are valid")
     }
+
   }
 
   private def getFormattedError(folderPath: String, fileName: String, errors: collection.Seq[(JsPath, collection.Seq[JsonValidationError])]) = {
