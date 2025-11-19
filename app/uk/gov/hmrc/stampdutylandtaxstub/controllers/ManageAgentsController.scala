@@ -192,7 +192,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
 
         findResource(fullPath) match {
           case Some(content) =>
-            logger.info("[ManageAgentsController][getReturns]: Successfully retrieved json resource")
+            logger.info(s"[ManageAgentsController][getReturns]: Successfully retrieved json resource: $content")
             Future.successful(jsonResourceAsResponse(fullPath))
           case err =>
             logger.error(s"[ManageAgentsController][getReturns]: Json resource not found: $err")

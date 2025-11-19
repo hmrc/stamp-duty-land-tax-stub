@@ -1,105 +1,21 @@
 {
   "returnSummaryCount": 16,
   "returnSummaryList": [
-    {
-      "returnReference": "RET000003",
-      "status": "ACCEPTED",
-      "purchaserName": "Michael Brown",
-      "address": "44 Oxford Road, Manchester",
-      "agentReference": "Anderson Legal LLP"
-    },
-    {
-      "returnReference": "RET000006",
-      "status": "ACCEPTED",
-      "purchaserName": "Daniel Taylor",
-      "address": "72 King Street, Glasgow"
-    },
-    {
-      "returnReference": "RET000009",
-      "status": "ACCEPTED",
-      "purchaserName": "Olivia Harris",
-      "address": "11 Church Street, Nottingham"
-    },
-    {
-      "returnReference": "RET000012",
-      "status": "ACCEPTED",
-      "purchaserName": "Lucas Walker",
-      "address": "18 Green Lane, Reading"
-    },
-    {
-      "returnReference": "RET000015",
-      "status": "ACCEPTED",
-      "purchaserName": "Henry Young",
-      "address": "10 Wharf Road, Newcastle",
-      "agentReference": "Oakridge Law"
-    },
-    {
-      "returnReference": "RET000018",
-      "status": "ACCEPTED",
-      "purchaserName": "Charlotte Scott",
-      "address": "14 North Road, Cardiff"
-    },
-    {
-      "returnReference": "RET000023",
-      "status": "ACCEPTED",
-      "purchaserName": "Hannah Perez",
-      "address": "5 Silver Street, Bath"
-    },
-    {
-      "returnReference": "RET000027",
-      "status": "ACCEPTED",
-      "purchaserName": "Scarlett Turner",
-      "address": "33 Bridge Street, Kent"
-    },
-    {
-      "returnReference": "RET000030",
-      "status": "ACCEPTED",
-      "purchaserName": "Mason Gray",
-      "address": "60 Elm Road, Southampton"
-    },
-    {
-      "returnReference": "RET000033",
-      "status": "ACCEPTED",
-      "purchaserName": "Chloe Reed",
-      "address": "42 Church Lane, Canterbury"
-    },
-    {
-      "returnReference": "RET000036",
-      "status": "ACCEPTED",
-      "purchaserName": "Joseph Murphy",
-      "address": "99 Station Road, Reading",
-      "agentReference": "Redwood Property Legal"
-    },
-    {
-      "returnReference": "RET000038",
-      "status": "ACCEPTED",
-      "purchaserName": "Aria Knight",
-      "address": "88 Lantern Street, York"
-    },
-    {
-      "returnReference": "RET000041",
-      "status": "ACCEPTED",
-      "purchaserName": "Freddie Berry",
-      "address": "70 Alban Street, St Albans",
-      "agentReference": "Horizon Property Law"
-    },
-    {
-      "returnReference": "RET000044",
-      "status": "ACCEPTED",
-      "purchaserName": "Leo Murray",
-      "address": "6 Pine Grove, Crawley"
-    },
-    {
-      "returnReference": "RET000047",
-      "status": "ACCEPTED",
-      "purchaserName": "Willow Hayes",
-      "address": "32 Station Drive, Gloucester"
-    },
-    {
-      "returnReference": "RET000050",
-      "status": "ACCEPTED",
-      "purchaserName": "Holly Saunders",
-      "address": "7 Meadowfield, Chichester"
-    }
+    { "returnReference": "RET000003", "status": "ACCEPTED", "purchaserName": "Michael Brown",   "address": "44 Oxford Road, Manchester",        "agentReference": "Anderson Legal LLP" },
+    { "returnReference": "RET000006", "status": "ACCEPTED", "purchaserName": "Daniel Taylor",   "address": "72 King Street, Glasgow" },
+    { "returnReference": "RET000009", "status": "ACCEPTED", "purchaserName": "Olivia Harris",   "address": "11 Church Street, Nottingham" },
+    { "returnReference": "RET000012", "status": "ACCEPTED", "purchaserName": "Lucas Walker",    "address": "18 Green Lane, Reading" },
+    { "returnReference": "RET000015", "status": "ACCEPTED", "purchaserName": "Henry Young",     "address": "10 Wharf Road, Newcastle",          "agentReference": "Oakridge Law" },
+    { "returnReference": "RET000018", "status": "ACCEPTED", "purchaserName": "Charlotte Scott", "address": "14 North Road, Cardiff" },
+    { "returnReference": "RET000023", "status": "ACCEPTED", "purchaserName": "Hannah Perez",    "address": "5 Silver Street, Bath" },
+    { "returnReference": "RET000027", "status": "ACCEPTED", "purchaserName": "Scarlett Turner", "address": "33 Bridge Street, Kent" },
+    { "returnReference": "RET000030", "status": "ACCEPTED", "purchaserName": "Mason Gray",      "address": "60 Elm Road, Southampton" },
+    { "returnReference": "RET000033", "status": "ACCEPTED", "purchaserName": "Chloe Reed",      "address": "42 Church Lane, Canterbury" },
+    { "returnReference": "RET000036", "status": "ACCEPTED", "purchaserName": "Joseph Murphy",   "address": "99 Station Road, Reading",          "agentReference": "Redwood Property Legal" },
+    { "returnReference": "RET000038", "status": "ACCEPTED", "purchaserName": "Aria Knight",     "address": "88 Lantern Street, York" },
+    { "returnReference": "RET000041", "status": "ACCEPTED", "purchaserName": "Freddie Berry",   "address": "70 Alban Street, St Albans",        "agentReference": "Horizon Property Law" },
+    { "returnReference": "RET000044", "status": "ACCEPTED", "purchaserName": "Leo Murray",      "address": "6 Pine Grove, Crawley" },
+    { "returnReference": "RET000047", "status": "ACCEPTED", "purchaserName": "Willow Hayes",    "address": "32 Station Drive, Gloucester" },
+    { "returnReference": "RET000050", "status": "ACCEPTED", "purchaserName": "Holly Saunders",  "address": "7 Meadowfield, Chichester" }
   ]
 }
