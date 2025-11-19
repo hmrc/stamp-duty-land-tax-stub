@@ -1,9 +1,0 @@
-{
-  "returnSummaryCount": 4,
-  "returnSummaryList": [
-    { "returnReference": "RET0014", "status": "DEPARTMENTAL_ERROR", "utrn": "UTRN0014", "dateSubmitted": "2025-01-14", "purchaserName": "Buyer 014", "address": "14 Example Road, City" },
-    { "returnReference": "RET0018", "status": "DEPARTMENTAL_ERROR", "utrn": "UTRN0018", "dateSubmitted": "2025-01-18", "purchaserName": "Buyer 018", "address": "18 Example Road, City", "agentReference": "Agent F" },
-    { "returnReference": "RET0034", "status": "DEPARTMENTAL_ERROR", "utrn": "UTRN0034", "dateSubmitted": "2025-01-21", "purchaserName": "Buyer 034", "address": "34 Example Road, City" },
-    { "returnReference": "RET0038", "status": "DEPARTMENTAL_ERROR", "utrn": "UTRN0038", "dateSubmitted": "2025-01-13", "purchaserName": "Buyer 038", "address": "38 Example Road, City" }
-  ]
-}
