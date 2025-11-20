@@ -20,16 +20,15 @@ import play.api.libs.json.{Json, OFormat}
 
 case class AgentDetailsBeforeCreation(
                                        agentName             : String,
-                                       name                  : String,
-                                       houseNumber           : String,
-                                       addressLine1          : String,
+                                       houseNumber           : Option[String],
+                                       addressLine1          : Option[String],
                                        addressLine2          : Option[String],
-                                       addressLine3          : String,
+                                       addressLine3          : Option[String],
                                        addressLine4          : Option[String],
                                        postcode              : Option[String],
                                        phone                 : Option[String],
-                                       email                 : String,
-                                       agentId               : String
+                                       email                 : Option[String],
+                                       agentId               : Option[String]
                                      )
 
 object AgentDetailsBeforeCreation {
