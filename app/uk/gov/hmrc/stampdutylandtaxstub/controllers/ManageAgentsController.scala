@@ -70,8 +70,8 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
 
         findResource(fullPath) match {
           case Some(content) =>
-            logger.info("[ManageAgentsController][removeAgent]: Successfully retrieved agent - sending dummy true delete")
-            Future.successful(Ok(Json.toJson(true)))
+            logger.info("[ManageAgentsController][removeAgent]: Successfully retrieved agent - sending dummy deleted JSON object")
+            Future.successful(Ok(Json.obj("message" -> "Agent Deleted")))
           case err =>
             logger.error(s"[ManageAgentsController][removeAgent]: Json resource not found: $err")
             Future.successful(NotFound)
