@@ -89,7 +89,8 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         logger.info("[ManageAgentsController][submitAgentDetails]: Json validation successful for AgentDetailsBeforeCreation")
         Future.successful(Ok(Json.toJson(
           SubmitAgentDetailsResponse(
-            UUID.randomUUID().toString
+            UUID.randomUUID().toString,
+            UUID.randomUUID().toString,
           )
         )))
       }
