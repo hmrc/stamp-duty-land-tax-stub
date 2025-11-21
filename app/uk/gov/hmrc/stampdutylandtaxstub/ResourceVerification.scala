@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub
 
-import models.response.{AgentDetailsResponse, SdltReturnRecordResponse, SubmitAgentDetailsResponse}
+import models.response.{AgentDetailsResponse, SdltOrganisationResponse, SdltReturnRecordResponse, SubmitAgentDetailsResponse}
 import play.api.libs.json.{JsError, JsPath, JsSuccess, Json, JsonValidationError}
 
 import java.nio.file.{FileSystems, Files}
@@ -61,7 +61,8 @@ object ResourceVerification {
   def resourceSchemaValidationMacrosImp()(using Quotes): Expr[String] = {
     val folderToVerifyFilesSchema: Seq[String] = Seq(
       "resources.manage.allReturns",
-      "legacy.resources.manage.agentDetails")
+      "legacy.resources.manage.agentDetails",
+      "resources.manage.getSdltOrganisation")
 
     val errors = folderToVerifyFilesSchema.flatMap {
       case folderPath if folderPath.endsWith("allReturns") =>
@@ -82,6 +83,19 @@ object ResourceVerification {
           .collect {
             case (fileName, Some(content)) =>
               Json.parse(content).validate[AgentDetailsResponse] match {
+                case JsSuccess(value, path) =>
+                  None
+                case JsError(errors) =>
+                  getFormattedError(folderPath, fileName, errors)
+              }
+            case (fileName, None) =>
+              Some(s"File with Empty content found: $fileName")
+          }
+      case folderPath if folderPath.endsWith("getSdltOrganisation") =>
+        readFiles(folderPath)
+          .collect {
+            case (fileName, Some(content)) =>
+              Json.parse(content).validate[SdltOrganisationResponse] match {
                 case JsSuccess(value, path) =>
                   None
                 case JsError(errors) =>
