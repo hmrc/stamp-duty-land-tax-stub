@@ -32,7 +32,9 @@ var userProfiles = '[' +
     '{ "description":"Error case: Vendor agent, main vendor is not represented by agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "vendor-agent-and-main-vendor-not-represented-by-agent" }, ' +
     '{ "description":"Error case: No return agent, main vendor is represented by agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-return-agent-and-main-vendor-represented-by-agent" }, ' +
     '{ "description":"Error case: Non vendor agent, main vendor is represented by agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "non-vendor-agent-and-main-vendor-represented-by-agent" }, ' +
-    '{ "description":"Error case: Vendor agent, no main vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "vendor-agent-and-no-main-vendor" }' +
+    '{ "description":"Error case: Vendor agent, no main vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "vendor-agent-and-no-main-vendor" }, ' +
+    '{ "description":"Error case: Bad request deleting vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "error-removing-vendor" }, ' +
+    '{ "description":"Error case: Bad request updating return version", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "error-updating-return-version" }' +
     ']';
 
 var submitFormVal = true;
