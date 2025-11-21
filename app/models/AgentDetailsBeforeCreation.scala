@@ -19,6 +19,7 @@ package models
 import play.api.libs.json.{Json, OFormat}
 
 case class AgentDetailsBeforeCreation(
+                                       storn                 : String,
                                        agentName             : String,
                                        houseNumber           : Option[String],
                                        addressLine1          : Option[String],
@@ -28,7 +29,7 @@ case class AgentDetailsBeforeCreation(
                                        postcode              : Option[String],
                                        phone                 : Option[String],
                                        email                 : Option[String],
-                                       agentId               : Option[String]
+                                       dxAddress             : Option[String]
                                      )
 
 object AgentDetailsBeforeCreation {
