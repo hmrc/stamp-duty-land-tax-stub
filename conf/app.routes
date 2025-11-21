@@ -2,6 +2,7 @@
 
 POST       /manage-agents/agent-details/submit               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.submitAgentDetails
 POST       /manage-agents/agent-details/remove               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.removeAgent
+PUT        /manage-agents/agent-details/update               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.updateAgentDetails
 
 # to be removed
 POST       /manage-returns/get-all                           uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getAllReturnsLegacy
