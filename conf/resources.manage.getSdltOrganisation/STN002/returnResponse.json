@@ -1,6 +1,6 @@
 {
   "storn": "STN002",
-  "version": 1,
+  "version": "1",
   "isReturnUser": "1",
   "doNotDisplayWelcomePage": "Yes",
   "agents": []
