@@ -20,7 +20,7 @@ import models.AgentDetailsBeforeCreation
 import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest}
 import models.response.SubmitAgentDetailsResponse
 import play.api.Logging
-import play.api.libs.json.{JsValue, Json}
+import play.api.libs.json._
 import play.api.mvc.{Action, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
@@ -38,21 +38,9 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
       invalid =>
         logger.error(s"[ManageAgentsController][removeAgent]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
-      response => {
-
-        val basePath = "/legacy.resources.manage.agentDetails"
-
-        val fullPath = s"$basePath/${response.storn}/${response.agentReferenceNumber}/manageAgentDetails.json"
-
-        findResource(fullPath) match {
-          case Some(content) =>
-            logger.info("[ManageAgentsController][removeAgent]: Successfully retrieved agent - sending dummy true delete")
-            Future.successful(Ok(Json.toJson(true)))
-          case err =>
-            logger.error(s"[ManageAgentsController][removeAgent]: Json resource not found: $err")
-            Future.successful(NotFound)
-        }
-      }
+      response =>
+        logger.info("[ManageAgentsController][removeAgent]: Successfully validated payload - sending dummy deleted JSON object")
+        Future.successful(Ok(Json.obj("message" -> s"Agent with reference number ${response.agentReferenceNumber} deleted for user with storn ${response.storn}")))
     )
   }
 
