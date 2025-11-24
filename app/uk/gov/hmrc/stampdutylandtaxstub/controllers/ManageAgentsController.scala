@@ -40,7 +40,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response =>
         logger.info("[ManageAgentsController][removeAgent]: Successfully validated payload - sending dummy deleted JSON object")
-        Future.successful(Ok(Json.obj("message" -> "Agent Deleted")))
+        Future.successful(Ok(Json.obj("message" -> s"Agent deleted with reference number: ${response.agentReferenceNumber}")))
     )
   }
 
