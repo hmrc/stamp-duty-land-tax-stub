@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import models.requests.{GetReturnByRefRequest, PrelimReturn}
+import models.requests.{GetReturnByRefRequest, PrelimReturn, ReturnVersionUpdateRequest}
 import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
@@ -26,7 +26,7 @@ import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class PrelimReturnController @Inject()(
+class ReturnController @Inject()(
                                         cc: ControllerComponents,
                                         override val executionContext: ExecutionContext
                                       ) extends BackendController(cc) with StubResource {
@@ -57,6 +57,24 @@ class PrelimReturnController @Inject()(
         findResource(fullPath) match {
           case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
           case _ => Future.successful(NotFound)
+        }
+      }
+    )
+  }
+
+  def updateReturnVersion(): Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[ReturnVersionUpdateRequest].fold(
+      invalid =>
+        logger.error(s"[ReturnVersionController][updateReturnVersion]: Failed to validate payload, errors: $invalid")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+        val successResponse = Ok(Json.obj("updated" -> true))
+        val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
+
+        response.returnResourceRef match {
+          case "errorUpdatingReturnVersion" => Future.successful(failureResponse)
+          case _ =>
+            Future.successful(successResponse)
         }
       }
     )
