@@ -18,7 +18,7 @@ package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.requests.CreatePredefinedAgentRequest
 import models.{ AgentDetailsAfterCreation}
-import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest}
+import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest, UpdatePredefinedAgent}
 import models.response.CreatePredefinedAgentResponse
 import play.api.Logging
 import play.api.libs.json.*
@@ -63,7 +63,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
   }
 
   def updateAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
-    request.body.validate[AgentDetailsAfterCreation].fold(
+    request.body.validate[UpdatePredefinedAgent].fold(
       invalid =>
         logger.error(s"[ManageAgentsController][updateAgentDetails]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),

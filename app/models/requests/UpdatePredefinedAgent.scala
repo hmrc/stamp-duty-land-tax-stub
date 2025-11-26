@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package models
+package models.requests
 
+import models.UpdatePredefinedAgent
 import play.api.libs.json.{Json, OFormat}
 
-case class AgentDetailsAfterCreation(
+case class UpdatePredefinedAgent(
                                       storn:                  String,
                                       agentId:                Option[String],
                                       name:                   String,
@@ -34,6 +35,6 @@ case class AgentDetailsAfterCreation(
                                       agentResourceReference: String
                                     )
 
-object AgentDetailsAfterCreation {
-  implicit val format: OFormat[AgentDetailsAfterCreation] = Json.format[AgentDetailsAfterCreation]
+object UpdatePredefinedAgent {
+  implicit val format: OFormat[UpdatePredefinedAgent] = Json.format[UpdatePredefinedAgent]
 }
