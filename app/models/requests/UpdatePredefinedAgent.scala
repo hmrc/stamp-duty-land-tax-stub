@@ -16,24 +16,21 @@
 
 package models.requests
 
-import models.UpdatePredefinedAgent
 import play.api.libs.json.{Json, OFormat}
 
 case class UpdatePredefinedAgent(
-                                      storn:                  String,
-                                      agentId:                Option[String],
-                                      name:                   String,
-                                      houseNumber:            Option[String],
-                                      address1:               String,
-                                      address2:               Option[String],
-                                      address3:               Option[String],
-                                      address4:               Option[String],
-                                      postcode:               Option[String],
-                                      phone:                  String,
-                                      email:                  String,
-                                      dxAddress:              Option[String],
-                                      agentResourceReference: String
-                                    )
+                                  agentResourceReference      : String, //still mandatory, reference number is injected in controller
+                                  storn                       : String,
+                                  agentName                   : String,
+                                  houseNumber                 : Option[String],
+                                  addressLine1                : Option[String],
+                                  addressLine2                : Option[String],
+                                  addressLine3                : Option[String],
+                                  addressLine4                : Option[String],
+                                  postcode                    : Option[String],
+                                  phone                       : Option[String],
+                                  email                       : Option[String]
+                                )
 
 object UpdatePredefinedAgent {
   implicit val format: OFormat[UpdatePredefinedAgent] = Json.format[UpdatePredefinedAgent]

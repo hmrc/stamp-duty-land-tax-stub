@@ -65,11 +65,11 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
   def updateAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[UpdatePredefinedAgent].fold(
       invalid =>
-        logger.error(s"[ManageAgentsController][updateAgentDetails]: Failed to validate payload, errors: $invalid")
+        logger.error(s"[ManageAgentsController][updateAgentDetails]: Failed to validate payload, errors: $invalid\n THE REQUEST PAYLOAD:\n \n ${request.body}\n \n DOES NOT EQUAL: \n \n ${UpdatePredefinedAgent} ")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
-      _ => {
-        logger.info("[ManageAgentsController][updateAgentDetails]: Json validation successful for AgentDetailsAfterCreation")
-        Future.successful(NoContent)
+      payload => {
+        logger.info(s"[ManageAgentsController][updateAgentDetails]: Json validation successful for AgentDetailsAfterCreation ${payload}")
+        Future.successful(Ok)
       }
     )
   }
