@@ -19,17 +19,19 @@ package models
 import play.api.libs.json.{Json, OFormat}
 
 case class AgentDetailsAfterCreation(
-                                      agentDetailsReferenceNumber : String,
-                                      storn                       : String,
-                                      name                        : String,
-                                      houseNumber                 : Option[String],
-                                      addressLine1                : Option[String],
-                                      addressLine2                : Option[String],
-                                      addressLine3                : Option[String],
-                                      addressLine4                : Option[String],
-                                      postcode                    : Option[String],
-                                      phone                       : Option[String],
-                                      email                       : Option[String]
+                                      storn:                  Option[String],
+                                      agentId:                Option[String],
+                                      name:                   Option[String],
+                                      houseNumber:            Option[String],
+                                      address1:               Option[String],
+                                      address2:               Option[String],
+                                      address3:               Option[String],
+                                      address4:               Option[String],
+                                      postcode:               Option[String],
+                                      phone:                  Option[String],
+                                      email:                  Option[String],
+                                      dxAddress:              Option[String],
+                                      agentResourceReference: Option[String]
                                     )
 
 object AgentDetailsAfterCreation {

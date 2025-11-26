@@ -17,10 +17,11 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.requests.CreatePredefinedAgentRequest
+import models.{ AgentDetailsAfterCreation}
 import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest}
 import models.response.CreatePredefinedAgentResponse
 import play.api.Logging
-import play.api.libs.json._
+import play.api.libs.json.*
 import play.api.mvc.{Action, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
@@ -138,6 +139,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case request@models.requests.SdltReturnRecordRequest(_, _, _, _, _) => // Not sure about this case || looks like expansion
             s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
         }
+
         findResource(fullPath) match {
           case Some(content) =>
             logger.info(s"[ManageAgentsController][getReturns]: Successfully retrieved json resource: $content")
