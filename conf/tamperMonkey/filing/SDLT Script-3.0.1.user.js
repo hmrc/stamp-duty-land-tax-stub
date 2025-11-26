@@ -36,7 +36,10 @@ var userProfiles = '[' +
     '{ "description":"Error case: Non vendor agent, main vendor is represented by agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "non-vendor-agent-and-main-vendor-represented-by-agent" }, ' +
     '{ "description":"Error case: Vendor agent, no main vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "vendor-agent-and-no-main-vendor" }, ' +
     '{ "description":"Error case: Bad request deleting vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "error-removing-vendor" }, ' +
-    '{ "description":"Error case: Bad request updating return version", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "error-updating-return-version" }' +
+    '{ "description":"Error case: Bad request updating return version", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "error-updating-return-version" },' +
+    '{ "description":"Refresh Created Return", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "firstJson" },' +
+    '{ "description":"Incomplete Purchaser", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "incomplete-purchaser" },' +
+    '{ "description":"Full Purchaser with address line 1", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser" }' +
     ']';
 
 var submitFormVal = true;
