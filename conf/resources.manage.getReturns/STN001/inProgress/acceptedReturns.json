@@ -6,7 +6,7 @@
       "status": "ACCEPTED",
       "purchaserName": "Michael Brown",
       "address": "44 Oxford Road, Manchester",
-      "agentReferenceNumber": "test"
+      "agentReference": "ARN003"
     },
     {
       "returnReference": "RET000006",
