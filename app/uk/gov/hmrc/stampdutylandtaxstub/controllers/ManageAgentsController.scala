@@ -33,14 +33,14 @@ import scala.concurrent.{ExecutionContext, Future}
 class ManageAgentsController @Inject()(cc: ControllerComponents, override val executionContext: ExecutionContext)
   extends BackendController(cc) with StubResource with Logging:
 
-  def removeAgent: Action[JsValue] = Action.async(parse.json) { implicit request =>
+  def deletePredefinedAgent: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornAndArnRequest].fold(
       invalid =>
-        logger.error(s"[ManageAgentsController][removeAgent]: Failed to validate payload, errors: $invalid")
+        logger.error(s"[ManageAgentsController][deletePredefinedAgent]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response =>
-        logger.info("[ManageAgentsController][removeAgent]: Successfully validated payload - sending dummy deleted JSON object")
-        Future.successful(Ok(Json.obj("message" -> s"Agent with reference number ${response.agentReferenceNumber} deleted for user with storn ${response.storn}")))
+        logger.info("[ManageAgentsController][deletePredefinedAgent]: Successfully validated payload - sending dummy deleted JSON Boolean")
+        Future.successful(Ok(Json.obj("deleted" -> true)))
     )
   }
 
