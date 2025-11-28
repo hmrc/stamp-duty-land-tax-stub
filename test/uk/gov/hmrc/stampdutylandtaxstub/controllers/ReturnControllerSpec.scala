@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import models.requests.{GetReturnByRefRequest, PrelimReturn}
+import models.requests.{GetReturnByRefRequest, PrelimReturn, ReturnVersionUpdateRequest}
 import org.apache.pekko.actor.ActorSystem
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
@@ -27,7 +27,7 @@ import play.api.libs.json.{JsValue, Json}
 import play.api.test.Helpers.*
 import play.api.test.FakeRequest
 
-class PrelimReturnControllerSpec
+class ReturnControllerSpec
   extends AnyWordSpec
     with Matchers
     with GuiceOneServerPerSuite
@@ -53,6 +53,12 @@ class PrelimReturnControllerSpec
     storn = "STORN12345"
   )
 
+  private val validUpdateReturnVersionRequest = ReturnVersionUpdateRequest(
+    storn = "STORN12345",
+    returnResourceRef = "123456",
+    currentVersion = "1.0"
+  )
+
   private val fakePrelimReturnPOSTRequest =
     FakeRequest("POST", "/")
       .withHeaders("Content-Type" -> "application/json")
@@ -73,7 +79,22 @@ class PrelimReturnControllerSpec
       .withHeaders("Content-Type" -> "application/json")
       .withBody(Json.toJson(""))
 
-  lazy val testController: PrelimReturnController = app.injector.instanceOf[PrelimReturnController]
+  private val fakeUpdateReturnVersionPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(validUpdateReturnVersionRequest))
+
+  private val fakeUpdateReturnVersionErrorPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(validUpdateReturnVersionRequest.copy(returnResourceRef = "errorUpdatingReturnVersion")))
+
+  private val invalidUpdateReturnVersionPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(""))
+
+  lazy val testController: ReturnController = app.injector.instanceOf[ReturnController]
 
   val returnIdJson: JsValue = Json.parse(
     """{
@@ -146,6 +167,40 @@ class PrelimReturnControllerSpec
         .withBody(invalidRequest)
 
       val result = testController.getFullReturn(request)
+
+      status(result) shouldBe Status.BAD_REQUEST
+      (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+  }
+
+  ".updateReturnVersion" should {
+
+    "return 200 when payload is valid and resource exists" in {
+      val result = testController.updateReturnVersion()(fakeUpdateReturnVersionPOSTRequest)
+
+      status(result) shouldBe Status.OK
+    }
+
+    "return 400 when payload is valid and returnResourceRef is errorUpdatingReturnVersion" in {
+      val result = testController.updateReturnVersion()(fakeUpdateReturnVersionErrorPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+    }
+
+    "return 400 when payload is invalid" in {
+      val result = testController.updateReturnVersion()(invalidUpdateReturnVersionPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+      (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+
+    "return 400 when required fields are missing" in {
+      val invalidRequest = Json.obj("returnResourceRef" -> "123456")
+      val request = FakeRequest("POST", "/")
+        .withHeaders("Content-Type" -> "application/json")
+        .withBody(invalidRequest)
+
+      val result = testController.updateReturnVersion()(request)
 
       status(result) shouldBe Status.BAD_REQUEST
       (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
