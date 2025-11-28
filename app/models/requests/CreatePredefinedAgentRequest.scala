@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package models
+package models.requests
 
 import play.api.libs.json.{Json, OFormat}
 
-case class AgentDetailsBeforeCreation(
+case class CreatePredefinedAgentRequest(
                                        storn                 : String,
                                        agentName             : String,
                                        houseNumber           : Option[String],
@@ -32,6 +32,6 @@ case class AgentDetailsBeforeCreation(
                                        dxAddress             : Option[String]
                                      )
 
-object AgentDetailsBeforeCreation {
-  implicit val format: OFormat[AgentDetailsBeforeCreation] = Json.format[AgentDetailsBeforeCreation]
+object CreatePredefinedAgentRequest {
+  implicit val format: OFormat[CreatePredefinedAgentRequest] = Json.format[CreatePredefinedAgentRequest]
 }

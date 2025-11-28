@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub
 
-import models.response.{AgentDetailsResponse, SdltReturnRecordResponse, SubmitAgentDetailsResponse}
+import models.response.{AgentDetailsResponse, SdltReturnRecordResponse}
 import play.api.libs.json.{JsError, JsPath, JsSuccess, Json, JsonValidationError}
 
 import java.nio.file.{FileSystems, Files}
