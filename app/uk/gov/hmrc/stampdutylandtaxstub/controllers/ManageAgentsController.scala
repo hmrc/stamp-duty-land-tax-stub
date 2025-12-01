@@ -94,6 +94,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         val fullPath = response match {
           case SdltReturnRecordRequest(_,     _,                            true,  Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedSubmittedReturns.json"
           case SdltReturnRecordRequest(_,     _,                            true,  Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
+          case SdltReturnRecordRequest(_,     None,                         false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/allInProgressReturns.json"
           case SdltReturnRecordRequest(_,     Some("ACCEPTED"),             false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
           case SdltReturnRecordRequest(_,     Some("STARTED"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
           case SdltReturnRecordRequest(_,     Some("PENDING"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/pendingReturns.json"
