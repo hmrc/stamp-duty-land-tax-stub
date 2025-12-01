@@ -90,17 +90,26 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         logger.error(s"[ManageAgentsController][getReturns]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
-
         val fullPath = response match {
-          case SdltReturnRecordRequest(_,     _,                            true,  Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedSubmittedReturns.json"
-          case SdltReturnRecordRequest(_,     _,                            true,  Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
-          case SdltReturnRecordRequest(_,     Some("ACCEPTED"),             false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
-          case SdltReturnRecordRequest(_,     Some("STARTED"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
-          case SdltReturnRecordRequest(_,     Some("PENDING"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/pendingReturns.json"
-          case SdltReturnRecordRequest(_,     Some("SUBMITTED"),            false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedReturns.json"
-          case SdltReturnRecordRequest(_,     Some("SUBMITTED_NO_RECEIPT"), false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedNoReceiptReturns.json"
+          case SdltReturnRecordRequest(_, _, true, Some("SUBMITTED"), _) =>
+            s"/resources.manage.getReturns/${response.storn}/deleted/deletedSubmittedReturns.json"
+          case SdltReturnRecordRequest(_, _, true, Some("IN-PROGRESS"), _) =>
+            s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
+          case SdltReturnRecordRequest(_, None, false, Some("IN-PROGRESS"), _) =>
+            s"/resources.manage.getReturns/${response.storn}/inProgress/all.json"
+          case SdltReturnRecordRequest(_, Some("ACCEPTED"), false, Some("IN-PROGRESS"), _) =>
+            s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
+          case SdltReturnRecordRequest(_, Some("STARTED"), false, Some("IN-PROGRESS"), _) =>
+            s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
+          case SdltReturnRecordRequest(_, Some("PENDING"), false, Some("IN-PROGRESS"), _) =>
+            s"/resources.manage.getReturns/${response.storn}/inProgress/pendingReturns.json"
+          case SdltReturnRecordRequest(_, Some("SUBMITTED"), false, Some("SUBMITTED"), _) =>
+            s"/resources.manage.getReturns/${response.storn}/submitted/submittedReturns.json"
+          case SdltReturnRecordRequest(_, Some("SUBMITTED_NO_RECEIPT"), false, Some("SUBMITTED"), _) =>
+            s"/resources.manage.getReturns/${response.storn}/submitted/submittedNoReceiptReturns.json"
+          case req@models.requests.SdltReturnRecordRequest(_, _, _, _, _) =>
+            throw new Error(s"Not matching case: $req")
         }
-
         findResource(fullPath) match {
           case Some(content) =>
             logger.info(s"[ManageAgentsController][getReturns]: Successfully retrieved json resource: $content")
