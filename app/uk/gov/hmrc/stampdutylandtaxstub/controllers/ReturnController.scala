@@ -68,7 +68,7 @@ class ReturnController @Inject()(
         logger.error(s"[ReturnVersionController][updateReturnVersion]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
-        val successResponse = Ok(Json.obj("updated" -> true))
+        val successResponse = Ok(Json.obj("newVersion" -> 2))
         val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
 
         response.returnResourceRef match {

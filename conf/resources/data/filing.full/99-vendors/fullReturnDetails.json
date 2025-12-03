@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "123456",
+  "returnResourceRef": "99-vendors",
   "sdltOrganisation": {
     "isReturnUser": "true",
     "doNotDisplayWelcomePage": "false",
@@ -93,17 +93,14 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "false",
+      "isRepresentedByAgent": "No",
       "vendorResourceRef": "VEN-REF-001",
       "nextVendorID": "VEN002"
     },
     {
       "vendorID": "VEN002",
       "returnID": "RET123456789",
-      "title": "Mr",
-      "forename1": "David",
-      "forename2": "Michael",
-      "name": "Smith",
+      "name": "SmithLTD",
       "houseNumber": "42",
       "address1": "Baker Street",
       "address2": "Marylebone",
@@ -1842,23 +1839,7 @@
     "totalConsiderationBusiness": null
   },
   "returnAgent": [
-    {
-      "returnAgentID": "RA001",
-      "returnID": "RET123456789",
-      "agentType": "VENDOR",
-      "name": "Smith & Partners LLP",
-      "houseNumber": "100",
-      "address1": "Fleet Street",
-      "address2": "City of London",
-      "address3": "London",
-      "address4": null,
-      "postcode": "EC4A 2DQ",
-      "phone": "020 7123 4567",
-      "email": "info@smithpartners.co.uk",
-      "DXAddress": "DX 123 London",
-      "reference": "SP/2024/001",
-      "isAuthorised": "true"
-    }
+
   ],
   "agent": {
     "agentId": "AGT001",
