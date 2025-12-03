@@ -1,7 +1,7 @@
 # microservice specific routes
 
 POST       /create/predefined-agent              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.submitAgentDetails
-POST        /manage-agents/agent-details/update               uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.updateAgentDetails
+POST       /update/predefined-agent             uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.updateAgentDetails
 
 # formp ready
 

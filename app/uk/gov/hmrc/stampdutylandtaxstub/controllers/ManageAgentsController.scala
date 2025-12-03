@@ -17,7 +17,6 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.requests.CreatePredefinedAgentRequest
-import models.{ AgentDetailsAfterCreation}
 import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest, UpdatePredefinedAgent}
 import models.response.CreatePredefinedAgentResponse
 import play.api.Logging

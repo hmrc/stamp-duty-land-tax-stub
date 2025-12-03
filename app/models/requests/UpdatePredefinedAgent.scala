@@ -19,7 +19,7 @@ package models.requests
 import play.api.libs.json.{Json, OFormat}
 
 case class UpdatePredefinedAgent(
-                                  agentResourceReference      : String, //still mandatory, reference number is injected in controller
+                                  agentResourceReference      : String, 
                                   storn                       : String,
                                   agentName                   : String,
                                   houseNumber                 : Option[String],
