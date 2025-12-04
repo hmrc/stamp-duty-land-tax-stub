@@ -17,10 +17,10 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.requests.CreatePredefinedAgentRequest
-import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest}
+import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest, UpdatePredefinedAgent}
 import models.response.CreatePredefinedAgentResponse
 import play.api.Logging
-import play.api.libs.json._
+import play.api.libs.json.*
 import play.api.mvc.{Action, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
@@ -57,6 +57,18 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
             UUID.randomUUID().toString,
           )
         )))
+      }
+    )
+  }
+
+  def updateAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[UpdatePredefinedAgent].fold(
+      invalid =>
+        logger.error(s"[ManageAgentsController][updateAgentDetails]: Failed to validate payload, errors: $invalid\n THE REQUEST PAYLOAD:\n \n ${request.body}\n \n DOES NOT EQUAL: \n \n ${UpdatePredefinedAgent} ")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      payload => {
+        logger.info(s"[ManageAgentsController][updateAgentDetails]: Json validation successful for AgentDetailsAfterCreation ${payload}")
+        Future.successful(Ok(Json.obj("updated" -> true)))
       }
     )
   }
@@ -102,6 +114,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case request@models.requests.SdltReturnRecordRequest(_, _, _, _, _) => // Not sure about this case || looks like expansion
             s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
         }
+
         findResource(fullPath) match {
           case Some(content) =>
             logger.info(s"[ManageAgentsController][getReturns]: Successfully retrieved json resource: $content")
