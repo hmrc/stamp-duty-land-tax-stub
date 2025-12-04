@@ -68,7 +68,7 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       payload => {
         logger.info(s"[ManageAgentsController][updateAgentDetails]: Json validation successful for AgentDetailsAfterCreation ${payload}")
-        Future.successful(Ok)
+        Future.successful(Ok(Json.obj("updated" -> true)))
       }
     )
   }
