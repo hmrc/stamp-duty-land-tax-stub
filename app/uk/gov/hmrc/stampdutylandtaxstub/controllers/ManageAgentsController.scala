@@ -18,7 +18,7 @@ package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.requests.CreatePredefinedAgentRequest
 import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest, UpdatePredefinedAgent}
-import models.response.CreatePredefinedAgentResponse
+import models.response.{CreatePredefinedAgentResponse, SdltReturnRecordResponse}
 import play.api.Logging
 import play.api.libs.json.*
 import play.api.mvc.{Action, ControllerComponents}
@@ -101,24 +101,41 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
       invalid =>
         logger.error(s"[ManageAgentsController][getReturns]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
-      response => {
-        val fullPath = response match {
-          case SdltReturnRecordRequest(_, None, false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/all.json"
-          case SdltReturnRecordRequest(_, Some("ACCEPTED"), false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
-          case SdltReturnRecordRequest(_, Some("STARTED"), false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
-          case SdltReturnRecordRequest(_, Some("PENDING"), false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/pendingReturns.json"
-          case SdltReturnRecordRequest(_, Some("SUBMITTED"), false, Some("SUBMITTED"), _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedReturns.json"
-          case SdltReturnRecordRequest(_, Some("SUBMITTED_NO_RECEIPT"), false, Some("SUBMITTED"), _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedNoReceiptReturns.json"
-          case SdltReturnRecordRequest(_, _, true, Some("SUBMITTED"), _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedSubmittedReturns.json"
-          case SdltReturnRecordRequest(_, _, true, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
-          case request@models.requests.SdltReturnRecordRequest(_, _, _, _, _) => // Not sure about this case || looks like expansion
-            s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
+      request => {
+        val fullPath = request match {
+          case SdltReturnRecordRequest(_, None, false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${request.storn}/inProgress/all.json"
+          case SdltReturnRecordRequest(_, None, false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${request.storn}/submitted/all.json"
+          case SdltReturnRecordRequest(_, _,    true,  Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${request.storn}/deleted/deletedSubmittedReturns.json"
+          case SdltReturnRecordRequest(_, _,    true,  Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${request.storn}/deleted/deletedInProgressReturns.json"
+          case SdltReturnRecordRequest(sto, sta, d, pt, pn) =>
+            throw RuntimeException(s"no match for endpoint: storn: $sto, status: $sta, deletionFlag: $d, pageType: $pt, pageNumber: $pn")
         }
-
         findResource(fullPath) match {
           case Some(content) =>
-            logger.info(s"[ManageAgentsController][getReturns]: Successfully retrieved json resource: $content")
-            Future.successful(jsonResourceAsResponse(fullPath))
+            val json = Json.parse(content)
+            val full = json.as[SdltReturnRecordResponse]
+
+            val pageSize  = 10
+            val page      = request.pageNumber.flatMap(_.toIntOption).getOrElse(1)
+            val fromIndex = (page - 1) * pageSize
+            val toIndex   = (fromIndex + pageSize) min full.returnSummaryList.length
+
+            val pagedList =
+              if (fromIndex >= full.returnSummaryList.length) Nil
+              else full.returnSummaryList.slice(fromIndex, toIndex)
+
+            val responseJson = Json.toJson(
+              full.copy(
+                returnSummaryList = pagedList // keep returnSummaryCount as the full count from DB
+              )
+            )
+
+            logger.info(
+              s"[ManageAgentsController][getReturns]: Returning page $page with ${pagedList.length} rows of ${full.returnSummaryCount}"
+            )
+
+            Future.successful(Ok(responseJson))
+
           case err =>
             logger.error(s"[ManageAgentsController][getReturns]: Json resource not found: $err")
             Future.successful(NotFound)
