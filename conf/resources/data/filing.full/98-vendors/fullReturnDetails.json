@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "123456",
+  "returnResourceRef": "98-vendors",
   "sdltOrganisation": {
     "isReturnUser": "true",
     "doNotDisplayWelcomePage": "false",

@@ -1,6 +1,7 @@
 # microservice specific routes
 
 POST       /create/predefined-agent              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.submitAgentDetails
+POST       /update/predefined-agent             uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.updateAgentDetails
 
 # formp ready
 
@@ -12,3 +13,5 @@ POST       /filing/create/return                 uk.gov.hmrc.stampdutylandtaxstu
 POST       /filing/receive/full-return           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.getFullReturn()
 POST       /filing/update/return-version         uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnVersion()
 POST       /filing/delete/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.removeVendor()
+POST       /filing/create/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.createVendor()
+POST       /filing/update/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.updateVendor()

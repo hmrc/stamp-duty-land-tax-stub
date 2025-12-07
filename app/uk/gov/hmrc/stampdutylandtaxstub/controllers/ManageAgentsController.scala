@@ -17,10 +17,10 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.requests.CreatePredefinedAgentRequest
-import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest}
+import models.requests.{SdltReturnRecordRequest, StornAndArnRequest, StornRequest, UpdatePredefinedAgent}
 import models.response.CreatePredefinedAgentResponse
 import play.api.Logging
-import play.api.libs.json._
+import play.api.libs.json.*
 import play.api.mvc.{Action, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
@@ -61,6 +61,18 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
     )
   }
 
+  def updateAgentDetails: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[UpdatePredefinedAgent].fold(
+      invalid =>
+        logger.error(s"[ManageAgentsController][updateAgentDetails]: Failed to validate payload, errors: $invalid\n THE REQUEST PAYLOAD:\n \n ${request.body}\n \n DOES NOT EQUAL: \n \n ${UpdatePredefinedAgent} ")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      payload => {
+        logger.info(s"[ManageAgentsController][updateAgentDetails]: Json validation successful for AgentDetailsAfterCreation ${payload}")
+        Future.successful(Ok(Json.obj("updated" -> true)))
+      }
+    )
+  }
+
   def getSdltOrganisation: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
@@ -90,16 +102,17 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
         logger.error(s"[ManageAgentsController][getReturns]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
-
         val fullPath = response match {
-          case SdltReturnRecordRequest(_,     _,                            true,  Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedSubmittedReturns.json"
-          case SdltReturnRecordRequest(_,     _,                            true,  Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
-          case SdltReturnRecordRequest(_,     None,                         false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/allInProgressReturns.json"
-          case SdltReturnRecordRequest(_,     Some("ACCEPTED"),             false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
-          case SdltReturnRecordRequest(_,     Some("STARTED"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
-          case SdltReturnRecordRequest(_,     Some("PENDING"),              false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/pendingReturns.json"
-          case SdltReturnRecordRequest(_,     Some("SUBMITTED"),            false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedReturns.json"
-          case SdltReturnRecordRequest(_,     Some("SUBMITTED_NO_RECEIPT"), false, Some("SUBMITTED"),   _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedNoReceiptReturns.json"
+          case SdltReturnRecordRequest(_, None, false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/all.json"
+          case SdltReturnRecordRequest(_, Some("ACCEPTED"), false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/acceptedReturns.json"
+          case SdltReturnRecordRequest(_, Some("STARTED"), false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/startedReturns.json"
+          case SdltReturnRecordRequest(_, Some("PENDING"), false, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/inProgress/pendingReturns.json"
+          case SdltReturnRecordRequest(_, Some("SUBMITTED"), false, Some("SUBMITTED"), _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedReturns.json"
+          case SdltReturnRecordRequest(_, Some("SUBMITTED_NO_RECEIPT"), false, Some("SUBMITTED"), _) => s"/resources.manage.getReturns/${response.storn}/submitted/submittedNoReceiptReturns.json"
+          case SdltReturnRecordRequest(_, _, true, Some("SUBMITTED"), _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedSubmittedReturns.json"
+          case SdltReturnRecordRequest(_, _, true, Some("IN-PROGRESS"), _) => s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
+          case request@models.requests.SdltReturnRecordRequest(_, _, _, _, _) => // Not sure about this case || looks like expansion
+            s"/resources.manage.getReturns/${response.storn}/deleted/deletedInProgressReturns.json"
         }
 
         findResource(fullPath) match {
