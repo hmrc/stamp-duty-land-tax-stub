@@ -32,12 +32,12 @@ object SdltReturnRecordResponse {
 
 case class ReturnSummary(
                           returnReference : String,
-                          utrn            : String,
+                          utrn            : Option[String],
                           status          : String,
-                          dateSubmitted   : LocalDate,
+                          dateSubmitted   : Option[LocalDate],
                           purchaserName   : String,
                           address         : String,
-                          agentReference  : String
+                          agentReference  : Option[String]
                         )
 
 object ReturnSummary {
