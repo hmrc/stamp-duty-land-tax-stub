@@ -115,23 +115,25 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
             val json = Json.parse(content)
             val full = json.as[SdltReturnRecordResponse]
 
-            val pageSize  = 10
-            val page      = request.pageNumber.flatMap(_.toIntOption).getOrElse(1)
-            val fromIndex = (page - 1) * pageSize
-            val toIndex   = (fromIndex + pageSize) min full.returnSummaryList.length
+            val pageSize    = 10
+            val totalCount  = full.returnSummaryList.length
+            val page        = request.pageNumber.flatMap(_.toIntOption).getOrElse(1).max(1)
+            val fromIndex   = (page - 1) * pageSize
+            val toIndex     = (fromIndex + pageSize) min totalCount
 
             val pagedList =
-              if (fromIndex >= full.returnSummaryList.length) Nil
+              if (fromIndex >= totalCount) Nil
               else full.returnSummaryList.slice(fromIndex, toIndex)
 
             val responseJson = Json.toJson(
               full.copy(
-                returnSummaryList = pagedList // keep returnSummaryCount as the full count from DB
+                returnSummaryCount = totalCount,
+                returnSummaryList  = pagedList
               )
             )
 
             logger.info(
-              s"[ManageAgentsController][getReturns]: Returning page $page with ${pagedList.length} rows of ${full.returnSummaryCount}"
+              s"[ManageAgentsController][getReturns]: Returning page $page with ${pagedList.length} rows of $totalCount"
             )
 
             Future.successful(Ok(responseJson))
