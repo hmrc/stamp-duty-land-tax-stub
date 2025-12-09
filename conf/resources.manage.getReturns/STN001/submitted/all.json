@@ -1,6 +1,6 @@
 {
   "storn": "STN001",
-  "returnSummaryCount": 62,
+  "returnSummaryCount": 59,
   "returnSummaryList": [
     { "returnReference": "RET100051", "utrn": "UTRN000051", "status": "SUBMITTED", "dateSubmitted": "2025-10-19", "purchaserName": "Isla Morgan", "address": "3 Elm Street, Leicester" },
     { "returnReference": "RET100027", "utrn": "UTRN000027", "status": "SUBMITTED", "dateSubmitted": "2025-10-11", "purchaserName": "Harper Foster", "address": "12 Regent Street, Plymouth", "agentReference": "Falcon Legal" },
