@@ -22,7 +22,7 @@ var scriptVersion = "3.0.1"
 
 var userProfiles = '[' +
     '{ "divider":"Filing Returns" }, ' +
-    '{ "description":"No Return ID", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "" }, ' +
+    '{ "description":"No Return ID", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STN001", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "" }, ' +
     '{ "description":"Prelim Questions Submitted - Skip to ReturnTaskList - ORG", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "123456" }, ' +
     '{ "description":"No return agent, no vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-return-agent-and-no-vendor" }, ' +
     '{ "description":"No vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-vendor" }, ' +
