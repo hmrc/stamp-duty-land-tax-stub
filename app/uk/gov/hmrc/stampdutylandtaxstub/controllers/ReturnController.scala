@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import models.requests.{GetReturnByRefRequest, PrelimReturn, ReturnVersionUpdateRequest}
+import models.requests.{GetReturnByRefRequest, PrelimReturn, ReturnInfoRequest, ReturnVersionUpdateRequest}
 import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
@@ -77,6 +77,24 @@ class ReturnController @Inject()(
             Future.successful(successResponse)
         }
       }
+    )
+  }
+
+  def updateReturnInfo(): Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[ReturnInfoRequest].fold(
+      invalid =>
+        logger.error(s"[ReturnController][updateReturnInfo]: Failed to validate payload, errors: $invalid")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response =>
+        val successResponse = Ok(Json.obj("updated" -> true))
+        val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
+
+        response.returnResourceRef match {
+          case "errorUpdatingReturnInfo" =>
+            Future.successful(failureResponse)
+          case _ =>
+            Future.successful(successResponse)
+        }
     )
   }
 }

@@ -12,6 +12,7 @@ POST       /delete/predefined-agent              uk.gov.hmrc.stampdutylandtaxstu
 POST       /filing/create/return                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.prelimReturnDetails()
 POST       /filing/receive/full-return           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.getFullReturn()
 POST       /filing/update/return-version         uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnVersion()
+POST       /filing/update/return-info            uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnInfo()
 POST       /filing/delete/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.removeVendor()
 POST       /filing/create/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.createVendor()
 POST       /filing/update/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.updateVendor()
