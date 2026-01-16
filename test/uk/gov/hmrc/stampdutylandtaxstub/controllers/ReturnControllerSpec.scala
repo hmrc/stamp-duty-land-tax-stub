@@ -58,7 +58,7 @@ class ReturnControllerSpec
     returnResourceRef = "123456",
     currentVersion = "1.0"
   )
-  
+
   private val validUpdateReturnInfoRequest = ReturnInfoRequest(
     storn = "STORN12345",
     returnResourceRef = "123456",
@@ -99,21 +99,38 @@ class ReturnControllerSpec
     FakeRequest("POST", "/")
       .withHeaders("Content-Type" -> "application/json")
       .withBody(Json.toJson(""))
-  
+
   private val fakeUpdateReturnInfoPOSTRequest =
     FakeRequest("POST", "/")
       .withHeaders("Content-Type" -> "application/json")
       .withBody(Json.toJson(validUpdateReturnInfoRequest))
-      
+
   private val fakeUpdateReturnInfoErrorPOSTRequest =
     FakeRequest("POST", "/")
       .withHeaders("Content-Type" -> "application/json")
       .withBody(Json.toJson(validUpdateReturnInfoRequest.copy(returnResourceRef = "errorUpdatingReturnInfo")))
-      
+
   private val invalidUpdateReturnInfoPOSTRequest =
     FakeRequest("POST", "/")
       .withHeaders("Content-Type" -> "application/json")
       .withBody(Json.toJson(""))
+
+  private val validGetSdltOrganisationPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj("storn" -> "STN005"))
+
+  private val invalidGetSdltOrganisationPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson("invalid" -> "payload"))
+  }
+
+  private val nonExistentGetSdltOrganisationPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj("storn" -> "NON_EXISTENT_STORN"))
+  }
 
   lazy val testController: ReturnController = app.injector.instanceOf[ReturnController]
 
@@ -227,25 +244,46 @@ class ReturnControllerSpec
       (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
     }
   }
-  
+
   ".updateReturnInfo" should {
     "return 200 when payload is valid and resource exists" in {
       val result = testController.updateReturnInfo()(fakeUpdateReturnInfoPOSTRequest)
 
       status(result) shouldBe Status.OK
     }
-  
+
     "return 400 when payload is valid and returnResourceRef is errorUpdatingReturnInfo" in {
       val result = testController.updateReturnInfo()(fakeUpdateReturnInfoErrorPOSTRequest)
 
       status(result) shouldBe Status.BAD_REQUEST
     }
-    
+
     "return 400 when payload is invalid" in {
       val result = testController.updateReturnInfo()(invalidUpdateReturnInfoPOSTRequest)
 
       status(result) shouldBe Status.BAD_REQUEST
       (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+  }
+
+  ".getSdltOrganisation" should {
+
+    "return 200 when payload is valid and resource exists" in {
+      val result = testController.getSdltOrganisation(validGetSdltOrganisationPOSTRequest)
+
+      status(result) shouldBe Status.OK
+    }
+
+    "return 400 when payload is invalid" in {
+      val result = testController.getSdltOrganisation(invalidGetSdltOrganisationPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+    }
+
+    "return 404 when payload is valid but resource does not exist" in {
+      val result = testController.getSdltOrganisation(nonExistentGetSdltOrganisationPOSTRequest)
+
+      status(result) shouldBe Status.NOT_FOUND
     }
   }
 }
