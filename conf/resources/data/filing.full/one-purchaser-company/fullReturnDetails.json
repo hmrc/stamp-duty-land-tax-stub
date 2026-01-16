@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "errorUpdatingReturnInfo",
+  "returnResourceRef": "123456",
   "sdltOrganisation": {
     "isReturnUser": "YES",
     "doNotDisplayWelcomePage": "NO",
@@ -10,7 +10,7 @@
   "returnInfo": {
     "returnID": "RET123456789",
     "storn": "STORN123456",
-    "purchaserCounter": "2",
+    "purchaserCounter": "1",
     "vendorCounter": "1",
     "landCounter": "1",
     "purgeDate": "2026-12-31",
@@ -29,7 +29,7 @@
       "purchaserID": "PUR001",
       "returnID": "RET123456789",
       "isCompany": "YES",
-      "isTrustee": "NO",
+      "isTrustee": "YES",
       "isConnectedToVendor": "NO",
       "isRepresentedByAgent": "YES",
       "companyName": "Company 1",
@@ -41,7 +41,7 @@
       "postcode": "SW1A 1AA",
       "phone": "020 7946 0958",
       "purchaserResourceRef": "PUR-REF-001",
-      "nextPurchaserID": "PUR002",
+      "nextPurchaserID": null,
       "lMigrated": "N",
       "createDate": "2024-10-01",
       "lastUpdateDate": "2024-10-15",
@@ -50,19 +50,6 @@
       "dateOfBirth": "1985-05-15",
       "registrationNumber": null,
       "placeOfRegistration": null
-    },
-    {
-      "createDate": "2025-11-09 19:53:34",
-      "companyName": "Company 2",
-      "isCompany": "YES",
-      "isTrustee": "NO",
-      "isConnectedToVendor": "NO",
-      "isRepresentedByAgent": "YES",
-      "lastUpdateDate": "2025-11-09 19:53:34",
-      "purchaserResourceRef": "PUR-REF-001",
-      "returnID": "221110168",
-      "purchaserID": "PUR002",
-      "address1": "test address"
     }
   ],
   "companyDetails": {

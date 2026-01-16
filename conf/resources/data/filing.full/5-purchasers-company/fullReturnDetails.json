@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "errorUpdatingReturnInfo",
+  "returnResourceRef": "123456",
   "sdltOrganisation": {
     "isReturnUser": "YES",
     "doNotDisplayWelcomePage": "NO",
@@ -59,9 +59,52 @@
       "isConnectedToVendor": "NO",
       "isRepresentedByAgent": "YES",
       "lastUpdateDate": "2025-11-09 19:53:34",
-      "purchaserResourceRef": "PUR-REF-001",
+      "purchaserResourceRef": "PUR-REF-002",
+      "nextPurchaserID": "PUR003",
       "returnID": "221110168",
       "purchaserID": "PUR002",
+      "address1": "test address"
+    },
+    {
+      "createDate": "2025-11-09 19:53:34",
+      "surname": "Name 3",
+      "isCompany": "NO",
+      "isTrustee": "NO",
+      "isConnectedToVendor": "NO",
+      "isRepresentedByAgent": "YES",
+      "lastUpdateDate": "2025-11-09 19:53:34",
+      "purchaserResourceRef": "PUR-REF-003",
+      "nextPurchaserID": "PUR004",
+      "returnID": "221110168",
+      "purchaserID": "PUR003",
+      "address1": "test address"
+    },
+    {
+      "createDate": "2025-11-09 19:53:34",
+      "surname": "Name 4",
+      "isCompany": "NO",
+      "isTrustee": "NO",
+      "isConnectedToVendor": "NO",
+      "isRepresentedByAgent": "YES",
+      "lastUpdateDate": "2025-11-09 19:53:34",
+      "purchaserResourceRef": "PUR-REF-004",
+      "nextPurchaserID": "PUR005",
+      "returnID": "221110168",
+      "purchaserID": "PUR004",
+      "address1": "test address"
+    },
+    {
+      "createDate": "2025-11-09 19:53:34",
+      "companyName": "Company 5",
+      "isCompany": "YES",
+      "isTrustee": "NO",
+      "isConnectedToVendor": "NO",
+      "isRepresentedByAgent": "YES",
+      "lastUpdateDate": "2025-11-09 19:53:34",
+      "purchaserResourceRef": "PUR-REF-005",
+      "nextPurchaserID": null,
+      "returnID": "221110168",
+      "purchaserID": "PUR005",
       "address1": "test address"
     }
   ],
