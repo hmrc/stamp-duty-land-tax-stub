@@ -101,20 +101,20 @@ class ReturnController @Inject()(
   def getSdltOrganisation: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[StornRequest].fold(
       invalid =>
-        logger.error(s"[GetOrganisationAgentsController][getSdltOrganisation]: Failed to validate payload, errors: $invalid")
+        logger.error(s"[ReturnController][getSdltOrganisation]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
 
-        logger.info(s"[GetOrganisationAgentsController][getSdltOrganisation]: Parsed request payload: $response")
+        logger.info(s"[ReturnController][getSdltOrganisation]: Parsed request payload: $response")
 
         val fullPath = s"$basePathFull/${response.storn}/returnResponse.json"
 
         findResource(fullPath) match {
           case Some(content) =>
-            logger.info("[GetOrganisationAgentsController][getSdltOrganisation]: Successfully retrieved json resource")
+            logger.info("[ReturnController][getSdltOrganisation]: Successfully retrieved json resource")
             Future.successful(jsonResourceAsResponse(fullPath))
           case _ =>
-            logger.error("[GetOrganisationAgentsController][getSdltOrganisation]: Json resource not found")
+            logger.error("[ReturnController][getSdltOrganisation]: Json resource not found")
             Future.successful(NotFound)
         }
       }
