@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import models.requests.{GetReturnByRefRequest, PrelimReturn, ReturnVersionUpdateRequest}
+import models.requests.{GetReturnByRefRequest, PrelimReturn, ReturnInfoRequest, ReturnVersionUpdateRequest}
 import org.apache.pekko.actor.ActorSystem
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
@@ -58,6 +58,12 @@ class ReturnControllerSpec
     returnResourceRef = "123456",
     currentVersion = "1.0"
   )
+  
+  private val validUpdateReturnInfoRequest = ReturnInfoRequest(
+    storn = "STORN12345",
+    returnResourceRef = "123456",
+    mainPurchaserID = Some("PURCH123")
+  )
 
   private val fakePrelimReturnPOSTRequest =
     FakeRequest("POST", "/")
@@ -90,6 +96,21 @@ class ReturnControllerSpec
       .withBody(Json.toJson(validUpdateReturnVersionRequest.copy(returnResourceRef = "errorUpdatingReturnVersion")))
 
   private val invalidUpdateReturnVersionPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(""))
+  
+  private val fakeUpdateReturnInfoPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(validUpdateReturnInfoRequest))
+      
+  private val fakeUpdateReturnInfoErrorPOSTRequest =
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson(validUpdateReturnInfoRequest.copy(returnResourceRef = "errorUpdatingReturnInfo")))
+      
+  private val invalidUpdateReturnInfoPOSTRequest =
     FakeRequest("POST", "/")
       .withHeaders("Content-Type" -> "application/json")
       .withBody(Json.toJson(""))
@@ -201,6 +222,27 @@ class ReturnControllerSpec
         .withBody(invalidRequest)
 
       val result = testController.updateReturnVersion()(request)
+
+      status(result) shouldBe Status.BAD_REQUEST
+      (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+  }
+  
+  ".updateReturnInfo" should {
+    "return 200 when payload is valid and resource exists" in {
+      val result = testController.updateReturnInfo()(fakeUpdateReturnInfoPOSTRequest)
+
+      status(result) shouldBe Status.OK
+    }
+  
+    "return 400 when payload is valid and returnResourceRef is errorUpdatingReturnInfo" in {
+      val result = testController.updateReturnInfo()(fakeUpdateReturnInfoErrorPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+    }
+    
+    "return 400 when payload is invalid" in {
+      val result = testController.updateReturnInfo()(invalidUpdateReturnInfoPOSTRequest)
 
       status(result) shouldBe Status.BAD_REQUEST
       (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
