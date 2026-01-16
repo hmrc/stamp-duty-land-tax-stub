@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import models.requests.{GetReturnByRefRequest, PrelimReturn, ReturnInfoRequest, ReturnVersionUpdateRequest}
+import models.requests.*
 import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
@@ -95,6 +95,29 @@ class ReturnController @Inject()(
           case _ =>
             Future.successful(successResponse)
         }
+    )
+  }
+
+  def getSdltOrganisation: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[StornRequest].fold(
+      invalid =>
+        logger.error(s"[ReturnController][getSdltOrganisation]: Failed to validate payload, errors: $invalid")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+
+        logger.info(s"[ReturnController][getSdltOrganisation]: Parsed request payload: $response")
+
+        val fullPath = s"$basePathFull/${response.storn}/returnResponse.json"
+
+        findResource(fullPath) match {
+          case Some(content) =>
+            logger.info("[ReturnController][getSdltOrganisation]: Successfully retrieved json resource")
+            Future.successful(jsonResourceAsResponse(fullPath))
+          case _ =>
+            logger.error("[ReturnController][getSdltOrganisation]: Json resource not found")
+            Future.successful(NotFound)
+        }
+      }
     )
   }
 }
