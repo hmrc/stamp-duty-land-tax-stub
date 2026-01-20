@@ -52,7 +52,8 @@ var userProfiles = '[' +
     '{ "description":"99 purchasers", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "99-purchasers" }, ' +
     '{ "description":"No Purchaser", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-purchaser" },' +
     '{ "description":"Purchaser Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "purchaser-agent" },' +
-    '{ "description":"Purchaser No Agents", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "purchaser-no-agents" }' +
+    '{ "description":"Purchaser No Agents", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "purchaser-no-agents" }, ' +
+    '{ "description":"50 purchasers and 50 vendors", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "50-purchasers-50-vendors" } ' +
     ']';
 
 var submitFormVal = true;
