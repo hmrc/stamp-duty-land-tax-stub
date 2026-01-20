@@ -1581,7 +1581,7 @@
       "phone": "07855 440912",
       "nino": "QQ181920K",
       "purchaserResourceRef": "PUR-REF-050",
-      "nextPurchaserID": "PUR051",
+      "nextPurchaserID": null,
       "lMigrated": "N",
       "createDate": "2023-12-04",
       "lastUpdateDate": "2024-02-22",
