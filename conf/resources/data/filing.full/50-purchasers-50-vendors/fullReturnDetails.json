@@ -2460,7 +2460,7 @@
       "postcode": "N10 3RT",
       "isRepresentedByAgent": "true",
       "vendorResourceRef": "VEN-REF-050",
-      "nextVendorID": "VEN051"
+      "nextVendorID": null
     }
   ],
   "land": [
