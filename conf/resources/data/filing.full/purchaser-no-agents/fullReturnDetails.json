@@ -2,8 +2,8 @@
   "stornId": "STN006",
   "returnResourceRef": "purchaser-agent",
   "sdltOrganisation": {
-    "isReturnUser": "true",
-    "doNotDisplayWelcomePage": "false",
+    "isReturnUser": "YES",
+    "doNotDisplayWelcomePage": "NO",
     "storn": "STN006",
     "version": "1.0"
   },
@@ -18,20 +18,20 @@
     "mainPurchaserID": "PUR001",
     "mainVendorID": "VEN001",
     "mainLandID": "LND001",
-    "IRMarkGenerated": "true",
-    "landCertForEachProp": "false",
+    "IRMarkGenerated": "YES",
+    "landCertForEachProp": "NO",
     "returnResourceRef": "purchaser-agent",
-    "declaration": "true",
+    "declaration": "YES",
     "status": "SUBMITTED"
   },
   "purchaser": [
     {
       "purchaserID": "PUR001",
       "returnID": "RET-PA-001",
-      "isCompany": "false",
-      "isTrustee": "false",
-      "isConnectedToVendor": "false",
-      "isRepresentedByAgent": "true",
+      "isCompany": "NO",
+      "isTrustee": "NO",
+      "isConnectedToVendor": "NO",
+      "isRepresentedByAgent": "YES",
       "title": "Mr",
       "surname": "Smith",
       "forename1": "John",
@@ -50,19 +50,19 @@
       "lMigrated": "N",
       "createDate": "2024-10-01",
       "lastUpdateDate": "2024-10-15",
-      "isUkCompany": "false",
-      "hasNino": "true",
-      "dateOfBirth": "1985-05-15",
+      "isUkCompany": "NO",
+      "hasNino": "YES",
+      "dateOfBirth": "15/05/1985",
       "registrationNumber": null,
       "placeOfRegistration": null
     },
     {
       "purchaserID": "PUR002",
       "returnID": "RET-PA-001",
-      "isCompany": "false",
-      "isTrustee": "false",
-      "isConnectedToVendor": "false",
-      "isRepresentedByAgent": "true",
+      "isCompany": "NO",
+      "isTrustee": "NO",
+      "isConnectedToVendor": "NO",
+      "isRepresentedByAgent": "YES",
       "title": "Mr",
       "surname": "Prince",
       "forename1": "Jack",
@@ -81,19 +81,19 @@
       "lMigrated": "N",
       "createDate": "2024-10-01",
       "lastUpdateDate": "2024-10-15",
-      "isUkCompany": "false",
-      "hasNino": "true",
-      "dateOfBirth": "1985-05-15",
+      "isUkCompany": "NO",
+      "hasNino": "YES",
+      "dateOfBirth": "15/05/1985",
       "registrationNumber": null,
       "placeOfRegistration": null
     },
     {
       "purchaserID": "PUR003",
       "returnID": "RET-PA-001",
-      "isCompany": "false",
-      "isTrustee": "false",
-      "isConnectedToVendor": "false",
-      "isRepresentedByAgent": "true",
+      "isCompany": "NO",
+      "isTrustee": "NO",
+      "isConnectedToVendor": "NO",
+      "isRepresentedByAgent": "YES",
       "title": "Mrs",
       "surname": "Jones",
       "forename1": "Janet",
@@ -112,19 +112,19 @@
       "lMigrated": "N",
       "createDate": "2024-10-01",
       "lastUpdateDate": "2024-10-15",
-      "isUkCompany": "false",
-      "hasNino": "true",
-      "dateOfBirth": "1985-05-15",
+      "isUkCompany": "NO",
+      "hasNino": "YES",
+      "dateOfBirth": "15/05/1985",
       "registrationNumber": null,
       "placeOfRegistration": null
     },
     {
       "purchaserID": "PUR004",
       "returnID": "RET-PA-001",
-      "isCompany": "false",
-      "isTrustee": "false",
-      "isConnectedToVendor": "false",
-      "isRepresentedByAgent": "true",
+      "isCompany": "NO",
+      "isTrustee": "NO",
+      "isConnectedToVendor": "NO",
+      "isRepresentedByAgent": "YES",
       "title": "Miss",
       "surname": "Fowler",
       "forename1": "Sarah",
@@ -143,9 +143,9 @@
       "lMigrated": "N",
       "createDate": "2024-10-01",
       "lastUpdateDate": "2024-10-15",
-      "isUkCompany": "false",
-      "hasNino": "true",
-      "dateOfBirth": "1985-05-15",
+      "isUkCompany": "NO",
+      "hasNino": "YES",
+      "dateOfBirth": "15/05/1985",
       "registrationNumber": null,
       "placeOfRegistration": null
     }
@@ -164,7 +164,7 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "false",
+      "isRepresentedByAgent": "NO",
       "vendorResourceRef": "VEN-PA-001",
       "nextVendorID": "VEN002"
     }
@@ -184,9 +184,9 @@
       "landArea": "250.5",
       "areaUnit": "SQMETRE",
       "localAuthorityNumber": "5900",
-      "mineralRights": "false",
+      "mineralRights": "NO",
       "NLPGUPRN": "10012345678",
-      "willSendPlanByPost": "false",
+      "willSendPlanByPost": "NO",
       "titleNumber": "TGL123456",
       "landResourceRef": "LND-PA-001",
       "nextLandID": null,
@@ -196,7 +196,7 @@
   "transaction": {
     "transactionID": "TXN001",
     "returnID": "RET-PA-001",
-    "claimingRelief": "false",
+    "claimingRelief": "NO",
     "totalConsideration": "500000.00",
     "considerationCash": "500000.00",
     "transactionDescription": "CONVEYANCE",
@@ -218,7 +218,7 @@
       "email": "info@smithpartners.co.uk",
       "DXAddress": "DX 123 London",
       "reference": "SP/2024/001",
-      "isAuthorised": "true"
+      "isAuthorised": "YES"
     }
   ],
   "agent": {
@@ -239,7 +239,7 @@
   "lease": {
     "leaseID": "LSE001",
     "returnID": "RET-PA-001",
-    "isAnnualRentOver1000": "true",
+    "isAnnualRentOver1000": "YES",
     "breakClauseType": "TENANT",
     "breakClauseDate": "2029-10-01",
     "leaseContReservedRent": "24000.00",
@@ -249,7 +249,7 @@
     "leaseType": "NEW",
     "marketRent": "24000.00",
     "netPresentValue": "95000.00",
-    "optionToRenew": "true",
+    "optionToRenew": "YES",
     "totalPremiumPayable": "50000.00",
     "rentChargeDate": "2024-10-01",
     "rentFreePeriod": "3 months",
@@ -259,8 +259,8 @@
     "serviceChargeFrequency": "ANNUAL",
     "startingRent": "24000.00",
     "startingRentEndDate": "2025-09-30",
-    "laterRentKnown": "true",
-    "termsSurrendered": "false",
+    "laterRentKnown": "YES",
+    "termsSurrendered": "NO",
     "considToLndlrdBuild": null,
     "considToLndlrdContin": null,
     "considToLndlrdDebt": null,
@@ -279,14 +279,14 @@
     "considToTenantSharesQTD": null,
     "considToTenantSharesUNQTD": null,
     "turnoverRent": null,
-    "unasertainableRent": "false",
+    "unasertainableRent": "NO",
     "VATAmount": "10000.00"
   },
   "taxCalculation": {
     "taxCalculationID": "TC001",
     "returnID": "RET-PA-001",
     "amountPaid": "15000.00",
-    "includesPenalty": "false",
+    "includesPenalty": "NO",
     "taxDue": "15000.00",
     "taxDuePremium": "15000.00",
     "taxDueNPV": null,
@@ -297,7 +297,7 @@
     "calcTotalTaxPenaltyDue": "15000.00",
     "calcTotalNPVTax": null,
     "calcTotalPremiumTax": "15000.00",
-    "honestyDeclaration": "true"
+    "honestyDeclaration": "YES"
   },
   "submission": {
     "submissionID": "SUB001",
@@ -330,8 +330,8 @@
   },
   "residency": {
     "residencyID": "RES001",
-    "isNonUkResidents": "false",
-    "isCloseCompany": "false",
-    "isCrownRelief": "false"
+    "isNonUkResidents": "NO",
+    "isCloseCompany": "NO",
+    "isCrownRelief": "NO"
   }
 }
