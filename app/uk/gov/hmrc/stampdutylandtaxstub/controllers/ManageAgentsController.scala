@@ -114,15 +114,16 @@ class ManageAgentsController @Inject()(cc: ControllerComponents, override val ex
           case Some(content) =>
             val json = Json.parse(content)
             val full = json.as[SdltReturnRecordResponse]
+            val orderedFull = full.returnSummaryList.sortBy(_.purchaserName)
 
             val pageSize  = 10
             val page      = request.pageNumber.flatMap(_.toIntOption).getOrElse(1)
             val fromIndex = (page - 1) * pageSize
-            val toIndex   = (fromIndex + pageSize) min full.returnSummaryList.length
+            val toIndex   = (fromIndex + pageSize) min orderedFull.length
 
             val pagedList =
-              if (fromIndex >= full.returnSummaryList.length) Nil
-              else full.returnSummaryList.slice(fromIndex, toIndex)
+              if (fromIndex >= orderedFull.length) Nil
+              else orderedFull.slice(fromIndex, toIndex)
 
             val responseJson = Json.toJson(
               full.copy(
