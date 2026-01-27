@@ -91,11 +91,11 @@ class ManagePurchasersControllerSpec extends AnyFreeSpec
         stornId = "STORN12345",
         purchaserResourceRef = "12345",
         returnResourceRef = "123456",
-        isCompany = "Yes",
-        isTrustee = "No",
-        isConnectedToVendor = "No",
-        isRepresentedByAgent = "Yes",
-        address1 = "Address"
+        isCompany = Some("Yes"),
+        isTrustee = Some("No"),
+        isConnectedToVendor = Some("No"),
+        isRepresentedByAgent = Some("Yes"),
+        address1 = Some("Address")
       )
 
       val fakeUpdatePurchaserPOSTRequest =
