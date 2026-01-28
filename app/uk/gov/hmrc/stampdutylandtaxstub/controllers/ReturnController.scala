@@ -120,4 +120,40 @@ class ReturnController @Inject()(
       }
     )
   }
+
+  def createReturnAgent(): Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[CreateReturnAgentRequest].fold(
+      invalid =>
+        logger.error(s"[ReturnController][createReturnAgent]: Failed to validate payload, errors: $invalid")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+        val successResponse = Ok(Json.obj("returnAgentId" -> "1234"))
+        val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
+        response.returnResourceRef match {
+          case "errorCreatingReturnAgent" =>
+            Future.successful(failureResponse)
+          case _ =>
+            Future.successful(successResponse)
+        }
+      }
+    )
+  }
+
+  def updateReturnAgent(): Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[UpdateReturnAgentRequest].fold(
+      invalid =>
+        logger.error(s"[ReturnController][updateReturnAgent]: Failed to validate payload, errors: $invalid")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+        val successResponse = Ok(Json.obj("updated" -> true))
+        val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
+        response.returnResourceRef match {
+          case "errorUpdatingReturnAgent" =>
+            Future.successful(failureResponse)
+          case _ =>
+            Future.successful(successResponse)
+        }
+      }
+    )
+  }
 }
