@@ -156,4 +156,24 @@ class ReturnController @Inject()(
       }
     )
   }
+
+  def deleteReturnAgent(): Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body
+      .validate[DeleteReturnAgentRequest]
+      .fold(
+        invalid =>
+          logger.error(s"[ReturnController][deleteReturnAgent] Failed to validate payload, errors: $invalid")
+          Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+        response =>
+          val successResponse = Ok(Json.obj("deleted" -> true))
+          val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
+
+          response.returnResourceRef match {
+            case "errorRemovingReturnAgent" =>
+              Future.successful(failureResponse)
+            case _ =>
+              Future.successful(successResponse)
+          }
+      )
+  }
 }
