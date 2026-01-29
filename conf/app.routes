@@ -25,3 +25,4 @@ POST       /filing/update/company-details              uk.gov.hmrc.stampdutyland
 POST       /filing/delete/company-details              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageCompanyDetailsController.removeCompanyDetails()
 POST       /filing/create/return-agent           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.createReturnAgent()
 POST       /filing/update/return-agent           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnAgent()
+POST       /filing/delete/return-agent            uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.deleteReturnAgent()

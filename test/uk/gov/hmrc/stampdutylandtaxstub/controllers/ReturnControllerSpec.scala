@@ -200,6 +200,22 @@ class ReturnControllerSpec
       ))
   }
 
+  private val validDeleteReturnAgentPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj(
+        "storn" -> "STORN001",
+        "returnResourceRef" -> "REF001",
+        "agentType" -> "PURCHASER"
+      ))
+  }
+
+  private val invalidDeleteReturnAgentPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj("invalid" -> "payload"))
+  }
+
   lazy val testController: ReturnController = app.injector.instanceOf[ReturnController]
 
   val returnIdJson: JsValue = Json.parse(
@@ -392,6 +408,22 @@ class ReturnControllerSpec
 
     "return 400 when payload is valid and returnResourceRef is errorUpdatingReturnAgent" in {
       val result = testController.updateReturnAgent()(updateReturnAgentErrorPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+    }
+  }
+
+  ".deleteReturnAgent" should {
+
+    "return 200 when payload is valid and resource exists" in {
+      val result = testController.deleteReturnAgent()(validDeleteReturnAgentPOSTRequest)
+
+      status(result) shouldBe Status.OK
+      contentAsJson(result) shouldBe Json.obj("deleted" -> true)
+    }
+
+    "return 400 when payload is invalid" in {
+      val result = testController.deleteReturnAgent()(invalidDeleteReturnAgentPOSTRequest)
 
       status(result) shouldBe Status.BAD_REQUEST
     }
