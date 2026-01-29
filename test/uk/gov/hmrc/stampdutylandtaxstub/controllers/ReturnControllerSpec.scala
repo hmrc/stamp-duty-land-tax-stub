@@ -132,6 +132,74 @@ class ReturnControllerSpec
       .withBody(Json.obj("storn" -> "NON_EXISTENT_STORN"))
   }
 
+  private val validCreateReturnAgentPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj(
+        "stornId" -> "STORN12345",
+        "returnResourceRef" -> "123456",
+        "agentType" -> "PURCHASER",
+        "name" -> "Agent Name",
+        "houseNumber" -> 12,
+        "addressLine1" -> "Test Street",
+        "postcode" -> "TE23 5TT"
+      ))
+  }
+
+  private val invalidCreateReturnAgentPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson("invalid" -> "data"))
+  }
+
+  private val createReturnAgentErrorPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj(
+        "stornId" -> "STORN12345",
+        "returnResourceRef" -> "errorCreatingReturnAgent",
+        "agentType" -> "PURCHASER",
+        "name" -> "Agent Name",
+        "houseNumber" -> 10,
+        "addressLine1" -> "Agent Street",
+        "postcode" -> "AG12 3NT"
+      ))
+  }
+
+  private val validUpdateReturnAgentPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj(
+        "stornId" -> "STORN12345",
+        "returnResourceRef" -> "123456",
+        "agentType" -> "PURCHASER",
+        "name" -> "Agent Name",
+        "houseNumber" -> 1,
+        "addressLine1" -> "Test Street",
+        "postcode" -> "TE23 5TT"
+      ))
+  }
+
+  private val invalidUpdateReturnAgentPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.toJson("invalid" -> "data"))
+  }
+
+  private val updateReturnAgentErrorPOSTRequest = {
+    FakeRequest("POST", "/")
+      .withHeaders("Content-Type" -> "application/json")
+      .withBody(Json.obj(
+        "stornId" -> "STORN12345",
+        "returnResourceRef" -> "errorUpdatingReturnAgent",
+        "agentType" -> "PURCHASER",
+        "name" -> "Agent Name",
+        "houseNumber" -> 1,
+        "addressLine1" -> "Test Street",
+        "postcode" -> "TE23 5TT"
+      ))
+  }
+
   lazy val testController: ReturnController = app.injector.instanceOf[ReturnController]
 
   val returnIdJson: JsValue = Json.parse(
@@ -284,6 +352,48 @@ class ReturnControllerSpec
       val result = testController.getSdltOrganisation(nonExistentGetSdltOrganisationPOSTRequest)
 
       status(result) shouldBe Status.NOT_FOUND
+    }
+  }
+
+  ".createReturnAgent" should {
+    "return 200 when payload is valid and resource exists" in {
+      val result = testController.createReturnAgent()(validCreateReturnAgentPOSTRequest)
+
+      status(result) shouldBe Status.OK
+    }
+
+    "return 400 when payload is invalid" in {
+      val result = testController.createReturnAgent()(invalidCreateReturnAgentPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+      (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+
+    "return 400 when payload is valid and returnResourceRef is errorCreatingReturnAgent" in {
+      val result = testController.createReturnAgent()(createReturnAgentErrorPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+    }
+  }
+
+  ".updateReturnAgent" should {
+    "return 200 when payload is valid and resource exists" in {
+      val result = testController.updateReturnAgent()(validUpdateReturnAgentPOSTRequest)
+
+      status(result) shouldBe Status.OK
+    }
+
+    "return 400 when payload is invalid" in {
+      val result = testController.updateReturnAgent()(invalidUpdateReturnAgentPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
+      (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
+    }
+
+    "return 400 when payload is valid and returnResourceRef is errorUpdatingReturnAgent" in {
+      val result = testController.updateReturnAgent()(updateReturnAgentErrorPOSTRequest)
+
+      status(result) shouldBe Status.BAD_REQUEST
     }
   }
 }
