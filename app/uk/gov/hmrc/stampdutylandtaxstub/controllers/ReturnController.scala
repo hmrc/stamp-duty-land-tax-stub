@@ -127,7 +127,7 @@ class ReturnController @Inject()(
         logger.error(s"[ReturnController][createReturnAgent]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
-        val successResponse = Ok(Json.obj("returnAgentId" -> "1234"))
+        val successResponse = Ok(Json.obj("returnAgentID" -> "1234"))
         val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
         response.returnResourceRef match {
           case "errorCreatingReturnAgent" =>
