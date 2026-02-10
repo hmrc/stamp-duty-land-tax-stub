@@ -2543,7 +2543,7 @@
       "isAuthorised": "YES"
     }
   ],
-  "agent": {
+  "agent": [{
     "agentId": "AGT001",
     "storn": "STORN123456",
     "name": "Smith & Partners LLP",
@@ -2557,7 +2557,7 @@
     "email": "info@smithpartners.co.uk",
     "dxAddress": "DX 123 London",
     "agentResourceReference": "AGT-REF-001"
-  },
+  }],
   "lease": {
     "leaseID": "LSE001",
     "returnID": "RET123456789",

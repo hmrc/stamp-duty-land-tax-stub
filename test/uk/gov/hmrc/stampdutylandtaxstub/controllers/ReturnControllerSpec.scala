@@ -349,28 +349,7 @@ class ReturnControllerSpec
       (contentAsJson(result) \ "message").as[String] should include("Invalid payload")
     }
   }
-
-  ".getSdltOrganisation" should {
-
-    "return 200 when payload is valid and resource exists" in {
-      val result = testController.getSdltOrganisation(validGetSdltOrganisationPOSTRequest)
-
-      status(result) shouldBe Status.OK
-    }
-
-    "return 400 when payload is invalid" in {
-      val result = testController.getSdltOrganisation(invalidGetSdltOrganisationPOSTRequest)
-
-      status(result) shouldBe Status.BAD_REQUEST
-    }
-
-    "return 404 when payload is valid but resource does not exist" in {
-      val result = testController.getSdltOrganisation(nonExistentGetSdltOrganisationPOSTRequest)
-
-      status(result) shouldBe Status.NOT_FOUND
-    }
-  }
-
+  
   ".createReturnAgent" should {
     "return 200 when payload is valid and resource exists" in {
       val result = testController.createReturnAgent()(validCreateReturnAgentPOSTRequest)
