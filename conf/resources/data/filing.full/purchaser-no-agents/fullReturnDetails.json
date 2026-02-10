@@ -221,21 +221,6 @@
       "isAuthorised": "YES"
     }
   ],
-  "agent": {
-    "agentId": "AGT001",
-    "storn": "STN006",
-    "name": "Smith & Partners LLP",
-    "houseNumber": "100",
-    "address1": "Fleet Street",
-    "address2": "City of London",
-    "address3": "London",
-    "address4": null,
-    "postcode": "EC4A 2DQ",
-    "phone": "020 7123 4567",
-    "email": "info@smithpartners.co.uk",
-    "dxAddress": "DX 123 London",
-    "agentResourceReference": "AGT-PA-001"
-  },
   "lease": {
     "leaseID": "LSE001",
     "returnID": "RET-PA-001",
