@@ -49,12 +49,11 @@
   },
   "land": [
     {
-      "postcode": "TE11 7HE",
-      "address2": "stafford",
-      "landResourceRef": "1",
-      "returnID": "221110168",
       "landID": "221110171",
-      "address1": "test"
+      "returnID": "221110168",
+      "address1": "Harbury Court",
+      "address2": "stafford",
+      "postcode": "TE11 7HE"
     }
   ]
 }
