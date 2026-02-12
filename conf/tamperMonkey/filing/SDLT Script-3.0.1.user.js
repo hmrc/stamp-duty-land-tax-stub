@@ -60,7 +60,9 @@ var userProfiles = '[' +
     '{ "description":"purchaser with land transaction with scott authcodes", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-with-scot-authcodes" }, ' +
     '{ "description":"purchaser with land transaction with empty eff and contract dates", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-emptydates" }, ' +
     '{ "description":"purchaser with land transaction with uk authcode with scot postcode", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-ukauthcode-with-scot-postcode" }, ' +
-    '{ "description":"purchaser with land transaction with welsh authcodes", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-welsh-authcodes" } ' +
+    '{ "description":"purchaser with land transaction with welsh authcodes", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-welsh-authcodes" }, ' +
+    '{ "description":"purchaser with land transaction 8998", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-8998" }, ' +
+    '{ "description":"purchaser with land transaction 8999", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-8999" } ' +
     ']';
 
 
