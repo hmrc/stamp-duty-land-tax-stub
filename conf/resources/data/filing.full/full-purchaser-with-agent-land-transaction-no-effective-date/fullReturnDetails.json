@@ -1,0 +1,76 @@
+{
+  "taxCalculation": {
+    "taxCalculationID": "221110174",
+    "returnID": "221110168"
+  },
+  "stornId": "XARN123456",
+  "sdltOrganisation": {
+    "storn": "XARN123456",
+    "version": "0"
+  },
+  "returnInfo": {
+    "storn": "XARN123456",
+    "vendorCounter": "0",
+    "purgeDate": "2026-02-07 19:53:34",
+    "mainLandID": "221110171",
+    "mainPurchaserID": "221110169",
+    "purchaserCounter": "1",
+    "version": "0",
+    "returnID": "221110168",
+    "status": "STARTED",
+    "landCounter": "1",
+    "returnResourceRef": "4"
+  },
+  "returnResourceRef": "4",
+  "residency": {
+    "residencyID": "221110173"
+  },
+  "transaction": {
+    "transactionID": "221110172",
+    "returnID": "221110168",
+    "transactionDescription": "transferOfRights",
+    "newTransactionDescription": "transferOfRights",
+    "contractDate" : "2024-09-15"
+  },
+  "purchaser": [
+    {
+      "createDate": "2025-11-09 19:53:34",
+      "companyName": "Stub Company name",
+      "isCompany": "YES",
+      "lastUpdateDate": "2025-11-09 19:53:34",
+      "purchaserResourceRef": "1",
+      "returnID": "221110168",
+      "purchaserID": "221110169",
+      "address1": "test address"
+    }
+  ],
+  "companyDetails": {
+    "companyDetailsID": "221110170",
+    "returnID": "221110168",
+    "purchaserID": "221110169"
+  },
+  "land": [
+    {
+      "landID": "LND001",
+      "returnID" : "RET123456789",
+      "propertyType" : "RESIDENTIAL",
+      "interestCreatedTransferred" : "FREEHOLD",
+      "houseNumber" : "123",
+      "address1" : "Baker Street",
+      "address2" : "Marylebone",
+      "address3" : "London",
+      "address4" : null,
+      "postcode" : "NW1 6XE",
+      "landArea" : "250.5",
+      "areaUnit" : "SQMETRE",
+      "localAuthorityNumber" : "5900",
+      "mineralRights" : "false",
+      "NLPGUPRN" : "10012345678",
+      "willSendPlanByPost" : "false",
+      "titleNumber" : "TGL123456",
+      "landResourceRef" : "LND-REF-001",
+      "nextLandID" : null,
+      "DARPostcode" : "NW1 6XE"
+    }
+  ]
+}
