@@ -50,7 +50,7 @@ class ManageVendorsController @Inject()(cc: ControllerComponents, override val e
         logger.error(s"[ManageVendorsController][updateVendor]: Failed to validate payload, errors: $invalid")
         Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
-        val successResponse = Ok(Json.obj("newVersion" -> 2))
+        val successResponse = Ok(Json.obj("updated" -> true))
         val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
         response.returnResourceRef match {
           case "errorUpdatingVendor" =>
