@@ -55,8 +55,18 @@ var userProfiles = '[' +
     '{ "description":"No Purchaser", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-purchaser" },' +
     '{ "description":"Purchaser Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "purchaser-agent" },' +
     '{ "description":"Purchaser No Agents", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "purchaser-no-agents" }, ' +
-    '{ "description":"50 purchasers and 50 vendors", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "50-purchasers-50-vendors" } ' +
+    '{ "description":"50 purchasers and 50 vendors", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "50-purchasers-50-vendors" }, ' +
+    '{ "description":"purchaser with land transaction with uk authcodes", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-uk-authcodes" }, ' +
+    '{ "description":"purchaser with land transaction with scott authcodes", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-with-scot-authcodes" }, ' +
+    '{ "description":"purchaser with land transaction with empty eff and contract dates", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-emptydates" }, ' +
+    '{ "description":"purchaser with land transaction with uk authcode with scot postcode", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-ukauthcode-with-scot-postcode" }, ' +
+    '{ "description":"purchaser with land transaction with welsh authcodes", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-welsh-authcodes" }, ' +
+    '{ "description":"purchaser with land transaction 8998", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-8998" }, ' +
+    '{ "description":"purchaser with land transaction 8999", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-8999" }, ' +
+    '{ "description":"purchaser with land transaction having no contract date", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-no-contract-date" }, ' +
+    '{ "description":"purchaser with land transaction having no effective date", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent-land-transaction-no-effective-date" } ' +
     ']';
+
 
 var submitFormVal = true;
 var clickCount = 0;
