@@ -1,15 +1,15 @@
 {
-  "stornId": "STN005",
+  "stornId": "STORN123456",
   "returnResourceRef": "purchaser-agent",
   "sdltOrganisation": {
     "isReturnUser": "YES",
     "doNotDisplayWelcomePage": "NO",
-    "storn": "STN005",
+    "storn": "STORN123456",
     "version": "1.0"
   },
   "returnInfo": {
     "returnID": "RET-PA-001",
-    "storn": "STN005",
+    "storn": "STORN123456",
     "purchaserCounter": "1",
     "vendorCounter": "1",
     "landCounter": "1",
