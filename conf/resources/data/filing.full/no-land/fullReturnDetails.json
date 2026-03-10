@@ -3,13 +3,13 @@
     "taxCalculationID": "221110174",
     "returnID": "221110168"
   },
-  "stornId": "XARN123456",
+  "stornId": "STORN123456",
   "sdltOrganisation": {
-    "storn": "XARN123456",
+    "storn": "STORN123456",
     "version": "0"
   },
   "returnInfo": {
-    "storn": "XARN123456",
+    "storn": "STORN123456",
     "vendorCounter": "0",
     "purgeDate": "2026-02-07 19:53:34",
     "mainLandID": "221110171",
