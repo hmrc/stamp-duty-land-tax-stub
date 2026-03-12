@@ -68,7 +68,8 @@
       "titleNumber": "TGL123456",
       "landResourceRef": "LND-REF-001",
       "nextLandID": "LND003",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2023-11-09 19:53:34"
     },
     {
       "landID": "LND001",
@@ -90,7 +91,8 @@
       "titleNumber": "TGL123456",
       "landResourceRef": "LND-REF-001",
       "nextLandID": "LND002",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2023-11-10 19:53:34"
     },
     {
       "landID": "LND004",
@@ -112,7 +114,8 @@
       "titleNumber": "TGL123456",
       "landResourceRef": "LND-REF-001",
       "nextLandID": "LND005",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2023-12-19 19:53:34"
     },
     {
       "landID": "LND003",
@@ -134,7 +137,8 @@
       "titleNumber": "TGL123456",
       "landResourceRef": "LND-REF-001",
       "nextLandID": "LND004",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2023-12-09 19:53:34"
     },
     {
       "landID": "LND005",
@@ -156,7 +160,8 @@
       "titleNumber": "TGL123456",
       "landResourceRef": "LND-REF-001",
       "nextLandID": null,
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2023-12-19 19:59:34"
     }
   ]
 }
