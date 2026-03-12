@@ -3,238 +3,238 @@
   "returnSummaryCount": 34,
   "returnSummaryList": [
     {
-      "returnReference": "RET000003",
+      "returnReference": "000003",
       "status": "ACCEPTED",
       "purchaserName": "Michael Brown",
       "address": "44 Oxford Road, Manchester",
       "agentReference": "ARN003"
     },
     {
-      "returnReference": "RET000006",
+      "returnReference": "000006",
       "status": "ACCEPTED",
       "purchaserName": "Daniel Taylor",
       "address": "72 King Street, Glasgow",
       "agentReference": "ARN006"
     },
     {
-      "returnReference": "RET000009",
+      "returnReference": "000009",
       "status": "ACCEPTED",
       "purchaserName": "Olivia Harris",
       "address": "11 Church Street, Nottingham",
       "agentReference": "ARN009"
     },
     {
-      "returnReference": "RET000012",
+      "returnReference": "000012",
       "status": "ACCEPTED",
       "purchaserName": "Lucas Walker",
       "address": "18 Green Lane, Reading",
       "agentReference": "ARN012"
     },
     {
-      "returnReference": "RET000015",
+      "returnReference": "000015",
       "status": "ACCEPTED",
       "purchaserName": "Henry Young",
       "address": "10 Wharf Road, Newcastle",
       "agentReference": "ARN015"
     },
     {
-      "returnReference": "RET000018",
+      "returnReference": "000018",
       "status": "ACCEPTED",
       "purchaserName": "Charlotte Scott",
       "address": "14 North Road, Cardiff",
       "agentReference": "ARN018"
     },
     {
-      "returnReference": "RET000023",
+      "returnReference": "000023",
       "status": "ACCEPTED",
       "purchaserName": "Hannah Perez",
       "address": "5 Silver Street, Bath",
       "agentReference": "ARN023"
     },
     {
-      "returnReference": "RET000027",
+      "returnReference": "000027",
       "status": "ACCEPTED",
       "purchaserName": "Scarlett Turner",
       "address": "33 Bridge Street, Kent",
       "agentReference": "ARN027"
     },
     {
-      "returnReference": "RET000030",
+      "returnReference": "000030",
       "status": "ACCEPTED",
       "purchaserName": "Mason Gray",
       "address": "60 Elm Road, Southampton",
       "agentReference": "ARN030"
     },
     {
-      "returnReference": "RET000033",
+      "returnReference": "000033",
       "status": "ACCEPTED",
       "purchaserName": "Chloe Reed",
       "address": "42 Church Lane, Canterbury",
       "agentReference": "ARN033"
     },
     {
-      "returnReference": "RET000036",
+      "returnReference": "000036",
       "status": "ACCEPTED",
       "purchaserName": "Joseph Murphy",
       "address": "99 Station Road, Reading",
       "agentReference": "ARN036"
     },
     {
-      "returnReference": "RET000038",
+      "returnReference": "000038",
       "status": "ACCEPTED",
       "purchaserName": "Aria Knight",
       "address": "88 Lantern Street, York",
       "agentReference": "ARN038"
     },
     {
-      "returnReference": "RET000041",
+      "returnReference": "000041",
       "status": "ACCEPTED",
       "purchaserName": "Freddie Berry",
       "address": "70 Alban Street, St Albans",
       "agentReference": "ARN041"
     },
     {
-      "returnReference": "RET000044",
+      "returnReference": "000044",
       "status": "ACCEPTED",
       "purchaserName": "Leo Murray",
       "address": "6 Pine Grove, Crawley",
       "agentReference": "ARN044"
     },
     {
-      "returnReference": "RET000047",
+      "returnReference": "000047",
       "status": "ACCEPTED",
       "purchaserName": "Willow Hayes",
       "address": "32 Station Drive, Gloucester",
       "agentReference": "ARN047"
     },
     {
-      "returnReference": "RET000050",
+      "returnReference": "000050",
       "status": "ACCEPTED",
       "purchaserName": "Holly Saunders",
       "address": "7 Meadowfield, Chichester",
       "agentReference": "ARN050"
     },
     {
-      "returnReference": "RET000001",
+      "returnReference": "000001",
       "status": "STARTED",
       "purchaserName": "John Smith",
       "address": "12 Baker Street, London",
       "agentReference": "ARN001"
     },
     {
-      "returnReference": "RET000004",
+      "returnReference": "000004",
       "status": "STARTED",
       "purchaserName": "Emily Davis",
       "address": "8 Queensway, Birmingham",
       "agentReference": "ARN004"
     },
     {
-      "returnReference": "RET000008",
+      "returnReference": "000008",
       "status": "STARTED",
       "purchaserName": "Matthew White",
       "address": "3 Station Road, Liverpool",
       "agentReference": "ARN008"
     },
     {
-      "returnReference": "RET000011",
+      "returnReference": "000011",
       "status": "STARTED",
       "purchaserName": "James Lee",
       "address": "4 Long Road, Cambridge",
       "agentReference": "ARN011"
     },
     {
-      "returnReference": "RET000014",
+      "returnReference": "000014",
       "status": "STARTED",
       "purchaserName": "Amelia Allen",
       "address": "28 Station Parade, Harrow",
       "agentReference": "ARN014"
     },
     {
-      "returnReference": "RET000016",
+      "returnReference": "000016",
       "status": "STARTED",
       "purchaserName": "Ella King",
       "address": "6 Chapel Street, Coventry",
       "agentReference": "ARN016"
     },
     {
-      "returnReference": "RET000019",
+      "returnReference": "000019",
       "status": "STARTED",
       "purchaserName": "Samuel Green",
       "address": "22 Kingsway, Swansea",
       "agentReference": "ARN019"
     },
     {
-      "returnReference": "RET000021",
+      "returnReference": "000021",
       "status": "STARTED",
       "purchaserName": "Benjamin Carter",
       "address": "19 Brookside, Derby",
       "agentReference": "ARN021"
     },
     {
-      "returnReference": "RET000024",
+      "returnReference": "000024",
       "status": "STARTED",
       "purchaserName": "Nathan Rogers",
       "address": "46 Marine Drive, Brighton",
       "agentReference": "ARN024"
     },
     {
-      "returnReference": "RET000026",
+      "returnReference": "000026",
       "status": "STARTED",
       "purchaserName": "Ethan Lewis",
       "address": "24 Meadow Way, Oxford",
       "agentReference": "ARN026"
     },
     {
-      "returnReference": "RET000029",
+      "returnReference": "000029",
       "status": "STARTED",
       "purchaserName": "Harper Foster",
       "address": "12 Regent Street, Plymouth",
       "agentReference": "ARN029"
     },
     {
-      "returnReference": "RET000031",
+      "returnReference": "000031",
       "status": "STARTED",
       "purchaserName": "Layla Ward",
       "address": "21 Oak Avenue, Portsmouth",
       "agentReference": "ARN031"
     },
     {
-      "returnReference": "RET000034",
+      "returnReference": "000034",
       "status": "STARTED",
       "purchaserName": "Riley Cox",
       "address": "55 Trinity Road, Cambridge",
       "agentReference": "ARN034"
     },
     {
-      "returnReference": "RET000037",
+      "returnReference": "000037",
       "status": "STARTED",
       "purchaserName": "Eva Simpson",
       "address": "62 Rose Lane, Chelmsford",
       "agentReference": "ARN037"
     },
     {
-      "returnReference": "RET000040",
+      "returnReference": "000040",
       "status": "STARTED",
       "purchaserName": "Ellie Barker",
       "address": "17 Westfield Road, Bolton",
       "agentReference": "ARN040"
     },
     {
-      "returnReference": "RET000043",
+      "returnReference": "000043",
       "status": "STARTED",
       "purchaserName": "Daisy Summers",
       "address": "29 Field Road, Telford",
       "agentReference": "ARN043"
     },
     {
-      "returnReference": "RET000046",
+      "returnReference": "000046",
       "status": "STARTED",
       "purchaserName": "Aiden Fox",
       "address": "14 River Street, Ipswich",
       "agentReference": "ARN046"
     },
     {
-      "returnReference": "RET000049",
+      "returnReference": "000049",
       "status": "STARTED",
       "purchaserName": "Millie Andrews",
       "address": "51 Park Road, Watford",
