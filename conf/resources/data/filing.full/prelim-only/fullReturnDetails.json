@@ -1,0 +1,24 @@
+{
+  "stornId": "STORN123456",
+  "returnResourceRef": "123456",
+  "sdltOrganisation": {
+    "isReturnUser": "true",
+    "doNotDisplayWelcomePage": "false",
+    "storn": "STORN123456",
+    "version": "1.0"
+  },
+  "returnInfo": {
+    "returnID": "RET123456789",
+    "storn": "STORN123456",
+    "purchaserCounter": "0",
+    "vendorCounter": "0",
+    "landCounter": "0",
+    "purgeDate": "2026-12-31",
+    "version": "1.0",
+    "IRMarkGenerated": "true",
+    "landCertForEachProp": "false",
+    "returnResourceRef": "123456",
+    "declaration": "true",
+    "status": "SUBMITTED"
+  }
+}
