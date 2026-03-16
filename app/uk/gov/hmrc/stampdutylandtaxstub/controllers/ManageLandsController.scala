@@ -31,6 +31,37 @@ class ManageLandsController @Inject()(
                                        override val executionContext: ExecutionContext
                                      ) extends BackendController(cc) with StubResource  with Logging{
 
+  def createLand: Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[CreateLandRequest].fold(
+      invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+        val fullPath = s"/resources.data.land/createLandReturn.json"
+
+        findResource(fullPath) match {
+          case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
+          case _ => Future.successful(NotFound)
+        }
+      }
+    )
+  }
+
+  def updateLand(): Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body.validate[UpdateLandRequest].fold(
+      invalid =>
+        logger.error(s"[ManageLandsController][updateLand]: Failed to validate payload, errors: $invalid")
+        Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      response => {
+        val successResponse = Ok(Json.obj("updated" -> true))
+        val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
+        response.returnResourceRef match {
+          case "errorUpdatingLand" =>
+            Future.successful(failureResponse)
+          case _ =>
+            Future.successful(successResponse)
+        }
+      }
+    )
+  }
 
   def removeLand(): Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[DeleteLandRequest].fold(

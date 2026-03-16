@@ -1,28 +1,30 @@
 # microservice specific routes
 
-POST       /create/predefined-agent              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.submitAgentDetails
-POST       /update/predefined-agent             uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.updateAgentDetails
+POST        /create/predefined-agent              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.submitAgentDetails
+POST        /update/predefined-agent              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.updateAgentDetails
 
 # formp ready
 
-POST       /organisation                         uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getSdltOrganisation
-POST       /returns                              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getReturns
-POST       /delete/predefined-agent              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.deletePredefinedAgent
+POST        /organisation                         uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getSdltOrganisation
+POST        /returns                              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getReturns
+POST        /delete/predefined-agent              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.deletePredefinedAgent
 
-POST       /filing/create/return                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.prelimReturnDetails()
-POST       /filing/receive/full-return           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.getFullReturn()
-POST       /filing/update/return-version         uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnVersion()
-POST       /filing/update/return-info            uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnInfo()
-POST       /filing/delete/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.removeVendor()
-POST       /filing/create/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.createVendor()
-POST       /filing/update/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.updateVendor()
-POST       /filing/create/purchaser              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManagePurchasersController.createPurchaser()
-POST       /filing/update/purchaser              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManagePurchasersController.updatePurchaser()
-POST       /filing/delete/purchaser              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManagePurchasersController.removePurchaser()
-POST       /filing/create/company-details              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageCompanyDetailsController.createCompanyDetails()
-POST       /filing/update/company-details              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageCompanyDetailsController.updateCompanyDetails()
-POST       /filing/delete/company-details              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageCompanyDetailsController.removeCompanyDetails()
-POST       /filing/create/return-agent           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.createReturnAgent()
-POST       /filing/update/return-agent           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnAgent()
-POST       /filing/delete/return-agent            uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.deleteReturnAgent()
-POST       /filing/delete/land                              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.removeLand()
+POST        /filing/create/return                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.prelimReturnDetails()
+POST        /filing/receive/full-return           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.getFullReturn()
+POST        /filing/update/return-version         uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnVersion()
+POST        /filing/update/return-info            uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnInfo()
+POST        /filing/delete/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.removeVendor()
+POST        /filing/create/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.createVendor()
+POST        /filing/update/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.updateVendor()
+POST        /filing/create/purchaser              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManagePurchasersController.createPurchaser()
+POST        /filing/update/purchaser              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManagePurchasersController.updatePurchaser()
+POST        /filing/delete/purchaser              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManagePurchasersController.removePurchaser()
+POST        /filing/create/company-details        uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageCompanyDetailsController.createCompanyDetails()
+POST        /filing/update/company-details        uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageCompanyDetailsController.updateCompanyDetails()
+POST        /filing/delete/company-details        uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageCompanyDetailsController.removeCompanyDetails()
+POST        /filing/create/return-agent           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.createReturnAgent()
+POST        /filing/update/return-agent           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnAgent()
+POST        /filing/delete/return-agent           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.deleteReturnAgent()
+POST        /filing/delete/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.removeLand()
+POST        /filing/create/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.createLand()
+POST        /filing/update/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.updateLand()
