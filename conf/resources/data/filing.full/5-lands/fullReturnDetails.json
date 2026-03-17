@@ -51,7 +51,7 @@
     {
       "landID": "LND002",
       "returnID": "RET123456789",
-      "propertyType": "02",
+      "propertyType": "01",
       "interestCreatedTransferred": "FG",
       "houseNumber": "123",
       "address1": "Address 2",
