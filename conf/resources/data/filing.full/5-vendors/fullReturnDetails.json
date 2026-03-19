@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "one-vendor",
+  "returnResourceRef": "RRF-2024-001",
   "sdltOrganisation": {
     "isReturnUser": "YES",
     "doNotDisplayWelcomePage": "NO",
