@@ -77,7 +77,8 @@ var userProfiles = '[' +
     '{ "description":"98 lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "98-lands" }, ' +
     '{ "description":"99 lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "99-lands" }, ' +
     '{ "description":"5 lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "5-lands" }, ' +
-    '{ "description":"Prelim Only", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelim-only" } ' +
+    '{ "description":"Prelim Only", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelim-only" }, ' +
+    '{ "description":"Incomplete main purchaser (multiple purchasers)", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "incomplete-main-purchaser-multiple-purchasers" } ' +
     ']';
 
 
