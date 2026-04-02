@@ -28,8 +28,8 @@
   "transaction": {
     "transactionID": "561110172",
     "returnID": "761110168",
-    "transactionDescription": "transferOfRights",
-    "newTransactionDescription": "transferOfRights",
+    "transactionDescription": "conveyanceTransfer",
+    "newTransactionDescription": "conveyanceTransfer",
     "isDependantOnFutureEvent" : "false" ,
     "isLandExchanged"  :"false" ,
     "exchangedLandHouseNumber"  : null,

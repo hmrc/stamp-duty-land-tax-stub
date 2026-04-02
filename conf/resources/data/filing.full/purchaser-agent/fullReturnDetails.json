@@ -199,7 +199,7 @@
     "claimingRelief": "NO",
     "totalConsideration": "500000.00",
     "considerationCash": "500000.00",
-    "transactionDescription": "CONVEYANCE",
+    "transactionDescription": "conveyanceTransfer",
     "effectiveDate": "2024-10-01"
   },
   "returnAgent": [
