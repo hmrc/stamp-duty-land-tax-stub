@@ -28,8 +28,8 @@
   "transaction": {
     "transactionID": "221110167",
     "returnID": "221110168",
-    "transactionDescription": "transferOfRights",
-    "newTransactionDescription": "transferOfRights",
+    "transactionDescription": "conveyanceTransfer",
+    "newTransactionDescription": "conveyanceTransfer",
     "effectiveDate": "2024-10-01",
     "contractDate" :"2024-09-15",
     "isDependantOnFutureEvent" : "false" ,

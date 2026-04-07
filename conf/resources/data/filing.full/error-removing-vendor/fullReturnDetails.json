@@ -156,7 +156,7 @@
     "usedAsWarehouse": "false",
     "contractDate": "2024-09-15",
     "isDependantOnFutureEvent": "false",
-    "transactionDescription": "CONVEYANCE",
+    "transactionDescription": "conveyanceTransfer",
     "newTransactionDescription": null,
     "effectiveDate": "2024-10-01",
     "isLandExchanged": "false",
