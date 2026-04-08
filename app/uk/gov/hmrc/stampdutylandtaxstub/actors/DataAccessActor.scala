@@ -42,7 +42,7 @@ class DataAccessActor extends Actor {
         ticksCounter = 0
       }
       log.info(s"Ticks: ${ticksCounter}")
-      sender() ! s"Ticks: ${ticksCounter}"
+      sender() ! s"$ticksCounter"
     case _ =>
       log.info("Unknown message")
   }

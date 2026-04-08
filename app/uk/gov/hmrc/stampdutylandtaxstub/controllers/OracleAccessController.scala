@@ -47,7 +47,11 @@ class OracleAccessController @Inject()(system: ActorSystem,
 
   def startOperation: Action[AnyContent] = Action.async {
     (dataAccessActor ? CreateData("fakeId")).mapTo[String].map {
-      message => Ok(message)
+      message =>
+      if (message.toInt == 0)
+        NotFound // Send NotFound on every 10 calls
+      else
+        Ok(message)
     }
   }
 
