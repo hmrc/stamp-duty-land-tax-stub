@@ -28,3 +28,8 @@ POST        /filing/delete/return-agent           uk.gov.hmrc.stampdutylandtaxst
 POST        /filing/delete/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.removeLand()
 POST        /filing/create/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.createLand()
 POST        /filing/update/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.updateLand()
+
+
+# Local Oracle Db : Ops
+GET         /createData                           uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.startOperation()
+#

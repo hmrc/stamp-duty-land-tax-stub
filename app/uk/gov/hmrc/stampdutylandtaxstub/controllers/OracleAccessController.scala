@@ -16,19 +16,39 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
-import play.api.libs.json.JsValue
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
-import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
 
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.{ExecutionContext}
+import org.apache.pekko.actor.*
+import org.apache.pekko.pattern.ask
+import org.apache.pekko.util.Timeout
+import play.api.mvc.*
+import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor
+import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.CreateData
+
+import scala.concurrent.duration.DurationInt
+
+// Local host testing: http://localhost:10914/stamp-duty-land-tax-stub/createData
 
 @Singleton
-class OracleAccessController @Inject()(cc: ControllerComponents) extends BackendController(cc) {
+class OracleAccessController @Inject()(system: ActorSystem,
+                                       cc: ControllerComponents)
+                                        (implicit ec: ExecutionContext)
+  extends BackendController(cc) {
 
-  def startOperation: Action[AnyContent] = Action.async { implicit request =>
-    Future.successful(NotFound)
+// https://www.playframework.com/documentation/3.0.x/ScalaPekko
+
+
+  private val dataAccessActor = system.actorOf(DataAccessActor.props, "DataAccess-Actor")
+
+  private implicit val timeout: Timeout = 5.seconds
+
+  def startOperation: Action[AnyContent] = Action.async {
+    (dataAccessActor ? CreateData("fakeId")).mapTo[String].map {
+      message => Ok(message)
+    }
   }
 
 }
