@@ -42,10 +42,10 @@ object DataAccessActor {
 // https://pekko.apache.org/docs/pekko/1.3/actors.html#creating-actors
 class DataAccessActor extends Actor {
 
-  var locked: Boolean = false
-  var lastError: String = ""
-  var progress: Int = 0
-  val log = Logging(context.system, this)
+  private var locked: Boolean = false
+  private var lastError: String = ""
+  private var progress: Int = 0
+  private val log = Logging(context.system, this)
 
   def receive: Receive = {
     case CreateData(id) =>
@@ -74,7 +74,6 @@ class DataAccessActor extends Actor {
         log.info(s"DataCreation:Failed")
         locked = false
       }
-      sender() ! s"COMPLETED"
 
     case DataCreationStatus(id) =>
       log.info(s"Retrieve:Status: $id")
