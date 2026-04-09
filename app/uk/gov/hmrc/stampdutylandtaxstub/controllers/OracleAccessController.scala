@@ -18,7 +18,6 @@ package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
-
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.ExecutionContext
 import org.apache.pekko.actor.*
@@ -27,7 +26,6 @@ import org.apache.pekko.util.Timeout
 import play.api.mvc.*
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.{CreateData, DataCreationStatus}
-
 import scala.concurrent.duration.DurationInt
 
 /* Local host testing:
@@ -41,9 +39,7 @@ class OracleAccessController @Inject()(system: ActorSystem,
                                         (implicit ec: ExecutionContext)
   extends BackendController(cc) {
 
-// https://www.playframework.com/documentation/3.0.x/ScalaPekko
-
-
+  // https://www.playframework.com/documentation/3.0.x/ScalaPekko
   private val dataAccessActor = system.actorOf(DataAccessActor.props, "DataAccess-Actor")
 
   private implicit val timeout: Timeout = 5.seconds

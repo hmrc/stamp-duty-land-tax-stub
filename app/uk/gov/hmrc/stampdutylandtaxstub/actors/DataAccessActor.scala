@@ -40,6 +40,8 @@ object DataAccessActor {
 }
 
 // https://pekko.apache.org/docs/pekko/1.3/actors.html#creating-actors
+// https://www.playframework.com/documentation/3.0.x/ScalaPekko
+
 class DataAccessActor extends Actor {
 
   private var locked: Boolean = false
@@ -91,6 +93,7 @@ class DataAccessActor extends Actor {
       log.info(s"Unknown message: $msg")
   }
 
+  // Simulating long-running process:: ie ingesting data into OracleDb
   private def longRunningOps(): Future[DataCreationComplete] = {
     Future {
       (0 to 99).foreach(_ => {
