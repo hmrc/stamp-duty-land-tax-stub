@@ -20,17 +20,20 @@ import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.{ExecutionContext}
+import scala.concurrent.ExecutionContext
 import org.apache.pekko.actor.*
 import org.apache.pekko.pattern.ask
 import org.apache.pekko.util.Timeout
 import play.api.mvc.*
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor
-import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.CreateData
+import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.{CreateData, DataCreationStatus}
 
 import scala.concurrent.duration.DurationInt
 
-// Local host testing: http://localhost:10914/stamp-duty-land-tax-stub/createData
+/* Local host testing:
+  CREATE_DATA => http://localhost:10914/stamp-duty-land-tax-stub/createData
+  GET_STATUS  => http://localhost:10914/stamp-duty-land-tax-stub/getStatus
+ */
 
 @Singleton
 class OracleAccessController @Inject()(system: ActorSystem,
@@ -46,11 +49,15 @@ class OracleAccessController @Inject()(system: ActorSystem,
   private implicit val timeout: Timeout = 5.seconds
 
   def startOperation: Action[AnyContent] = Action.async {
-    (dataAccessActor ? CreateData("fakeId")).mapTo[String].map {
+    (dataAccessActor ? CreateData() ).mapTo[String].map {
       message =>
-      if (message.toInt == 0)
-        NotFound // Send NotFound on every 10 calls
-      else
+        Ok(message)
+    }
+  }
+
+  def getOpsStatus: Action[AnyContent] = Action.async {
+    (dataAccessActor ? DataCreationStatus("")).mapTo[String].map {
+      message =>
         Ok(message)
     }
   }
