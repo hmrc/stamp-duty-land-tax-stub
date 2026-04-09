@@ -21,26 +21,30 @@ import pekko.actor.{Actor, Props}
 import pekko.event.Logging
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.*
 
-import java.util.UUID
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
-import scala.util.{Failure, Success}
+import java.util.UUID
+import scala.concurrent.{ExecutionContext, Future}
 import org.apache.pekko.pattern.pipe
 
 object DataAccessActor {
 
-  case class CreateData(id: String = UUID.randomUUID().toString )
+  case class CreateData(id: String = UUID.randomUUID().toString)
+
   case class CreateDataStart(id: String)
+
   case class DataCreationStatus(id: String)
+
   case class DataCreationComplete(failed: Boolean)
+
   def props = Props[DataAccessActor]()
 }
 
 // https://pekko.apache.org/docs/pekko/1.3/actors.html#creating-actors
 class DataAccessActor extends Actor {
+
   var locked: Boolean = false
   var lastError: String = ""
-
+  var progress: Int = 0
   val log = Logging(context.system, this)
 
   def receive: Receive = {
@@ -49,6 +53,7 @@ class DataAccessActor extends Actor {
       if (!locked) {
         locked = true
         lastError = ""
+        progress = 0
         log.info(s"Ready to start data creation: $id")
         self ! CreateDataStart(id)
         sender() ! s"START"
@@ -57,10 +62,9 @@ class DataAccessActor extends Actor {
         sender() ! s"BUSY"
       }
 
-    case CreateDataStart(id) if !locked =>
+    case CreateDataStart(id) =>
       log.info(s"Start data creation: $id")
-      longRunningOps().pipeTo(self)
-      sender() ! s"STARTED"
+      longRunningOps().mapTo[DataCreationComplete].pipeTo(self)
 
     case DataCreationComplete(status) =>
       if (!status) {
@@ -73,9 +77,9 @@ class DataAccessActor extends Actor {
       sender() ! s"COMPLETED"
 
     case DataCreationStatus(id) =>
-      log.info(s"Retrieve:Stutus: $id")
+      log.info(s"Retrieve:Status: $id")
       if (locked) {
-        sender() ! s"IN_PROGRESS"
+        sender() ! s"IN_PROGRESS: ${progress}%"
       } else {
         if (lastError.nonEmpty) {
           sender() ! s"FREE:$lastError"
@@ -84,15 +88,20 @@ class DataAccessActor extends Actor {
         }
       }
 
-    case _ =>
-      log.info("Unknown message")
+    case msg =>
+      log.info(s"Unknown message: $msg")
   }
 
-  def longRunningOps(): Future[DataCreationComplete] = {
-    (0 to 9).foreach(_ =>
-      Thread.sleep(5000) // delay for 5 seconds
-    )
-    Future.successful(DataCreationComplete(false))
+  private def longRunningOps(): Future[DataCreationComplete] = {
+    Future {
+      (0 to 99).foreach(_ => {
+        progress += 1
+        Thread.sleep(1000)
+        log.info(s"Next iteration: $progress")
+      })
+      DataCreationComplete(false)
+    }
+
   }
 
 }
