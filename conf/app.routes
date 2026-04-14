@@ -28,3 +28,5 @@ POST        /filing/delete/return-agent           uk.gov.hmrc.stampdutylandtaxst
 POST        /filing/delete/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.removeLand()
 POST        /filing/create/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.createLand()
 POST        /filing/update/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.updateLand()
+POST        /filing/create/residency              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageResidencyController.createResidency()
+POST        /filing/update/residency              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageResidencyController.updateResidency()
