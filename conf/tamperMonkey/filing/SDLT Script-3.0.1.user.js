@@ -84,7 +84,8 @@ var userProfiles = '[' +
     '{ "description":"Prelim Transaction Type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelimTransactionL" }, ' +
     '{ "description":"Prelim Transaction Type A", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelimTransactionA" }, ' +
     '{ "description":"Prelim Transaction Type O", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelimTransactionO" }, ' +
-    '{ "description":"Incomplete main purchaser (multiple purchasers)", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "incomplete-main-purchaser-multiple-purchasers" } ' +
+    '{ "description":"Incomplete main purchaser (multiple purchasers)", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "incomplete-main-purchaser-multiple-purchasers" }, ' +
+    '{ "description":"land with invalid interestTransferredOption", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "1-land-with-Invalid-InterestTransferredOption" } ' +
     ']';
 
 
