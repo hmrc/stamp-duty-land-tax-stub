@@ -22,19 +22,19 @@ import pekko.event.Logging
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.*
 
 import scala.concurrent.ExecutionContext.Implicits.global
-import java.util.UUID
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.{ExecutionContext}
 import org.apache.pekko.pattern.pipe
+import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService
 
 object DataAccessActor {
 
-  case class CreateData(id: String = UUID.randomUUID().toString)
+  case class CreateData(storn: String, numberOfRecords: Option[Int])
 
-  case class CreateDataStart(id: String)
+  case object DeleteAllData
 
-  case class DataCreationStatus(id: String)
-
-  case class DataCreationComplete(failed: Boolean)
+  case object OperationStatus
+  private case class OperationStart(cmd: String, arg: String = "")
+  private case class OperationComplete(failed: Boolean)
 
   def props = Props[DataAccessActor]()
 }
@@ -49,26 +49,42 @@ class DataAccessActor extends Actor {
   private var progress: Int = 0
   private val log = Logging(context.system, this)
 
+  private val oracleDataService = new OracleDataService()
+
   def receive: Receive = {
-    case CreateData(id) =>
+    case CreateData(storn, id) =>
       log.info(s"Status: $locked")
       if (!locked) {
         locked = true
         lastError = ""
         progress = 0
         log.info(s"Ready to start data creation: $id")
-        self ! CreateDataStart(id)
+        self ! OperationStart("CREATE_DATA", arg = storn)
         sender() ! s"START"
       } else {
         log.info(s"Other operation in progress -> failed to start: $id")
         sender() ! s"BUSY"
       }
 
-    case CreateDataStart(id) =>
-      log.info(s"Start data creation: $id")
-      longRunningOps().mapTo[DataCreationComplete].pipeTo(self)
+    case OperationStart(cmd, arg) =>
+      log.info(s"Start data creation: $cmd")
+      cmd match {
+        case "CREATE_DATA" =>
+          oracleDataService
+          .createData(arg)
+          .map(_ => OperationComplete)
+          .mapTo[OperationComplete].pipeTo(self)
+        case "DELETE_ALL_DATA" =>
+          oracleDataService
+            .deleteAllData()
+            .map(_ => OperationComplete)
+            .mapTo[OperationComplete].pipeTo(self)
+        case _ =>
+          log.info(s"UNKNOWN COMMAND: $cmd")
+      }
 
-    case DataCreationComplete(status) =>
+
+    case OperationComplete(status) =>
       if (!status) {
         log.info(s"DataCreation:Success")
         locked = false
@@ -77,8 +93,8 @@ class DataAccessActor extends Actor {
         locked = false
       }
 
-    case DataCreationStatus(id) =>
-      log.info(s"Retrieve:Status: $id")
+    case OperationStatus =>
+      log.info(s"Retrieve:Status")
       if (locked) {
         sender() ! s"IN_PROGRESS: ${progress}%"
       } else {
@@ -89,21 +105,22 @@ class DataAccessActor extends Actor {
         }
       }
 
+    case DeleteAllData =>
+      log.info(s"Status: $locked")
+      if (!locked) {
+        locked = true
+        lastError = ""
+        progress = 0
+        log.info(s"Ready to start data deletion")
+        self ! OperationStart("DELETE_ALL_DATA")
+        sender() ! s"START"
+      } else {
+        log.info(s"Other operation in progress -> failed to start")
+        sender() ! s"BUSY"
+      }
+
     case msg =>
       log.info(s"Unknown message: $msg")
-  }
-
-  // Simulating long-running process:: ie ingesting data into OracleDb
-  private def longRunningOps(): Future[DataCreationComplete] = {
-    Future {
-      (0 to 99).foreach(_ => {
-        progress += 1
-        Thread.sleep(1000)
-        log.info(s"Next iteration: $progress")
-      })
-      DataCreationComplete(false)
-    }
-
   }
 
 }

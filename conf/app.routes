@@ -31,7 +31,9 @@ POST        /filing/update/land                   uk.gov.hmrc.stampdutylandtaxst
 
 
 # Local Oracle Db : Ops
-GET         /createData                           uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.startOperation()
-GET         /getStatus                           uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.getOpsStatus()
+GET         /returns/deleteAll                    uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.createData(stron: String, records: Option[Int])
+GET         /returns/createData                   uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.deleteAll()
+
+GET         /returns/getStatus                    uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.getStatus()
 
 #
