@@ -22,7 +22,7 @@ import pekko.event.Logging
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.*
 
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{ExecutionContext}
+import scala.concurrent.{ExecutionContext, Future}
 import org.apache.pekko.pattern.pipe
 import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService
 
@@ -33,8 +33,8 @@ object DataAccessActor {
   case object DeleteAllData
 
   case object OperationStatus
-  private case class OperationStart(cmd: String, arg: String = "")
-  private case class OperationComplete(failed: Boolean)
+  case class OperationStart(cmd: String, arg: String = "")
+  case class OperationComplete(failed: Boolean)
 
   def props = Props[DataAccessActor]()
 }
@@ -44,10 +44,12 @@ object DataAccessActor {
 
 class DataAccessActor extends Actor {
 
+  private val log = Logging(context.system, this)
+
+  // Internal Actor state
   private var locked: Boolean = false
   private var lastError: String = ""
   private var progress: Int = 0
-  private val log = Logging(context.system, this)
 
   private val oracleDataService = new OracleDataService()
 
@@ -67,18 +69,19 @@ class DataAccessActor extends Actor {
       }
 
     case OperationStart(cmd, arg) =>
-      log.info(s"Start data creation: $cmd")
       cmd match {
         case "CREATE_DATA" =>
+          log.info(s"Start data creation")
           oracleDataService
           .createData(arg)
-          .map(_ => OperationComplete)
           .mapTo[OperationComplete].pipeTo(self)
+          
         case "DELETE_ALL_DATA" =>
+          log.info(s"Start data deletion: $cmd")
           oracleDataService
             .deleteAllData()
-            .map(_ => OperationComplete)
             .mapTo[OperationComplete].pipeTo(self)
+          
         case _ =>
           log.info(s"UNKNOWN COMMAND: $cmd")
       }

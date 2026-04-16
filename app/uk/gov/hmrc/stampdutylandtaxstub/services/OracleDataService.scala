@@ -16,23 +16,43 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.services
 
+import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.OperationComplete
+import uk.gov.hmrc.stampdutylandtaxstub.sql.DeleteQueries.{deleteAllLandAction, deleteAllOrgsAction, deleteAllPurchaserAction, deleteAllReturnAction, deleteAllReturnAgentAction, deleteAllSubmittedAction, updateReturnMainLandIdAction, updateReturnPurchaserIdAction}
+import uk.gov.hmrc.stampdutylandtaxstub.sql.OracleConnect.{insertRecords, postInsertUpdate}
+import uk.gov.hmrc.stampdutylandtaxstub.sql.{DueForDeletionReturns, OracleConnectBase}
+
 import scala.concurrent.{ExecutionContext, Future}
 
-class OracleDataService {
+class OracleDataService extends OracleConnectBase {
 
   // Simulate Creation and DataAll deletion
 
   def createData(storn: String)
                 (implicit ec: ExecutionContext): Future[Unit] = Future {
-      (0 to 99).foreach(_ => {
-        Thread.sleep(1000)
-      })
+      val recNumber : Int = 100
+      for {
+        _ <- Future {
+          insertRecords(100, storn, DueForDeletionReturns)
+        }
+        _ <- Future {
+          postInsertUpdate(recNumber, DueForDeletionReturns)
+        }
+      } yield OperationComplete(false)
     }
 
-  def deleteAllData(implicit ec: ExecutionContext): Future[Unit] = Future {
-    (0 to 99).foreach(_ => {
-      Thread.sleep(1000)
-    })
+  // Async version for: purgeDbStep method
+  def deleteAllData(implicit ec: ExecutionContext): Future[OperationComplete] = {
+    for {
+      _ <- db.run(updateReturnMainLandIdAction)
+      _ <- db.run(updateReturnPurchaserIdAction)
+      _ <- db.run(deleteAllPurchaserAction)
+      _ <- db.run(deleteAllSubmittedAction)
+      _ <- db.run(deleteAllLandAction)
+      _ <- db.run(deleteAllReturnAgentAction)
+      _ <- db.run(deleteAllReturnAction)
+      _ <- db.run(deleteAllOrgsAction)
+    } yield OperationComplete(false)
   }
+
 
 }
