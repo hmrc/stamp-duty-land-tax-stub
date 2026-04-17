@@ -28,71 +28,51 @@ class OracleDataService extends OracleConnectBase {
 
   val insertAllAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     insertReturnAction(recNumber, storn, returnType, nextId) andThen
-        insertReturnAgent(recNumber, returnType, nextId) andThen
-        insertLand(recNumber, returnType, nextId) andThen insertPurchaser(recNumber, returnType, nextId)
+      insertReturnAgent(recNumber, returnType, nextId) andThen
+      insertLand(recNumber, returnType, nextId) andThen insertPurchaser(recNumber, returnType, nextId)
 
   def createData(storn: String, returnType: ReturnType, recNumberMaybe: Option[Int])
                 (implicit ec: ExecutionContext): Future[OperationComplete] = {
     val recNumber: Int = recNumberMaybe.getOrElse(5)
     for {
-      _ <- db.run( insertOrgAction(storn) ) // Suppress error in case this Org already exists
-              .map(_ => "OK")
-              .recover(_ => "ERROR")
-      maxReturnId <- db.run( maxReturnIdQuery ) // Extract Id's
-      maxReturnAgentId <- db.run( maxReturnAgentIdQuery )
-      maxLandId <- db.run( maxLandIdQuery )
-      maxPurchaserId <- db.run( maxPurchaserIdQuery )
-      maxSubmissionId <- db.run( maxSubmissionIdQuery )
-      _ <- db.run(
-              insertAllAction(recNumber, storn, returnType,
-                NextId(
-                  nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
-                  nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
-                  nextLandId = maxLandId.map(_.toInt).getOrElse(1),
-                  nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(1),
-                  nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(1)
-                )
-              )
-           )
-      _ <- returnType match { // Extra insert calls for submissions
-        case SubmissionReturns | DueForDeletionReturns =>
-          val nextId = NextId(
-            nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
-            nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
-            nextLandId = maxLandId.map(_.toInt).getOrElse(1),
-            nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(1),
-            nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(1)
-          )
-          db.run( insertSubmittion(recNumber, storn, returnType, nextId)).map(_ => "SUBS")
-        case _ =>
-          Future.successful("NO_SUBS")
-      }
-      _ <- Future.sequence {
-        val nextId = NextId(
+      _ <- db.run(insertOrgAction(storn)) // Suppress error in case this Org already exists
+        .map(_ => "OK")
+        .recover(_ => "ERROR")
+      maxReturnId <- db.run(maxReturnIdQuery) // Extract Id's
+      maxReturnAgentId <- db.run(maxReturnAgentIdQuery)
+      maxLandId <- db.run(maxLandIdQuery)
+      maxPurchaserId <- db.run(maxPurchaserIdQuery)
+      maxSubmissionId <- db.run(maxSubmissionIdQuery)
+      nextId <- Future.successful(
+        NextId(
           nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
           nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
           nextLandId = maxLandId.map(_.toInt).getOrElse(1),
           nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(1),
           nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(1)
         )
+      )
+      _ <- db.run(
+        insertAllAction(recNumber, storn, returnType, nextId
+        )
+      )
+      _ <- returnType match { // Extra insert calls for submissions
+        case SubmissionReturns | DueForDeletionReturns =>
+          db.run(insertSubmittion(recNumber, storn, returnType, nextId)).map(_ => "SUBS")
+        case _ =>
+          Future.successful("NO_SUBS")
+      }
+      _ <- Future.sequence {
         for {
           id <- 1 to recNumber
         } yield updateReturnMainLandId(id, nextId = nextId)
       }
       _ <- Future.sequence {
-        val nextId = NextId(
-          nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
-          nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
-          nextLandId = maxLandId.map(_.toInt).getOrElse(1),
-          nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(1),
-          nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(1)
-        )
         for {
           id <- 1 to recNumber
         } yield updateReturnsMainPurchaserId(id, nextId = nextId)
       }
     } yield OperationComplete(false)
-
   }
 
   // Async version for: purgeDbStep method

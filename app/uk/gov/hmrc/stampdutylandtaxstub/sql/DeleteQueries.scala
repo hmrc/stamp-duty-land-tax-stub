@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.sql
 
-import uk.gov.hmrc.stampdutylandtaxstub.sql.ReturnType.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.profile.api.*
 
