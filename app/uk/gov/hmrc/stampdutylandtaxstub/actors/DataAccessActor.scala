@@ -17,16 +17,14 @@
 package uk.gov.hmrc.stampdutylandtaxstub.actors
 
 import org.apache.pekko
-import pekko.actor.{Actor, Props, SupervisorStrategy}
-import pekko.event.Logging
-import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.*
-
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{ExecutionContext, Future}
+import org.apache.pekko.actor.{Actor, Props}
 import org.apache.pekko.pattern.pipe
 import play.api.Logging
+import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.*
 import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService
 import uk.gov.hmrc.stampdutylandtaxstub.sql.{InProgressReturns, ReturnType}
+import scala.concurrent.ExecutionContext
+import scala.concurrent.ExecutionContext.Implicits.global
 
 object DataAccessActor {
 

@@ -27,13 +27,14 @@ object DeleteQueries {
   // TODO: ???
   implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
-  val deleteOrg = (storn: String) =>
-    DBIO
-      .seq(
-        Tables.SdltOrganisation.filter(_.storn === storn).delete
-      )
-      .transactionally
+//  val deleteOrg = (storn: String) =>
+//    DBIO
+//      .seq(
+//        Tables.SdltOrganisation.filter(_.storn === storn).delete
+//      )
+//      .transactionally
 
+/*
   val deleteReturns = (recNumber: Int, returnType: ReturnType) =>
     DBIO
       .sequence(
@@ -41,6 +42,7 @@ object DeleteQueries {
           .map(id => Tables.Return.filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id)).delete)
       )
       .transactionally
+*/
 
 //  val agentReturnsIdToDelete = (recNumber: Int, returnType: ReturnType) =>
 //    DBIO
@@ -54,29 +56,29 @@ object DeleteQueries {
 //      )
 //      .transactionally
 
-  val deleteMultiLand = (recNumber: Int, returnType: ReturnType) =>
-    DBIO
-      .sequence(
-        (1 to recNumber)
-          .map(id => Tables.Land.filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id)).delete)
-      )
-      .transactionally
+//  val deleteMultiLand = (recNumber: Int, returnType: ReturnType) =>
+//    DBIO
+//      .sequence(
+//        (1 to recNumber)
+//          .map(id => Tables.Land.filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id)).delete)
+//      )
+//      .transactionally
 
-  val deletePurchaser = (recNumber: Int, returnType: ReturnType) =>
-    DBIO
-      .sequence(
-        (1 to recNumber)
-          .map(id => Tables.Purchaser.filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id)).delete)
-      )
-      .transactionally
-
-  val deleteSubmitted = (recNumber: Int, returnType: ReturnType) =>
-    DBIO
-      .sequence(
-        (1 to recNumber)
-          .map(id => Tables.Submission.filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id)).delete)
-      )
-      .transactionally
+//  val deletePurchaser = (recNumber: Int, returnType: ReturnType) =>
+//    DBIO
+//      .sequence(
+//        (1 to recNumber)
+//          .map(id => Tables.Purchaser.filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id)).delete)
+//      )
+//      .transactionally
+//
+//  val deleteSubmitted = (recNumber: Int, returnType: ReturnType) =>
+//    DBIO
+//      .sequence(
+//        (1 to recNumber)
+//          .map(id => Tables.Submission.filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id)).delete)
+//      )
+//      .transactionally
 
   // DELETE ALL
   val updateReturnMainLandIdAction =

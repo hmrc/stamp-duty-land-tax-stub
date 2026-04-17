@@ -46,11 +46,11 @@ object InsertQueries {
       .transactionally
 
   // RETURNS
-  val multipleReturnRows = (recNumber: Int, storn: String, returnType: ReturnType, nextId: Int) =>
+  val multipleReturnRows = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     (1 to recNumber)
       .map(id =>
         ReturnRow(
-          returnId = BigDecimal(nextId + id),
+          returnId = BigDecimal(nextId.nextReturnId + id),
           storn = storn,
           purchaserCounter = BigDecimal(1),
           vendorCounter = BigDecimal(1),
@@ -67,7 +67,7 @@ object InsertQueries {
             case _                     =>
               None
           },
-          returnResourceRef = Some(BigDecimal(getReturnIdRangeStart(returnType) + id)),
+          returnResourceRef = Some(BigDecimal(nextId.nextReturnId + id)),
           status = returnType match {
             case InProgressReturns     =>
               "STARTED"
@@ -102,7 +102,7 @@ object InsertQueries {
   val insertReturnAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
-        Tables.Return ++= multipleReturnRows(recNumber, storn, returnType, nextId.nextReturnId)
+        Tables.Return ++= multipleReturnRows(recNumber, storn, returnType, nextId)
       )
       .transactionally
 

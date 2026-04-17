@@ -39,30 +39,4 @@ object ReturnType {
     }
   }
 
-  def getReturnIdRangeStart(returnType: ReturnType): Int =
-    returnType match {
-      case InProgressReturns     =>
-        1
-      case SubmissionReturns     =>
-        1000
-      case DueForDeletionReturns =>
-        2000
-      case _                     =>
-        throw new Exception(s"Not supported returnType: $returnType")
-    }
-
-  def getReturnAgentIdRangeStart(returnType: ReturnType): Int =
-    returnType match {
-      case InProgressReturns     =>
-        30001
-      case SubmissionReturns     =>
-        50001
-      case DueForDeletionReturns =>
-        70001
-      case _                     =>
-        throw new Exception(s"Not supported returnType: $returnType")
-    }
-
-  
-
 }

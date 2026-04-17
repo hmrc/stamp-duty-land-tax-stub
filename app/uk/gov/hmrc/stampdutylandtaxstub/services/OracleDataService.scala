@@ -20,7 +20,7 @@ import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.OperationComplete
 import uk.gov.hmrc.stampdutylandtaxstub.sql.DeleteQueries.{deleteAllLandAction, deleteAllOrgsAction, deleteAllPurchaserAction, deleteAllReturnAction, deleteAllReturnAgentAction, deleteAllSubmittedAction, updateReturnMainLandIdAction, updateReturnPurchaserIdAction}
 import uk.gov.hmrc.stampdutylandtaxstub.sql.InsertQueries.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.UpdateQueries.{updateReturnMainLandId, updateReturnsMainPurchaserId}
-import uk.gov.hmrc.stampdutylandtaxstub.sql.{InProgressReturns, InsertQueries, OracleConnectBase, ReturnType}
+import uk.gov.hmrc.stampdutylandtaxstub.sql.{DueForDeletionReturns, InProgressReturns, InsertQueries, OracleConnectBase, ReturnType, SubmissionReturns}
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -44,7 +44,7 @@ class OracleDataService extends OracleConnectBase {
       maxPurchaserId <- db.run( maxPurchaserIdQuery )
       maxSubmissionId <- db.run( maxSubmissionIdQuery )
       _ <- db.run(
-              insertAllAction(recNumber, storn, InProgressReturns,
+              insertAllAction(recNumber, storn, returnType,
                 NextId(
                   nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
                   nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
@@ -54,6 +54,19 @@ class OracleDataService extends OracleConnectBase {
                 )
               )
            )
+      _ <- returnType match { // Extra insert calls for submissions
+        case SubmissionReturns | DueForDeletionReturns =>
+          val nextId = NextId(
+            nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
+            nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
+            nextLandId = maxLandId.map(_.toInt).getOrElse(1),
+            nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(1),
+            nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(1)
+          )
+          db.run( insertSubmittion(recNumber, storn, returnType, nextId)).map(_ => "SUBS")
+        case _ =>
+          Future.successful("NO_SUBS")
+      }
       _ <- Future.sequence {
         val nextId = NextId(
           nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),

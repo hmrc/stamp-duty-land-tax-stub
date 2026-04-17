@@ -50,16 +50,22 @@ class OracleAccessController @Inject()(system: ActorSystem,
 
   def createData(storn: String, numberOfRecords: Option[Int], returnTypeStr: String): Action[AnyContent] = Action.async {
     logger.info(s"[OracleAccessController][createData]: ${storn}-${numberOfRecords}-${returnTypeStr}")
-    val returnType = toReturnType(returnTypeStr)
-    (oracleDataAccessActor ? CreateData(storn, numberOfRecords, returnType))
-      .mapTo[String]
-      .recoverWith {
-        case ex =>
-          logger.error(s"[OracleAccessController][createData]: $ex")
-          Future.successful(ex.toString)
-      }.map { msg =>
-        Ok(msg)
-      }
+    if (numberOfRecords.getOrElse(0) < 0 || numberOfRecords.getOrElse(0) > 500 ) {
+          logger.error(s"[OracleAccessController][createData]: recNumber::${numberOfRecords}")
+          Future.successful( Ok("ERROR: permitted number of records between 1 and 500") )
+    } else {
+
+      val returnType = toReturnType(returnTypeStr)
+      (oracleDataAccessActor ? CreateData(storn, numberOfRecords, returnType))
+        .mapTo[String]
+        .recoverWith {
+          case ex =>
+            logger.error(s"[OracleAccessController][createData]: $ex")
+            Future.successful(ex.toString)
+        }.map { msg =>
+          Ok(msg)
+        }
+    }
   }
 
   def deleteAll(): Action[AnyContent] = Action.async {
