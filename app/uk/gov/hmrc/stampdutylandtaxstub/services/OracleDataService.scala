@@ -77,7 +77,7 @@ class OracleDataService extends OracleConnectBase {
         )
         for {
           id <- 1 to recNumber
-        } yield updateReturnMainLandId(id, InProgressReturns, nextId = nextId)
+        } yield updateReturnMainLandId(id, nextId = nextId)
       }
       _ <- Future.sequence {
         val nextId = NextId(
@@ -89,7 +89,7 @@ class OracleDataService extends OracleConnectBase {
         )
         for {
           id <- 1 to recNumber
-        } yield updateReturnsMainPurchaserId(id, InProgressReturns, nextId = nextId)
+        } yield updateReturnsMainPurchaserId(id, nextId = nextId)
       }
     } yield OperationComplete(false)
 
