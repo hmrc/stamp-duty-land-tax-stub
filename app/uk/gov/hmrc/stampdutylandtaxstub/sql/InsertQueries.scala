@@ -46,11 +46,11 @@ object InsertQueries {
       .transactionally
 
   // RETURNS
-  val multipleReturnRows = (recNumber: Int, storn: String, returnType: ReturnType) =>
+  val multipleReturnRows = (recNumber: Int, storn: String, returnType: ReturnType, nextId: Int) =>
     (1 to recNumber)
       .map(id =>
         ReturnRow(
-          returnId = BigDecimal(getReturnIdRangeStart(returnType) + id),
+          returnId = BigDecimal(nextId + id),
           storn = storn,
           purchaserCounter = BigDecimal(1),
           vendorCounter = BigDecimal(1),
@@ -86,19 +86,32 @@ object InsertQueries {
       )
       .toList
 
-  val insertReturnAction = (recNumber: Int, storn: String, returnType: ReturnType) =>
+
+  val maxReturnIdQuery = Tables.Return.map(_.returnId).max.result
+  val maxReturnAgentIdQuery = Tables.ReturnAgent.map(_.returnAgentId).max.result
+  val maxLandIdQuery = Tables.Land.map(_.landId).max.result
+  val maxPurchaserIdQuery = Tables.Purchaser.map(_.purchaserId).max.result
+  val maxSubmissionIdQuery = Tables.Submission.map(_.submissionId).max.result
+
+  case class NextId(nextReturnId: Int,
+                    nextReturnAgentId: Int,
+                    nextLandId: Int,
+                    nextPurchaserId: Int,
+                    nextSubmissionId: Int)
+
+  val insertReturnAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
-        Tables.Return ++= multipleReturnRows(recNumber, storn, returnType)
+        Tables.Return ++= multipleReturnRows(recNumber, storn, returnType, nextId.nextReturnId)
       )
       .transactionally
 
   // AGENT_RETURNS
-  val multipleAgentReturns = (recNumber: Int, returnType: ReturnType) =>
+  val multipleAgentReturns = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
     (1 to recNumber).map(id =>
       ReturnAgentRow(
-        returnAgentId = BigDecimal(getReturnAgentIdRangeStart(returnType) + id),
-        returnId = Some(BigDecimal(getReturnIdRangeStart(returnType) + id)),
+        returnAgentId = BigDecimal(nextId.nextReturnAgentId + id),
+        returnId = Some(BigDecimal(nextId.nextReturnId + id)),
         agentType = "PURCHASER",
         name = Some("FoxAgencyy"),
         houseNumber = Some("num 18"),
@@ -118,20 +131,20 @@ object InsertQueries {
       )
     )
 
-  val insertReturnAgent = (recNumber: Int, returnType: ReturnType) =>
+  val insertReturnAgent = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
         Tables.ReturnAgent ++=
-          multipleAgentReturns(recNumber, returnType)
+          multipleAgentReturns(recNumber, returnType, nextId)
       )
       .transactionally
 
   // LAND
-  val insertMultiLand = (recNumber: Int, returnType: ReturnType) =>
+  val insertMultiLand = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
     (1 to recNumber).map(id =>
       LandRow(
-        landId = BigDecimal(getLandStart(returnType) + id),
-        returnId = BigDecimal(getReturnIdRangeStart(returnType) + id),
+        landId = BigDecimal(nextId.nextLandId + id),
+        returnId = BigDecimal(nextId.nextReturnId + id),
         propertyType = None,
         interestTransferredCreated = None,
         houseNumber = getNextFullAddress.map(_.houseNumber),
@@ -155,19 +168,19 @@ object InsertQueries {
       )
     )
 
-  val insertLand = (recNumber: Int, returnType: ReturnType) =>
+  val insertLand = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
-        Tables.Land ++= insertMultiLand(recNumber, returnType)
+        Tables.Land ++= insertMultiLand(recNumber, returnType, nextId)
       )
       .transactionally
 
   // PURCHASER
-  val multiplePurchaser = (recNumber: Int, returnType: ReturnType) =>
+  val multiplePurchaser = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
     (1 to recNumber).map(id =>
       PurchaserRow(
-        purchaserId = BigDecimal(getPurchaserStart(returnType) + id),
-        returnId = BigDecimal(getReturnIdRangeStart(returnType) + id),
+        purchaserId = BigDecimal(nextId.nextPurchaserId + id),
+        returnId = BigDecimal(nextId.nextReturnId + id),
         isCompany = Some("NO"),
         isTrustee = None,
         isConnectedToVendor = None,
@@ -198,19 +211,19 @@ object InsertQueries {
       )
     )
 
-  val insertPurchaser = (recNumber: Int, returnType: ReturnType) =>
+  val insertPurchaser = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
-        Tables.Purchaser ++= multiplePurchaser(recNumber, returnType)
+        Tables.Purchaser ++= multiplePurchaser(recNumber, returnType, nextId)
       )
       .transactionally
 
   // SUBMITTION
-  val insertMultiSubmittion = (recNumber: Int, storn: String, returnType: ReturnType) =>
+  val insertMultiSubmittion = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     (1 to recNumber).map(id =>
       SubmissionRow(
-        submissionId = BigDecimal(getSubmittionStart(returnType) + id),
-        returnId = BigDecimal(getReturnIdRangeStart(returnType) + id),
+        submissionId = BigDecimal(nextId.nextSubmissionId + id),
+        returnId = BigDecimal(nextId.nextReturnId + id),
         storn = storn,
         submissionStatus = None,
         govtalkMessageClass = None,
@@ -232,10 +245,10 @@ object InsertQueries {
       )
     )
 
-  val insertSubmittion = (recNumber: Int, storn: String, returnType: ReturnType) =>
+  val insertSubmittion = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
-        Tables.Submission ++= insertMultiSubmittion(recNumber, storn, returnType)
+        Tables.Submission ++= insertMultiSubmittion(recNumber, storn, returnType, nextId)
       )
       .transactionally
 

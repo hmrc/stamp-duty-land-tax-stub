@@ -25,6 +25,20 @@ case object SubmissionReturns extends ReturnType
 case object DueForDeletionReturns extends ReturnType
 
 object ReturnType {
+
+  def toReturnType(returnType: String): ReturnType = {
+    returnType match {
+      case "inprogress" =>
+        InProgressReturns
+      case "submission" =>
+        SubmissionReturns
+      case "deletion" =>
+        DueForDeletionReturns
+      case _ =>
+        InProgressReturns
+    }
+  }
+
   def getReturnIdRangeStart(returnType: ReturnType): Int =
     returnType match {
       case InProgressReturns     =>
@@ -49,40 +63,6 @@ object ReturnType {
         throw new Exception(s"Not supported returnType: $returnType")
     }
 
-  def getLandStart(returnType: ReturnType): Int =
-    returnType match {
-      case InProgressReturns     =>
-        4000
-      case SubmissionReturns     =>
-        5000
-      case DueForDeletionReturns =>
-        8000
-      case _                     =>
-        throw new Exception(s"Not supported returnType: $returnType")
-    }
-
-  def getPurchaserStart(returnType: ReturnType): Int =
-    returnType match {
-      case InProgressReturns     =>
-        10001
-      case SubmissionReturns     =>
-        20001
-      case DueForDeletionReturns =>
-        40001
-      case _                     =>
-        throw new Exception(s"Not supported returnType: $returnType")
-    }
-
-  def getSubmittionStart(returnType: ReturnType): Int =
-    returnType match {
-      case InProgressReturns     =>
-        900
-      case SubmissionReturns     =>
-        5000
-      case DueForDeletionReturns =>
-        9000
-      case _                     =>
-        throw new Exception(s"Not supported returnType: $returnType")
-    }
+  
 
 }

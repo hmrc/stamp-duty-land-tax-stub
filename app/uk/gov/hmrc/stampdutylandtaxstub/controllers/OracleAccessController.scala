@@ -18,57 +18,74 @@ package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
-
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.ExecutionContext
+import scala.concurrent.{ExecutionContext, Future}
 import org.apache.pekko.actor.*
 import org.apache.pekko.pattern.ask
 import org.apache.pekko.util.Timeout
+import play.api.Logging
 import play.api.mvc.*
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.{CreateData, DeleteAllData, OperationStatus}
-
+import uk.gov.hmrc.stampdutylandtaxstub.sql.ReturnType.toReturnType
 import scala.concurrent.duration.DurationInt
 
 /* Local host testing:
   CREATE_DATA => http://localhost:10914/stamp-duty-land-tax-stub/createData
   GET_STATUS  => http://localhost:10914/stamp-duty-land-tax-stub/getStatus
- */
 
-
-/*
   Play + Pekko actor integration
   https://www.playframework.com/documentation/3.0.x/ScalaPekko
  */
 @Singleton
 class OracleAccessController @Inject()(system: ActorSystem,
                                        cc: ControllerComponents)
-                                        (implicit ec: ExecutionContext)
-  extends BackendController(cc) {
+                                      (implicit ec: ExecutionContext)
+  extends BackendController(cc) with Logging {
 
   private val oracleDataAccessActor = system.actorOf(DataAccessActor.props, "DataAccess-Actor")
 
-  private implicit val timeout: Timeout = 60.seconds
+  // Timeout for the Ask patter / sync calls to actor
+  private implicit val timeout: Timeout = 15.seconds
 
-  def createData(storn: String, numberOfRecords: Option[Int]): Action[AnyContent] = Action.async {
-    (oracleDataAccessActor ? CreateData(storn, numberOfRecords) ).mapTo[String].map {
-      message =>
-        Ok(message)
-    }
+  def createData(storn: String, numberOfRecords: Option[Int], returnTypeStr: String): Action[AnyContent] = Action.async {
+    logger.info(s"[OracleAccessController][createData]: ${storn}-${numberOfRecords}-${returnTypeStr}")
+    val returnType = toReturnType(returnTypeStr)
+    (oracleDataAccessActor ? CreateData(storn, numberOfRecords, returnType))
+      .mapTo[String]
+      .recoverWith {
+        case ex =>
+          logger.error(s"[OracleAccessController][createData]: $ex")
+          Future.successful(ex.toString)
+      }.map { msg =>
+        Ok(msg)
+      }
   }
 
   def deleteAll(): Action[AnyContent] = Action.async {
-    (oracleDataAccessActor ? DeleteAllData).mapTo[String].map {
-      message =>
-        Ok(message)
-    }
+    logger.info(s"[OracleAccessController][deleteAll]")
+    (oracleDataAccessActor ? DeleteAllData)
+      .recoverWith {
+        case ex =>
+          logger.error(s"[OracleAccessController][deleteAll]: $ex")
+          Future.successful(ex.toString)
+      }
+      .mapTo[String].map { msg =>
+        Ok(msg)
+      }
   }
 
   def getStatus: Action[AnyContent] = Action.async {
-    (oracleDataAccessActor ? OperationStatus).mapTo[String].map {
-      message =>
+    logger.info(s"[OracleAccessController][getStatus]")
+    (oracleDataAccessActor ? OperationStatus).mapTo[String]
+      .recoverWith {
+        case ex =>
+          logger.error(s"[OracleAccessController][getStatus]: $ex")
+          Future.successful(ex.toString)
+      }
+      .map { message =>
         Ok(message)
-    }
+      }
   }
 
 }

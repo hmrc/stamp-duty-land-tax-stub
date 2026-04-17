@@ -42,17 +42,17 @@ object DeleteQueries {
       )
       .transactionally
 
-  val agentReturnsIdToDelete = (recNumber: Int, returnType: ReturnType) =>
-    DBIO
-      .sequence(
-        (1 to recNumber)
-          .map(id =>
-            Tables.ReturnAgent
-              .filter(_.returnAgentId === BigDecimal(getReturnAgentIdRangeStart(returnType) + id))
-              .delete
-          )
-      )
-      .transactionally
+//  val agentReturnsIdToDelete = (recNumber: Int, returnType: ReturnType) =>
+//    DBIO
+//      .sequence(
+//        (1 to recNumber)
+//          .map(id =>
+//            Tables.ReturnAgent
+//              .filter(_.returnAgentId === BigDecimal(getReturnAgentIdRangeStart(returnType) + id))
+//              .delete
+//          )
+//      )
+//      .transactionally
 
   val deleteMultiLand = (recNumber: Int, returnType: ReturnType) =>
     DBIO

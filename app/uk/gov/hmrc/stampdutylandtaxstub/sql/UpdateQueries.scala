@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.sql
 
-import uk.gov.hmrc.stampdutylandtaxstub.sql.ReturnType.*
+import uk.gov.hmrc.stampdutylandtaxstub.sql.InsertQueries.NextId
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.profile.api.*
 
@@ -25,51 +25,51 @@ import scala.language.postfixOps
 
 object UpdateQueries {
 
-  def updateReturnMainLandIdAsNull(id: Int, returnType: ReturnType)(implicit
+  def updateReturnMainLandIdAsNull(id: Int, returnType: ReturnType, nextId: NextId)(implicit
     db: profile.backend.JdbcDatabaseDef
   ): Future[Int] = {
     Thread.sleep(100)
     val action = Tables.Return
-      .filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id))
+      .filter(_.returnId === BigDecimal(nextId.nextReturnId + id))
       .map(_.mainLandId)
       .update(None)
       .transactionally
     db.run(action)
   }
 
-  def updateReturnMainPurchaserIdAsNull(id: Int, returnType: ReturnType)(implicit
+  def updateReturnMainPurchaserIdAsNull(id: Int, returnType: ReturnType, nextId: NextId)(implicit
     db: profile.backend.JdbcDatabaseDef
   ): Future[Int] = {
     Thread.sleep(100)
     val action = Tables.Return
-      .filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id))
+      .filter(_.returnId === BigDecimal(nextId.nextReturnId + id))
       .map(_.mainPurchaserId)
       .update(None)
       .transactionally
     db.run(action)
   }
 
-  def updateReturnMainLandId(id: Int, returnType: ReturnType)(implicit
-    db: profile.backend.JdbcDatabaseDef
+  def updateReturnMainLandId(id: Int, returnType: ReturnType, nextId: NextId)(implicit
+                                                                              db: profile.backend.JdbcDatabaseDef
   ): Future[_] = {
     Thread.sleep(100)
     db.run(
       Tables.Return
-        .filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id))
+        .filter(_.returnId === BigDecimal(nextId.nextReturnId + id))
         .map(_.mainLandId)
-        .update(Some(BigDecimal(getLandStart(returnType) + id)))
+        .update(Some(BigDecimal(nextId.nextLandId + id)))
         .transactionally
     )
   }
 
-  def updateReturnsMainPurchaserId(id: Int, returnType: ReturnType)(implicit
+  def updateReturnsMainPurchaserId(id: Int, returnType: ReturnType, nextId: NextId)(implicit
     db: profile.backend.JdbcDatabaseDef
   ): Future[Int] = {
     Thread.sleep(100)
     val action = Tables.Return
-      .filter(_.returnId === BigDecimal(getReturnIdRangeStart(returnType) + id))
+      .filter(_.returnId === BigDecimal(nextId.nextReturnId + id))
       .map(_.mainPurchaserId)
-      .update(Some(BigDecimal(getPurchaserStart(returnType) + id)))
+      .update(Some(BigDecimal(nextId.nextPurchaserId + id)))
       .transactionally
     db.run(action)
   }
