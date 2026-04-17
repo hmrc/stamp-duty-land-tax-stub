@@ -20,8 +20,7 @@ import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.OperationComplete
 import uk.gov.hmrc.stampdutylandtaxstub.sql.DeleteQueries.{deleteAllLandAction, deleteAllOrgsAction, deleteAllPurchaserAction, deleteAllReturnAction, deleteAllReturnAgentAction, deleteAllSubmittedAction, updateReturnMainLandIdAction, updateReturnPurchaserIdAction}
 import uk.gov.hmrc.stampdutylandtaxstub.sql.InsertQueries.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.UpdateQueries.{updateReturnMainLandId, updateReturnsMainPurchaserId}
-import uk.gov.hmrc.stampdutylandtaxstub.sql.{DueForDeletionReturns, InProgressReturns, InsertQueries, OracleConnectBase, ReturnType, SubmissionReturns}
-
+import uk.gov.hmrc.stampdutylandtaxstub.sql.*
 import scala.concurrent.{ExecutionContext, Future}
 
 class OracleDataService extends OracleConnectBase {

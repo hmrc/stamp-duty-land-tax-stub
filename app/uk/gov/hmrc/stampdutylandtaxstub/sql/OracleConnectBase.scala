@@ -22,8 +22,6 @@ import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.profile.api.*
 
 trait OracleConnectBase {
 
-  implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
-
   val url                                          =
     """jdbc:oracle:thin:sdlt_file_data/sdlt_file_data@
                         ( DESCRIPTION=

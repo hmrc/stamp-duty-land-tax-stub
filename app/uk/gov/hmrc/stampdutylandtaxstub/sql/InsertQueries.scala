@@ -74,8 +74,6 @@ object InsertQueries {
               "SUBMITTED"
             case DueForDeletionReturns =>
               "SUBMITTED" // (''PENDING'',''ACCEPTED'',''STARTED'')'
-            case _                     =>
-              "STARTED"
           },
           lMigrated = None,
           createDate = Timestamp(0),
