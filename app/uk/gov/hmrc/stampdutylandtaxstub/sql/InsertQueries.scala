@@ -208,7 +208,7 @@ object InsertQueries {
       )
     )
 
-  val insertPurchaser = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
+  val insertPurchaser: (Int, ReturnType, NextId) => DBIOAction[Unit, NoStream, Effect.Write & Effect.Transactional] = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
         Tables.Purchaser ++= multiplePurchaser(recNumber, returnType, nextId)

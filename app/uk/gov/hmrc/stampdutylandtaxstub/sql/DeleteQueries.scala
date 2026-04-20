@@ -29,87 +29,87 @@ object DeleteQueries {
   val updateReturnMainLandIdAction =
     for {
       returnIds <- Tables.Return.map(_.returnId).result
-      _         <- DBIO
-                     .sequence(
-                       returnIds.map(id => Tables.Return.filter(_.returnId === id).map(_.mainLandId).update(None))
-                     )
-                     .transactionally
+      _ <- DBIO
+        .sequence(
+          returnIds.map(id => Tables.Return.filter(_.returnId === id).map(_.mainLandId).update(None))
+        )
+        .transactionally
     } yield ()
 
   val updateReturnPurchaserIdAction =
     for {
       returnIds <- Tables.Return.map(_.returnId).result
-      _         <- DBIO
-                     .sequence(
-                       returnIds.map(id => Tables.Return.filter(_.returnId === id).map(_.mainPurchaserId).update(None))
-                     )
-                     .transactionally
+      _ <- DBIO
+        .sequence(
+          returnIds.map(id => Tables.Return.filter(_.returnId === id).map(_.mainPurchaserId).update(None))
+        )
+        .transactionally
     } yield ()
 
   val deleteAllPurchaserAction =
     for {
       purchaserIds <- Tables.Purchaser.map(_.purchaserId).result
-      _            <- DBIO
-                        .sequence(
-                          purchaserIds
-                            .map(id => Tables.Purchaser.filter(_.purchaserId === id).delete)
-                        )
-                        .transactionally
+      _ <- DBIO
+        .sequence(
+          purchaserIds
+            .map(id => Tables.Purchaser.filter(_.purchaserId === id).delete)
+        )
+        .transactionally
     } yield ()
 
   val deleteAllSubmittedAction =
     for {
       submissionIds <- Tables.Submission.map(_.submissionId).result
-      _             <- DBIO
-                         .sequence(
-                           submissionIds
-                             .map(id => Tables.Submission.filter(_.submissionId === id).delete)
-                         )
-                         .transactionally
+      _ <- DBIO
+        .sequence(
+          submissionIds
+            .map(id => Tables.Submission.filter(_.submissionId === id).delete)
+        )
+        .transactionally
     } yield ()
 
   val deleteAllLandAction =
     for {
       submissionIds <- Tables.Land.map(_.landId).result
-      _             <- DBIO
-                         .sequence(
-                           submissionIds
-                             .map(id => Tables.Land.filter(_.landId === id).delete)
-                         )
-                         .transactionally
+      _ <- DBIO
+        .sequence(
+          submissionIds
+            .map(id => Tables.Land.filter(_.landId === id).delete)
+        )
+        .transactionally
     } yield ()
 
   val deleteAllReturnAgentAction =
     for {
       submissionIds <- Tables.ReturnAgent.map(_.returnAgentId).result
-      _             <- DBIO
-                         .sequence(
-                           submissionIds
-                             .map(id => Tables.ReturnAgent.filter(_.returnAgentId === id).delete)
-                         )
-                         .transactionally
+      _ <- DBIO
+        .sequence(
+          submissionIds
+            .map(id => Tables.ReturnAgent.filter(_.returnAgentId === id).delete)
+        )
+        .transactionally
     } yield ()
 
   val deleteAllReturnAction =
     for {
       submissionIds <- Tables.Return.map(_.returnId).result
-      _             <- DBIO
-                         .sequence(
-                           submissionIds
-                             .map(id => Tables.Return.filter(_.returnId === id).delete)
-                         )
-                         .transactionally
+      _ <- DBIO
+        .sequence(
+          submissionIds
+            .map(id => Tables.Return.filter(_.returnId === id).delete)
+        )
+        .transactionally
     } yield ()
 
   val deleteAllOrgsAction =
     for {
       submissionIds <- Tables.SdltOrganisation.map(_.storn).result
-      _             <- DBIO
-                         .sequence(
-                           submissionIds
-                             .map(id => Tables.SdltOrganisation.filter(_.storn === id).delete)
-                         )
-                         .transactionally
+      _ <- DBIO
+        .sequence(
+          submissionIds
+            .map(id => Tables.SdltOrganisation.filter(_.storn === id).delete)
+        )
+        .transactionally
     } yield ()
 
 }

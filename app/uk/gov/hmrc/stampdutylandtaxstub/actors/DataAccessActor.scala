@@ -22,7 +22,9 @@ import org.apache.pekko.pattern.pipe
 import play.api.Logging
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.*
 import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService
+import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService.CreateDataBatchParams
 import uk.gov.hmrc.stampdutylandtaxstub.sql.{InProgressReturns, ReturnType}
+
 import scala.concurrent.ExecutionContext
 import scala.concurrent.ExecutionContext.Implicits.global
 
@@ -80,7 +82,7 @@ class DataAccessActor extends Actor with Logging {
         case "CREATE_DATA" =>
           logger.info(s"Start data creation")
           oracleDataService
-          .createData(storn, returnType, recNumber)
+            .createDataBatch( param = CreateDataBatchParams(storn = storn, returnType = returnType, batchSizeMaybe = recNumber) )
           .mapTo[OperationComplete].pipeTo(self)
           
         case "DELETE_ALL_DATA" =>
