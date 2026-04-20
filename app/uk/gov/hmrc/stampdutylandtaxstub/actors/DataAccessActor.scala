@@ -35,8 +35,11 @@ object DataAccessActor {
   case object DeleteAllData
 
   case object OperationStatus
-  private case class OperationStart(cmd: String, storn: String = "", returnType: ReturnType = InProgressReturns, recNum: Option[Int])
-  case class OperationComplete(failed: Boolean)
+
+  private case class OperationStart(cmd: String, storn: String = "",
+                                    returnType: ReturnType = InProgressReturns, recNum: Option[Int])
+
+  case class OperationComplete(errorMaybe: Option[Throwable])
 
   def props = Props[DataAccessActor]()
 }
@@ -70,7 +73,7 @@ class DataAccessActor extends Actor with Logging {
         locked = true
         lastError = ""
         logger.info(s"Ready to start data creation: $recNumber")
-        self ! OperationStart("CREATE_DATA", storn = storn, returnType = returnType, recNumber )
+        self ! OperationStart("CREATE_DATA", storn = storn, returnType = returnType, recNumber)
         sender() ! s"START"
       } else {
         logger.info(s"Other operation in progress -> failed to start")
@@ -82,28 +85,27 @@ class DataAccessActor extends Actor with Logging {
         case "CREATE_DATA" =>
           logger.info(s"Start data creation")
           oracleDataService
-            .createDataBatch( param = CreateDataBatchParams(storn = storn, returnType = returnType, batchSizeMaybe = recNumber) )
-          .mapTo[OperationComplete].pipeTo(self)
-          
+            .createDataBatch(param = CreateDataBatchParams(storn = storn, returnType = returnType, batchSizeMaybe = recNumber))
+            .mapTo[OperationComplete].pipeTo(self)
+
         case "DELETE_ALL_DATA" =>
           logger.info(s"Start data deletion: $cmd")
           oracleDataService
             .deleteAllData()
             .mapTo[OperationComplete].pipeTo(self)
-          
+
         case _ =>
           logger.info(s"UNKNOWN COMMAND: $cmd")
       }
 
 
-    case OperationComplete(status) =>
-      if (!status) {
-        logger.info(s"DataCreation:Success")
-        locked = false
-      } else {
-        logger.info(s"DataCreation:Failed")
-        locked = false
-      }
+    case OperationComplete(Some(error)) =>
+      logger.info(s"DataCreation:Failed: ${error}")
+      locked = false
+
+    case OperationComplete(None) =>
+      logger.info(s"DataCreation:Success")
+      locked = false
 
     case OperationStatus =>
       logger.info(s"Retrieve:Status")

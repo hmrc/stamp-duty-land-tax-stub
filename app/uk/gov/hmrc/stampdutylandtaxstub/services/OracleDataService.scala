@@ -78,19 +78,19 @@ class OracleDataService extends OracleConnectBase with Logging {
       updateMainLandIdResult <- db.run(updateReturnMainLandId(nextId = nextId, batchSize = param.batchSize).asTry)
       updatePurchaserIdResult <- db.run(updateReturnsMainPurchaserId(nextId = nextId, batchSize = param.batchSize).asTry)
     } yield {
-      if (orgInsertResult.isFailure) {
-        logger.error(s"[OracleDataService][createDataBatch]: failed to insert organisation: ${param.storn} - as its already exists")
-      }
-      if (insertResult.isFailure) {
-        logger.error(s"[OracleDataService][createDataBatch]: failed to insert returns and other data")
-      }
-      if (updateMainLandIdResult.isFailure) {
-        logger.error(s"[OracleDataService][createDataBatch]: failed to updateMainLandIdResult")
-      }
-      if (updatePurchaserIdResult.isFailure) {
-        logger.error(s"[OracleDataService][createDataBatch]: failed to updatePurchaserIdResult")
-      }
-      OperationComplete(false)
+        val errors = Seq(orgInsertResult, insertResult, updateMainLandIdResult, updatePurchaserIdResult)
+          .map(_.toEither).collect {
+            case Left(error) => error
+          }
+        if (errors.nonEmpty){
+          errors
+            .foreach(error =>
+              logger.error(s"[OracleDataService][createDataBatch]: error => ${error}")
+            )
+          OperationComplete(errors.headOption) // return first found error only
+        } else {
+          OperationComplete(None)
+        }
     }
   }
 
@@ -106,17 +106,23 @@ class OracleDataService extends OracleConnectBase with Logging {
       deleteAllReturnResult <- db.run(deleteAllReturnAction.asTry)
       deleteAllOrgsResult <- db.run(deleteAllOrgsAction.asTry)
     } yield {
-      Seq(updateReturnMainLandIdResult, updateReturnPurchaserIdResult,
+      val errors = Seq(updateReturnMainLandIdResult, updateReturnPurchaserIdResult,
         deleteAllPurchaserResult, deleteAllSubmittedResult, deleteAllLandResult,
         deleteAllReturnAgentResult, deleteAllReturnResult, deleteAllOrgsResult)
         .map(_.toEither)
         .collect {
           case Left(error) => error
         }
+      errors
         .foreach(error =>
-          logger.error(s"[OracleDataService][deleteAllData]: failed to ${error}")
+          logger.error(s"[OracleDataService][deleteAllData]: error => ${error}")
         )
-      OperationComplete(false)
+      if (errors.nonEmpty) {
+        OperationComplete(errors.headOption)
+      } else {
+        OperationComplete(None)
+      }
+
     }
   }
 
