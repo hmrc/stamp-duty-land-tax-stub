@@ -17,17 +17,12 @@
 package uk.gov.hmrc.stampdutylandtaxstub.sql
 
 import slick.dbio.{DBIO, Effect}
-import slick.sql.FixedSqlAction
 import uk.gov.hmrc.stampdutylandtaxstub.sql.InsertQueries.NextId
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.profile.api.*
 
 import scala.language.postfixOps
 
-
-// TODO: for some reason we still need this Thread.sleep to prevent error
-// > java.sql.SQLException: Listener refused the connection with the following error
-// Too many DB connections ??
 object UpdateQueries {
 
   def updateReturnMainLandId(nextId: NextId, batchSize: Int)

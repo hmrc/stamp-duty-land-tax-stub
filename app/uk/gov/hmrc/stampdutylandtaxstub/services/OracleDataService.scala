@@ -32,7 +32,7 @@ object OracleDataService {
   }
 }
 
-class OracleDataService extends OracleConnectBase with Logging{
+class OracleDataService extends OracleConnectBase with Logging {
 
   private val insertAllAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     insertReturnAction(recNumber, storn, returnType, nextId) andThen
@@ -54,19 +54,20 @@ class OracleDataService extends OracleConnectBase with Logging{
       maxLandId <- db.run(maxLandIdQuery)
       maxPurchaserId <- db.run(maxPurchaserIdQuery)
       maxSubmissionId <- db.run(maxSubmissionIdQuery)
-    } yield NextId(
-      nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
-      nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
-      nextLandId = maxLandId.map(_.toInt).getOrElse(1),
-      nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(1),
-      nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(1)
-    )
+    } yield
+      NextId(
+        nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
+        nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
+        nextLandId = maxLandId.map(_.toInt).getOrElse(1),
+        nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(1),
+        nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(1)
+      )
   }
 
   def createDataBatch(param: CreateDataBatchParams)
                      (implicit ec: ExecutionContext): Future[OperationComplete] = {
     for {
-      orgInsertResult <- db.run(insertOrgAction(param.storn).asTry) // suppress DB error if Org already exists
+      orgInsertResult <- db.run(insertOrgAction(param.storn).asTry)
       nextId <- extractNextId
       insertResult <- db.run(param.returnType match {
         case SubmissionReturns | DueForDeletionReturns =>
@@ -77,13 +78,13 @@ class OracleDataService extends OracleConnectBase with Logging{
       updateMainLandIdResult <- db.run(updateReturnMainLandId(nextId = nextId, batchSize = param.batchSize).asTry)
       updatePurchaserIdResult <- db.run(updateReturnsMainPurchaserId(nextId = nextId, batchSize = param.batchSize).asTry)
     } yield {
-      if (orgInsertResult.isFailure){
+      if (orgInsertResult.isFailure) {
         logger.error(s"[OracleDataService][createDataBatch]: failed to insert organisation: ${param.storn} - as its already exists")
       }
-      if (insertResult.isFailure){
+      if (insertResult.isFailure) {
         logger.error(s"[OracleDataService][createDataBatch]: failed to insert returns and other data")
       }
-      if (updateMainLandIdResult.isFailure){
+      if (updateMainLandIdResult.isFailure) {
         logger.error(s"[OracleDataService][createDataBatch]: failed to updateMainLandIdResult")
       }
       if (updatePurchaserIdResult.isFailure) {
@@ -93,19 +94,30 @@ class OracleDataService extends OracleConnectBase with Logging{
     }
   }
 
-  // Async version for: purgeDbStep method
   // TODO: add delete by storn???
   def deleteAllData(implicit ec: ExecutionContext): Future[OperationComplete] = {
     for {
-      _ <- db.run(updateReturnMainLandIdAction)
-      _ <- db.run(updateReturnPurchaserIdAction)
-      _ <- db.run(deleteAllPurchaserAction)
-      _ <- db.run(deleteAllSubmittedAction)
-      _ <- db.run(deleteAllLandAction)
-      _ <- db.run(deleteAllReturnAgentAction)
-      _ <- db.run(deleteAllReturnAction)
-      _ <- db.run(deleteAllOrgsAction)
-    } yield OperationComplete(false)
+      updateReturnMainLandIdResult <- db.run(updateReturnMainLandIdAction.asTry)
+      updateReturnPurchaserIdResult <- db.run(updateReturnPurchaserIdAction.asTry)
+      deleteAllPurchaserResult <- db.run(deleteAllPurchaserAction.asTry)
+      deleteAllSubmittedResult <- db.run(deleteAllSubmittedAction.asTry)
+      deleteAllLandResult <- db.run(deleteAllLandAction.asTry)
+      deleteAllReturnAgentResult <- db.run(deleteAllReturnAgentAction.asTry)
+      deleteAllReturnResult <- db.run(deleteAllReturnAction.asTry)
+      deleteAllOrgsResult <- db.run(deleteAllOrgsAction.asTry)
+    } yield {
+      Seq(updateReturnMainLandIdResult, updateReturnPurchaserIdResult,
+        deleteAllPurchaserResult, deleteAllSubmittedResult, deleteAllLandResult,
+        deleteAllReturnAgentResult, deleteAllReturnResult, deleteAllOrgsResult)
+        .map(_.toEither)
+        .collect {
+          case Left(error) => error
+        }
+        .foreach(error =>
+          logger.error(s"[OracleDataService][deleteAllData]: failed to ${error}")
+        )
+      OperationComplete(false)
+    }
   }
 
 }
