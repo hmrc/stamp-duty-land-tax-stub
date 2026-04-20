@@ -16,12 +16,13 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.services
 
+import play.api.Logging
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.OperationComplete
 import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService.CreateDataBatchParams
+import uk.gov.hmrc.stampdutylandtaxstub.sql.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.DeleteQueries.{deleteAllLandAction, deleteAllOrgsAction, deleteAllPurchaserAction, deleteAllReturnAction, deleteAllReturnAgentAction, deleteAllSubmittedAction, updateReturnMainLandIdAction, updateReturnPurchaserIdAction}
 import uk.gov.hmrc.stampdutylandtaxstub.sql.InsertQueries.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.UpdateQueries.{updateReturnMainLandId, updateReturnsMainPurchaserId}
-import uk.gov.hmrc.stampdutylandtaxstub.sql.*
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -31,7 +32,7 @@ object OracleDataService {
   }
 }
 
-class OracleDataService extends OracleConnectBase {
+class OracleDataService extends OracleConnectBase with Logging{
 
   private val insertAllAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     insertReturnAction(recNumber, storn, returnType, nextId) andThen
@@ -65,27 +66,31 @@ class OracleDataService extends OracleConnectBase {
   def createDataBatch(param: CreateDataBatchParams)
                      (implicit ec: ExecutionContext): Future[OperationComplete] = {
     for {
-      _ <- db.run(insertOrgAction(param.storn).asTry) // suppress DB error if Org already exists
+      orgInsertResult <- db.run(insertOrgAction(param.storn).asTry) // suppress DB error if Org already exists
       nextId <- extractNextId
-      _ <- db.run(param.returnType match {
+      insertResult <- db.run(param.returnType match {
         case SubmissionReturns | DueForDeletionReturns =>
-          insertAllSubmissionAction(param.batchSize, param.storn, param.returnType, nextId)
+          insertAllSubmissionAction(param.batchSize, param.storn, param.returnType, nextId).asTry
         case _ =>
-          insertAllAction(param.batchSize, param.storn, param.returnType, nextId)
+          insertAllAction(param.batchSize, param.storn, param.returnType, nextId).asTry
       })
-      // Create relevant relationship between entities
-      // TODO: remove parallel future execution ?
-      _ <- Future.sequence {
-        for {
-          id <- 1 to param.batchSize
-        } yield updateReturnMainLandId(id, nextId = nextId)
+      updateMainLandIdResult <- db.run(updateReturnMainLandId(nextId = nextId, batchSize = param.batchSize).asTry)
+      updatePurchaserIdResult <- db.run(updateReturnsMainPurchaserId(nextId = nextId, batchSize = param.batchSize).asTry)
+    } yield {
+      if (orgInsertResult.isFailure){
+        logger.error(s"[OracleDataService][createDataBatch]: failed to insert organisation: ${param.storn} - as its already exists")
       }
-      _ <- Future.sequence {
-        for {
-          id <- 1 to param.batchSize
-        } yield updateReturnsMainPurchaserId(id, nextId = nextId)
+      if (insertResult.isFailure){
+        logger.error(s"[OracleDataService][createDataBatch]: failed to insert returns and other data")
       }
-    } yield OperationComplete(false)
+      if (updateMainLandIdResult.isFailure){
+        logger.error(s"[OracleDataService][createDataBatch]: failed to updateMainLandIdResult")
+      }
+      if (updatePurchaserIdResult.isFailure) {
+        logger.error(s"[OracleDataService][createDataBatch]: failed to updatePurchaserIdResult")
+      }
+      OperationComplete(false)
+    }
   }
 
   // Async version for: purgeDbStep method

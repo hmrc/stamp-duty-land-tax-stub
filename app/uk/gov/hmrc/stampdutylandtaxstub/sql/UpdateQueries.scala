@@ -16,11 +16,12 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.sql
 
+import slick.dbio.{DBIO, Effect}
+import slick.sql.FixedSqlAction
 import uk.gov.hmrc.stampdutylandtaxstub.sql.InsertQueries.NextId
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.profile.api.*
 
-import scala.concurrent.Future
 import scala.language.postfixOps
 
 
@@ -29,29 +30,30 @@ import scala.language.postfixOps
 // Too many DB connections ??
 object UpdateQueries {
 
-  def updateReturnMainLandId(id: Int, nextId: NextId)(implicit
-                                                                              db: profile.backend.JdbcDatabaseDef
-  ): Future[_] = {
-    Thread.sleep(100)
-    db.run(
-      Tables.Return
-        .filter(_.returnId === BigDecimal(nextId.nextReturnId + id))
-        .map(_.mainLandId)
-        .update(Some(BigDecimal(nextId.nextLandId + id)))
-        .transactionally
+  def updateReturnMainLandId(nextId: NextId, batchSize: Int)
+                            (implicit db: profile.backend.JdbcDatabaseDef): DBIOAction[IndexedSeq[Int], NoStream, Effect.Write] = {
+    DBIO.sequence(
+      for {
+        id <- 1 to batchSize
+      } yield
+        Tables.Return
+          .filter(_.returnId === BigDecimal(nextId.nextReturnId + id))
+          .map(_.mainLandId)
+          .update(Some(BigDecimal(nextId.nextLandId + id)))
     )
   }
 
-  def updateReturnsMainPurchaserId(id: Int, nextId: NextId)(implicit
+  def updateReturnsMainPurchaserId(nextId: NextId, batchSize: Int)(implicit
     db: profile.backend.JdbcDatabaseDef
-  ): Future[Int] = {
-    Thread.sleep(100)
-    val action = Tables.Return
+  ): DBIOAction[IndexedSeq[Int], NoStream, Effect.Write] = {
+    DBIO.sequence(
+      for {
+        id <- 1 to batchSize
+      } yield Tables.Return
       .filter(_.returnId === BigDecimal(nextId.nextReturnId + id))
       .map(_.mainPurchaserId)
       .update(Some(BigDecimal(nextId.nextPurchaserId + id)))
-      .transactionally
-    db.run(action)
+    )
   }
 
 }
