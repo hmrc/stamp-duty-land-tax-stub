@@ -84,8 +84,9 @@ class DataAccessActor extends Actor with Logging {
       cmd match {
         case "CREATE_DATA" =>
           logger.info(s"Start data creation")
+          val param = CreateDataBatchParams(storn = storn, returnType = returnType, batchSizeMaybe = recNumber)
           oracleDataService
-            .createDataBatch(param = CreateDataBatchParams(storn = storn, returnType = returnType, batchSizeMaybe = recNumber))
+            .createDataBatch(param)
             .mapTo[OperationComplete].pipeTo(self)
 
         case "DELETE_ALL_DATA" =>
