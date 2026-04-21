@@ -18,7 +18,7 @@ package uk.gov.hmrc.stampdutylandtaxstub.sql
 
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.profile.api.*
-import scala.concurrent.{ExecutionContext}
+import scala.concurrent.ExecutionContext
 import scala.language.postfixOps
 
 trait DeleteQueries {

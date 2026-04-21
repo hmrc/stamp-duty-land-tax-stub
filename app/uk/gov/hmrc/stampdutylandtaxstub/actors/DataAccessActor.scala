@@ -46,9 +46,10 @@ object DataAccessActor {
 // https://pekko.apache.org/docs/pekko/1.3/actors.html#creating-actors
 // https://www.playframework.com/documentation/3.0.x/ScalaPekko
 
-class DataAccessActor  (implicit ec: ExecutionContext)
+class DataAccessActor
     extends Actor with Logging {
 
+  implicit val ec: ExecutionContext = ExecutionContext.global
 
   // Internal Actor state
   private var locked: Boolean = false
