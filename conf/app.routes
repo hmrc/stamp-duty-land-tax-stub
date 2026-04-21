@@ -28,13 +28,12 @@ POST        /filing/delete/return-agent           uk.gov.hmrc.stampdutylandtaxst
 POST        /filing/delete/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.removeLand()
 POST        /filing/create/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.createLand()
 POST        /filing/update/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.updateLand()
+POST        /filing/create/residency              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageResidencyController.createResidency()
+POST        /filing/update/residency              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageResidencyController.updateResidency()
 
-
-# Local Oracle Db : Ops
-# ??? Separate endpoints for ??? for different returns type
+# Returns data load / generation :: local use only
 GET         /returns/createData                   uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.createData(storn: String, records: Option[Int], returnType: String)
 GET         /returns/deleteAll                    uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.deleteAll()
 
 GET         /returns/getStatus                    uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.getStatus()
-
 #
