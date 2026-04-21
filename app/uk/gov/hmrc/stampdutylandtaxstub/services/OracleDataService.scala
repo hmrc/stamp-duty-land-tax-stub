@@ -34,8 +34,6 @@ object OracleDataService {
 class OracleDataService
   extends OracleConnectBase with Logging with DeleteQueries {
 
-  override implicit val ec: ExecutionContext = ExecutionContext.global
-  
   private val insertAllAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     insertReturnAction(recNumber, storn, returnType, nextId) andThen
       insertReturnAgent(recNumber, returnType, nextId) andThen

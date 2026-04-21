@@ -18,12 +18,11 @@ package uk.gov.hmrc.stampdutylandtaxstub.sql
 
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.profile.api.*
-import scala.concurrent.ExecutionContext
 import scala.language.postfixOps
 
 trait DeleteQueries {
 
-  implicit val ec: ExecutionContext
+  implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
   // DELETE ALL
   val updateReturnMainLandIdAction =

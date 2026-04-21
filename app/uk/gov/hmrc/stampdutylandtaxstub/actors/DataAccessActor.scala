@@ -49,7 +49,7 @@ object DataAccessActor {
 class DataAccessActor
     extends Actor with Logging {
 
-  implicit val ec: ExecutionContext = ExecutionContext.global
+  implicit val ec: ExecutionContext = scala.concurrent.ExecutionContext.global
 
   // Internal Actor state
   private var locked: Boolean = false
