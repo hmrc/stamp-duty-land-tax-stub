@@ -26,7 +26,6 @@ import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService.CreateDataBat
 import uk.gov.hmrc.stampdutylandtaxstub.sql.{InProgressReturns, ReturnType}
 
 import scala.concurrent.ExecutionContext
-import scala.concurrent.ExecutionContext.Implicits.global
 
 object DataAccessActor {
 
@@ -47,7 +46,8 @@ object DataAccessActor {
 // https://pekko.apache.org/docs/pekko/1.3/actors.html#creating-actors
 // https://www.playframework.com/documentation/3.0.x/ScalaPekko
 
-class DataAccessActor extends Actor with Logging {
+class DataAccessActor  (implicit ec: ExecutionContext)
+    extends Actor with Logging {
 
 
   // Internal Actor state
