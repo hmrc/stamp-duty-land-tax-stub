@@ -20,7 +20,6 @@ import play.api.Logging
 import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.OperationComplete
 import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService.CreateDataBatchParams
 import uk.gov.hmrc.stampdutylandtaxstub.sql.*
-import uk.gov.hmrc.stampdutylandtaxstub.sql.DeleteQueries.{deleteAllLandAction, deleteAllOrgsAction, deleteAllPurchaserAction, deleteAllReturnAction, deleteAllReturnAgentAction, deleteAllSubmittedAction, updateReturnMainLandIdAction, updateReturnPurchaserIdAction}
 import uk.gov.hmrc.stampdutylandtaxstub.sql.InsertQueries.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.UpdateQueries.{updateReturnMainLandId, updateReturnsMainPurchaserId}
 
@@ -32,7 +31,10 @@ object OracleDataService {
   }
 }
 
-class OracleDataService extends OracleConnectBase with Logging {
+class OracleDataService (implicit execContext: ExecutionContext)
+  extends OracleConnectBase with Logging with DeleteQueries {
+
+  override implicit val ec: ExecutionContext = execContext
 
   private val insertAllAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     insertReturnAction(recNumber, storn, returnType, nextId) andThen
