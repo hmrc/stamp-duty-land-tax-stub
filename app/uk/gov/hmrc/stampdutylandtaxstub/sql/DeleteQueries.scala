@@ -18,14 +18,14 @@ package uk.gov.hmrc.stampdutylandtaxstub.sql
 
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.Tables.profile.api.*
+
+import scala.concurrent.ExecutionContext
 import scala.language.postfixOps
 
-trait DeleteQueries {
-
-  implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
+object DeleteQueries {
 
   // DELETE ALL
-  val updateReturnMainLandIdAction =
+  def updateReturnMainLandIdAction(implicit ec: ExecutionContext) = {
     for {
       returnIds <- Tables.Return.map(_.returnId).result
       _ <- DBIO
@@ -34,8 +34,9 @@ trait DeleteQueries {
         )
         .transactionally
     } yield ()
+  }
 
-  val updateReturnPurchaserIdAction =
+  def updateReturnPurchaserIdAction(implicit ec: ExecutionContext) =
     for {
       returnIds <- Tables.Return.map(_.returnId).result
       _ <- DBIO
@@ -45,7 +46,7 @@ trait DeleteQueries {
         .transactionally
     } yield ()
 
-  val deleteAllPurchaserAction =
+  def deleteAllPurchaserAction(implicit ec: ExecutionContext) =
     for {
       purchaserIds <- Tables.Purchaser.map(_.purchaserId).result
       _ <- DBIO
@@ -56,7 +57,7 @@ trait DeleteQueries {
         .transactionally
     } yield ()
 
-  val deleteAllSubmittedAction =
+  def deleteAllSubmittedAction(implicit ec: ExecutionContext) =
     for {
       submissionIds <- Tables.Submission.map(_.submissionId).result
       _ <- DBIO
@@ -67,7 +68,7 @@ trait DeleteQueries {
         .transactionally
     } yield ()
 
-  val deleteAllLandAction =
+  def deleteAllLandAction(implicit ec: ExecutionContext) =
     for {
       submissionIds <- Tables.Land.map(_.landId).result
       _ <- DBIO
@@ -78,7 +79,7 @@ trait DeleteQueries {
         .transactionally
     } yield ()
 
-  val deleteAllReturnAgentAction =
+  def deleteAllReturnAgentAction(implicit ec: ExecutionContext) =
     for {
       submissionIds <- Tables.ReturnAgent.map(_.returnAgentId).result
       _ <- DBIO
@@ -89,7 +90,7 @@ trait DeleteQueries {
         .transactionally
     } yield ()
 
-  val deleteAllReturnAction =
+  def deleteAllReturnAction(implicit ec: ExecutionContext) =
     for {
       submissionIds <- Tables.Return.map(_.returnId).result
       _ <- DBIO
@@ -100,7 +101,7 @@ trait DeleteQueries {
         .transactionally
     } yield ()
 
-  val deleteAllOrgsAction =
+  def deleteAllOrgsAction(implicit ec: ExecutionContext) =
     for {
       submissionIds <- Tables.SdltOrganisation.map(_.storn).result
       _ <- DBIO

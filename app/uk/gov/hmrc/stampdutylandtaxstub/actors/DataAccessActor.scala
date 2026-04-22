@@ -49,13 +49,13 @@ object DataAccessActor {
 class DataAccessActor
     extends Actor with Logging {
 
-  implicit val ec: ExecutionContext = scala.concurrent.ExecutionContext.global
+  implicit val ec: ExecutionContext = context.dispatcher
 
   // Internal Actor state
   private var locked: Boolean = false
   private var lastError: String = ""
 
-  private val oracleDataService = new OracleDataService()
+  private lazy val oracleDataService = new OracleDataService()
 
   override def preStart(): Unit = {
     logger.info("Starting DataAccessActor ...")

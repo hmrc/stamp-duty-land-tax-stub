@@ -21,6 +21,7 @@ import uk.gov.hmrc.stampdutylandtaxstub.actors.DataAccessActor.OperationComplete
 import uk.gov.hmrc.stampdutylandtaxstub.services.OracleDataService.CreateDataBatchParams
 import uk.gov.hmrc.stampdutylandtaxstub.sql.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.InsertQueries.*
+import uk.gov.hmrc.stampdutylandtaxstub.sql.DeleteQueries.*
 import uk.gov.hmrc.stampdutylandtaxstub.sql.UpdateQueries.{updateReturnMainLandId, updateReturnsMainPurchaserId}
 
 import scala.concurrent.{ExecutionContext, Future}
@@ -32,7 +33,7 @@ object OracleDataService {
 }
 
 class OracleDataService
-  extends OracleConnectBase with Logging with DeleteQueries {
+  extends OracleConnectBase with Logging {
 
   private val insertAllAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     insertReturnAction(recNumber, storn, returnType, nextId) andThen

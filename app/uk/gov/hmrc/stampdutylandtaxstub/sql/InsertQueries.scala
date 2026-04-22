@@ -248,5 +248,5 @@ object InsertQueries {
         Tables.Submission ++= insertMultiSubmittion(recNumber, storn, returnType, nextId)
       )
       .transactionally
-
+  
 }
