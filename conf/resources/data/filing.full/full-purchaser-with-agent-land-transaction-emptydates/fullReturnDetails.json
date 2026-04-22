@@ -87,7 +87,7 @@
     {
       "landID": "NED001",
       "returnID" : "RET123456788",
-      "propertyType" : "RESIDENTIAL",
+      "propertyType" : "01",
       "interestCreatedTransferred" : "FREEHOLD",
       "houseNumber" : "321",
       "address1" : "Baker Street",

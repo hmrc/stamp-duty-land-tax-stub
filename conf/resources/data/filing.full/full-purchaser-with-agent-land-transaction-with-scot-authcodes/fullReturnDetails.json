@@ -89,7 +89,7 @@
     {
       "landID": "SCD003",
       "returnID" : "RET123456786",
-      "propertyType" : "RESIDENTIAL",
+      "propertyType" : "01",
       "interestCreatedTransferred" : "FREEHOLD",
       "houseNumber" : "321",
       "address1" : "Baker Street",
@@ -113,7 +113,7 @@
     {
       "landID": "SCD004",
       "returnID" : "RET123456785",
-      "propertyType" : "RESIDENTIAL",
+      "propertyType" : "01",
       "interestCreatedTransferred" : "FREEHOLD",
       "houseNumber" : "321",
       "address1" : "Baker Street",
