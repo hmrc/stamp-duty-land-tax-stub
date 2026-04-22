@@ -1732,7 +1732,7 @@
     {
       "landID": "LND001",
       "returnID": "RET123456789",
-      "propertyType": "RESIDENTIAL",
+      "propertyType": "01",
       "interestCreatedTransferred": "FREEHOLD",
       "houseNumber": "123",
       "address1": "Baker Street",

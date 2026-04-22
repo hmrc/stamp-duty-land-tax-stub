@@ -173,7 +173,7 @@
     {
       "landID": "LND001",
       "returnID": "RET-PA-001",
-      "propertyType": "RESIDENTIAL",
+      "propertyType": "01",
       "interestCreatedTransferred": "FREEHOLD",
       "houseNumber": "123",
       "address1": "Baker Street",
