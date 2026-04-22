@@ -1755,7 +1755,7 @@
   "transaction": {
     "transactionID": "TXN001",
     "returnID": "RET123456789",
-    "claimingRelief": "false",
+    "claimingRelief": "no",
     "reliefAmount": null,
     "reliefReason": null,
     "reliefSchemeNumber": null,

@@ -196,7 +196,7 @@
   "transaction": {
     "transactionID": "TXN001",
     "returnID": "RET-PA-001",
-    "claimingRelief": "NO",
+    "claimingRelief": "no",
     "totalConsideration": "500000.00",
     "considerationCash": "500000.00",
     "transactionDescription": "F",
