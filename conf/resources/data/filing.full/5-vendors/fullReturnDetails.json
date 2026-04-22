@@ -284,7 +284,7 @@
   "lease": {
     "leaseID": "LSE001",
     "returnID": "RET123456789",
-    "isAnnualRentOver1000": "YES",
+    "isAnnualRentOver1000": "yes",
     "breakClauseType": "TENANT",
     "breakClauseDate": "2029-10-01",
     "leaseContReservedRent": "24000.00",
