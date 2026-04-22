@@ -110,7 +110,7 @@
     "reliefAmount": null,
     "reliefReason": null,
     "reliefSchemeNumber": null,
-    "isLinked": "NO",
+    "isLinked": "no",
     "totalConsiderationLinked": null,
     "totalConsideration": "500000.00",
     "considerationBuild": null,
