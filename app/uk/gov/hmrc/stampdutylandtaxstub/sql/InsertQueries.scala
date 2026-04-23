@@ -137,7 +137,7 @@ object InsertQueries {
       .transactionally
 
   // LAND
-  val insertMultiLand = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
+  val insertMultiLand = (recNumber: Int, nextId: NextId) =>
     (1 to recNumber).map(id =>
       LandRow(
         landId = BigDecimal(nextId.nextLandId + id),
@@ -165,10 +165,10 @@ object InsertQueries {
       )
     )
 
-  val insertLand = (recNumber: Int, returnType: ReturnType, nextId: NextId) =>
+  val insertLand = (recNumber: Int, nextId: NextId) =>
     DBIO
       .seq(
-        Tables.Land ++= insertMultiLand(recNumber, returnType, nextId)
+        Tables.Land ++= insertMultiLand(recNumber, nextId)
       )
       .transactionally
 

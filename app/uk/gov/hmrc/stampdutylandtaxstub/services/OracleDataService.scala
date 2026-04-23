@@ -38,13 +38,13 @@ class OracleDataService
   private val insertAllAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     insertReturnAction(recNumber, storn, returnType, nextId) andThen
       insertReturnAgent(recNumber, returnType, nextId) andThen
-      insertLand(recNumber, returnType, nextId) andThen
+      insertLand(recNumber, nextId) andThen
       insertPurchaser(recNumber, returnType, nextId)
 
   private val insertAllSubmissionAction = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     insertReturnAction(recNumber, storn, returnType, nextId) andThen
       insertReturnAgent(recNumber, returnType, nextId) andThen
-      insertLand(recNumber, returnType, nextId) andThen
+      insertLand(recNumber, nextId) andThen
       insertPurchaser(recNumber, returnType, nextId) andThen
       insertSubmittion(recNumber, storn, returnType, nextId)
 

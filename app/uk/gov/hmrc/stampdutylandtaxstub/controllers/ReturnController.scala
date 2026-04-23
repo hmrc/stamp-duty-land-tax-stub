@@ -18,7 +18,7 @@ package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.requests.*
 import play.api.libs.json.{JsValue, Json}
-import play.api.mvc.{Action, AnyContent, ControllerComponents}
+import play.api.mvc.{Action, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
 
