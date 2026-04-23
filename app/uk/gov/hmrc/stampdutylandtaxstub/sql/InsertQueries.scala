@@ -215,8 +215,7 @@ object InsertQueries {
       )
       .transactionally
 
-  // SUBMITTION
-  val insertMultiSubmittion = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
+  private val insertMultiSubmission = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     (1 to recNumber).map(id =>
       SubmissionRow(
         submissionId = BigDecimal(nextId.nextSubmissionId + id),
@@ -245,7 +244,7 @@ object InsertQueries {
   val insertSubmission: (Int, String, ReturnType, NextId) => DBIOAction[Unit, NoStream, Effect.Write & Effect.Transactional] = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
-        Tables.Submission ++= insertMultiSubmittion(recNumber, storn, returnType, nextId)
+        Tables.Submission ++= insertMultiSubmission(recNumber, storn, returnType, nextId)
       )
       .transactionally
   
