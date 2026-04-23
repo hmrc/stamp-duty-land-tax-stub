@@ -30,3 +30,10 @@ POST        /filing/create/land                   uk.gov.hmrc.stampdutylandtaxst
 POST        /filing/update/land                   uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLandsController.updateLand()
 POST        /filing/create/residency              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageResidencyController.createResidency()
 POST        /filing/update/residency              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageResidencyController.updateResidency()
+
+# Returns data load / generation :: local use only
+GET         /returns/createData                   uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.createData(storn: String, records: Option[Int], returnType: String)
+GET         /returns/deleteAll                    uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.deleteAll()
+
+GET         /returns/getStatus                    uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.getStatus()
+#
