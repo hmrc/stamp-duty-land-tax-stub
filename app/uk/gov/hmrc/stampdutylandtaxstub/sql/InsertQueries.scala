@@ -242,7 +242,7 @@ object InsertQueries {
       )
     )
 
-  val insertSubmittion = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
+  val insertSubmission: (Int, String, ReturnType, NextId) => DBIOAction[Unit, NoStream, Effect.Write & Effect.Transactional] = (recNumber: Int, storn: String, returnType: ReturnType, nextId: NextId) =>
     DBIO
       .seq(
         Tables.Submission ++= insertMultiSubmittion(recNumber, storn, returnType, nextId)

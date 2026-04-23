@@ -46,7 +46,7 @@ class OracleDataService
       insertReturnAgent(recNumber, returnType, nextId) andThen
       insertLand(recNumber, nextId) andThen
       insertPurchaser(recNumber, returnType, nextId) andThen
-      insertSubmittion(recNumber, storn, returnType, nextId)
+      insertSubmission(recNumber, storn, returnType, nextId)
 
   private def extractNextId(implicit ec: ExecutionContext): Future[NextId] = {
     for {
