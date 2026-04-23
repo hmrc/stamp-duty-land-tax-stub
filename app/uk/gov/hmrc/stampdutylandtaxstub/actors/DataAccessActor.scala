@@ -29,13 +29,18 @@ import scala.concurrent.ExecutionContext
 
 object DataAccessActor {
 
+  private sealed trait InternalDataCmd
+  private case object CreateInternalDataCmd extends InternalDataCmd
+  private case object DeleteAllCmdInternal extends InternalDataCmd
+
+
   case class CreateData(storn: String, numberOfRecords: Option[Int], returnType: ReturnType)
 
   case object DeleteAllData
 
   case object OperationStatus
 
-  private case class OperationStart(cmd: String, storn: String = "",
+  private case class OperationStart(cmd: InternalDataCmd, storn: String = "",
                                     returnType: ReturnType = InProgressReturns, recNum: Option[Int])
 
   case class OperationComplete(errorMaybe: Option[Throwable])
@@ -74,7 +79,7 @@ class DataAccessActor
         locked = true
         lastError = ""
         logger.info(s"Ready to start data creation: $recNumber")
-        self ! OperationStart("CREATE_DATA", storn = storn, returnType = returnType, recNumber)
+        self ! OperationStart(CreateInternalDataCmd, storn = storn, returnType = returnType, recNumber)
         sender() ! s"START"
       } else {
         logger.info(s"Other operation in progress -> failed to start")
@@ -83,21 +88,18 @@ class DataAccessActor
 
     case OperationStart(cmd, storn, returnType, recNumber) =>
       cmd match {
-        case "CREATE_DATA" =>
+        case CreateInternalDataCmd =>
           logger.info(s"Start data creation")
           val param = CreateDataBatchParams(storn = storn, returnType = returnType, batchSizeMaybe = recNumber)
           oracleDataService
             .createDataBatch(param)
             .mapTo[OperationComplete].pipeTo(self)
 
-        case "DELETE_ALL_DATA" =>
+        case DeleteAllCmdInternal =>
           logger.info(s"Start data deletion: $cmd")
           oracleDataService
             .deleteAllData()
             .mapTo[OperationComplete].pipeTo(self)
-
-        case _ =>
-          logger.info(s"UNKNOWN COMMAND: $cmd")
       }
 
 
@@ -127,7 +129,7 @@ class DataAccessActor
         locked = true
         lastError = ""
         logger.info(s"Ready to start data deletion")
-        self ! OperationStart("DELETE_ALL_DATA", "", returnType = InProgressReturns, recNum = None)
+        self ! OperationStart(DeleteAllCmdInternal, "", returnType = InProgressReturns, recNum = None)
         sender() ! s"START"
       } else {
         logger.info(s"Other operation in progress -> failed to start")
