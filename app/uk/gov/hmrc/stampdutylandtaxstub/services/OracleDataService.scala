@@ -57,11 +57,11 @@ class OracleDataService
       maxSubmissionId <- db.run(maxSubmissionIdQuery)
     } yield
       NextId(
-        nextReturnId = maxReturnId.map(_.toInt).getOrElse(1),
-        nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(1),
-        nextLandId = maxLandId.map(_.toInt).getOrElse(1),
-        nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(1),
-        nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(1)
+        nextReturnId = maxReturnId.map(_.toInt).getOrElse(0),
+        nextReturnAgentId = maxReturnAgentId.map(_.toInt).getOrElse(0),
+        nextLandId = maxLandId.map(_.toInt).getOrElse(0),
+        nextPurchaserId = maxPurchaserId.map(_.toInt).getOrElse(0),
+        nextSubmissionId = maxSubmissionId.map(_.toInt).getOrElse(0)
       )
   }
 
