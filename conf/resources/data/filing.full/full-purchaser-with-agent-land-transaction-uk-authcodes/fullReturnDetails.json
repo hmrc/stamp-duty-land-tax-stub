@@ -89,8 +89,8 @@
     {
       "landID": "LND001",
       "returnID" : "RET123456789",
-      "propertyType" : "RESIDENTIAL",
-      "interestCreatedTransferred" : "FREEHOLD",
+      "propertyType" : "01",
+      "interestCreatedTransferred" : "FGL",
       "houseNumber" : "123",
       "address1" : "Baker Street",
       "address2" : "Marylebone",

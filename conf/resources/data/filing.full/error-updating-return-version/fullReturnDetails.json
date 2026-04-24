@@ -102,8 +102,8 @@
     {
       "landID": "LND001",
       "returnID": "RET123456789",
-      "propertyType": "RESIDENTIAL",
-      "interestCreatedTransferred": "FREEHOLD",
+      "propertyType": "01",
+      "interestCreatedTransferred": "FGL",
       "houseNumber": "123",
       "address1": "Baker Street",
       "address2": "Marylebone",
@@ -125,11 +125,11 @@
   "transaction": {
     "transactionID": "TXN001",
     "returnID": "RET123456789",
-    "claimingRelief": "false",
+    "claimingRelief": "no",
     "reliefAmount": null,
     "reliefReason": null,
     "reliefSchemeNumber": null,
-    "isLinked": "false",
+    "isLinked": "no",
     "totalConsiderationLinked": null,
     "totalConsideration": "500000.00",
     "considerationBuild": null,
@@ -212,7 +212,7 @@
   "lease": {
     "leaseID": "LSE001",
     "returnID": "RET123456789",
-    "isAnnualRentOver1000": "true",
+    "isAnnualRentOver1000": "yes",
     "breakClauseType": "TENANT",
     "breakClauseDate": "2029-10-01",
     "leaseContReservedRent": "24000.00",
@@ -303,7 +303,7 @@
   },
   "residency": {
     "residencyID": "RES001",
-    "isNonUkResidents": "false",
+    "isNonUkResidents": "NO",
     "isCloseCompany": "false",
     "isCrownRelief": "false"
   }
