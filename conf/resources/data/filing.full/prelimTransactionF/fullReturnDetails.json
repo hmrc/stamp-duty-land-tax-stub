@@ -49,12 +49,27 @@
   },
   "land": [
     {
-      "postcode": "TE11 7HE",
-      "address2": "stafford",
-      "landResourceRef": "1",
-      "returnID": "221110168",
       "landID": "221110171",
-      "address1": "test"
+      "returnID": "221110168",
+      "propertyType": "02",
+      "interestCreatedTransferred": "FG",
+      "houseNumber": "123",
+      "address1": "test",
+      "address2": "stafford",
+      "address3": "London",
+      "address4": null,
+      "postcode": "TE11 7HE",
+      "landArea": "250.000",
+      "areaUnit": "SquareMetres",
+      "localAuthorityNumber": "5900",
+      "mineralRights": "NO",
+      "NLPGUPRN": "10012345678",
+      "willSendPlanByPost": "NO",
+      "titleNumber": "TGL123456",
+      "landResourceRef": "1",
+      "nextLandID": null,
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     }
   ]
 }
