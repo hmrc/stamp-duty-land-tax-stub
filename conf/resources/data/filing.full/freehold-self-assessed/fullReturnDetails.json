@@ -29,8 +29,7 @@
     "returnID": "RET100002",
     "claimingRelief": "yes",
     "reliefReason": "8",
-    "reliefAmount": "10000.00",
-    "isLinked": "no",
+    "isLinked": "yes",
     "totalConsideration": "500000.00",
     "transactionDescription": "F",
     "effectiveDate": "2024-10-01"
