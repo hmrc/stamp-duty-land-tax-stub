@@ -1,0 +1,49 @@
+{
+  "stornId": "STORN100004",
+  "returnResourceRef": "leasehold-self-assessed",
+  "returnInfo": {
+    "returnID": "RET100004",
+    "storn": "STORN100004",
+    "returnResourceRef": "leasehold-self-assessed",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "PUR100004",
+      "returnID": "RET100004",
+      "isCompany": "NO",
+      "surname": "Carter",
+      "forename1": "Amelia"
+    }
+  ],
+  "land": [
+    {
+      "landID": "LND100004",
+      "returnID": "RET100004",
+      "propertyType": "02",
+      "interestCreatedTransferred": "FGL"
+    }
+  ],
+  "transaction": {
+    "transactionID": "TXN100004",
+    "returnID": "RET100004",
+    "claimingRelief": "yes",
+    "reliefReason": "22",
+    "reliefAmount": "5000.00",
+    "isLinked": "yes",
+    "totalConsideration": "120000.00",
+    "transactionDescription": "L",
+    "effectiveDate": "2024-10-01"
+  },
+  "lease": {
+    "leaseID": "LSE100004",
+    "returnID": "RET100004",
+    "contractStartDate": "2024-10-01",
+    "contractEndDate": "2034-09-30",
+    "startingRent": "9600.00"
+  },
+  "residency": {
+    "residencyID": "RES100004",
+    "isNonUkResidents": "NO"
+  }
+}
