@@ -1,0 +1,40 @@
+{
+  "stornId": "STORN100001",
+  "returnResourceRef": "freehold-tax-calculated",
+  "returnInfo": {
+    "returnID": "RET100001",
+    "storn": "STORN100001",
+    "returnResourceRef": "freehold-tax-calculated",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "PUR100001",
+      "returnID": "RET100001",
+      "isCompany": "NO",
+      "surname": "Smith",
+      "forename1": "John"
+    }
+  ],
+  "land": [
+    {
+      "landID": "LND100001",
+      "returnID": "RET100001",
+      "propertyType": "01",
+      "interestCreatedTransferred": "FPF"
+    }
+  ],
+  "transaction": {
+    "transactionID": "TXN100001",
+    "returnID": "RET100001",
+    "claimingRelief": "no",
+    "isLinked": "no",
+    "totalConsideration": "500000.00",
+    "transactionDescription": "F",
+    "effectiveDate": "2024-10-01"
+  },
+  "residency": {
+    "residencyID": "RES100001",
+    "isNonUkResidents": "NO"
+  }
+}
