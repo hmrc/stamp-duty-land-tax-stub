@@ -40,7 +40,8 @@
     "returnID": "RET100004",
     "contractStartDate": "2024-10-01",
     "contractEndDate": "2034-09-30",
-    "startingRent": "9600.00"
+    "startingRent": "9600.00",
+    "netPresentValue": "1897"
   },
   "residency": {
     "residencyID": "RES100004",
