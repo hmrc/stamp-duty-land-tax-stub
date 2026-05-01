@@ -1,0 +1,107 @@
+{
+  "taxCalculation": {
+    "taxCalculationID": "221110174",
+    "returnID": "221110168"
+  },
+  "stornId": "STORN123456",
+  "sdltOrganisation": {
+    "storn": "STORN123456",
+    "version": "0"
+  },
+  "returnInfo": {
+    "storn": "STORN123456",
+    "vendorCounter": "0",
+    "purgeDate": "2026-02-07 19:53:34",
+    "mainLandID": "221110171",
+    "mainPurchaserID": "221110169",
+    "purchaserCounter": "1",
+    "version": "0",
+    "returnID": "221110168",
+    "status": "STARTED",
+    "landCounter": "1",
+    "returnResourceRef": "4"
+  },
+  "returnResourceRef": "4",
+  "residency": {
+    "residencyID": "221110173"
+  },
+  "transaction": {
+    "transactionID": "221110172",
+    "returnID": "221110168",
+    "transactionDescription": "F",
+    "newTransactionDescription": "F"
+  },
+  "purchaser": [
+    {
+      "createDate": "2025-11-09 19:53:34",
+      "companyName": "Stub Company name",
+      "isCompany": "YES",
+      "lastUpdateDate": "2025-11-09 19:53:34",
+      "purchaserResourceRef": "1",
+      "returnID": "221110168",
+      "purchaserID": "221110169",
+      "address1": "test address"
+    }
+  ],
+  "companyDetails": {
+    "companyDetailsID": "221110170",
+    "returnID": "221110168",
+    "purchaserID": "221110169"
+  },
+  "land": [
+    {
+      "postcode": "TE11 7HE",
+      "address2": "stafford",
+      "landResourceRef": "1",
+      "returnID": "221110168",
+      "landID": "221110171",
+      "address1": "test"
+    }
+  ],
+  "lease": {
+    "leaseID": "LSE001",
+    "returnID": "RET123456789",
+    "isAnnualRentOver1000": "yes",
+    "breakClauseType": "TENANT",
+    "breakClauseDate": "2029-10-01",
+    "leaseContReservedRent": "24000.00",
+    "contractEndDate": "2034-09-30",
+    "contractStartDate": "2024-10-01",
+    "firstReviewDate": "2029-10-01",
+    "leaseType": "NEW",
+    "marketRent": "24000.00",
+    "netPresentValue": null,
+    "optionToRenew": "YES",
+    "totalPremiumPayable": null,
+    "rentChargeDate": "2024-10-01",
+    "rentFreePeriod": "3 months",
+    "reviewClauseType": "RPI",
+    "rentReviewFrequency": "YEARLY",
+    "serviceCharge": "2000.00",
+    "serviceChargeFrequency": "ANNUAL",
+    "startingRent": "24000.00",
+    "startingRentEndDate": "2025-09-30",
+    "laterRentKnown": "YES",
+    "termsSurrendered": "NO",
+    "considToLndlrdBuild": null,
+    "considToLndlrdContin": null,
+    "considToLndlrdDebt": null,
+    "considToLndlrdEmploy": null,
+    "considToLndlrdOther": null,
+    "considToLndlrdLand": null,
+    "considToLndlrdServices": null,
+    "considToLndlrdSharedQTD": null,
+    "considToLndlrdSharedUNQTD": null,
+    "considToTenantBuild": null,
+    "considToTenantContin": null,
+    "considToTenantEmploy": null,
+    "considToTenantOther": null,
+    "considToTenantLand": null,
+    "considToTenantServices": null,
+    "considToTenantSharesQTD": null,
+    "considToTenantSharesUNQTD": null,
+    "turnoverRent": null,
+    "unasertainableRent": "NO",
+    "VATAmount": "10000.00"
+  }
+}
