@@ -1,16 +1,16 @@
 {
   "stornId": "STORN100002",
-  "returnResourceRef": "freehold-self-assessed",
+  "returnResourceRef": "freehold-self-assessed-slice",
   "returnInfo": {
-    "returnID": "RET100002",
+    "returnID": "RET100003",
     "storn": "STORN100002",
-    "returnResourceRef": "freehold-self-assessed",
+    "returnResourceRef": "freehold-self-assessed-slice",
     "status": "STARTED"
   },
   "purchaser": [
     {
       "purchaserID": "PUR100002",
-      "returnID": "RET100002",
+      "returnID": "RET100003",
       "isCompany": "NO",
       "surname": "Patel",
       "forename1": "Priya"
@@ -19,14 +19,14 @@
   "land": [
     {
       "landID": "LND100002",
-      "returnID": "RET100002",
+      "returnID": "RET100003",
       "propertyType": "01",
       "interestCreatedTransferred": "FPF"
     }
   ],
   "transaction": {
     "transactionID": "TXN100002",
-    "returnID": "RET100002",
+    "returnID": "RET100003",
     "claimingRelief": "yes",
     "reliefReason": "8",
     "isLinked": "yes",
