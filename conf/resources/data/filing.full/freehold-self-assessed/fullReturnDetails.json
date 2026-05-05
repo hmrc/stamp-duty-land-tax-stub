@@ -1,10 +1,10 @@
 {
   "stornId": "STORN100002",
-  "returnResourceRef": "freehold-self-assessed-zero",
+  "returnResourceRef": "freehold-self-assessed",
   "returnInfo": {
     "returnID": "RET100004",
     "storn": "STORN100002",
-    "returnResourceRef": "freehold-self-assessed-zero",
+    "returnResourceRef": "freehold-self-assessed",
     "status": "STARTED"
   },
   "purchaser": [
@@ -28,11 +28,11 @@
     "transactionID": "TXN100002",
     "returnID": "RET100004",
     "claimingRelief": "yes",
-     "reliefReason": "34",
-    "isLinked": "no",
-    "totalConsideration": "0",
+    "reliefReason": "8",
+    "isLinked": "yes",
+    "totalConsideration": "500000.00",
     "transactionDescription": "F",
-    "effectiveDate": "2013-05-01"
+    "effectiveDate": "2024-10-01"
   },
   "residency": {
     "residencyID": "RES100002",

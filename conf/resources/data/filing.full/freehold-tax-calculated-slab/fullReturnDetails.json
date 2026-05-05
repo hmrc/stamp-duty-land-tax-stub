@@ -1,10 +1,10 @@
 {
   "stornId": "STORN100002",
-  "returnResourceRef": "freehold-self-assessed-slab",
+  "returnResourceRef": "freehold-tax-calculated-slab",
   "returnInfo": {
     "returnID": "RET100002",
     "storn": "STORN100002",
-    "returnResourceRef": "freehold-self-assessed-slab",
+    "returnResourceRef": "freehold-tax-calculated-slab",
     "status": "STARTED"
   },
   "purchaser": [

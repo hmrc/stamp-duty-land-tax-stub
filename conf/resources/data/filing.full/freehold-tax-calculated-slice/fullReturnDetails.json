@@ -1,10 +1,10 @@
 {
   "stornId": "STORN100002",
-  "returnResourceRef": "freehold-self-assessed-slice",
+  "returnResourceRef": "freehold-tax-calculated-slice",
   "returnInfo": {
     "returnID": "RET100003",
     "storn": "STORN100002",
-    "returnResourceRef": "freehold-self-assessed-slice",
+    "returnResourceRef": "freehold-tax-calculated-slice",
     "status": "STARTED"
   },
   "purchaser": [
