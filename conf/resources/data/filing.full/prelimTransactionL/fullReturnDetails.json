@@ -71,5 +71,9 @@
       "DARPostcode": "NW1 6XE",
       "lastUpdateDate": "2025-11-09 19:53:34"
     }
-  ]
+  ],
+  "lease": {
+    "leaseID": "LSE001",
+    "returnID": "221110168"
+  }
 }
