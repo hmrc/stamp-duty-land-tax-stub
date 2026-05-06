@@ -27,9 +27,8 @@
   "transaction": {
     "transactionID": "TXN100002",
     "returnID": "RET100003",
-    "claimingRelief": "yes",
-    "reliefReason": "8",
-    "isLinked": "yes",
+    "claimingRelief": "no",
+    "isLinked": "no",
     "totalConsideration": "500000.00",
     "transactionDescription": "F",
     "effectiveDate": "2024-10-01"
