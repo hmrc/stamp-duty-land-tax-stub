@@ -2,6 +2,7 @@
   "stornId": "STORN100004",
   "returnResourceRef": "leasehold-self-assessed",
   "returnInfo": {
+    "mainLandID": "LND100004",
     "returnID": "RET100004",
     "storn": "STORN100004",
     "returnResourceRef": "leasehold-self-assessed",
