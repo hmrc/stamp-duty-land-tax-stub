@@ -2,6 +2,7 @@
   "stornId": "STORN100002",
   "returnResourceRef": "freehold-tax-calculated-slab",
   "returnInfo": {
+    "mainLandID": "LND100002",
     "returnID": "RET100002",
     "storn": "STORN100002",
     "returnResourceRef": "freehold-tax-calculated-slab",

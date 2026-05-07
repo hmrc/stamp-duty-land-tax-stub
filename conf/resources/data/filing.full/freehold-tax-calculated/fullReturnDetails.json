@@ -2,6 +2,7 @@
   "stornId": "STORN100001",
   "returnResourceRef": "freehold-tax-calculated",
   "returnInfo": {
+    "mainLandID": "LND100001",
     "returnID": "RET100001",
     "storn": "STORN100001",
     "returnResourceRef": "freehold-tax-calculated",
