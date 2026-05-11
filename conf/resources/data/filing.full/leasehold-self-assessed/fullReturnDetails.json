@@ -42,7 +42,8 @@
     "contractStartDate": "2024-10-01",
     "contractEndDate": "2034-09-30",
     "startingRent": "9600.00",
-    "netPresentValue": "1897"
+    "netPresentValue": "1897",
+    "totalPremiumPayable": "50000.00"
   },
   "residency": {
     "residencyID": "RES100004",
