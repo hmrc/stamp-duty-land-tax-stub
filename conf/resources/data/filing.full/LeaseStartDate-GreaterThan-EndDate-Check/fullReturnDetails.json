@@ -75,7 +75,7 @@
   "lease": {
     "leaseID": "LSE001",
     "returnID": "221110168",
-    "contractEndDate": "10 10 2050",
-    "startingRentEndDate": "01 01 2026"
+    "contractEndDate": "10 02 2026",
+    "startingRentEndDate": "01 01 2050"
   }
 }
