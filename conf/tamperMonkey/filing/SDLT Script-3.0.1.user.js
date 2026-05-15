@@ -102,7 +102,7 @@ var userProfiles = '[' +
     '{ "description":"land with invalid interestTransferredOption", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "1-land-with-Invalid-InterestTransferredOption" }, ' +
     '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" }, ' +
     '{ "description":"Full lease, transaction type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-l" }, ' +
-    '{ "description":"LeaseStartDate GreaterThan EndDates Check", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "LeaseStartDate-GreaterThan-RentEndDate-Check" } '
+    '{ "description":"LeaseStartDate GreaterThan EndDates Check", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "LeaseStartDate-GreaterThan-EndDate-Check" } ' +
     ']';
 
 
