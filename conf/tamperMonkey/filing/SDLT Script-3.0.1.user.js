@@ -101,7 +101,8 @@ var userProfiles = '[' +
     '{ "description":"Uk Residency 1 Residential and Purchaser Company", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "5-lands-One-Residential-Company" }, ' +
     '{ "description":"land with invalid interestTransferredOption", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "1-land-with-Invalid-InterestTransferredOption" }, ' +
     '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" }, ' +
-    '{ "description":"Full lease, transaction type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-l" } ' +
+    '{ "description":"Full lease, transaction type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-l" }, ' +
+    '{ "description":"LeaseStartDate GreaterThan EndDates Check", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "LeaseStartDate-GreaterThan-EndDate-Check" } ' +
     ']';
 
 
