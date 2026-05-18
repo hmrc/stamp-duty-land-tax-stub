@@ -1,0 +1,42 @@
+{
+  "stornId": "STORN100008",
+  "returnResourceRef": "freehold-self-assessed-MultipleDwellings",
+  "returnInfo": {
+    "mainLandID": "LND100002",
+    "returnID": "RET100004",
+    "storn": "STORN100008",
+    "returnResourceRef": "freehold-self-assessed-MultipleDwellings",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "PUR100008",
+      "returnID": "RET100004",
+      "isCompany": "NO",
+      "surname": "Patel",
+      "forename1": "Priya"
+    }
+  ],
+  "land": [
+    {
+      "landID": "LND100002",
+      "returnID": "RET100004",
+      "propertyType": "01",
+      "interestCreatedTransferred": "FPF"
+    }
+  ],
+  "transaction": {
+    "transactionID": "TXN100008",
+    "returnID": "RET100004",
+    "claimingRelief": "yes",
+    "reliefReason": "33",
+    "isLinked": "no",
+    "totalConsideration": "500000.00",
+    "transactionDescription": "F",
+    "effectiveDate": "2024-10-01"
+  },
+  "residency": {
+    "residencyID": "RES100008",
+    "isNonUkResidents": "NO"
+  }
+}
