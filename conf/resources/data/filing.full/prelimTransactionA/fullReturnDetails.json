@@ -56,5 +56,9 @@
       "landID": "221110171",
       "address1": "test"
     }
-  ]
+  ],
+  "lease": {
+    "leaseID": "LSE001",
+    "returnID": "221110168"
+  }
 }
