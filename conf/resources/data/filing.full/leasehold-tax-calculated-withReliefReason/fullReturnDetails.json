@@ -1,0 +1,50 @@
+{
+  "stornId": "STORN100010",
+  "returnResourceRef": "leasehold-tax-calculated-withReliefReason",
+  "returnInfo": {
+    "mainLandID": "LND100010",
+    "returnID": "RET100010",
+    "storn": "STORN100010",
+    "returnResourceRef": "leasehold-tax-calculated-withReliefReason",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "PUR100010",
+      "returnID": "RET100010",
+      "isCompany": "NO",
+      "surname": "OBrien",
+      "forename1": "Liam"
+    }
+  ],
+  "land": [
+    {
+      "landID": "LND100010",
+      "returnID": "RET100010",
+      "propertyType": "01",
+      "interestCreatedTransferred": "FGL"
+    }
+  ],
+  "transaction": {
+    "transactionID": "TXN100010",
+    "returnID": "RET100010",
+    "claimingRelief": "yes",
+    "reliefReason": "22",
+    "reliefAmount": "5000.00",
+    "isLinked": "no",
+    "totalConsideration": "150000.00",
+    "transactionDescription": "L",
+    "effectiveDate": "2024-10-01"
+  },
+  "lease": {
+    "leaseID": "LSE100010",
+    "returnID": "RET100010",
+    "contractStartDate": "2024-10-01",
+    "contractEndDate": "2034-09-30",
+    "startingRent": "12000.00"
+  },
+  "residency": {
+    "residencyID": "RES100010",
+    "isNonUkResidents": "NO"
+  }
+}
