@@ -127,7 +127,7 @@
     "returnID": "RET123456789",
     "claimingRelief": "YES",
     "reliefAmount": "200",
-    "reliefReason": "partExchange",
+    "reliefReason": "08",
     "reliefSchemeNumber": "200",
     "isLinked": "NO",
     "totalConsiderationLinked": null,
