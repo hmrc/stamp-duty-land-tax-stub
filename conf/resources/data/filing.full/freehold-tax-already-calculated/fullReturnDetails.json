@@ -1,0 +1,52 @@
+{
+  "stornId": "STORN100005",
+  "returnResourceRef": "freehold-tax-already-calculated",
+  "returnInfo": {
+    "mainLandID": "LND100005",
+    "returnID": "RET100005",
+    "storn": "STORN100005",
+    "returnResourceRef": "freehold-tax-already-calculated",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "PUR100005",
+      "returnID": "RET100005",
+      "isCompany": "NO",
+      "surname": "Smith",
+      "forename1": "John"
+    }
+  ],
+  "land": [
+    {
+      "landID": "LND100005",
+      "returnID": "RET100005",
+      "propertyType": "01",
+      "interestCreatedTransferred": "FPF"
+    }
+  ],
+  "transaction": {
+    "transactionID": "TXN100005",
+    "returnID": "RET100005",
+    "claimingRelief": "no",
+    "isLinked": "no",
+    "totalConsideration": "500000.00",
+    "transactionDescription": "F",
+    "effectiveDate": "2024-10-01"
+  },
+  "residency": {
+    "residencyID": "RES100005",
+    "isNonUkResidents": "NO"
+  },
+  "taxCalculation": {
+    "taxCalculationID": "TC100005",
+    "returnID": "RET100005",
+    "amountPaid": "12700.00",
+    "includesPenalty": "yes",
+    "taxDue": "12500.00",
+    "calcPenaltyDue": "200.00",
+    "calcTaxDue": "12500.00",
+    "calcTotalTaxPenaltyDue": "12700.00",
+    "honestyDeclaration": "yes"
+  }
+}

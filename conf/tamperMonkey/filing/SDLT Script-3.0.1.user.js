@@ -112,6 +112,7 @@ var userProfiles = '[' +
     '{ "description":"freehold-tax-calculated-slice", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-tax-calculated-slice" }, ' +
     '{ "description":"freehold-tax-calculated-slab", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-tax-calculated-slab" }, ' +
     '{ "description":"freehold-tax-calculated-zero", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-tax-calculated-zero" }, ' +
+    '{ "description":"freehold-tax-already-calculated", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-tax-already-calculated" }, ' +
 
     '{ "divider":"Leasehold" }, ' +
     '{ "description":"leasehold-self-assessed", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "leasehold-self-assessed" }, ' +
