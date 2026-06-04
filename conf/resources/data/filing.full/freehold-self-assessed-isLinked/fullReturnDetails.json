@@ -29,7 +29,7 @@
     "transactionID": "TXN100005",
     "returnID": "RET100004",
     "claimingRelief": "yes",
-    "reliefReason": "8",
+    "reliefReason": "08",
     "isLinked": "yes",
     "totalConsideration": "500000.00",
     "transactionDescription": "F",
@@ -37,6 +37,6 @@
   },
   "residency": {
     "residencyID": "RES100005",
-    "isNonUkResidents": "NO"
+    "isNonUkResidents": "no"
   }
 }

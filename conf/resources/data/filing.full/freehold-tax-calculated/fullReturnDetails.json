@@ -36,6 +36,6 @@
   },
   "residency": {
     "residencyID": "RES100001",
-    "isNonUkResidents": "NO"
+    "isNonUkResidents": "no"
   }
 }

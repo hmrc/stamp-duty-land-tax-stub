@@ -36,7 +36,7 @@
   },
   "residency": {
     "residencyID": "RES100005",
-    "isNonUkResidents": "NO"
+    "isNonUkResidents": "no"
   },
   "taxCalculation": {
     "taxCalculationID": "TC100005",
