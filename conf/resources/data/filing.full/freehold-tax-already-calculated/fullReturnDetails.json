@@ -3,6 +3,7 @@
   "returnResourceRef": "freehold-tax-already-calculated",
   "returnInfo": {
     "mainLandID": "LND100005",
+    "version": "1.0",
     "returnID": "RET100005",
     "storn": "STORN100005",
     "returnResourceRef": "freehold-tax-already-calculated",
