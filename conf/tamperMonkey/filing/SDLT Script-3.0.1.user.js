@@ -138,12 +138,14 @@ var userProfiles = '[' +
     '{ "description":"land with invalid interestTransferredOption", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "1-land-with-Invalid-InterestTransferredOption" }, ' +
 
     '{ "divider":"Full Transactions" }, ' +
-    '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" }, ' +
-    '{ "description":"Full lease, transaction type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-l" }, ' +
     '{ "description":"Full transaction, Grant of lease, 08 PartExchange", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-transaction-grantoflease-08partexchange" }, ' +
     '{ "description":"Full transaction, Grant of lease, 20 CharitiesRelief", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-transaction-grantoflease-20charitiesrelief" }, ' +
     '{ "description":"Full transaction, Conveyance/Transfer, mixed property type", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-transaction-conveyance" }, ' +
     '{ "description":"LeaseStartDate GreaterThan EndDates Check", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "LeaseStartDate-GreaterThan-EndDate-Check" }, ' +
+
+    '{ "divider":"Full Lease" }, ' +
+    '{ "description":"Full lease, transaction type A", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-a" }, ' +
+    '{ "description":"Full lease, transaction type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-l" }, ' +
 
     '{ "divider":"Crossflow Errors" }, ' +
     '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" } ' +
