@@ -32,7 +32,17 @@
     "isLinked": "no",
     "totalConsideration": "500000.00",
     "transactionDescription": "F",
-    "effectiveDate": "2024-10-01"
+    "effectiveDate": "2024-10-01",
+    "considerationCash": "yes",
+    "considerationDebt": "no",
+    "considerationBuild": "no",
+    "considerationEmploy": "no",
+    "considerationOther": "no",
+    "considerationSharesQTD": "no",
+    "considerationSharesUNQTD": "no",
+    "considerationLand": "no",
+    "considerationServices": "no",
+    "considerationContingent": "no"
   },
   "residency": {
     "residencyID": "RES100005",
