@@ -28,8 +28,8 @@
   "transaction": {
     "transactionID": "221110172",
     "returnID": "221110168",
-    "transactionDescription": "F",
-    "newTransactionDescription": "F"
+    "transactionDescription": "A",
+    "newTransactionDescription": "A"
   },
   "purchaser": [
     {
@@ -68,13 +68,13 @@
     "contractEndDate": "2034-09-30",
     "contractStartDate": "2024-10-01",
     "firstReviewDate": "2029-10-01",
-    "leaseType": "NEW",
+    "leaseType": "R",
     "marketRent": "24000.00",
     "netPresentValue": null,
     "optionToRenew": "YES",
     "totalPremiumPayable": null,
     "rentChargeDate": "2024-10-01",
-    "rentFreePeriod": "3 months",
+    "rentFreePeriod": "3",
     "reviewClauseType": "RPI",
     "rentReviewFrequency": "YEARLY",
     "serviceCharge": "2000.00",
@@ -102,6 +102,6 @@
     "considToTenantSharesUNQTD": null,
     "turnoverRent": null,
     "unasertainableRent": "NO",
-    "VATAmount": "10000.00"
+    "VATAmount": "1000"
   }
 }
