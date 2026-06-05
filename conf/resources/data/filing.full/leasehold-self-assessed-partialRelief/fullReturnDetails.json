@@ -2,6 +2,7 @@
   "stornId": "STORN100006",
   "returnResourceRef": "leasehold-self-assessed-partialRelief",
   "returnInfo": {
+    "version": "1.0",
     "mainLandID": "LND100002",
     "returnID": "RET100004",
     "storn": "STORN100006",

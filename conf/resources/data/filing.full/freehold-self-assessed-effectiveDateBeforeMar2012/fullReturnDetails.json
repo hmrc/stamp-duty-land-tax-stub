@@ -2,6 +2,7 @@
   "stornId": "STORN100009",
   "returnResourceRef": "freehold-self-assessed-effectiveDateBeforeMar12",
   "returnInfo": {
+    "version": "1.0",
     "mainLandID": "LND100002",
     "returnID": "RET100004",
     "storn": "STORN100009",

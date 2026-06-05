@@ -2,6 +2,7 @@
   "stornId": "STORN100010",
   "returnResourceRef": "leasehold-tax-calculated-withReliefReason",
   "returnInfo": {
+    "version": "1.0",
     "mainLandID": "LND100010",
     "returnID": "RET100010",
     "storn": "STORN100010",

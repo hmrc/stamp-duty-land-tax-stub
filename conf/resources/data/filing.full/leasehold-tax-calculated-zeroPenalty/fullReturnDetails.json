@@ -2,6 +2,7 @@
   "stornId": "STORN100003",
   "returnResourceRef": "leasehold-tax-calculated-zeroPenalty",
   "returnInfo": {
+    "version": "1.0",
     "mainLandID": "LND100003",
     "returnID": "RET100003",
     "storn": "STORN100003",
