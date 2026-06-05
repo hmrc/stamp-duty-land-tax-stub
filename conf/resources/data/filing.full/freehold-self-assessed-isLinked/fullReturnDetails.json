@@ -2,6 +2,7 @@
   "stornId": "STORN100005",
   "returnResourceRef": "freehold-self-assessed-isLinked",
   "returnInfo": {
+    "version": "1.0",
     "mainLandID": "LND100002",
     "returnID": "RET100004",
     "storn": "STORN100005",

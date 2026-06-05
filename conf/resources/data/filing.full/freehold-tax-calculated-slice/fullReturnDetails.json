@@ -2,6 +2,7 @@
   "stornId": "STORN100002",
   "returnResourceRef": "freehold-tax-calculated-slice",
   "returnInfo": {
+    "version": "1.0",
     "mainLandID": "LND100002",
     "returnID": "RET100003",
     "storn": "STORN100002",
