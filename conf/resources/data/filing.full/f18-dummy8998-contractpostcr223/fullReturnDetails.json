@@ -1,0 +1,110 @@
+{
+  "stornId": "STORN-F18-8998C",
+  "returnResourceRef": "F18-8998-CONTRACT",
+  "sdltOrganisation": {
+    "isReturnUser": "YES",
+    "doNotDisplayWelcomePage": "NO",
+    "storn": "STORN-F18-8998C",
+    "version": "1.0"
+  },
+  "returnInfo": {
+    "returnID": "RET-F18-8998-CONTRACT",
+    "storn": "STORN-F18-8998C",
+    "purchaserCounter": "1",
+    "vendorCounter": "1",
+    "landCounter": "1",
+    "purgeDate": "2026-12-31",
+    "version": "1.0",
+    "mainPurchaserID": "PUR001",
+    "mainVendorID": "VEN001",
+    "mainLandID": "LND001",
+    "IRMarkGenerated": "YES",
+    "landCertForEachProp": "NO",
+    "returnResourceRef": "F18-8998-CONTRACT",
+    "declaration": "YES",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "PUR001",
+      "returnID": "RET-F18-8998-CONTRACT",
+      "isCompany": "NO",
+      "isTrustee": "NO",
+      "isConnectedToVendor": "NO",
+      "isRepresentedByAgent": "YES",
+      "title": "Mr",
+      "surname": "Smith",
+      "forename1": "John",
+      "houseNumber": "42",
+      "address1": "High Street",
+      "address2": "Kensington",
+      "address3": "London",
+      "postcode": "SW1A 1AA",
+      "phone": "020 7946 0958",
+      "nino": "AB123456C",
+      "purchaserResourceRef": "PUR-REF-001",
+      "lMigrated": "N",
+      "createDate": "2024-10-01",
+      "lastUpdateDate": "2025-11-16 19:53:40",
+      "isUkCompany": "NO",
+      "hasNino": "YES",
+      "dateOfBirth": "15/05/1985"
+    }
+  ],
+  "vendor": [
+    {
+      "vendorID": "VEN001",
+      "returnID": "RET-F18-8998-CONTRACT",
+      "title": "Mrs",
+      "forename1": "Jane",
+      "name": "Johnson",
+      "houseNumber": "15",
+      "address1": "Park Lane",
+      "address2": "Mayfair",
+      "address3": "London",
+      "postcode": "W1K 1LB",
+      "isRepresentedByAgent": "NO",
+      "vendorResourceRef": "VEN-REF-001"
+    }
+  ],
+  "land": [
+    {
+      "landID": "LND001",
+      "returnID": "RET-F18-8998-CONTRACT",
+      "propertyType": "01",
+      "interestCreatedTransferred": "FGL",
+      "houseNumber": "11",
+      "address1": "Albion Drive",
+      "address2": "Leeds",
+      "address3": "England",
+      "postcode": "LS5 3DJ",
+      "landArea": "200.0",
+      "areaUnit": "SquareMetres",
+      "localAuthorityNumber": "8998",
+      "mineralRights": "NO",
+      "NLPGUPRN": "10012345671",
+      "willSendPlanByPost": "NO",
+      "titleNumber": "TGL000001",
+      "landResourceRef": "LND-REF-001",
+      "DARPostcode": "LS5 3DJ"
+    }
+  ],
+  "transaction": {
+    "transactionID": "TXN001",
+    "returnID": "RET-F18-8998-CONTRACT",
+    "claimingRelief": "no",
+    "totalConsideration": "500000.00",
+    "considerationCash": "500000.00",
+    "transactionDescription": "F",
+    "isLandExchanged": "NO",
+    "isPartOfSaleOfBusiness": "NO",
+    "effectiveDate": "2015-12-15",
+    "contractDate": "2015-06-01"
+  },
+  "residency": {
+    "residencyID": "RES001",
+    "isNonUkResidents": "NO",
+    "isCloseCompany": "NO",
+    "isCrownRelief": "NO"
+  }
+}

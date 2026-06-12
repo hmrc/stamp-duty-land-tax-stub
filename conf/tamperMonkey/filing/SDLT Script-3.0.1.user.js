@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         SDLT Script
 // @namespace    http://localhost
-// @lastupdate   17/07/2019
-// @version      3.4.0
+// @lastupdate   05/06/2026
+// @version      3.5.0
 // @description  This script automated logging in to SDLT Install Tampermonkey on Chrome or Greasemonkey on Firefox and add this to your userscripts to automate logging in to SDLT
 // @author       https://github.com/gianick
 // @match        http://localhost:9949/gg/sign-in
@@ -18,7 +18,7 @@
 // ==/UserScript==
 
 // Note: This should match the version on line 5
-var scriptVersion = "3.4.0"
+var scriptVersion = "3.5.0"
 
 var userProfiles = '[' +
     '{ "divider":"Getting Started" }, ' +
@@ -148,7 +148,46 @@ var userProfiles = '[' +
     '{ "description":"Full lease, transaction type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-l" }, ' +
 
     '{ "divider":"Crossflow Errors" }, ' +
-    '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" } ' +
+    '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" }, ' +
+    '{ "description":"f17-welsh6996-before-wales-act", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-welsh6996-before-wales-act" }, ' +
+    '{ "description":"f17-welsh6996-before-wales-act-multi", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-welsh6996-before-wales-act-multi" }, ' +
+    '{ "description":"f23-32-fail-property-not-residential", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-32-fail-property-not-residential" }, ' +
+    '{ "description":"f23-33-fail-property-not-allowed", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-33-fail-property-not-allowed" }, ' +
+    '{ "description":"f23-34-fail-date-before-2013", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-34-fail-date-before-2013" }, ' +
+    '{ "description":"f23-35-fail-date-before-2013", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-35-fail-date-before-2013" }, ' +
+    '{ "description":"f23-36-fail-after-window", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-36-fail-after-window" }, ' +
+    '{ "description":"f23-36-fail-before-window", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-36-fail-before-window" }, ' +
+    '{ "description":"f23-36-pass-inside-window", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-36-pass-inside-window" }, ' +
+    '{ "description":"f23-37-fail-after-window", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-37-fail-after-window" }, ' +
+    '{ "description":"f23-37-fail-before-window", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-37-fail-before-window" }, ' +
+    '{ "description":"f23-38-fail-date-before-2025-03-19", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f23-38-fail-date-before-2025-03-19" }, ' +
+    '{ "description":"f25-fail-contract-date-after-cutoff", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f25-fail-contract-date-after-cutoff" }, ' +
+    '{ "description":"f25-fail-contract-date-null", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f25-fail-contract-date-null" }, ' +
+    '{ "description":"f25-fail-contract-date-on-cutoff", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f25-fail-contract-date-on-cutoff" }, ' +
+    '{ "description":"f25-fail-effective-date-after-cutoff", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f25-fail-effective-date-after-cutoff" }, ' +
+    '{ "description":"f25-fail-effective-date-on-cutoff", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f25-fail-effective-date-on-cutoff" }, ' +
+    '{ "description":"f28-cap500k-original-window-fail", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f28-cap500k-original-window-fail" }, ' +
+    '{ "description":"f28-cap500k-post-2025-fail", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f28-cap500k-post-2025-fail" }, ' +
+    '{ "description":"f28-cap625k-middle-window-fail", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f28-cap625k-middle-window-fail" },' +
+    '{ "description":"f17-6996-missingeffdate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6996-missingeffdate" }, ' +
+    '{ "description":"f17-6996-preact", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6996-preact" }, ' +
+    '{ "description":"f17-6997-preact", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6997-preact" }, ' +
+    '{ "description":"f17-6998-bothdates", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6998-bothdates" }, ' +
+    '{ "description":"f17-6998-contractdate-postact", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6998-contractdate-postact" }, ' +
+    '{ "description":"f17-6998-effdate-preact", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6998-effdate-preact" }, ' +
+    '{ "description":"f17-6999-bothdates", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6999-bothdates" }, ' +
+    '{ "description":"f17-6999-contractdate-afterwalesact", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6999-contractdate-afterwalesact" }, ' +
+    '{ "description":"f17-6999-effdate-preact", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-6999-effdate-preact" }, ' +
+    '{ "description":"f17-regularwelsh-postact", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f17-regularwelsh-postact" }, ' +
+    '{ "description":"f18-dummy8998-contractpostcr223", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-dummy8998-contractpostcr223" }, ' +
+    '{ "description":"f18-dummy8998-precr223", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-dummy8998-precr223" }, ' +
+    '{ "description":"f18-dummy8999-contractafterscotact", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-dummy8999-contractafterscotact" }, ' +
+    '{ "description":"f18-dummy8999-precr223", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-dummy8999-precr223" }, ' +
+    '{ "description":"f18-scottishcode-postcr223", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-scottishcode-postcr223" }, ' +
+    '{ "description":"f18-scottishpostcode-edinburgh", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-scottishpostcode-edinburgh" }, ' +
+    '{ "description":"f18-scottishpostcode-glasgow", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-scottishpostcode-glasgow" },' +
+    '{ "description":"all-f17-and-f18-predate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-f17-and-f18-predate" },' +
+    '{ "description":"all-f17-and-f18-postdate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-f17-and-f18-postdate" }' +
     ']';
 
 
