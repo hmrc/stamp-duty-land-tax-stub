@@ -1,0 +1,51 @@
+{
+  "stornId": "STORN100007",
+  "returnResourceRef": "leasehold-self-assessed-multipleReasons",
+  "returnInfo": {
+    "version": "1.0",
+    "mainLandID": "LND100002",
+    "returnID": "RET100004",
+    "storn": "STORN100007",
+    "returnResourceRef": "leasehold-self-assessed-multipleReasons",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "PUR100007",
+      "returnID": "RET100004",
+      "isCompany": "NO",
+      "surname": "Patel",
+      "forename1": "Priya"
+    }
+  ],
+  "land": [
+    {
+      "landID": "LND100002",
+      "returnID": "RET100004",
+      "propertyType": "01",
+      "interestCreatedTransferred": "OT"
+    }
+  ],
+  "transaction": {
+    "transactionID": "TXN100007",
+    "returnID": "RET100004",
+    "claimingRelief": "no",
+    "isLinked": "yes",
+    "totalConsideration": "500000.00",
+    "transactionDescription": "L",
+    "effectiveDate": "2024-10-01"
+  },
+  "lease": {
+    "leaseID": "LSE100004",
+    "returnID": "RET100004",
+    "contractStartDate": "2024-10-01",
+    "contractEndDate": "2034-09-30",
+    "startingRent": "9600.00",
+    "netPresentValue": "1897.00",
+    "totalPremiumPayable": "50000.00"
+  },
+  "residency": {
+    "residencyID": "RES100007",
+    "isNonUkResidents": "NO"
+  }
+}
