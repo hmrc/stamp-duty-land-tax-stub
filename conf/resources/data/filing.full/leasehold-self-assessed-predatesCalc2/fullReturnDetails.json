@@ -33,16 +33,17 @@
     "isLinked": "no",
     "totalConsideration": "500000.00",
     "transactionDescription": "L",
-    "effectiveDate": "2012-02-01"
+    "effectiveDate": "2014-02-01"
   },
   "lease": {
     "leaseID": "LSE100004",
     "returnID": "RET100004",
-    "contractStartDate": "2011-02-01",
-    "contractEndDate": "2012-02-01",
+    "contractStartDate": "2013-02-01",
+    "contractEndDate": "2014-02-01",
     "startingRent": "9600.00",
     "netPresentValue": "1897.00",
-    "totalPremiumPayable": "50000.00"
+    "totalPremiumPayable": "50000.00",
+    "isAnnualRentOver1000": "yes"
   },
   "residency": {
     "residencyID": "RES100009",

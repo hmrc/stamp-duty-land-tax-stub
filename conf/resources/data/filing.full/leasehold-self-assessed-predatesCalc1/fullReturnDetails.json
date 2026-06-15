@@ -22,7 +22,7 @@
     {
       "landID": "LND100002",
       "returnID": "RET100004",
-      "propertyType": "02",
+      "propertyType": "01",
       "interestCreatedTransferred": "FPF"
     }
   ],
@@ -34,13 +34,13 @@
     "isLinked": "no",
     "totalConsideration": "500000.00",
     "transactionDescription": "L",
-    "effectiveDate": "2010-02-01"
+    "effectiveDate": "2012-03-24"
   },
   "lease": {
     "leaseID": "LSE100004",
     "returnID": "RET100004",
-    "contractStartDate": "2009-02-01",
-    "contractEndDate": "2010-02-01",
+    "contractStartDate": "2011-03-24",
+    "contractEndDate": "2012-03-24",
     "startingRent": "9600.00",
     "netPresentValue": "1897.00",
     "totalPremiumPayable": "50000.00"
