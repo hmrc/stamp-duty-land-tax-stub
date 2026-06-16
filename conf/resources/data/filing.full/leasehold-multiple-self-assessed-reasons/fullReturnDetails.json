@@ -1,12 +1,12 @@
 {
   "stornId": "STORN100007",
-  "returnResourceRef": "leasehold-self-assessed-multipleReasons",
+  "returnResourceRef": "leasehold-multiple-self-assessed-reasons",
   "returnInfo": {
     "version": "1.0",
     "mainLandID": "LND100002",
     "returnID": "RET100004",
     "storn": "STORN100007",
-    "returnResourceRef": "leasehold-self-assessed-multipleReasons",
+    "returnResourceRef": "leasehold-multiple-self-assessed-reasons",
     "status": "STARTED"
   },
   "purchaser": [

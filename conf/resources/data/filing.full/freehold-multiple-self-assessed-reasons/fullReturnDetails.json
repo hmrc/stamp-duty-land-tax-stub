@@ -1,12 +1,12 @@
 {
   "stornId": "STORN100006",
-  "returnResourceRef": "freehold-self-assessed-multipleReasons",
+  "returnResourceRef": "freehold-multiple-self-assessed-reasons",
   "returnInfo": {
     "version": "1.0",
     "mainLandID": "LND100002",
     "returnID": "RET100004",
     "storn": "STORN100006",
-    "returnResourceRef": "freehold-self-assessed-multipleReasons",
+    "returnResourceRef": "freehold-multiple-self-assessed-reasons",
     "status": "STARTED"
   },
   "purchaser": [
