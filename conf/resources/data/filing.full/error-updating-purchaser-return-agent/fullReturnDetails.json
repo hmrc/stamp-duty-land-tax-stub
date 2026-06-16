@@ -330,7 +330,7 @@
   },
   "residency": {
     "residencyID": "RES001",
-    "isNonUkResidents": "NO",
+    "isNonUkResidents": "no",
     "isCloseCompany": "false",
     "isCrownRelief": "false"
   }

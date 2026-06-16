@@ -125,11 +125,11 @@
   "transaction": {
     "transactionID": "TXN001",
     "returnID": "RET123456789",
-    "claimingRelief": "YES",
+    "claimingRelief": "yes",
     "reliefAmount": "200",
     "reliefReason": "20",
     "reliefSchemeNumber": "200",
-    "isLinked": "NO",
+    "isLinked": "no",
     "totalConsiderationLinked": null,
     "totalConsideration": "3000",
     "considerationBuild": null,
@@ -303,7 +303,7 @@
   },
   "residency": {
     "residencyID": "RES001",
-    "isNonUkResidents": "NO",
+    "isNonUkResidents": "no",
     "isCloseCompany": "NO",
     "isCrownRelief": "NO"
   }
