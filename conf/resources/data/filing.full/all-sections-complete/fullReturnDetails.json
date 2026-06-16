@@ -1,0 +1,68 @@
+{
+  "stornId": "STORN123456",
+  "returnResourceRef": "123456",
+  "sdltOrganisation": {
+    "isReturnUser": "true",
+    "doNotDisplayWelcomePage": "false",
+    "storn": "STORN123456",
+    "version": "1.0"
+  },
+
+  "returnInfo": {
+    "returnID": "RET123456789",
+    "storn": "STORN123456",
+    "purchaserCounter": "1",
+    "vendorCounter": "1",
+    "landCounter": "1",
+    "purgeDate": "2026-12-31",
+    "version": "1.0",
+    "mainPurchaserID": "PUR001",
+    "mainVendorID": "VEN001",
+    "mainLandID": "LND001",
+    "IRMarkGenerated": "true",
+    "landCertForEachProp": "false",
+    "returnResourceRef": "123456",
+    "declaration": "true",
+    "status": "SUBMITTED"
+  },
+  "vendor": [{}],
+
+  "returnAgent": [
+    {
+      "agentType": "PURCHASER",
+      "name": "Joe Bloggs"
+    },
+    {
+      "agentType": "VENDOR",
+      "name": "Joe Bloggs"
+    }
+  ],
+
+  "purchaser": [{}],
+
+  "land": [{
+    "propertyType": "01"
+  }],
+
+  "lease": {
+    "leaseType": "N"
+  },
+
+  "residency": {
+    "residencyID": "RES001",
+    "isNonUkResidents": "NO",
+    "isCloseCompany": "false",
+    "isCrownRelief": "false"
+  },
+
+  "taxCalculation": {
+    "taxDue": "15000.00"
+  },
+
+  "transaction": {
+    "transactionDescription": "L",
+    "effectiveDate": "01/10/2024"
+  },
+
+  "submission": {}
+}
