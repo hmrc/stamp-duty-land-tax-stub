@@ -1,0 +1,43 @@
+{
+  "stornId": "STORN100009",
+  "returnResourceRef": "freehold-self-assessed-collectiveEnfranchisement",
+  "returnInfo": {
+    "version": "1.0",
+    "mainLandID": "LND100002",
+    "returnID": "RET100004",
+    "storn": "STORN100009",
+    "returnResourceRef": "freehold-self-assessed-collectiveEnfranchisement",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "PUR100009",
+      "returnID": "RET100004",
+      "isCompany": "NO",
+      "surname": "Patel",
+      "forename1": "Priya"
+    }
+  ],
+  "land": [
+    {
+      "landID": "LND100002",
+      "returnID": "RET100004",
+      "propertyType": "03",
+      "interestCreatedTransferred": "FPF"
+    }
+  ],
+  "transaction": {
+    "transactionID": "TXN100009",
+    "returnID": "RET100004",
+    "claimingRelief": "yes",
+    "reliefReason": "25",
+    "isLinked": "no",
+    "totalConsideration": "500000.00",
+    "transactionDescription": "F",
+    "effectiveDate": "2012-02-01"
+  },
+  "residency": {
+    "residencyID": "RES100009",
+    "isNonUkResidents": "NO"
+  }
+}
