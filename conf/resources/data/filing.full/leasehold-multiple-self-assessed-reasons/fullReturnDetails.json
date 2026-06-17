@@ -29,17 +29,19 @@
   "transaction": {
     "transactionID": "TXN100007",
     "returnID": "RET100004",
-    "claimingRelief": "no",
+    "claimingRelief": "yes",
+    "reliefReason": "25",
+    "reliefAmount": "5000.00",
     "isLinked": "yes",
     "totalConsideration": "500000.00",
     "transactionDescription": "L",
-    "effectiveDate": "2024-10-01"
+    "effectiveDate": "2010-10-05"
   },
   "lease": {
     "leaseID": "LSE100004",
     "returnID": "RET100004",
-    "contractStartDate": "2024-10-01",
-    "contractEndDate": "2034-09-30",
+    "contractStartDate": "2009-10-05",
+    "contractEndDate": "2010-10-05",
     "startingRent": "9600.00",
     "netPresentValue": "1897.00",
     "totalPremiumPayable": "50000.00"
