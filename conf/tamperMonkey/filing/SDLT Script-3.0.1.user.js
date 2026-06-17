@@ -194,14 +194,14 @@ var userProfiles = '[' +
     '{ "description":"f18-scottishpostcode-edinburgh", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-scottishpostcode-edinburgh" }, ' +
     '{ "description":"f18-scottishpostcode-glasgow", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "f18-scottishpostcode-glasgow" },' +
     '{ "description":"all-f17-and-f18-predate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-f17-and-f18-predate" },' +
-    '{ "description":"all-f17-and-f18-postdate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-f17-and-f18-postdate" }' +
-    '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" } ' +
+    '{ "description":"all-f17-and-f18-postdate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-f17-and-f18-postdate" }, ' +
+    '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" }, ' +
 
     '{ "divider":"Tasklist" }, ' +
     '{ "description":"All sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-incomplete" }, ' +
     '{ "description":"All sections complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-complete" }, ' +
     '{ "description":"Only mandatory sections complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-complete" }, ' +
-    '{ "description":"Only mandatory sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-incomplete" }, ' +
+    '{ "description":"Only mandatory sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-incomplete" } ' +
     ']';
 
 
