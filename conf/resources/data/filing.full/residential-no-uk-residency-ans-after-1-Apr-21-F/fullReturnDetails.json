@@ -1,0 +1,21 @@
+{
+  "stornId": "STORN123456",
+  "returnResourceRef": "residential-no-uk-residency-ans-after-1-Apr-21-F",
+  "returnInfo": {
+    "mainLandID": "LND001"
+  },
+  "land": [
+    {
+      "landID": "LND001",
+      "propertyType": "01",
+      "interestCreatedTransferred": "FPF"
+    }
+  ],
+  "transaction": {
+    "claimingRelief": "no",
+    "isLinked": "no",
+    "totalConsideration": "500000.00",
+    "transactionDescription": "F",
+    "effectiveDate": "2023-01-01"
+  }
+}

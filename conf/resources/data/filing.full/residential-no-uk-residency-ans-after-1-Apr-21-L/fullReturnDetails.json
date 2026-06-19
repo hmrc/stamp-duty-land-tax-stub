@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "residential-no-uk-residency",
+  "returnResourceRef": "residential-no-uk-residency-ans-after-1-Apr-21-L",
   "returnInfo": {
     "mainLandID": "LND001"
   },
@@ -15,7 +15,15 @@
     "claimingRelief": "no",
     "isLinked": "no",
     "totalConsideration": "500000.00",
-    "transactionDescription": "F",
+    "transactionDescription": "L",
     "effectiveDate": "2023-01-01"
+  },
+  "lease": {
+    "leaseID": "LSE001",
+    "contractStartDate": "2023-01-01",
+    "contractEndDate": "2033-01-01",
+    "startingRent": "9600.00",
+    "netPresentValue": "1897.00",
+    "totalPremiumPayable": "50000.00"
   }
 }
