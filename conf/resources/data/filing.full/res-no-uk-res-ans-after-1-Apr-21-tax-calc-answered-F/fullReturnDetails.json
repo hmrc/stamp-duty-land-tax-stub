@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "residential-no-uk-residency-ans-after-1-Apr-21-F",
+  "returnResourceRef": "res-no-uk-res-ans-after-1-Apr-21-tax-calc-answered-F",
   "sdltOrganisation": {
     "isReturnUser": "YES",
     "doNotDisplayWelcomePage": "NO",
@@ -8,7 +8,7 @@
     "version": "1.0"
   },
   "returnInfo": {
-    "returnID": "RET-NONUKRES-F-001",
+    "returnID": "RET-NONUKRES-F-TC-001",
     "storn": "STORN123456",
     "purchaserCounter": "1",
     "vendorCounter": "1",
@@ -20,14 +20,14 @@
     "mainLandID": "LND001",
     "IRMarkGenerated": "NO",
     "landCertForEachProp": "NO",
-    "returnResourceRef": "residential-no-uk-residency-ans-after-1-Apr-21-F",
+    "returnResourceRef": "residential-no-uk-residency-ans-after-1-Apr-21-tax-calc-answered-F",
     "declaration": "YES",
     "status": "STARTED"
   },
   "purchaser": [
     {
       "purchaserID": "PUR001",
-      "returnID": "RET-NONUKRES-F-001",
+      "returnID": "RET-NONUKRES-F-TC-001",
       "isCompany": "NO",
       "isTrustee": "NO",
       "isConnectedToVendor": "NO",
@@ -54,7 +54,7 @@
   "vendor": [
     {
       "vendorID": "VEN001",
-      "returnID": "RET-NONUKRES-F-001",
+      "returnID": "RET-NONUKRES-F-TC-001",
       "title": "Mrs",
       "forename1": "Jane",
       "forename2": "Elizabeth",
@@ -73,7 +73,7 @@
   "land": [
     {
       "landID": "LND001",
-      "returnID": "RET-NONUKRES-F-001",
+      "returnID": "RET-NONUKRES-F-TC-001",
       "propertyType": "01",
       "interestCreatedTransferred": "FPF",
       "houseNumber": "123",
@@ -96,7 +96,7 @@
   ],
   "transaction": {
     "transactionID": "TXN001",
-    "returnID": "RET-NONUKRES-F-001",
+    "returnID": "RET-NONUKRES-F-TC-001",
     "claimingRelief": "no",
     "reliefAmount": null,
     "reliefReason": null,
@@ -126,5 +126,22 @@
     "restrictionsAffectInterest": "no",
     "postTransRulingFollowed": "no",
     "isPartOfSaleOfBusiness": "no"
+  },
+  "taxCalculation": {
+    "taxCalculationID": "TC-NONUKRES-F-001",
+    "returnID": "RET-NONUKRES-F-TC-001",
+    "amountPaid": "25000.00",
+    "includesPenalty": "NO",
+    "taxDue": "25000.00",
+    "taxDuePremium": "0.00",
+    "taxDueNPV": "0.00",
+    "calcPenaltyDue": "0.00",
+    "calcTaxDue": "25000.00",
+    "calcTaxRate1": "2.0",
+    "calcTaxRate2": "7.0",
+    "calcTotalTaxPenaltyDue": "25000.00",
+    "calcTotalNPVTax": "0.00",
+    "calcTotalPremiumTax": "25000.00",
+    "honestyDeclaration": "YES"
   }
 }

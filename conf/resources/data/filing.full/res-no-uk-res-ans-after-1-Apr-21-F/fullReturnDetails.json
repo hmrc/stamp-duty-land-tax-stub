@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "residential-no-uk-residency-ans-after-1-Apr-21-L",
+  "returnResourceRef": "res-no-uk-res-ans-after-1-Apr-21-F",
   "sdltOrganisation": {
     "isReturnUser": "YES",
     "doNotDisplayWelcomePage": "NO",
@@ -8,7 +8,7 @@
     "version": "1.0"
   },
   "returnInfo": {
-    "returnID": "RET-NONUKRES-L-001",
+    "returnID": "RET-NONUKRES-F-001",
     "storn": "STORN123456",
     "purchaserCounter": "1",
     "vendorCounter": "1",
@@ -20,14 +20,14 @@
     "mainLandID": "LND001",
     "IRMarkGenerated": "NO",
     "landCertForEachProp": "NO",
-    "returnResourceRef": "residential-no-uk-residency-ans-after-1-Apr-21-L",
+    "returnResourceRef": "residential-no-uk-residency-ans-after-1-Apr-21-F",
     "declaration": "YES",
     "status": "STARTED"
   },
   "purchaser": [
     {
       "purchaserID": "PUR001",
-      "returnID": "RET-NONUKRES-L-001",
+      "returnID": "RET-NONUKRES-F-001",
       "isCompany": "NO",
       "isTrustee": "NO",
       "isConnectedToVendor": "NO",
@@ -54,7 +54,7 @@
   "vendor": [
     {
       "vendorID": "VEN001",
-      "returnID": "RET-NONUKRES-L-001",
+      "returnID": "RET-NONUKRES-F-001",
       "title": "Mrs",
       "forename1": "Jane",
       "forename2": "Elizabeth",
@@ -73,9 +73,9 @@
   "land": [
     {
       "landID": "LND001",
-      "returnID": "RET-NONUKRES-L-001",
+      "returnID": "RET-NONUKRES-F-001",
       "propertyType": "01",
-      "interestCreatedTransferred": "FGL",
+      "interestCreatedTransferred": "FPF",
       "houseNumber": "123",
       "address1": "Baker Street",
       "address2": "Marylebone",
@@ -96,7 +96,7 @@
   ],
   "transaction": {
     "transactionID": "TXN001",
-    "returnID": "RET-NONUKRES-L-001",
+    "returnID": "RET-NONUKRES-F-001",
     "claimingRelief": "no",
     "reliefAmount": null,
     "reliefReason": null,
@@ -117,7 +117,7 @@
     "usedAsWarehouse": "NO",
     "contractDate": "2022-12-15",
     "isDependantOnFutureEvent": "no",
-    "transactionDescription": "L",
+    "transactionDescription": "F",
     "effectiveDate": "2023-01-01",
     "isLandExchanged": "no",
     "agreedToDeferPayment": "no",
@@ -126,21 +126,5 @@
     "restrictionsAffectInterest": "no",
     "postTransRulingFollowed": "no",
     "isPartOfSaleOfBusiness": "no"
-  },
-  "lease": {
-    "leaseID": "LSE001",
-    "returnID": "RET-NONUKRES-L-001",
-    "leaseType": "NEW",
-    "isAnnualRentOver1000": "yes",
-    "contractStartDate": "2023-01-01",
-    "contractEndDate": "2033-01-01",
-    "startingRent": "9600.00",
-    "netPresentValue": "1897.00",
-    "totalPremiumPayable": "50000.00",
-    "marketRent": "9600.00",
-    "optionToRenew": "NO",
-    "laterRentKnown": "no",
-    "termsSurrendered": "NO",
-    "unasertainableRent": "NO"
   }
 }
