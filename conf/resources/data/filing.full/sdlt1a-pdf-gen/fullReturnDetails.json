@@ -19,7 +19,7 @@
     "mainVendorID": "382966907",
     "mainLandID": "382966901",
     "IRMarkGenerated": null,
-    "landCertForEachProp": null,
+    "landCertForEachProp": "YES",
     "returnResourceRef": "123456",
     "declaration": null,
     "status": "STARTED"
