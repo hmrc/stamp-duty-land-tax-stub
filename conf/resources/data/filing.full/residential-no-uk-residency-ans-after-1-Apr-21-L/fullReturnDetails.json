@@ -142,20 +142,5 @@
     "laterRentKnown": "no",
     "termsSurrendered": "NO",
     "unasertainableRent": "NO"
-  },
-  "taxCalculation": {
-    "taxCalculationID": "TC001",
-    "returnID": "RET-NONUKRES-L-001",
-    "amountPaid": "30000.00",
-    "includesPenalty": "NO",
-    "taxDue": "30000.00",
-    "taxDuePremium": "30000.00",
-    "taxDueNPV": "0.00",
-    "calcPenaltyDue": "0.00",
-    "calcTaxDue": "30000.00",
-    "calcTotalTaxPenaltyDue": "30000.00",
-    "calcTotalPremiumTax": "30000.00",
-    "calcTotalNPVTax": "0.00",
-    "honestyDeclaration": "YES"
   }
 }

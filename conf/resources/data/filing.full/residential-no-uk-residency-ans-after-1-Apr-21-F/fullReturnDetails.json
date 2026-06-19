@@ -126,19 +126,5 @@
     "restrictionsAffectInterest": "no",
     "postTransRulingFollowed": "no",
     "isPartOfSaleOfBusiness": "no"
-  },
-  "taxCalculation": {
-    "taxCalculationID": "TC001",
-    "returnID": "RET-NONUKRES-F-001",
-    "amountPaid": "30000.00",
-    "includesPenalty": "NO",
-    "taxDue": "30000.00",
-    "taxDuePremium": "30000.00",
-    "taxDueNPV": null,
-    "calcPenaltyDue": "0.00",
-    "calcTaxDue": "30000.00",
-    "calcTotalTaxPenaltyDue": "30000.00",
-    "calcTotalPremiumTax": "30000.00",
-    "honestyDeclaration": "YES"
   }
 }
