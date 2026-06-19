@@ -204,6 +204,9 @@ var userProfiles = '[' +
     '{ "description":"all-f17-and-f18-postdate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-f17-and-f18-postdate" }, ' +
     '{ "description":"Full lease, transaction type F", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-f" }, ' +
 
+    '{ "divider":"PDF Generation" }, ' +
+    '{ "description":"Complete SDLT1a PDF Section", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt1a-pdf-gen" }, ' +
+
     '{ "divider":"Tasklist" }, ' +
     '{ "description":"All sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-incomplete" }, ' +
     '{ "description":"All sections complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-complete" }, ' +
@@ -226,8 +229,10 @@ var sectionColors = {
   'leasehold':          '#f97316',
   'uk-residency':       '#84cc16',
   'full-transactions':  '#a855f7',
-  'crossflow-errors':  '#6d0202',
-    'tasklist':         '#ffeb00',
+  'full-lease':         '#567ec4',
+  'crossflow-errors':   '#6d0202',
+  'pdf-generation':     '#529f26',
+  'tasklist':           '#ffeb00'
 };
 
 var submitFormVal = true;
