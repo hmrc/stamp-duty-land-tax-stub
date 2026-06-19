@@ -157,11 +157,5 @@
     "calcTotalPremiumTax": "30000.00",
     "calcTotalNPVTax": "0.00",
     "honestyDeclaration": "YES"
-  },
-  "residency": {
-    "residencyID": "RES001",
-    "isNonUkResidents": "YES",
-    "isCloseCompany": "NO",
-    "isCrownRelief": "NO"
   }
 }
