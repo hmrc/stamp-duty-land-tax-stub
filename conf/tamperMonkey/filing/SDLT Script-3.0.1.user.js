@@ -198,6 +198,7 @@ var userProfiles = '[' +
     '{ "description":"F30-Cf-5c", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "F30-Cf-5c" },' +
     '{ "description":"F30-CF6", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "F30-CF6" },' +
     '{ "description":"F30-CF6-with-cf5a", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "F30-CF6-with-cf5a" },' +
+    '{ "description":"CF-17", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "CF-17" },' +
     '{ "description":"all-f17-and-f18-predate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-f17-and-f18-predate" },' +
     '{ "description":"all-f17-and-f18-postdate", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-f17-and-f18-postdate" }' +
     ']';
