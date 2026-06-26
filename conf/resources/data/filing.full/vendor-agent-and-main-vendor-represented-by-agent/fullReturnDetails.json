@@ -16,7 +16,7 @@
     "purgeDate": "2026-12-31",
     "version": "1.0",
     "mainPurchaserID": "PUR001",
-    "mainVendorID": "VEN002",
+    "mainVendorID": "VEN001",
     "mainLandID": "LND001",
     "IRMarkGenerated": "YES",
     "landCertForEachProp": "NO",
@@ -95,7 +95,7 @@
       "postcode": "W1K 1LB",
       "isRepresentedByAgent": "NO",
       "vendorResourceRef": "VEN-REF-001",
-      "nextVendorID": null
+      "nextVendorID": "VEN002"
     },
     {
       "vendorID": "VEN002",
@@ -112,7 +112,7 @@
       "postcode": "W1K 1LA",
       "isRepresentedByAgent": "YES",
       "vendorResourceRef": "VEN-REF-002",
-      "nextVendorID": null
+      "nextVendorID": "VEN003"
     },
     {
       "vendorID": "VEN003",
