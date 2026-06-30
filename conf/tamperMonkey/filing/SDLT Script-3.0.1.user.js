@@ -210,6 +210,7 @@ var userProfiles = '[' +
     '{ "divider":"PDF Generation" }, ' +
     '{ "description":"Complete SDLT1a PDF Section", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt1a-pdf-gen" }, ' +
     '{ "description":"Complete SDLT2 Purchaser PDF Section", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt2Purchaser-pdf-gen" }, ' +
+    '{ "description":"Complete SDLT1c PDF Section", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt1c-pdf-gen" }, ' +
 
     '{ "divider":"Tasklist" }, ' +
     '{ "description":"All sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-incomplete" }, ' +
