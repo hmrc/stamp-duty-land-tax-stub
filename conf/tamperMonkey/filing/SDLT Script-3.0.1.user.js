@@ -219,7 +219,10 @@ var userProfiles = '[' +
     '{ "description":"All sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-incomplete" }, ' +
     '{ "description":"All sections complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-complete" }, ' +
     '{ "description":"Only mandatory sections complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-complete" }, ' +
-    '{ "description":"Only mandatory sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-incomplete" } ' +
+    '{ "description":"Only mandatory sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-incomplete" }, ' +
+
+    '{ "divider":"Submission" }, ' +
+    '{ "description":"Submission Complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete" } ' +
     ']';
 
 
@@ -240,7 +243,8 @@ var sectionColors = {
   'full-lease':         '#567ec4',
   'crossflow-errors':   '#6d0202',
   'pdf-generation':     '#529f26',
-  'tasklist':           '#ffeb00'
+  'tasklist':           '#ffeb00',
+  'submission':         '#475569'
 };
 
 var submitFormVal = true;
