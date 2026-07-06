@@ -223,6 +223,7 @@ var userProfiles = '[' +
     '{ "description":"Only mandatory sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-incomplete" }, ' +
 
     '{ "divider":"Submission" }, ' +
+    '{ "description":"Submission Failed", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-failed" }, ' +
     '{ "description":"Submission Complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete" } ' +
     ']';
 
