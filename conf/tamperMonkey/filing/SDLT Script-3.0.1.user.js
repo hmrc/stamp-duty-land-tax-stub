@@ -212,8 +212,9 @@ var userProfiles = '[' +
     '{ "description":"Complete SDLT1d PDF Section", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt1d-pdf-gen" }, ' +
     '{ "description":"Complete SDLT2 Purchaser PDF Section", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt2Purchaser-pdf-gen" }, ' +
     '{ "description":"Complete SDLT1c PDF Section", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt1c-pdf-gen" }, ' +
-    '{ "description":"Complete SDLT4 PDF Section - leased", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt4-pdf-answers-leased" }, ' +
-    '{ "description":"Complete SDLT4 PDF Section - freehold", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt4-pdf-answers-freehold" }, ' +
+    '{ "description":"Complete SDLT4 PDF Section - leased", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt4-pdf-answers-leased-3-lands" }, ' +
+    '{ "description":"Complete SDLT4a PDF Section - freehold", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt4a-pdf-answers-freehold-f48" }, ' +
+    '{ "description":"Complete SDLT4a PDF Section - leased", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "sdlt4a-pdf-answers-leased-1-land" }, ' +
 
     '{ "divider":"Tasklist" }, ' +
     '{ "description":"All sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-incomplete" }, ' +
