@@ -274,7 +274,7 @@
     "createDate": "2024-10-15T10:30:00",
     "lastUpdateDate": "2024-10-15T11:00:00",
     "acceptedDate": "2024-10-15T11:00:00",
-    "submittedDate": "2024-10-15T10:30:00",
+    "submittedDate": "2024-10-15T10:30:00+01:00",
     "email": "john.smith@email.com",
     "submissionRequestDate": "2024-10-15T10:15:00Z",
     "irmarkSent": "IRMARK-SENT-001"
