@@ -52,7 +52,7 @@
       "lastUpdateDate": "2026-06-09 10:09:31",
       "isUkCompany": "NO",
       "hasNino": null,
-      "dateOfBirth": null,
+      "dateOfBirth": "15/05/1985",
       "registrationNumber": "123",
       "placeOfRegistration": "Germany"
     }
@@ -262,7 +262,7 @@
     "submissionID": "SUB001",
     "returnID": "382966898",
     "storn": "STORN123456",
-    "submissionStatus": "ACCEPTED",
+    "submissionStatus": "submitted",
     "govtalkMessageClass": "HMRC-STAMP-SDLT",
     "UTRN": "23456789MCe",
     "irmarkReceived": "IRMARK-RCV-001",
