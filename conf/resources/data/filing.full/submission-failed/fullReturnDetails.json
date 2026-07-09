@@ -262,7 +262,7 @@
     "submissionID": "SUB001",
     "returnID": "382966898",
     "storn": "STORN123456",
-    "submissionStatus": "ACCEPTED",
+    "submissionStatus": "DEPARTMENTAL_ERROR",
     "govtalkMessageClass": "HMRC-STAMP-SDLT",
     "UTRN": "23456789MCe",
     "irmarkReceived": "IRMARK-RCV-001",

@@ -52,7 +52,7 @@
       "lastUpdateDate": "2026-06-09 10:09:31",
       "isUkCompany": "NO",
       "hasNino": null,
-      "dateOfBirth": null,
+      "dateOfBirth": "15/05/1985",
       "registrationNumber": "123",
       "placeOfRegistration": "Germany"
     }
@@ -262,7 +262,7 @@
     "submissionID": "SUB001",
     "returnID": "382966898",
     "storn": "STORN123456",
-    "submissionStatus": "ACCEPTED",
+    "submissionStatus": "submitted",
     "govtalkMessageClass": "HMRC-STAMP-SDLT",
     "UTRN": "23456789MCe",
     "irmarkReceived": "IRMARK-RCV-001",
@@ -274,7 +274,7 @@
     "createDate": "2024-10-15T10:30:00",
     "lastUpdateDate": "2024-10-15T11:00:00",
     "acceptedDate": "2024-10-15T11:00:00",
-    "submittedDate": "2024-10-15T10:30:00",
+    "submittedDate": "2024-10-15T10:30:00+01:00",
     "email": "john.smith@email.com",
     "submissionRequestDate": "2024-10-15T10:15:00Z",
     "irmarkSent": "IRMARK-SENT-001"
