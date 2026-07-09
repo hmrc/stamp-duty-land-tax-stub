@@ -226,10 +226,10 @@ var userProfiles = '[' +
     '{ "description":"Submission Failed", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-failed" }, ' +
     '{ "description":"Submission Complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete" }, ' +
     '{ "description":"Submission Complete with Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete-with-agent" }, ' +
-    '{ "description":"Submission Complete with multiple purchasers vendors and lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete-multiples" } ' +
+    '{ "description":"Submission Complete with multiple purchasers vendors and lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete-multiples" }, ' +
 
     '{ "divider":"End To End" }, ' +
-    '{ "description":"UK Residency to Tax Calculation journey", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "e2e-from-uk-residency-to-tax-calculation" }, ' +
+    '{ "description":"UK Residency to Tax Calculation journey", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "e2e-from-uk-residency-to-tax-calculation" } ' +
     ']';
 
 
