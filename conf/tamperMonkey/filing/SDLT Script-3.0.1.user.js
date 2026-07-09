@@ -227,6 +227,9 @@ var userProfiles = '[' +
     '{ "description":"Submission Complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete" }, ' +
     '{ "description":"Submission Complete with Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete-with-agent" }, ' +
     '{ "description":"Submission Complete with multiple purchasers vendors and lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-complete-multiples" } ' +
+
+    '{ "divider":"End To End" }, ' +
+    '{ "description":"UK Residency to Tax Calculation journey", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "e2e-from-uk-residency-to-tax-calculation" }, ' +
     ']';
 
 
@@ -248,7 +251,8 @@ var sectionColors = {
   'crossflow-errors':   '#6d0202',
   'pdf-generation':     '#529f26',
   'tasklist':           '#ffeb00',
-  'submission':         '#475569'
+  'submission':         '#475569',
+  'end-to-end':         '#023020'
 };
 
 var submitFormVal = true;
