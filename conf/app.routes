@@ -35,7 +35,7 @@ POST        /filing/update/tax-calculation        uk.gov.hmrc.stampdutylandtaxst
 POST        /filing/create/lease                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLeaseController.createLease()
 POST        /filing/update/lease                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLeaseController.updateLease()
 POST        /filing/delete/lease                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLeaseController.removeLease()
-POST        /filing/submit                        uk.gov.hmrc.stampdutylandtaxstub.controllers.SubmissionController.submit()
+POST        /filing/chris/submission              uk.gov.hmrc.stampdutylandtaxstub.controllers.SubmissionController.submit()
 
 # Returns data load / generation :: local use only
 GET         /returns/createData                   uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.createData(storn: String, records: Option[Int], returnType: String)
