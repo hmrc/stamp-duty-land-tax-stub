@@ -17,19 +17,20 @@
 package uk.gov.hmrc.stampdutylandtaxstub.controllers
 
 import models.requests.*
-import play.api.libs.json.{JsValue, Json}
+import play.api.libs.json.{JsObject, JsValue, Json}
 import play.api.mvc.{Action, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
-import uk.gov.hmrc.stampdutylandtaxstub.util.StubResource
+import uk.gov.hmrc.stampdutylandtaxstub.util.{PollCounter, StubResource}
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
 class ReturnController @Inject()(
-                                        cc: ControllerComponents,
-                                        override val executionContext: ExecutionContext
-                                      ) extends BackendController(cc) with StubResource {
+                                  cc: ControllerComponents,
+                                  pollCounter: PollCounter,
+                                  override val executionContext: ExecutionContext
+                                ) extends BackendController(cc) with StubResource {
 
   val basePath = "/resources/data/filing.prelim"
   val basePathFull = "/resources/data/filing.full"
@@ -52,14 +53,33 @@ class ReturnController @Inject()(
     request.body.validate[GetReturnByRefRequest].fold(
       invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
-        val fullPath = s"$basePathFull/${response.returnResourceRef}/fullReturnDetails.json"
+        val ref = response.returnResourceRef
+        val fullPath = s"$basePathFull/$ref/fullReturnDetails.json"
 
         findResource(fullPath) match {
-          case Some(content) => Future.successful(jsonResourceAsResponse(fullPath))
-          case _ => Future.successful(NotFound)
+          case Some(content) =>
+            val base = Json.parse(content).as[JsObject]
+            val status = pollCounter.resolve(ref, terminalStatusFor(ref))
+            val submission = (base \ "submission").asOpt[JsObject].getOrElse(Json.obj())
+            val patched = base ++ Json.obj(
+              "submission" -> (submission ++ Json.obj("submissionStatus" -> status))
+            )
+            Future.successful(Ok(patched))
+          case _ =>
+            Future.successful(NotFound)
         }
       }
     )
+  }
+
+  private def terminalStatusFor(ref: String): String = ref match {
+    case "submitted"    => "SUBMITTED"
+    case "acknowledged" => "ACCEPTED"
+    case "rejected"     => "DEPARTMENTAL_ERROR"
+    case "fatal"        => "FATAL_ERROR"
+    case "started"      => "STARTED"
+    case "stuck"        => "PENDING"
+    case _              => "SUBMITTED"
   }
 
   def updateReturnVersion(): Action[JsValue] = Action.async(parse.json) { implicit request =>
@@ -73,8 +93,7 @@ class ReturnController @Inject()(
 
         response.returnResourceRef match {
           case "errorUpdatingReturnVersion" => Future.successful(failureResponse)
-          case _ =>
-            Future.successful(successResponse)
+          case _ => Future.successful(successResponse)
         }
       }
     )
@@ -90,14 +109,12 @@ class ReturnController @Inject()(
         val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
 
         response.returnResourceRef match {
-          case "errorUpdatingReturnInfo" =>
-            Future.successful(failureResponse)
-          case _ =>
-            Future.successful(successResponse)
+          case "errorUpdatingReturnInfo" => Future.successful(failureResponse)
+          case _ => Future.successful(successResponse)
         }
     )
   }
-  
+
   def createReturnAgent(): Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[CreateReturnAgentRequest].fold(
       invalid =>
@@ -107,10 +124,8 @@ class ReturnController @Inject()(
         val successResponse = Ok(Json.obj("returnAgentID" -> "1234"))
         val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
         response.returnResourceRef match {
-          case "errorCreatingReturnAgent" =>
-            Future.successful(failureResponse)
-          case _ =>
-            Future.successful(successResponse)
+          case "errorCreatingReturnAgent" => Future.successful(failureResponse)
+          case _ => Future.successful(successResponse)
         }
       }
     )
@@ -125,10 +140,8 @@ class ReturnController @Inject()(
         val successResponse = Ok(Json.obj("updated" -> true))
         val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
         response.returnResourceRef match {
-          case "errorUpdatingReturnAgent" =>
-            Future.successful(failureResponse)
-          case _ =>
-            Future.successful(successResponse)
+          case "errorUpdatingReturnAgent" => Future.successful(failureResponse)
+          case _ => Future.successful(successResponse)
         }
       }
     )
@@ -146,10 +159,8 @@ class ReturnController @Inject()(
           val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
 
           response.returnResourceRef match {
-            case "errorRemovingReturnAgent" =>
-              Future.successful(failureResponse)
-            case _ =>
-              Future.successful(successResponse)
+            case "errorRemovingReturnAgent" => Future.successful(failureResponse)
+            case _ => Future.successful(successResponse)
           }
       )
   }
