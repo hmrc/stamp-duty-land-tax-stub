@@ -49,24 +49,37 @@ class ReturnController @Inject()(
     )
   }
 
+  private val pollingRefs: Map[String, String] = Map(
+    "started"           -> "STARTED",
+    "fatal"             -> "FATAL_ERROR",
+    "pending"           -> "PENDING",
+    "acknowledged"      -> "ACCEPTED",
+    "submitted"         -> "SUBMITTED"
+  )
+
   def getFullReturn: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[GetReturnByRefRequest].fold(
-      invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+      invalid  => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       response => {
-        val ref = response.returnResourceRef
+        val ref      = response.returnResourceRef
         val fullPath = s"$basePathFull/$ref/fullReturnDetails.json"
 
         findResource(fullPath) match {
           case Some(content) =>
             val base = Json.parse(content).as[JsObject]
-            val status = pollCounter.resolve(ref, terminalStatusFor(ref))
-            val submission = (base \ "submission").asOpt[JsObject].getOrElse(Json.obj())
-            val patched = base ++ Json.obj(
-              "submission" -> (submission ++ Json.obj("submissionStatus" -> status))
-            )
-            Future.successful(Ok(patched))
-          case _ =>
-            Future.successful(NotFound)
+
+            val body = pollingRefs.get(ref) match {
+              case Some(terminal) =>
+                val status     = pollCounter.resolve(ref, terminal)
+                val submission = (base \ "submission").asOpt[JsObject].getOrElse(Json.obj())
+                base ++ Json.obj("submission" -> (submission ++ Json.obj("submissionStatus" -> status)))
+              case None =>
+                base
+            }
+
+            Future.successful(Ok(body))
+
+          case _ => Future.successful(NotFound)
         }
       }
     )
