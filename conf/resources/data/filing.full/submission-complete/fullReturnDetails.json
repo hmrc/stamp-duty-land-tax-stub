@@ -57,27 +57,6 @@
       "placeOfRegistration": "Germany"
     }
   ],
-  "companyDetails": {
-    "companyDetailsID": "382966900",
-    "returnID": "382966898",
-    "purchaserID": "382966899",
-    "UTR": null,
-    "VATReference": null,
-    "companyTypeBank": "no",
-    "companyTypeBuilder": "yes",
-    "companyTypeBuildsoc": "no",
-    "companyTypeCentgov": "no",
-    "companyTypeIndividual": "no",
-    "companyTypeInsurance": "no",
-    "companyTypeLocalauth": "no",
-    "companyTypeOthercharity": "no",
-    "companyTypeOtherfinancial": "no",
-    "companyTypePartnership": "yes",
-    "companyTypeProperty": "no",
-    "companyTypePubliccorp": "no",
-    "companyTypeSoletrader": "yes",
-    "companyTypePensionfund": "no"
-  },
   "vendor": [
     {
       "vendorID": "382966907",
