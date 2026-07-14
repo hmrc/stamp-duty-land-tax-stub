@@ -7,7 +7,6 @@
     "storn": "STORN123456",
     "version": "1.0"
   },
-
   "returnInfo": {
     "returnID": "RET123456789",
     "storn": "STORN123456",
@@ -25,7 +24,6 @@
     "declaration": "true",
     "status": "SUBMITTED"
   },
-
   "vendor": [{
     "vendorID": "VEN001",
     "returnID": "RET123456789",
@@ -39,12 +37,11 @@
     "address3": "London",
     "address4": null,
     "postcode": "W1K 1LB",
-    "isRepresentedByAgent": "NO",
+    "isRepresentedByAgent": "YES",
     "vendorResourceRef": "VEN-REF-001",
     "nextVendorID": "VEN002",
     "lastUpdateDate": "2023-11-09 19:53:34"
   }],
-
   "purchaser": [
     {
       "purchaserID": "PUR001",
@@ -52,7 +49,7 @@
       "isCompany": "NO",
       "isTrustee": "NO",
       "isConnectedToVendor": "NO",
-      "isRepresentedByAgent": "NO",
+      "isRepresentedByAgent": "YES",
       "title": "Mr",
       "surname": "Smith",
       "forename1": "John",
@@ -78,7 +75,6 @@
       "placeOfRegistration": null
     }
   ],
-
   "land": [
     {
       "landID": "LND001",
@@ -104,7 +100,6 @@
       "lastUpdateDate": "2025-11-09 19:53:34"
     }
   ],
-
   "transaction": {
     "transactionDescription": "L",
     "effectiveDate": "2024-10-01",
@@ -161,7 +156,6 @@
     "postTransRulingFollowed": "NO",
     "totalConsiderationBusiness": null
   },
-
   "lease": {
     "leaseType": "N",
     "contractEndDate": "02/02/2026",
@@ -210,14 +204,12 @@
     "unasertainableRent": null,
     "VATAmount": "10000.00"
   },
-
   "residency": {
     "residencyID": "RES001",
     "isNonUkResidents": "YES",
     "isCloseCompany": "true",
     "isCrownRelief" : "false"
   },
-
   "taxCalculation": {
     "taxDue": "50000.00",
     "amountPaid": "50000.00",

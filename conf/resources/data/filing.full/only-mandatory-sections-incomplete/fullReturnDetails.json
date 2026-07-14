@@ -24,7 +24,5 @@
     "returnResourceRef": "123456",
     "declaration": "true",
     "status": "SUBMITTED"
-  },
-
-  "submission": {}
+  }
 }

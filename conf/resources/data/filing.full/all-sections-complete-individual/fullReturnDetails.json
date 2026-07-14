@@ -25,7 +25,6 @@
     "declaration": "true",
     "status": "SUBMITTED"
   },
-
   "vendor": [{
     "vendorID": "VEN001",
     "returnID": "RET123456789",
@@ -45,6 +44,43 @@
     "lastUpdateDate": "2023-11-09 19:53:34"
   }],
 
+  "returnAgent": [
+    {
+      "returnAgentID": "RA001",
+      "returnID": "RET123456789",
+      "agentType": "PURCHASER",
+      "name": "Smith & Partners LLP",
+      "houseNumber": "100",
+      "address1": "Fleet Street",
+      "address2": "City of London",
+      "address3": "London",
+      "address4": null,
+      "postcode": "EC4A 2DQ",
+      "phone": "020 7123 4567",
+      "email": "info@smithpartners.co.uk",
+      "DXAddress": "DX 123 London",
+      "reference": "SP/2024/001",
+      "isAuthorised": "true"
+    },
+    {
+      "returnAgentID": "RA001",
+      "returnID": "RET123456789",
+      "agentType": "VENDOR",
+      "name": "Smith & Partners LLP",
+      "houseNumber": "100",
+      "address1": "Fleet Street",
+      "address2": "City of London",
+      "address3": "London",
+      "address4": null,
+      "postcode": "EC4A 2DQ",
+      "phone": "020 7123 4567",
+      "email": "info@smithpartners.co.uk",
+      "DXAddress": "DX 123 London",
+      "reference": "SP/2024/001",
+      "isAuthorised": "YES"
+    }
+  ],
+
   "purchaser": [
     {
       "purchaserID": "PUR001",
@@ -52,7 +88,7 @@
       "isCompany": "NO",
       "isTrustee": "NO",
       "isConnectedToVendor": "NO",
-      "isRepresentedByAgent": "NO",
+      "isRepresentedByAgent": "YES",
       "title": "Mr",
       "surname": "Smith",
       "forename1": "John",
