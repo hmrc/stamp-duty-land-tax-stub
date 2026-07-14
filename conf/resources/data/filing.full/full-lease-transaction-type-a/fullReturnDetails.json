@@ -61,7 +61,7 @@
   "lease": {
     "leaseID": "LSE001",
     "returnID": "RET123456789",
-    "isAnnualRentOver1000": "no",
+    "isAnnualRentOver1000": null,
     "breakClauseType": null,
     "breakClauseDate": null,
     "leaseContReservedRent": null,
