@@ -122,6 +122,7 @@ var userProfiles = '[' +
 
     '{ "divider":"Leasehold" }, ' +
     '{ "description":"leasehold-self-assessed", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "leasehold-self-assessed" }, ' +
+    '{ "description":"leasehold-self-assessed-completed", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "leasehold-self-assessed-completed" }, ' +
     '{ "description":"leasehold-self-assessed-isLinked", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "leasehold-self-assessed-isLinked" }, ' +
     '{ "description":"leasehold-self-assessed-zeroPenalty", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "leasehold-self-assessed-zeroPenalty"}, ' +
     '{ "description":"leasehold-self-assessed-partialRelief", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "leasehold-self-assessed-partialRelief" }, ' +
