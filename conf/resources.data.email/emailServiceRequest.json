@@ -1,0 +1,9 @@
+{
+  "to": ["glen.nmoka@digital.hmrc.gov.uk"],
+  "templateId": "sdlt_submission_confirmation",
+  "parameters": {
+    "purchaserName": "Mr Joe Bloggs",
+    "utrn": "IM123456789A"
+  },
+  "force": false
+}
