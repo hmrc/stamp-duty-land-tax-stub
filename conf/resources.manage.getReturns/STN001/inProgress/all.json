@@ -11,28 +11,27 @@
     },
     {
       "returnReference": "123456",
-      "status": "ACCEPTED",
+      "status": "STARTED",
       "purchaserName": "Daniel Taylor",
       "address": "72 King Street, Glasgow",
       "agentReference": "ARN006"
     },
     {
       "returnReference": "123456",
-      "status": "ACCEPTED",
+      "status": "FATAL_ERROR",
       "purchaserName": "Olivia Harris",
       "address": "11 Church Street, Nottingham",
       "agentReference": "ARN009"
     },
     {
       "returnReference": "123456",
-      "status": "ACCEPTED",
+      "status": "DEPARTMENTAL_ERROR",
       "purchaserName": "Lucas Walker",
       "address": "18 Green Lane, Reading",
       "agentReference": "ARN012"
     },
     {
       "returnReference": "123456",
-      "status": "ACCEPTED",
       "purchaserName": "Henry Young",
       "address": "10 Wharf Road, Newcastle",
       "agentReference": "ARN015"
