@@ -37,28 +37,44 @@ class SubmissionController @Inject()(cc: ControllerComponents,
     val ref = (request.body \ "fullReturn" \ "returnResourceRef").asOpt[String].getOrElse("")
     logger.info(s"[Stub][submit] returnResourceRef=$ref")
 
-    pollCounter.reset(ref)
+    if (pollCounter.isTimedOut(ref)) {
+      logger.info(s"[Stub][submit] poll timeout for returnResourceRef=$ref")
+      Future.successful(RequestTimeout(Json.obj("returnId" -> ref, "_type" -> "failed")))
+    } else {
 
-    val result = ref match {
-      case "acknowledged" =>
-        Accepted(Json.obj("returnId" -> ref, "_type" -> "acknowledged"))
+      val result = ref match {
+        case "acknowledged" =>
+          Accepted(Json.obj("returnId" -> ref, "_type" -> "acknowledged"))
 
-      case "rejected" =>
-        BadRequest(Json.obj(
-          "returnId" -> ref,
-          "_type"    -> "rejected",
-          "errors"   -> Json.arr(
-            Json.obj("code" -> "3001", "message" -> "Business validation failed", "location" -> "/purchaser[1]"),
-            Json.obj("code" -> "3002", "message" -> "Consideration mismatch")
-          )
-        ))
+        case "retryable" =>
+          ServiceUnavailable(Json.obj("returnId" -> ref, "_type" -> "retryable"))
 
-      case "error" =>
-        InternalServerError(Json.obj("error" -> "Submission failed", "message" -> "Simulated transport error"))
+        case "rejected" =>
+          BadRequest(Json.obj(
+            "returnId" -> ref,
+            "_type"    -> "rejected",
+            "errors"   -> Json.arr(
+              Json.obj("code" -> "3001", "message" -> "Business validation failed", "location" -> "/purchaser[1]"),
+              Json.obj("code" -> "3002", "message" -> "Consideration mismatch")
+            )
+          ))
 
-      case _ =>
-        Ok(Json.obj("returnId" -> ref, "utrn" -> "123456789MA", "_type" -> "accepted"))
+        case "failed" | "error" =>
+          BadGateway(Json.obj(
+            "returnId" -> ref,
+            "_type"    -> "failed",
+            "errors"   -> Json.arr(
+              Json.obj("code" -> "5001", "message" -> "Simulated transport error")
+            )
+          ))
+
+        case "no-receipt" =>
+          Ok(Json.obj("returnId" -> ref, "utrn" -> "123456789MA", "receipt" -> false, "_type" -> "submitted"))
+
+        case _ =>
+          Ok(Json.obj("returnId" -> ref, "utrn" -> "123456789MA", "receipt" -> true, "_type" -> "submitted"))
+      }
+
+      Future.successful(result)
     }
-
-    Future.successful(result)
   }
