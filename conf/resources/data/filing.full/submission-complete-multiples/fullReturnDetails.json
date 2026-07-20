@@ -481,7 +481,7 @@
     "submissionID": "SUB001",
     "returnID": "RET123456789",
     "storn": "STORN123456",
-    "submissionStatus": "submitted",
+    "submissionStatus": null,
     "govtalkMessageClass": "HMRC-STAMP-SDLT",
     "UTRN": "23456789MCe",
     "irmarkReceived": "IRMARK-RCV-001",

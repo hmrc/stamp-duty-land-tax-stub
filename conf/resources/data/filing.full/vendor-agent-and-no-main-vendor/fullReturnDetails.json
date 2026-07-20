@@ -253,35 +253,6 @@
     "calcTotalPremiumTax": "15000.00",
     "honestyDeclaration": "YES"
   },
-  "submission": {
-    "submissionID": "SUB001",
-    "returnID": "RET123456789",
-    "storn": "STORN123456",
-    "submissionStatus": "ACCEPTED",
-    "govtalkMessageClass": "HMRC-STAMP-SDLT",
-    "UTRN": "UTRN123456789012",
-    "irmarkReceived": "IRMARK-RCV-001",
-    "submissionReceipt": "RECEIPT-001",
-    "govtalkErrorCode": null,
-    "govtalkErrorType": null,
-    "govtalkErrorMessage": null,
-    "numPolls": "3",
-    "createDate": "2024-10-15T10:30:00",
-    "lastUpdateDate": "2024-10-15T11:00:00",
-    "acceptedDate": "2024-10-15T11:00:00",
-    "submittedDate": "2024-10-15T10:30:00",
-    "email": "john.smith@email.com",
-    "submissionRequestDate": "2024-10-15T10:15:00",
-    "irmarkSent": "IRMARK-SENT-001"
-  },
-  "submissionErrorDetails": {
-    "errorDetailID": null,
-    "returnID": "RET123456789",
-    "position": null,
-    "errorMessage": null,
-    "storn": "STORN123456",
-    "submissionID": "SUB001"
-  },
   "residency": {
     "residencyID": "RES001",
     "isNonUkResidents": "NO",
