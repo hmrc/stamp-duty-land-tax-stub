@@ -22,6 +22,7 @@ import javax.inject.Singleton
 @Singleton
 class PollCounter {
   private val PollsBeforeTerminal = 10
+  private val PollsBeforeTimeout  = 5
   private val counts = new ConcurrentHashMap[String, Int]()
 
   def reset(ref: String): Unit = counts.remove(ref)
@@ -32,4 +33,7 @@ class PollCounter {
       val n = counts.merge(ref, 1, Integer.sum)
       if (n <= PollsBeforeTerminal) "PENDING" else terminalStatus
     }
+
+  def isTimedOut(ref: String): Boolean =
+    counts.merge(ref, 1, Integer.sum) > PollsBeforeTimeout
 }

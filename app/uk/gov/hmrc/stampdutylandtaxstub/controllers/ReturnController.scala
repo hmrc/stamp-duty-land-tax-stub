@@ -49,13 +49,20 @@ class ReturnController @Inject()(
     )
   }
 
+  // NB: "pending" is intentionally NOT mapped here. It must fall through to the
+  // `None` branch of getFullReturn so the isTimedOut cap can time it out — otherwise
+  // resolve("pending", "PENDING") returns PENDING forever and never terminates.
   private val pollingRefs: Map[String, String] = Map(
     "started"           -> "STARTED",
     "fatal"             -> "FATAL_ERROR",
-    "pending"           -> "PENDING",
     "acknowledged"      -> "ACCEPTED",
     "submitted"         -> "SUBMITTED"
   )
+
+  private def withStatus(base: JsObject, status: String): JsObject = {
+    val submission = (base \ "submission").asOpt[JsObject].getOrElse(Json.obj())
+    base ++ Json.obj("submission" -> (submission ++ Json.obj("submissionStatus" -> status)))
+  }
 
   def getFullReturn: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[GetReturnByRefRequest].fold(
@@ -70,11 +77,10 @@ class ReturnController @Inject()(
 
             val body = pollingRefs.get(ref) match {
               case Some(terminal) =>
-                val status     = pollCounter.resolve(ref, terminal)
-                val submission = (base \ "submission").asOpt[JsObject].getOrElse(Json.obj())
-                base ++ Json.obj("submission" -> (submission ++ Json.obj("submissionStatus" -> status)))
+                withStatus(base, pollCounter.resolve(ref, terminal))
               case None =>
-                base
+                if (pollCounter.isTimedOut(ref)) withStatus(base, "FATAL_ERROR")
+                else base
             }
 
             Future.successful(Ok(body))
