@@ -33,7 +33,7 @@ object SdltReturnRecordResponse {
 case class ReturnSummary(
                           returnReference : String,
                           utrn            : Option[String],
-                          status          : String,
+                          status          : Option[String] = None,
                           dateSubmitted   : Option[LocalDate],
                           purchaserName   : String,
                           address         : String,
