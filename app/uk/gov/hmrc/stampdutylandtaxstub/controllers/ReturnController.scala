@@ -49,9 +49,6 @@ class ReturnController @Inject()(
     )
   }
 
-  // NB: "pending" is intentionally NOT mapped here. It must fall through to the
-  // `None` branch of getFullReturn so the isTimedOut cap can time it out — otherwise
-  // resolve("pending", "PENDING") returns PENDING forever and never terminates.
   private val pollingRefs: Map[String, String] = Map(
     "started"           -> "STARTED",
     "fatal"             -> "FATAL_ERROR",
@@ -79,7 +76,7 @@ class ReturnController @Inject()(
               case Some(terminal) =>
                 withStatus(base, pollCounter.resolve(ref, terminal))
               case None =>
-                if (pollCounter.isTimedOut(ref)) withStatus(base, "FATAL_ERROR")
+                if (ref == "pending" && pollCounter.isTimedOut(ref)) withStatus(base, "FATAL_ERROR")
                 else base
             }
 
