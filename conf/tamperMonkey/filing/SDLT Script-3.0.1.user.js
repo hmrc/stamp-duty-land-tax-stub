@@ -219,9 +219,15 @@ var userProfiles = '[' +
 
     '{ "divider":"Tasklist" }, ' +
     '{ "description":"All sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-incomplete" }, ' +
-    '{ "description":"All sections complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-complete" }, ' +
+    '{ "description":"All sections in progress", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-in-progress" }, ' +
+    '{ "description":"All sections complete individual type", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-complete-individual" }, ' +
+    '{ "description":"All sections complete company type", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "all-sections-complete-company" }, ' +
     '{ "description":"Only mandatory sections complete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-complete" }, ' +
     '{ "description":"Only mandatory sections incomplete", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "only-mandatory-sections-incomplete" }, ' +
+    '{ "description":"Agents incomplete - represented by Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "section-agent-incomplete" }, ' +
+    '{ "description":"Agents complete - represented by Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "section-agent-complete-yes" }, ' +
+    '{ "description":"Agents complete - not represented by Agent - without agent details", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "section-agent-complete-no" }, ' +
+    '{ "description":"Agents complete - not represented by Agent - with agent details", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "section-agent-complete-no-with-agent-details" }, ' +
 
     '{ "divider":"Submission" }, ' +
     '{ "description":"Submission Failed - Staus DEPARTMENTAL_ERROR", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submission-failed" }, ' +
@@ -826,10 +832,10 @@ function submitForm(description, affinityGroup, enrlKey, idName, idVal, status, 
     if (description == "No Return ID") {
       redirectUrl = "http://localhost:10910/stamp-duty-land-tax-filing";
     } else {
-      redirectUrl = "http://localhost:10910/stamp-duty-land-tax-filing/returnTaskList";
+      redirectUrl = "http://localhost:10910/stamp-duty-land-tax-filing/task-list";
     }
   } else {
-    redirectUrl = "/stamp-duty-land-tax-filing/returnTaskList";
+    redirectUrl = "/stamp-duty-land-tax-filing/task-list";
   }
 
   // Add returnId to redirect URL if it exists
