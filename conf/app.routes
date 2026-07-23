@@ -9,8 +9,8 @@ POST        /organisation                         uk.gov.hmrc.stampdutylandtaxst
 POST        /returns                              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.getReturns
 POST        /delete/predefined-agent              uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageAgentsController.deletePredefinedAgent
 
-POST        /filing/create/return                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.prelimReturnDetails()
-POST        /filing/receive/full-return           uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.getFullReturn()
+POST        /create/return                        uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.prelimReturnDetails()
+POST        /retrieve-return                      uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.getFullReturn()
 POST        /filing/update/return-version         uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnVersion()
 POST        /filing/update/return-info            uk.gov.hmrc.stampdutylandtaxstub.controllers.ReturnController.updateReturnInfo()
 POST        /filing/delete/vendor                 uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageVendorsController.removeVendor()
@@ -35,11 +35,48 @@ POST        /filing/update/tax-calculation        uk.gov.hmrc.stampdutylandtaxst
 POST        /filing/create/lease                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLeaseController.createLease()
 POST        /filing/update/lease                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLeaseController.updateLease()
 POST        /filing/delete/lease                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ManageLeaseController.removeLease()
-POST        /filing/chris/submission              uk.gov.hmrc.stampdutylandtaxstub.controllers.SubmissionController.submit()
+#POST        /filing/submission                    uk.gov.hmrc.stampdutylandtaxstub.controllers.SubmissionController.submit()
 
 # Returns data load / generation :: local use only
 GET         /returns/createData                   uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.createData(storn: String, records: Option[Int], returnType: String)
 GET         /returns/deleteAll                    uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.deleteAll()
 
 GET         /returns/getStatus                    uk.gov.hmrc.stampdutylandtaxstub.controllers.OracleAccessController.getStatus()
+
+
+# ============================================================================
+# ChRIS role — the endpoint ChrisConnector posts GovTalk envelopes to.
+# Both submit AND delete envelopes go to this same path (connector uses the
+# same target for both), so the controller branches on MessageDetails/Function.
+# Path must equal backend `chris.baseUrl` + `chris.submit-url`
+# (default chris.submit-url = /ChRIS/SDLT/Filing/sync/SDLT).
+# ============================================================================
+POST        /ChRIS/SDLT/Filing/sync/SDLT          uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisStubController.submit()
+
+# ============================================================================
+# formp-proxy prerequisite endpoints (see task 6). Paths below mirror the
+# paths in FilingFormpProxyConnector (the source of truth for what the backend
+# actually sends). If this stub is context-mounted (e.g. play.http.context or a
+# /formp-proxy prefix) or already defines some of these under different names,
+# reconcile before adding — don't duplicate.
+#
+# NOTE: selectGovTalkStatus / selectGovTalkFormResultId are GET-with-body in the
+# connector; Play routes them fine.
+# ============================================================================
+POST        /filing/return/lock                            uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.lockReturn()
+POST        /filing/submission                             uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.createSubmission()
+POST        /filing/update/submission                      uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.updateSubmission()
+POST        /filing/submission-error-detail                uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.createSubmissionErrorDetail()
+POST        /filing/delete/submission-error-detail         uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.deleteSubmissionErrorDetail()
+
+GET         /filing/govtalk-status                         uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.selectGovTalkStatus()
+POST        /filing/govtalk-status                         uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.insertInitialGovTalkStatus()
+GET         /filing/govtalk-status/form-result-Id          uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.selectGovTalkFormResultId()
+POST        /filing/reset/govtalk-status/reset             uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.resetGovTalkStatus()
+POST        /filing/update/govtalk-status                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.updateGovTalkStatus()
+POST        /filing/update/govtalk-status/correlation-Id   uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.updateGovTalkStatusCorrelationId()
+POST        /filing/update/govtalk-status/lock             uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.updateGovTalkStatusLock()
+POST        /filing/update/govtalk-status/statistics       uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.updateGovTalkStatistics()
+POST        /filing/delete/govtalk-status                  uk.gov.hmrc.stampdutylandtaxstub.controllers.ChrisPersistenceController.deleteGovTalkStatus()
+
 

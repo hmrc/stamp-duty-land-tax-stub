@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "acknowledged",
+  "returnResourceRef": "lock-error",
   "sdltOrganisation": {
     "isReturnUser": null,
     "doNotDisplayWelcomePage": "no",
@@ -20,7 +20,7 @@
     "mainLandID": "382966901",
     "IRMarkGenerated": null,
     "landCertForEachProp": "YES",
-    "returnResourceRef": "acknowledged",
+    "returnResourceRef": "lock-error",
     "declaration": null,
     "status": "STARTED"
   },

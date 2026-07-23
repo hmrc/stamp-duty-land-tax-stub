@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "acknowledged",
+  "returnResourceRef": "schema-invalid",
   "sdltOrganisation": {
     "isReturnUser": null,
     "doNotDisplayWelcomePage": "no",
@@ -20,7 +20,7 @@
     "mainLandID": "382966901",
     "IRMarkGenerated": null,
     "landCertForEachProp": "YES",
-    "returnResourceRef": "acknowledged",
+    "returnResourceRef": "schema-invalid",
     "declaration": null,
     "status": "STARTED"
   },
@@ -103,7 +103,7 @@
       "landID": "382966901",
       "returnID": "382966898",
       "propertyType": "01",
-      "interestCreatedTransferred": "FP",
+      "interestCreatedTransferred": "FPO",
       "houseNumber": "1",
       "address1": "1 Test Lane",
       "address2": "TestTown",
@@ -212,7 +212,7 @@
     "optionToRenew": null,
     "totalPremiumPayable": "456.00",
     "rentChargeDate": null,
-    "rentFreePeriod": "05",
+    "rentFreePeriod": "5",
     "reviewClauseType": null,
     "serviceCharge": null,
     "serviceChargeFrequency": null,

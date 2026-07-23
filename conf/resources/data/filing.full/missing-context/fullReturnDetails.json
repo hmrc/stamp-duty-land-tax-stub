@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "acknowledged",
+  "returnResourceRef": "missing-context",
   "sdltOrganisation": {
     "isReturnUser": null,
     "doNotDisplayWelcomePage": "no",
@@ -14,13 +14,13 @@
     "vendorCounter": "1",
     "landCounter": "1",
     "purgeDate": "2026-09-07 10:16:28",
-    "version": "26",
+    "version": null,
     "mainPurchaserID": "382966899",
     "mainVendorID": "382966907",
     "mainLandID": "382966901",
     "IRMarkGenerated": null,
     "landCertForEachProp": "YES",
-    "returnResourceRef": "acknowledged",
+    "returnResourceRef": "missing-context",
     "declaration": null,
     "status": "STARTED"
   },
