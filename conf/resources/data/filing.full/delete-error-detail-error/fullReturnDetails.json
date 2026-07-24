@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "acknowledged",
+  "returnResourceRef": "delete-error-detail-error",
   "sdltOrganisation": {
     "isReturnUser": null,
     "doNotDisplayWelcomePage": "no",
@@ -20,7 +20,7 @@
     "mainLandID": "382966901",
     "IRMarkGenerated": null,
     "landCertForEachProp": "YES",
-    "returnResourceRef": "acknowledged",
+    "returnResourceRef": "delete-error-detail-error",
     "declaration": null,
     "status": "STARTED"
   },
@@ -263,5 +263,8 @@
     "isNonUkResidents": "yes",
     "isCloseCompany": "yes",
     "isCrownRelief": "yes"
+  },
+  "submission": {
+    "submissionStatus": "STARTED"
   }
 }

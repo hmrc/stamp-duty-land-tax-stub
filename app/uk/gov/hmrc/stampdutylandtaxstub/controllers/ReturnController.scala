@@ -25,10 +25,13 @@ import uk.gov.hmrc.stampdutylandtaxstub.util.{PollCounter, StubResource}
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
 
+import uk.gov.hmrc.stampdutylandtaxstub.chris.SubmissionStateStore
+
 @Singleton
 class ReturnController @Inject()(
                                   cc: ControllerComponents,
                                   pollCounter: PollCounter,
+                                  submissionState: SubmissionStateStore,
                                   override val executionContext: ExecutionContext
                                 ) extends BackendController(cc) with StubResource {
 
@@ -49,18 +52,6 @@ class ReturnController @Inject()(
     )
   }
 
-  private val pollingRefs: Map[String, String] = Map(
-    "started"           -> "STARTED",
-    "fatal"             -> "FATAL_ERROR",
-    "acknowledged"      -> "ACCEPTED",
-    "submitted"         -> "SUBMITTED"
-  )
-
-  private def withStatus(base: JsObject, status: String): JsObject = {
-    val submission = (base \ "submission").asOpt[JsObject].getOrElse(Json.obj())
-    base ++ Json.obj("submission" -> (submission ++ Json.obj("submissionStatus" -> status)))
-  }
-
   def getFullReturn: Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[GetReturnByRefRequest].fold(
       invalid  => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
@@ -72,12 +63,25 @@ class ReturnController @Inject()(
           case Some(content) =>
             val base = Json.parse(content).as[JsObject]
 
-            val body = pollingRefs.get(ref) match {
-              case Some(terminal) =>
-                withStatus(base, pollCounter.resolve(ref, terminal))
-              case None =>
-                if (ref == "pending" && pollCounter.isTimedOut(ref)) withStatus(base, "FATAL_ERROR")
-                else base
+            // Reflect whatever the backend last wrote via updateSubmission (if any),
+            // so the "return is being submitted" poll completes once a terminal
+            // status has been written. No stored state => fixture returned as-is.
+            val body = submissionState.get(ref) match {
+              case Some(sub) =>
+                val existingSub = (base \ "submission").asOpt[JsObject].getOrElse(Json.obj())
+                val merged      = base ++ Json.obj("submission" -> (existingSub ++ sub))
+
+                // Keep returnInfo.status consistent for a completed submission so the
+                // task list / completion pages agree with the submission.
+                (sub \ "submissionStatus").asOpt[String] match {
+                  case Some("SUBMITTED") | Some("SUBMITTED_NO_RECEIPT") =>
+                    val ri = (merged \ "returnInfo").asOpt[JsObject].getOrElse(Json.obj()) ++
+                      Json.obj("status" -> "SUBMITTED")
+                    merged ++ Json.obj("returnInfo" -> ri)
+                  case _ => merged
+                }
+
+              case None => base
             }
 
             Future.successful(Ok(body))
@@ -88,15 +92,6 @@ class ReturnController @Inject()(
     )
   }
 
-  private def terminalStatusFor(ref: String): String = ref match {
-    case "submitted"    => "SUBMITTED"
-    case "acknowledged" => "ACCEPTED"
-    case "rejected"     => "DEPARTMENTAL_ERROR"
-    case "fatal"        => "FATAL_ERROR"
-    case "started"      => "STARTED"
-    case "stuck"        => "PENDING"
-    case _              => "SUBMITTED"
-  }
 
   def updateReturnVersion(): Action[JsValue] = Action.async(parse.json) { implicit request =>
     request.body.validate[ReturnVersionUpdateRequest].fold(

@@ -15,7 +15,8 @@ object AppDependencies {
     "org.scala-lang"                   % "scala-library"               % "2.13.17",
     jdbc,
     "com.typesafe.slick" %% "slick"         % slickVersion,
-    "com.typesafe.slick" %% "slick-codegen" % slickVersion
+    "com.typesafe.slick" %% "slick-codegen" % slickVersion,
+    "org.apache.santuario"    %  "xmlsec"                     % "3.0.5",
   )
 
   val test = Seq(
