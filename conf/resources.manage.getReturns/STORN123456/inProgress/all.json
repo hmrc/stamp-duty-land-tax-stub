@@ -1,0 +1,20 @@
+{
+  "storn": "STORN123456",
+  "returnSummaryCount": 34,
+  "returnSummaryList": [
+    {
+      "returnReference": "123456",
+      "status": "ACCEPTED",
+      "purchaserName": "Michael Brown",
+      "address": "44 Oxford Road, Manchester",
+      "agentReference": "ARN003"
+    },
+    {
+      "returnReference": "123456",
+      "status": "STARTED",
+      "purchaserName": "Daniel Taylor",
+      "address": "72 King Street, Glasgow",
+      "agentReference": "ARN006"
+    }
+  ]
+}
