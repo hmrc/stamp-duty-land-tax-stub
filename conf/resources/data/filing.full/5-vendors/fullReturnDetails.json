@@ -111,7 +111,7 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "NO",
+      "isRepresentedByAgent": "YES",
       "vendorResourceRef": "VEN-REF-001",
       "nextVendorID": "VEN002"
     },
@@ -164,7 +164,7 @@
       "address3": "London",
       "address4": null,
       "postcode": "W1K 1LB",
-      "isRepresentedByAgent": "NO",
+      "isRepresentedByAgent": "YES",
       "vendorResourceRef": "VEN-REF-001",
       "nextVendorID": "VEN003",
       "lastUpdateDate": "2021-11-09 19:53:34"
@@ -251,7 +251,7 @@
     {
       "returnAgentID": "RA001",
       "returnID": "RET123456789",
-      "agentType": "SOLICITOR",
+      "agentType": "VENDOR",
       "name": "Smith & Partners LLP",
       "houseNumber": "100",
       "address1": "Fleet Street",

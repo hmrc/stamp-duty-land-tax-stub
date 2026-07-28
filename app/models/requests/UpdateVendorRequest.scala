@@ -31,7 +31,7 @@ case class UpdateVendorRequest(
                                 addressLine3: Option[String] = None,
                                 addressLine4: Option[String] = None,
                                 postcode: Option[String] = None,
-                                isRepresentedByAgent: String,
+                                isRepresentedByAgent: Option[String] = None,
                                 vendorResourceRef: String,
                                 nextVendorId: Option[String] = None
                               )
