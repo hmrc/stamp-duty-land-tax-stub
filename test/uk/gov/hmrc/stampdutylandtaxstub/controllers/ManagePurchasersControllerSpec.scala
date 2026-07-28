@@ -44,7 +44,7 @@ class ManagePurchasersControllerSpec extends AnyFreeSpec
         isCompany = "Yes",
         isTrustee = "No",
         isConnectedToVendor = "No",
-        isRepresentedByAgent = "Yes",
+        isRepresentedByAgent = Some("Yes"),
         address1 = "Address"
       )
 
