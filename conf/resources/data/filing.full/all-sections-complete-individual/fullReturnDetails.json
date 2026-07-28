@@ -65,7 +65,7 @@
     {
       "returnAgentID": "RA001",
       "returnID": "RET123456789",
-      "agentType": "VENDOR",
+      "agentType": "PURCHASER",
       "name": "Smith & Partners LLP",
       "houseNumber": "100",
       "address1": "Fleet Street",
@@ -120,7 +120,7 @@
       "landID": "LND001",
       "returnID": "RET123456789",
       "propertyType": "03",
-      "interestCreatedTransferred": "FGS",
+      "interestCreatedTransferred": "FG",
       "houseNumber": "123",
       "address1": "Baker Street",
       "address2": "Marylebone",
