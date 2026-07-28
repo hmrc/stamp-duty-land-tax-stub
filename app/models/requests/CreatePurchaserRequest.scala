@@ -24,7 +24,7 @@ case class CreatePurchaserRequest(
                                    isCompany: String,
                                    isTrustee: String,
                                    isConnectedToVendor: String,
-                                   isRepresentedByAgent: String,
+                                   isRepresentedByAgent: Option[String] = None,
                                    title: Option[String] = None,
                                    surname: Option[String] = None,
                                    forename1: Option[String] = None,
