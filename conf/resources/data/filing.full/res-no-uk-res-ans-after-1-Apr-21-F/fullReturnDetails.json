@@ -34,6 +34,9 @@
       "isRepresentedByAgent": "NO",
       "title": "Mr",
       "forename1": "Pierre",
+      "surname": "Smith",
+      "forename2": "David",
+      "companyName": null,
       "name": "Dubois",
       "houseNumber": "12",
       "address1": "Rue de Rivoli",
@@ -48,7 +51,11 @@
       "hasNino": "no",
       "dateOfBirth": "15/05/1985",
       "registrationNumber": null,
-      "placeOfRegistration": null
+      "placeOfRegistration": null,
+      "nino": "AB123456C",
+      "lMigrated": "N",
+      "createDate": "2024-10-01",
+      "lastUpdateDate": "2021-11-16 19:53:40"
     }
   ],
   "vendor": [
@@ -75,7 +82,7 @@
       "landID": "LND001",
       "returnID": "RET-NONUKRES-F-001",
       "propertyType": "01",
-      "interestCreatedTransferred": "FPF",
+      "interestCreatedTransferred": "FP",
       "houseNumber": "123",
       "address1": "Baker Street",
       "address2": "Marylebone",
@@ -91,7 +98,8 @@
       "titleNumber": "TGL123456",
       "landResourceRef": "LND-REF-001",
       "nextLandID": null,
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     }
   ],
   "transaction": {
@@ -125,6 +133,30 @@
     "isPursuantToPreviousOption": "no",
     "restrictionsAffectInterest": "no",
     "postTransRulingFollowed": "no",
-    "isPartOfSaleOfBusiness": "no"
+    "isPartOfSaleOfBusiness": "no",
+    "considerationBuild": null,
+    "considerationContingent": "YES",
+    "considerationDebt": null,
+    "considerationEmploy": null,
+    "considerationOther": null,
+    "considerationLand": null,
+    "considerationServices": null,
+    "considerationSharesQTD": null,
+    "considerationSharesUNQTD": null,
+    "totalConsiderationLinked": null,
+    "considerationVAT": "23",
+    "newTransactionDescription": null,
+    "exchangedLandHouseNumber": "190",
+    "exchangedLandAddress1": "Kyn Avenue",
+    "exchangedLandAddress2": null,
+    "exchangedLandAddress3": null,
+    "exchangedLandAddress4": null,
+    "exchangedLandPostcode": "BD5 CXV",
+    "restrictionDetails": null,
+    "totalConsiderationBusiness": null
+  },
+  "residency": {
+    "residencyID": "RES100002",
+    "isNonUkResidents": "NO"
   }
 }
