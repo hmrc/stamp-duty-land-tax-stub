@@ -46,7 +46,7 @@
     "totalConsideration": "150000.00",
     "transactionDescription": "L",
     "newTransactionDescription": "L",
-    "effectiveDate": "2024-10-01"
+    "effectiveDate": "01/10/2024"
   },
   "companyDetails": {
     "companyDetailsID": "221110170",
@@ -68,9 +68,9 @@
       "landArea": "250.000",
       "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
-      "mineralRights": "NO",
+      "mineralRights": "no",
       "NLPGUPRN": "10012345678",
-      "willSendPlanByPost": "NO",
+      "willSendPlanByPost": "no",
       "titleNumber": "TGL123456",
       "landResourceRef": "1",
       "nextLandID": null,
@@ -80,11 +80,6 @@
   ],
   "lease": {
     "leaseID": "LSE001",
-    "returnID": "221110168",
-    "contractStartDate": "2024-10-01",
-    "contractEndDate": "2034-09-30",
-    "netPresentValue": "700000.00",
-    "totalPremiumPayable": "500000.00",
-    "startingRent": "12000.00"
+    "returnID": "221110168"
   }
 }
