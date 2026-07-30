@@ -154,7 +154,7 @@
   ],
   "transaction": {
     "transactionDescription": "L",
-    "effectiveDate": "2024-10-01",
+    "effectiveDate": "01/10/2024",
     "isDependantOnFutureEvent": "NO",
     "agreedToDeferPayment": "NO",
     "isPartOfSaleOfBusiness": "NO",
@@ -196,7 +196,7 @@
     "includesGoodwill": "NO",
     "includesOther": "NO",
     "includesStock": "NO",
-    "contractDate": "2024-09-15",
+    "contractDate": "15/09/2024",
     "newTransactionDescription": null,
     "exchangedLandHouseNumber": "190",
     "exchangedLandAddress1": "Kyn Avenue",
@@ -255,12 +255,6 @@
     "turnoverRent": null,
     "unasertainableRent": null,
     "VATAmount": "10000.00"
-  },
-  "residency": {
-    "residencyID": "RES001",
-    "isNonUkResidents": "YES",
-    "isCloseCompany": "true",
-    "isCrownRelief" : "false"
   },
   "taxCalculation": {
     "taxDue": "50000.00",

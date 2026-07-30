@@ -48,7 +48,14 @@
       "hasNino": "no",
       "dateOfBirth": "15/05/1985",
       "registrationNumber": null,
-      "placeOfRegistration": null
+      "placeOfRegistration": null,
+      "surname": "Smith",
+      "forename2": "David",
+      "companyName": null,
+      "nino": "AB123456C",
+      "lMigrated": "N",
+      "createDate": "2024-10-01",
+      "lastUpdateDate": "2021-11-16 19:53:40"
     }
   ],
   "vendor": [
@@ -75,7 +82,7 @@
       "landID": "LND001",
       "returnID": "RET-NONUKRES-F-TC-001",
       "propertyType": "01",
-      "interestCreatedTransferred": "FPF",
+      "interestCreatedTransferred": "FP",
       "houseNumber": "123",
       "address1": "Baker Street",
       "address2": "Marylebone",
@@ -125,7 +132,27 @@
     "isPursuantToPreviousOption": "no",
     "restrictionsAffectInterest": "no",
     "postTransRulingFollowed": "no",
-    "isPartOfSaleOfBusiness": "no"
+    "isPartOfSaleOfBusiness": "no",
+    "considerationBuild": null,
+    "considerationContingent": "YES",
+    "considerationDebt": null,
+    "considerationEmploy": null,
+    "considerationOther": null,
+    "considerationLand": null,
+    "considerationServices": null,
+    "considerationSharesQTD": null,
+    "considerationSharesUNQTD": null,
+    "totalConsiderationLinked": null,
+    "considerationVAT": "23",
+    "newTransactionDescription": null,
+    "exchangedLandHouseNumber": "190",
+    "exchangedLandAddress1": "Kyn Avenue",
+    "exchangedLandAddress2": null,
+    "exchangedLandAddress3": null,
+    "exchangedLandAddress4": null,
+    "exchangedLandPostcode": "BD5 CXV",
+    "restrictionDetails": null,
+    "totalConsiderationBusiness": null
   },
   "taxCalculation": {
     "taxCalculationID": "TC-NONUKRES-F-001",
@@ -143,5 +170,9 @@
     "calcTotalNPVTax": "0.00",
     "calcTotalPremiumTax": "25000.00",
     "honestyDeclaration": "YES"
+  },
+  "residency": {
+    "residencyID": "RES100002",
+    "isNonUkResidents": "NO"
   }
 }
