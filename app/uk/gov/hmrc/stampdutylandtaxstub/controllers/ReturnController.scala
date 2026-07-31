@@ -175,4 +175,22 @@ class ReturnController @Inject()(
           }
       )
   }
+
+  def deleteReturn(): Action[JsValue] = Action.async(parse.json) { implicit request =>
+    request.body
+      .validate[DeleteReturnRequest]
+      .fold(
+        invalid =>
+          logger.error(s"[ReturnController][deleteReturn] Failed to validate payload, errors: $invalid")
+          Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
+        response =>
+          val successResponse = Ok(Json.obj("deleted" -> true))
+          val failureResponse = BadRequest(Json.obj("message" -> "Something went wrong"))
+
+          response.returnResourceRef match {
+            case "errorDeletingReturn" => Future.successful(failureResponse)
+            case _ => Future.successful(successResponse)
+          }
+      )
+  }
 }
