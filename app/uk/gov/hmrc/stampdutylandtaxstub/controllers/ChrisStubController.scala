@@ -26,15 +26,7 @@ import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future, Promise}
 import scala.util.control.NonFatal
 import scala.xml.Elem
-// NB: do NOT `import scala.xml.XML` here — BackendController inherits Play's
-// MimeTypes, whose `val XML = "application/xml"` (a String) outranks the import
-// in Scala's name resolution. Reference scala.xml.XML fully-qualified instead.
 
-/** ChRIS role: answers the GovTalk POST that ChrisConnector sends (both submit
- * and delete go to this same path). Scenario is chosen by the
- * `Gov-Test-Scenario` header; the reply is a spec-valid GovTalk envelope with
- * request-derived values echoed back.
- */
 @Singleton
 class ChrisStubController @Inject() (
                                       cc:      ControllerComponents,
@@ -43,9 +35,7 @@ class ChrisStubController @Inject() (
                                       store:   CorrelationScenarioStore
                                     )(implicit ec: ExecutionContext)
   extends BackendController(cc) with Logging:
-
-  // Daemon timer used only to delay the TIMEOUT scenario. No external
-  // akka/pekko dependency required.
+  
   private val timer: Timer = new Timer("chris-stub-timeout", true)
 
   def submit(): Action[String] = Action.async(parse.tolerantText) { implicit request =>
@@ -54,12 +44,7 @@ class ChrisStubController @Inject() (
     val function      = messageField(parsed, "Function").toLowerCase
     val clazz         = messageField(parsed, "Class")
     val correlationId = resolveCorrelationId(request.headers.get(ChrisStubConfig.CorrelationIdHeader), parsed)
-
-    // Scenario precedence:
-    //   1. explicit Gov-Test-Scenario header (one-off override), else
-    //   2. the return resource reference linked to this correlationId
-    //      (recorded by insertInitialGovTalkStatus), else
-    //   3. the configured default.
+    
     val resourceRef = store.resourceRef(correlationId)
     val scenario =
       Scenario.parseToken(request.headers.get(ChrisStubConfig.ScenarioHeader))
@@ -72,15 +57,13 @@ class ChrisStubController @Inject() (
 
     val reply =
       if function == "delete" then
-        store.remove(correlationId) // tidy up once the submission is being torn down
+        store.remove(correlationId)
         builder.buildDelete(scenario, ctx)
       else builder.buildSubmit(scenario, ctx)
 
     render(reply)
   }
-
-  // ----- reply rendering ----------------------------------------------------
-
+  
   private def render(reply: StubReply): Future[Result] = reply match
     case StubReply.Xml(status, envelope) =>
       Future.successful(Status(status)(envelope.toString).as("application/xml"))
@@ -97,7 +80,6 @@ class ChrisStubController @Inject() (
     timer.schedule(new TimerTask { def run(): Unit = p.success(()) }, delayMs)
     p.future
 
-  // ----- inbound parsing ----------------------------------------------------
 
   private def parseEnvelope(body: String): Option[Elem] =
     try Some(scala.xml.XML.loadString(body))
