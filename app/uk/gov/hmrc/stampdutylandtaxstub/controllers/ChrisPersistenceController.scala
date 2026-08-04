@@ -98,6 +98,9 @@ class ChrisPersistenceController @Inject() (
 
   private def okJson: Result = Ok(Json.obj("success" -> true))
 
+  private def successSubmissionJson(submissionId: String): Result =
+    Ok(Json.obj("success" -> true, "submissionId" -> submissionId))
+    
   /** Success unless this endpoint's fault (ref token or config key) is triggered. */
   private def faulted(op: String, configKey: String, refToken: String): Action[JsValue] = Action(parse.json) { request =>
     logger.info(s"[ChrisPersistence][$op] ${request.body}")
@@ -112,10 +115,7 @@ class ChrisPersistenceController @Inject() (
         store.put(corr, ref)
         logger.info(s"[ChrisPersistence] mapped correlationId=$corr -> returnResourceRef=$ref")
       }
-
-  // --- return lock ----------------------------------------------------------
-  // Any non-2xx -> Left(UpstreamErrorResponse) -> ReturnLockConflictException.
-  // ref token: lock-error   (also persistence.lock-conflict / faults.lock)
+  
   def lockReturn(): Action[JsValue] = Action(parse.json) { request =>
     logger.info(s"[ChrisPersistence][lockReturn] ${request.body}")
     if config.persistenceLockConflict || faultTriggered(request.body, "lock", "LOCK_ERROR") then
@@ -123,20 +123,16 @@ class ChrisPersistenceController @Inject() (
     else okJson
   }
 
-  // --- submission record ----------------------------------------------------
-  // createSubmission marks the START of a fresh submit -> reset any prior state
-  // for this ref so a re-run doesn't inherit a completed status.
   def createSubmission(): Action[JsValue] = Action(parse.json) { request =>
     logger.info(s"[ChrisPersistence][createSubmission] ${request.body}")
     if faultTriggered(request.body, "create-submission", "CREATE_SUBMISSION_ERROR") then
       fault("createSubmission", "CREATE_SUBMISSION_ERROR")
     else
-      (request.body \ "returnResourceRef").asOpt[String].foreach(submissionState.clear)
-      okJson
+      val ref = (request.body \ "returnResourceRef").asOpt[String].map(_.trim).filter(_.nonEmpty)
+      ref.foreach(submissionState.clear)
+      successSubmissionJson(ref.getOrElse("STUB-SUBMISSION"))
   }
-
-  // updateSubmission is how the backend writes submission progress. Record it so
-  // getFullReturn reflects it and the "return is being submitted" poll completes.
+  
   def updateSubmission(): Action[JsValue] = Action(parse.json) { request =>
     logger.info(s"[ChrisPersistence][updateSubmission] ${request.body}")
     if faultTriggered(request.body, "update-submission", "UPDATE_SUBMISSION_ERROR") then
