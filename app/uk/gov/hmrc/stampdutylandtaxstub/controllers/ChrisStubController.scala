@@ -35,7 +35,7 @@ class ChrisStubController @Inject() (
                                       store:   CorrelationScenarioStore
                                     )(implicit ec: ExecutionContext)
   extends BackendController(cc) with Logging:
-  
+
   private val timer: Timer = new Timer("chris-stub-timeout", true)
 
   def submit(): Action[String] = Action.async(parse.tolerantText) { implicit request =>
@@ -44,16 +44,23 @@ class ChrisStubController @Inject() (
     val function      = messageField(parsed, "Function").toLowerCase
     val clazz         = messageField(parsed, "Class")
     val correlationId = resolveCorrelationId(request.headers.get(ChrisStubConfig.CorrelationIdHeader), parsed)
-    
-    val resourceRef = store.resourceRef(correlationId)
+
+    // Self-describing first: the backend injects <Key Type="ReturnResourceRef">
+    // into the envelope's GovTalkDetails/Keys when talking to the stub. This works
+    // regardless of replica or whether persistence went to the real formp-proxy.
+    // Header and the legacy correlation-id store remain as fallbacks.
+    val payloadRef = scenarioRefFromEnvelope(parsed)
+    val storeRef   = store.resourceRef(correlationId)
+
     val scenario =
-      Scenario.parseToken(request.headers.get(ChrisStubConfig.ScenarioHeader))
-        .orElse(Scenario.fromResourceRef(resourceRef))
+      Scenario.fromResourceRef(payloadRef)
+        .orElse(Scenario.parseToken(request.headers.get(ChrisStubConfig.ScenarioHeader)))
+        .orElse(Scenario.fromResourceRef(storeRef))
         .getOrElse(config.defaultScenario)
 
     val ctx = ChrisRequestContext(clazz, correlationId, parsed.getOrElse(<GovTalkMessage/>))
 
-    logger.info(s"[ChrisStub] function=${if function.isEmpty then "<none>" else function} scenario=${Scenario.token(scenario)} resourceRef=${resourceRef.getOrElse("-")} corrId=$correlationId class=$clazz")
+    logger.info(s"[ChrisStub] function=${if function.isEmpty then "<none>" else function} scenario=${Scenario.token(scenario)} payloadRef=${payloadRef.getOrElse("-")} storeRef=${storeRef.getOrElse("-")} corrId=$correlationId class=$clazz")
 
     val reply =
       if function == "delete" then
@@ -63,7 +70,7 @@ class ChrisStubController @Inject() (
 
     render(reply)
   }
-  
+
   private def render(reply: StubReply): Future[Result] = reply match
     case StubReply.Xml(status, envelope) =>
       Future.successful(Status(status)(envelope.toString).as("application/xml"))
@@ -93,6 +100,18 @@ class ChrisStubController @Inject() (
       .flatMap(xml => (xml \\ "MessageDetails" \ field).headOption)
       .map(_.text.trim)
       .getOrElse("")
+
+  /** The resource reference the backend injected into GovTalkDetails/Keys as
+   * `<Key Type="ReturnResourceRef">…</Key>`. Matched by label so the envelope's
+   * default namespace doesn't matter. None if absent/blank.
+   */
+  private def scenarioRefFromEnvelope(parsed: Option[Elem]): Option[String] =
+    parsed.flatMap { xml =>
+      (xml \\ "Key")
+        .find(k => (k \ "@Type").text.trim.equalsIgnoreCase("ReturnResourceRef"))
+        .map(_.text.trim)
+        .filter(_.nonEmpty)
+    }
 
   private def resolveCorrelationId(header: Option[String], parsed: Option[Elem]): String =
     header.map(_.trim).filter(_.nonEmpty)
