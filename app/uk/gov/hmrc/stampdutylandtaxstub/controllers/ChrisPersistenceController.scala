@@ -100,7 +100,7 @@ class ChrisPersistenceController @Inject() (
 
   private def successSubmissionJson(submissionId: String): Result =
     Ok(Json.obj("success" -> true, "submissionId" -> submissionId))
-    
+
   /** Success unless this endpoint's fault (ref token or config key) is triggered. */
   private def faulted(op: String, configKey: String, refToken: String): Action[JsValue] = Action(parse.json) { request =>
     logger.info(s"[ChrisPersistence][$op] ${request.body}")
@@ -123,16 +123,21 @@ class ChrisPersistenceController @Inject() (
     else okJson
   }
 
+
   def createSubmission(): Action[JsValue] = Action(parse.json) { request =>
     logger.info(s"[ChrisPersistence][createSubmission] ${request.body}")
     if faultTriggered(request.body, "create-submission", "CREATE_SUBMISSION_ERROR") then
       fault("createSubmission", "CREATE_SUBMISSION_ERROR")
     else
       val ref = (request.body \ "returnResourceRef").asOpt[String].map(_.trim).filter(_.nonEmpty)
-      ref.foreach(submissionState.clear)
-      successSubmissionJson(ref.getOrElse("STUB-SUBMISSION"))
+      val id  = ref.getOrElse("STUB-SUBMISSION")
+      ref.foreach { r =>
+        submissionState.clear(r)          
+        submissionState.seedSubmissionId(r, id) 
+      }
+      successSubmissionJson(id)
   }
-  
+
   def updateSubmission(): Action[JsValue] = Action(parse.json) { request =>
     logger.info(s"[ChrisPersistence][updateSubmission] ${request.body}")
     if faultTriggered(request.body, "update-submission", "UPDATE_SUBMISSION_ERROR") then

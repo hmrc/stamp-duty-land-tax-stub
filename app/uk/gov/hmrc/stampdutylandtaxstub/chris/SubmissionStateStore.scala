@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stampdutylandtaxstub.chris
 
-import play.api.libs.json.JsObject
+import play.api.libs.json.{JsObject, Json}
 
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Singleton
@@ -41,6 +41,10 @@ class SubmissionStateStore:
   def merge(ref: String, submission: JsObject): Unit =
     if ref.trim.nonEmpty then
       byRef.merge(key(ref), submission, (existing, incoming) => existing ++ incoming)
+  
+  def seedSubmissionId(ref: String, submissionId: String): Unit =
+    if ref.trim.nonEmpty && submissionId.trim.nonEmpty then
+      merge(ref, Json.obj("submissionID" -> submissionId.trim))
 
   def get(ref: String): Option[JsObject] = Option(byRef.get(key(ref)))
 
