@@ -94,7 +94,7 @@
     "returnID": "RET-CF17-MURAL",
     "claimingRelief": "no",
     "totalConsideration": "500000.00",
-    "considerationCash": "500000.00",
+    "considerationCash": "yes",
     "transactionDescription": "F",
     "isLandExchanged": "NO",
     "isPartOfSaleOfBusiness": "NO",
