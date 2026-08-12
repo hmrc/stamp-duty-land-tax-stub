@@ -34,19 +34,14 @@
   "purchaser": [
     {
       "createDate": "2025-11-09 19:53:34",
-      "companyName": "Stub Company name",
-      "isCompany": "YES",
+      "surname": "Smith",
+      "isCompany": "NO",
       "lastUpdateDate": "2025-11-09 19:53:34",
       "purchaserResourceRef": "1",
       "returnID": "221110168",
       "purchaserID": "221110169"
     }
   ],
-  "companyDetails": {
-    "companyDetailsID": "221110170",
-    "returnID": "221110168",
-    "purchaserID": "221110169"
-  },
   "land": [
     {
       "landID": "221110171",
