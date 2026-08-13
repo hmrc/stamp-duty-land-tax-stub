@@ -82,7 +82,7 @@
       "landID": "LND001",
       "returnID": "RET-NONUKRES-F-001",
       "propertyType": "01",
-      "interestCreatedTransferred": "FP",
+      "interestCreatedTransferred": "FPO",
       "houseNumber": "123",
       "address1": "Baker Street",
       "address2": "Marylebone",
