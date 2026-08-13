@@ -68,7 +68,8 @@
       "titleNumber": "TGL123401",
       "landResourceRef": "LND-REF-001",
       "nextLandID": "LND002",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND002",
@@ -90,7 +91,8 @@
       "titleNumber": "TGL123402",
       "landResourceRef": "LND-REF-002",
       "nextLandID": "LND003",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND003",
@@ -112,7 +114,8 @@
       "titleNumber": "TGL123403",
       "landResourceRef": "LND-REF-003",
       "nextLandID": "LND004",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND004",
@@ -134,7 +137,8 @@
       "titleNumber": "TGL123404",
       "landResourceRef": "LND-REF-004",
       "nextLandID": "LND005",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND005",
@@ -156,7 +160,8 @@
       "titleNumber": "TGL123405",
       "landResourceRef": "LND-REF-005",
       "nextLandID": "LND006",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND006",
@@ -178,7 +183,8 @@
       "titleNumber": "TGL123406",
       "landResourceRef": "LND-REF-006",
       "nextLandID": "LND007",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND007",
@@ -200,7 +206,8 @@
       "titleNumber": "TGL123407",
       "landResourceRef": "LND-REF-007",
       "nextLandID": "LND008",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND008",
@@ -222,7 +229,8 @@
       "titleNumber": "TGL123408",
       "landResourceRef": "LND-REF-008",
       "nextLandID": "LND009",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND009",
@@ -244,7 +252,8 @@
       "titleNumber": "TGL123409",
       "landResourceRef": "LND-REF-009",
       "nextLandID": "LND010",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND010",
@@ -266,7 +275,8 @@
       "titleNumber": "TGL123410",
       "landResourceRef": "LND-REF-010",
       "nextLandID": "LND011",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND011",
@@ -288,7 +298,8 @@
       "titleNumber": "TGL123411",
       "landResourceRef": "LND-REF-011",
       "nextLandID": "LND012",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND012",
@@ -310,7 +321,8 @@
       "titleNumber": "TGL123412",
       "landResourceRef": "LND-REF-012",
       "nextLandID": "LND013",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND013",
@@ -332,7 +344,8 @@
       "titleNumber": "TGL123413",
       "landResourceRef": "LND-REF-013",
       "nextLandID": "LND014",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND014",
@@ -354,7 +367,8 @@
       "titleNumber": "TGL123414",
       "landResourceRef": "LND-REF-014",
       "nextLandID": "LND015",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND015",
@@ -376,7 +390,8 @@
       "titleNumber": "TGL123415",
       "landResourceRef": "LND-REF-015",
       "nextLandID": "LND016",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND016",
@@ -398,7 +413,8 @@
       "titleNumber": "TGL123416",
       "landResourceRef": "LND-REF-016",
       "nextLandID": "LND017",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND017",
@@ -412,7 +428,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345617",
@@ -420,7 +436,8 @@
       "titleNumber": "TGL123417",
       "landResourceRef": "LND-REF-017",
       "nextLandID": "LND018",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND018",
@@ -434,7 +451,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345618",
@@ -442,7 +459,8 @@
       "titleNumber": "TGL123418",
       "landResourceRef": "LND-REF-018",
       "nextLandID": "LND019",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND019",
@@ -456,7 +474,7 @@
       "address4": null,
       "postcode": "WC2N 5DU",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345619",
@@ -464,7 +482,8 @@
       "titleNumber": "TGL123419",
       "landResourceRef": "LND-REF-019",
       "nextLandID": "LND020",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND020",
@@ -478,7 +497,7 @@
       "address4": null,
       "postcode": "WC1B 3DG",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345620",
@@ -486,7 +505,8 @@
       "titleNumber": "TGL123420",
       "landResourceRef": "LND-REF-020",
       "nextLandID": "LND021",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND021",
@@ -500,7 +520,7 @@
       "address4": null,
       "postcode": "NW1 6XE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345621",
@@ -508,7 +528,8 @@
       "titleNumber": "TGL123421",
       "landResourceRef": "LND-REF-021",
       "nextLandID": "LND022",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND022",
@@ -522,7 +543,7 @@
       "address4": null,
       "postcode": "W1D 1BS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345622",
@@ -530,7 +551,8 @@
       "titleNumber": "TGL123422",
       "landResourceRef": "LND-REF-022",
       "nextLandID": "LND023",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND023",
@@ -544,7 +566,7 @@
       "address4": null,
       "postcode": "W1B 5AH",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345623",
@@ -552,7 +574,8 @@
       "titleNumber": "TGL123423",
       "landResourceRef": "LND-REF-023",
       "nextLandID": "LND024",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND024",
@@ -566,7 +589,7 @@
       "address4": null,
       "postcode": "NW1 7JE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345624",
@@ -574,7 +597,8 @@
       "titleNumber": "TGL123424",
       "landResourceRef": "LND-REF-024",
       "nextLandID": "LND025",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND025",
@@ -588,7 +612,7 @@
       "address4": null,
       "postcode": "SW3 5XP",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345625",
@@ -596,7 +620,8 @@
       "titleNumber": "TGL123425",
       "landResourceRef": "LND-REF-025",
       "nextLandID": "LND026",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND026",
@@ -610,7 +635,7 @@
       "address4": null,
       "postcode": "W1J 9HS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345626",
@@ -618,7 +643,8 @@
       "titleNumber": "TGL123426",
       "landResourceRef": "LND-REF-026",
       "nextLandID": "LND027",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND027",
@@ -632,7 +658,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345627",
@@ -640,7 +666,8 @@
       "titleNumber": "TGL123427",
       "landResourceRef": "LND-REF-027",
       "nextLandID": "LND028",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND028",
@@ -654,7 +681,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345628",
@@ -662,7 +689,8 @@
       "titleNumber": "TGL123428",
       "landResourceRef": "LND-REF-028",
       "nextLandID": "LND029",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND029",
@@ -676,7 +704,7 @@
       "address4": null,
       "postcode": "WC2N 5DU",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345629",
@@ -684,7 +712,8 @@
       "titleNumber": "TGL123429",
       "landResourceRef": "LND-REF-029",
       "nextLandID": "LND030",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND030",
@@ -698,7 +727,7 @@
       "address4": null,
       "postcode": "WC1B 3DG",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345630",
@@ -706,7 +735,8 @@
       "titleNumber": "TGL123430",
       "landResourceRef": "LND-REF-030",
       "nextLandID": "LND031",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND031",
@@ -720,7 +750,7 @@
       "address4": null,
       "postcode": "NW1 6XE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345631",
@@ -728,7 +758,8 @@
       "titleNumber": "TGL123431",
       "landResourceRef": "LND-REF-031",
       "nextLandID": "LND032",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND032",
@@ -742,7 +773,7 @@
       "address4": null,
       "postcode": "W1D 1BS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345632",
@@ -750,7 +781,8 @@
       "titleNumber": "TGL123432",
       "landResourceRef": "LND-REF-032",
       "nextLandID": "LND033",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND033",
@@ -764,7 +796,7 @@
       "address4": null,
       "postcode": "W1B 5AH",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345633",
@@ -772,7 +804,8 @@
       "titleNumber": "TGL123433",
       "landResourceRef": "LND-REF-033",
       "nextLandID": "LND034",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND034",
@@ -786,7 +819,7 @@
       "address4": null,
       "postcode": "NW1 7JE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345634",
@@ -794,7 +827,8 @@
       "titleNumber": "TGL123434",
       "landResourceRef": "LND-REF-034",
       "nextLandID": "LND035",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND035",
@@ -808,7 +842,7 @@
       "address4": null,
       "postcode": "SW3 5XP",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345635",
@@ -816,7 +850,8 @@
       "titleNumber": "TGL123435",
       "landResourceRef": "LND-REF-035",
       "nextLandID": "LND036",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND036",
@@ -830,7 +865,7 @@
       "address4": null,
       "postcode": "W1J 9HS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345636",
@@ -838,7 +873,8 @@
       "titleNumber": "TGL123436",
       "landResourceRef": "LND-REF-036",
       "nextLandID": "LND037",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND037",
@@ -852,7 +888,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345637",
@@ -860,7 +896,8 @@
       "titleNumber": "TGL123437",
       "landResourceRef": "LND-REF-037",
       "nextLandID": "LND038",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND038",
@@ -874,7 +911,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345638",
@@ -882,7 +919,8 @@
       "titleNumber": "TGL123438",
       "landResourceRef": "LND-REF-038",
       "nextLandID": "LND039",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND039",
@@ -896,7 +934,7 @@
       "address4": null,
       "postcode": "WC2N 5DU",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345639",
@@ -904,7 +942,8 @@
       "titleNumber": "TGL123439",
       "landResourceRef": "LND-REF-039",
       "nextLandID": "LND040",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND040",
@@ -918,7 +957,7 @@
       "address4": null,
       "postcode": "WC1B 3DG",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345640",
@@ -926,7 +965,8 @@
       "titleNumber": "TGL123440",
       "landResourceRef": "LND-REF-040",
       "nextLandID": "LND041",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND041",
@@ -940,7 +980,7 @@
       "address4": null,
       "postcode": "NW1 6XE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345641",
@@ -948,7 +988,8 @@
       "titleNumber": "TGL123441",
       "landResourceRef": "LND-REF-041",
       "nextLandID": "LND042",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND042",
@@ -962,7 +1003,7 @@
       "address4": null,
       "postcode": "W1D 1BS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345642",
@@ -970,7 +1011,8 @@
       "titleNumber": "TGL123442",
       "landResourceRef": "LND-REF-042",
       "nextLandID": "LND043",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND043",
@@ -984,7 +1026,7 @@
       "address4": null,
       "postcode": "W1B 5AH",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345643",
@@ -992,7 +1034,8 @@
       "titleNumber": "TGL123443",
       "landResourceRef": "LND-REF-043",
       "nextLandID": "LND044",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND044",
@@ -1006,7 +1049,7 @@
       "address4": null,
       "postcode": "NW1 7JE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345644",
@@ -1014,7 +1057,8 @@
       "titleNumber": "TGL123444",
       "landResourceRef": "LND-REF-044",
       "nextLandID": "LND045",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND045",
@@ -1028,7 +1072,7 @@
       "address4": null,
       "postcode": "SW3 5XP",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345645",
@@ -1036,7 +1080,8 @@
       "titleNumber": "TGL123445",
       "landResourceRef": "LND-REF-045",
       "nextLandID": "LND046",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND046",
@@ -1050,7 +1095,7 @@
       "address4": null,
       "postcode": "W1J 9HS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345646",
@@ -1058,7 +1103,8 @@
       "titleNumber": "TGL123446",
       "landResourceRef": "LND-REF-046",
       "nextLandID": "LND047",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND047",
@@ -1072,7 +1118,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345647",
@@ -1080,7 +1126,8 @@
       "titleNumber": "TGL123447",
       "landResourceRef": "LND-REF-047",
       "nextLandID": "LND048",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND048",
@@ -1094,7 +1141,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345648",
@@ -1102,7 +1149,8 @@
       "titleNumber": "TGL123448",
       "landResourceRef": "LND-REF-048",
       "nextLandID": "LND049",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND049",
@@ -1116,7 +1164,7 @@
       "address4": null,
       "postcode": "WC2N 5DU",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345649",
@@ -1124,7 +1172,8 @@
       "titleNumber": "TGL123449",
       "landResourceRef": "LND-REF-049",
       "nextLandID": "LND050",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND050",
@@ -1138,7 +1187,7 @@
       "address4": null,
       "postcode": "WC1B 3DG",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345650",
@@ -1146,7 +1195,8 @@
       "titleNumber": "TGL123450",
       "landResourceRef": "LND-REF-050",
       "nextLandID": "LND051",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND051",
@@ -1160,7 +1210,7 @@
       "address4": null,
       "postcode": "NW1 6XE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345651",
@@ -1168,7 +1218,8 @@
       "titleNumber": "TGL123451",
       "landResourceRef": "LND-REF-051",
       "nextLandID": "LND052",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND052",
@@ -1182,7 +1233,7 @@
       "address4": null,
       "postcode": "W1D 1BS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345652",
@@ -1190,7 +1241,8 @@
       "titleNumber": "TGL123452",
       "landResourceRef": "LND-REF-052",
       "nextLandID": "LND053",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND053",
@@ -1204,7 +1256,7 @@
       "address4": null,
       "postcode": "W1B 5AH",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345653",
@@ -1212,7 +1264,8 @@
       "titleNumber": "TGL123453",
       "landResourceRef": "LND-REF-053",
       "nextLandID": "LND054",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND054",
@@ -1226,7 +1279,7 @@
       "address4": null,
       "postcode": "NW1 7JE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345654",
@@ -1234,7 +1287,8 @@
       "titleNumber": "TGL123454",
       "landResourceRef": "LND-REF-054",
       "nextLandID": "LND055",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND055",
@@ -1248,7 +1302,7 @@
       "address4": null,
       "postcode": "SW3 5XP",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345655",
@@ -1256,7 +1310,8 @@
       "titleNumber": "TGL123455",
       "landResourceRef": "LND-REF-055",
       "nextLandID": "LND056",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND056",
@@ -1270,7 +1325,7 @@
       "address4": null,
       "postcode": "W1J 9HS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345656",
@@ -1278,7 +1333,8 @@
       "titleNumber": "TGL123456",
       "landResourceRef": "LND-REF-056",
       "nextLandID": "LND057",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND057",
@@ -1292,7 +1348,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345657",
@@ -1300,7 +1356,8 @@
       "titleNumber": "TGL123457",
       "landResourceRef": "LND-REF-057",
       "nextLandID": "LND058",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND058",
@@ -1314,7 +1371,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345658",
@@ -1322,7 +1379,8 @@
       "titleNumber": "TGL123458",
       "landResourceRef": "LND-REF-058",
       "nextLandID": "LND059",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND059",
@@ -1336,7 +1394,7 @@
       "address4": null,
       "postcode": "WC2N 5DU",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345659",
@@ -1344,7 +1402,8 @@
       "titleNumber": "TGL123459",
       "landResourceRef": "LND-REF-059",
       "nextLandID": "LND060",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND060",
@@ -1358,7 +1417,7 @@
       "address4": null,
       "postcode": "WC1B 3DG",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345660",
@@ -1366,7 +1425,8 @@
       "titleNumber": "TGL123460",
       "landResourceRef": "LND-REF-060",
       "nextLandID": "LND061",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND061",
@@ -1380,7 +1440,7 @@
       "address4": null,
       "postcode": "NW1 6XE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345661",
@@ -1388,7 +1448,8 @@
       "titleNumber": "TGL123461",
       "landResourceRef": "LND-REF-061",
       "nextLandID": "LND062",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND062",
@@ -1402,7 +1463,7 @@
       "address4": null,
       "postcode": "W1D 1BS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345662",
@@ -1410,7 +1471,8 @@
       "titleNumber": "TGL123462",
       "landResourceRef": "LND-REF-062",
       "nextLandID": "LND063",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND063",
@@ -1424,7 +1486,7 @@
       "address4": null,
       "postcode": "W1B 5AH",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345663",
@@ -1432,7 +1494,8 @@
       "titleNumber": "TGL123463",
       "landResourceRef": "LND-REF-063",
       "nextLandID": "LND064",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND064",
@@ -1446,7 +1509,7 @@
       "address4": null,
       "postcode": "NW1 7JE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345664",
@@ -1454,7 +1517,8 @@
       "titleNumber": "TGL123464",
       "landResourceRef": "LND-REF-064",
       "nextLandID": "LND065",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND065",
@@ -1468,7 +1532,7 @@
       "address4": null,
       "postcode": "SW3 5XP",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345665",
@@ -1476,7 +1540,8 @@
       "titleNumber": "TGL123465",
       "landResourceRef": "LND-REF-065",
       "nextLandID": "LND066",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND066",
@@ -1490,7 +1555,7 @@
       "address4": null,
       "postcode": "W1J 9HS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345666",
@@ -1498,7 +1563,8 @@
       "titleNumber": "TGL123466",
       "landResourceRef": "LND-REF-066",
       "nextLandID": "LND067",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND067",
@@ -1512,7 +1578,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345667",
@@ -1520,7 +1586,8 @@
       "titleNumber": "TGL123467",
       "landResourceRef": "LND-REF-067",
       "nextLandID": "LND068",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND068",
@@ -1534,7 +1601,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345668",
@@ -1542,7 +1609,8 @@
       "titleNumber": "TGL123468",
       "landResourceRef": "LND-REF-068",
       "nextLandID": "LND069",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND069",
@@ -1556,7 +1624,7 @@
       "address4": null,
       "postcode": "WC2N 5DU",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345669",
@@ -1564,7 +1632,8 @@
       "titleNumber": "TGL123469",
       "landResourceRef": "LND-REF-069",
       "nextLandID": "LND070",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND070",
@@ -1578,7 +1647,7 @@
       "address4": null,
       "postcode": "WC1B 3DG",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345670",
@@ -1586,7 +1655,8 @@
       "titleNumber": "TGL123470",
       "landResourceRef": "LND-REF-070",
       "nextLandID": "LND071",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND071",
@@ -1600,7 +1670,7 @@
       "address4": null,
       "postcode": "NW1 6XE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345671",
@@ -1608,7 +1678,8 @@
       "titleNumber": "TGL123471",
       "landResourceRef": "LND-REF-071",
       "nextLandID": "LND072",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND072",
@@ -1622,7 +1693,7 @@
       "address4": null,
       "postcode": "W1D 1BS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345672",
@@ -1630,7 +1701,8 @@
       "titleNumber": "TGL123472",
       "landResourceRef": "LND-REF-072",
       "nextLandID": "LND073",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND073",
@@ -1644,7 +1716,7 @@
       "address4": null,
       "postcode": "W1B 5AH",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345673",
@@ -1652,7 +1724,8 @@
       "titleNumber": "TGL123473",
       "landResourceRef": "LND-REF-073",
       "nextLandID": "LND074",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND074",
@@ -1666,7 +1739,7 @@
       "address4": null,
       "postcode": "NW1 7JE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345674",
@@ -1674,7 +1747,8 @@
       "titleNumber": "TGL123474",
       "landResourceRef": "LND-REF-074",
       "nextLandID": "LND075",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND075",
@@ -1688,7 +1762,7 @@
       "address4": null,
       "postcode": "SW3 5XP",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345675",
@@ -1696,7 +1770,8 @@
       "titleNumber": "TGL123475",
       "landResourceRef": "LND-REF-075",
       "nextLandID": "LND076",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND076",
@@ -1710,7 +1785,7 @@
       "address4": null,
       "postcode": "W1J 9HS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345676",
@@ -1718,7 +1793,8 @@
       "titleNumber": "TGL123476",
       "landResourceRef": "LND-REF-076",
       "nextLandID": "LND077",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND077",
@@ -1732,7 +1808,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345677",
@@ -1740,7 +1816,8 @@
       "titleNumber": "TGL123477",
       "landResourceRef": "LND-REF-077",
       "nextLandID": "LND078",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND078",
@@ -1754,7 +1831,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345678",
@@ -1762,7 +1839,8 @@
       "titleNumber": "TGL123478",
       "landResourceRef": "LND-REF-078",
       "nextLandID": "LND079",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND079",
@@ -1776,7 +1854,7 @@
       "address4": null,
       "postcode": "WC2N 5DU",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345679",
@@ -1784,7 +1862,8 @@
       "titleNumber": "TGL123479",
       "landResourceRef": "LND-REF-079",
       "nextLandID": "LND080",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND080",
@@ -1798,7 +1877,7 @@
       "address4": null,
       "postcode": "WC1B 3DG",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345680",
@@ -1806,7 +1885,8 @@
       "titleNumber": "TGL123480",
       "landResourceRef": "LND-REF-080",
       "nextLandID": "LND081",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND081",
@@ -1820,7 +1900,7 @@
       "address4": null,
       "postcode": "NW1 6XE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345681",
@@ -1828,7 +1908,8 @@
       "titleNumber": "TGL123481",
       "landResourceRef": "LND-REF-081",
       "nextLandID": "LND082",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND082",
@@ -1842,7 +1923,7 @@
       "address4": null,
       "postcode": "W1D 1BS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345682",
@@ -1850,7 +1931,8 @@
       "titleNumber": "TGL123482",
       "landResourceRef": "LND-REF-082",
       "nextLandID": "LND083",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND083",
@@ -1864,7 +1946,7 @@
       "address4": null,
       "postcode": "W1B 5AH",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345683",
@@ -1872,7 +1954,8 @@
       "titleNumber": "TGL123483",
       "landResourceRef": "LND-REF-083",
       "nextLandID": "LND084",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND084",
@@ -1886,7 +1969,7 @@
       "address4": null,
       "postcode": "NW1 7JE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345684",
@@ -1894,7 +1977,8 @@
       "titleNumber": "TGL123484",
       "landResourceRef": "LND-REF-084",
       "nextLandID": "LND085",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND085",
@@ -1908,7 +1992,7 @@
       "address4": null,
       "postcode": "SW3 5XP",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345685",
@@ -1916,7 +2000,8 @@
       "titleNumber": "TGL123485",
       "landResourceRef": "LND-REF-085",
       "nextLandID": "LND086",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND086",
@@ -1930,7 +2015,7 @@
       "address4": null,
       "postcode": "W1J 9HS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345686",
@@ -1938,7 +2023,8 @@
       "titleNumber": "TGL123486",
       "landResourceRef": "LND-REF-086",
       "nextLandID": "LND087",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND087",
@@ -1952,7 +2038,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345687",
@@ -1960,7 +2046,8 @@
       "titleNumber": "TGL123487",
       "landResourceRef": "LND-REF-087",
       "nextLandID": "LND088",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND088",
@@ -1974,7 +2061,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345688",
@@ -1982,7 +2069,8 @@
       "titleNumber": "TGL123488",
       "landResourceRef": "LND-REF-088",
       "nextLandID": "LND089",
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND089",
@@ -1996,7 +2084,7 @@
       "address4": null,
       "postcode": "WC2N 5DU",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345689",
@@ -2004,7 +2092,8 @@
       "titleNumber": "TGL123489",
       "landResourceRef": "LND-REF-089",
       "nextLandID": "LND090",
-      "DARPostcode": "WC2N 5DU"
+      "DARPostcode": "WC2N 5DU",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND090",
@@ -2018,7 +2107,7 @@
       "address4": null,
       "postcode": "WC1B 3DG",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345690",
@@ -2026,7 +2115,8 @@
       "titleNumber": "TGL123490",
       "landResourceRef": "LND-REF-090",
       "nextLandID": "LND091",
-      "DARPostcode": "WC1B 3DG"
+      "DARPostcode": "WC1B 3DG",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND091",
@@ -2040,7 +2130,7 @@
       "address4": null,
       "postcode": "NW1 6XE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345691",
@@ -2048,7 +2138,8 @@
       "titleNumber": "TGL123491",
       "landResourceRef": "LND-REF-091",
       "nextLandID": "LND092",
-      "DARPostcode": "NW1 6XE"
+      "DARPostcode": "NW1 6XE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND092",
@@ -2062,7 +2153,7 @@
       "address4": null,
       "postcode": "W1D 1BS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345692",
@@ -2070,7 +2161,8 @@
       "titleNumber": "TGL123492",
       "landResourceRef": "LND-REF-092",
       "nextLandID": "LND093",
-      "DARPostcode": "W1D 1BS"
+      "DARPostcode": "W1D 1BS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND093",
@@ -2084,7 +2176,7 @@
       "address4": null,
       "postcode": "W1B 5AH",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345693",
@@ -2092,7 +2184,8 @@
       "titleNumber": "TGL123493",
       "landResourceRef": "LND-REF-093",
       "nextLandID": "LND094",
-      "DARPostcode": "W1B 5AH"
+      "DARPostcode": "W1B 5AH",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND094",
@@ -2106,7 +2199,7 @@
       "address4": null,
       "postcode": "NW1 7JE",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345694",
@@ -2114,7 +2207,8 @@
       "titleNumber": "TGL123494",
       "landResourceRef": "LND-REF-094",
       "nextLandID": "LND095",
-      "DARPostcode": "NW1 7JE"
+      "DARPostcode": "NW1 7JE",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND095",
@@ -2128,7 +2222,7 @@
       "address4": null,
       "postcode": "SW3 5XP",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345695",
@@ -2136,7 +2230,8 @@
       "titleNumber": "TGL123495",
       "landResourceRef": "LND-REF-095",
       "nextLandID": "LND096",
-      "DARPostcode": "SW3 5XP"
+      "DARPostcode": "SW3 5XP",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND096",
@@ -2150,7 +2245,7 @@
       "address4": null,
       "postcode": "W1J 9HS",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345696",
@@ -2158,7 +2253,8 @@
       "titleNumber": "TGL123496",
       "landResourceRef": "LND-REF-096",
       "nextLandID": "LND097",
-      "DARPostcode": "W1J 9HS"
+      "DARPostcode": "W1J 9HS",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND097",
@@ -2172,7 +2268,7 @@
       "address4": null,
       "postcode": "W1T 7RQ",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345697",
@@ -2180,7 +2276,8 @@
       "titleNumber": "TGL123497",
       "landResourceRef": "LND-REF-097",
       "nextLandID": "LND098",
-      "DARPostcode": "W1T 7RQ"
+      "DARPostcode": "W1T 7RQ",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     },
     {
       "landID": "LND098",
@@ -2194,7 +2291,7 @@
       "address4": null,
       "postcode": "EC4A 2LT",
       "landArea": "250.000",
-      "areaUnit": "SQMETRE",
+      "areaUnit": "SquareMetres",
       "localAuthorityNumber": "5900",
       "mineralRights": "NO",
       "NLPGUPRN": "10012345698",
@@ -2202,7 +2299,8 @@
       "titleNumber": "TGL123498",
       "landResourceRef": "LND-REF-098",
       "nextLandID": null,
-      "DARPostcode": "EC4A 2LT"
+      "DARPostcode": "EC4A 2LT",
+      "lastUpdateDate": "2025-11-09 19:53:34"
     }
   ]
 }
