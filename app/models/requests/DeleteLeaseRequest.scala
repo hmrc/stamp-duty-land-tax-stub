@@ -20,7 +20,6 @@ import play.api.libs.json.{Json, OFormat}
 
 case class DeleteLeaseRequest(
                                    storn: String,
-                                   leaseResourceRef: String,
                                    returnResourceRef: String
                                  )
 

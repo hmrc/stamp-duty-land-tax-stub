@@ -159,8 +159,7 @@ class ManageLeaseControllerSpec extends AnyFreeSpec
     ".removeLease" - {
       val validRemoveLeaseRequest = DeleteLeaseRequest(
         storn = "STORN12345",
-        returnResourceRef = "123456",
-        leaseResourceRef = "123456"
+        returnResourceRef = "123456"
 )
 
       val fakeRemoveLeasePOSTRequest =

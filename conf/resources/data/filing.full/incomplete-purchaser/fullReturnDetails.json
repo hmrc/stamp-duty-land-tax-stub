@@ -53,7 +53,8 @@
       "returnID": "221110168",
       "address1": "Harbury Court",
       "address2": "stafford",
-      "postcode": "TE11 7HE"
+      "postcode": "TE11 7HE",
+      "landResourceRef": "1"
     }
   ]
 }
