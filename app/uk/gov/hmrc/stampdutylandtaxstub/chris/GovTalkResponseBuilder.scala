@@ -152,11 +152,22 @@ class GovTalkResponseBuilder @Inject() (
       <GovTalkDetails><Keys/></GovTalkDetails>
       <Body>
         <SuccessResponse xmlns="http://www.govtalk.gov.uk/taxation/SDLT/1">
-          {irMark.map(m => <IRmark Type="generic">{m}</IRmark>).getOrElse(NodeSeq.Empty)}
+          {irMark.map(irMarkReceipt).getOrElse(NodeSeq.Empty)}
           {utrn.map(u => <UTRN>{u}</UTRN>).getOrElse(NodeSeq.Empty)}
         </SuccessResponse>
       </Body>
     </GovTalkMessage>
+
+  private def irMarkReceipt(mark: String): Elem =
+    <IRmarkReceipt>
+      <dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+        <dsig:SignedInfo>
+          <dsig:Reference>
+            <dsig:DigestValue>{mark}</dsig:DigestValue>
+          </dsig:Reference>
+        </dsig:SignedInfo>
+      </dsig:Signature>
+    </IRmarkReceipt>
 
   private def acknowledgementEnvelope(ctx: ChrisRequestContext): Elem =
     <GovTalkMessage xmlns="http://www.govtalk.gov.uk/CM/envelope">
