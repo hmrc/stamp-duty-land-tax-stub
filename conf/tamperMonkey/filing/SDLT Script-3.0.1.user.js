@@ -149,7 +149,7 @@ var userProfiles = '[' +
     '{ "description":"NRSDLT exempt: Type = A, Lease term = 6 years", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "nrsdlt-exempt-conveyance-with-lease" }, ' +
     '{ "description":"NRSDLT exempt: Crown relief = yes", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "nrsdlt-exempt-crown-relief" }, ' +
     '{ "description":"NRSDLT exempt: Relief code = 9", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "nrsdlt-exempt-relief-code" }, ' +
-    '{ "description":"NRSDLT exempt: Type = L, Lease term = 6 years", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "nrsdlt-exempt-grant-of-lease-leaseTerm" }, ' +
+    '{ "description":"NRSDLT exempt: Type = L, Lease term = 6 years 365 days", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "nrsdlt-exempt-grant-of-lease-leaseTerm" }, ' +
     '{ "description":"NRSDLT exempt: Type = L, Premium = 39999, Rent = 999", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "nrsdlt-exempt-grant-of-lease-premium-and-rent" }, ' +
 
     '{ "divider":"UK Residency" }, ' +
