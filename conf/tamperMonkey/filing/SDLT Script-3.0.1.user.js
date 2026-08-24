@@ -154,6 +154,8 @@ var userProfiles = '[' +
     '{ "description":"Full transaction, Grant of lease, 20 CharitiesRelief", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-transaction-grantoflease-20charitiesrelief" }, ' +
     '{ "description":"Full transaction, Conveyance/Transfer, mixed property type", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-transaction-conveyance" }, ' +
     '{ "description":"LeaseStartDate GreaterThan EndDates Check", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "LeaseStartDate-GreaterThan-EndDate-Check" }, ' +
+    '{ "description":"Effective date after cut off - type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "grantoflease-effectiveDate-after-cutoff" }, ' +
+    '{ "description":"Effective date before cut off - type L", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "grantoflease-effectiveDate-before-cutoff" }, ' +
 
     '{ "divider":"Full Lease" }, ' +
     '{ "description":"Full lease, transaction type A", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-lease-transaction-type-a" }, ' +
