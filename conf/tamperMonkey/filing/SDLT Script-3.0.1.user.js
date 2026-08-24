@@ -28,6 +28,7 @@ var userProfiles = '[' +
     '{ "divider":"Vendors" }, ' +
     '{ "description":"No return agent, no vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-return-agent-and-no-vendor" }, ' +
     '{ "description":"No vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-vendor" }, ' +
+    '{ "description":"1 vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "one-vendor" }, ' +
     '{ "description":"5 vendors", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "5-vendors" }, ' +
     '{ "description":"97 vendors, 1 purchaser", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "97-vendors-1-purchaser" }, ' +
     '{ "description":"99 vendors", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "99-vendors" }, ' +
@@ -59,10 +60,12 @@ var userProfiles = '[' +
     '{ "description":"5 Purchasers, Main Purchaser is type Individual", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "5-purchasers-individual" },' +
     '{ "description":"Error case: Bad request updating return info", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "error-updating-return-info" },' +
     '{ "description":"97 purchasers, 1 vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "97-purchasers-1-vendor" }, ' +
+    '{ "description":"98 Purchasers, Main Purchaser is type Company", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "98-purchasers-company" }, ' +
     '{ "description":"99 purchasers", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "99-purchasers" }, ' +
     '{ "description":"No Purchaser", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-purchaser" },' +
     '{ "description":"Purchaser Agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "purchaser-agent" },' +
     '{ "description":"Purchaser No Agents", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "purchaser-no-agents" }, ' +
+    '{ "description":"Company Purchaser with no company details", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-company-details" }, ' +
     '{ "description":"50 purchasers and 50 vendors", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "50-purchasers-50-vendors" }, ' +
 
     '{ "divider":"Land Transactions" }, ' +
@@ -102,6 +105,7 @@ var userProfiles = '[' +
     '{ "description":"Prelim Transaction Type L - Additional Property Type", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelimTransactionL-property-type-additional" }, ' +
     '{ "description":"Prelim Transaction Type L - No Land", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelimTransactionL-no-land" }, ' +
     '{ "description":"Prelim Transaction Type A", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelimTransactionA" }, ' +
+    '{ "description":"Prelim Transaction Type O", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelimTransactionO" }, ' +
 
     '{ "divider":"Freehold" }, ' +
     '{ "description":"freehold-self-assessed", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-self-assessed" }, ' +
@@ -113,6 +117,7 @@ var userProfiles = '[' +
     '{ "description":"freehold-self-assessed-effectiveDateBeforeMar2012", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-self-assessed-effectiveDateBeforeMar2012" }, ' +
     '{ "description":"freehold-self-assessed-collectiveEnfranchisement", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-self-assessed-collectiveEnfranchisement" }, ' +
     '{ "description":"freehold-multiple-self-assessed-reasons", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-multiple-self-assessed-reasons" }, ' +
+    '{ "description":"freehold-tax-calculated", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-tax-calculated" }, ' +
     '{ "description":"freehold-tax-calculated-slice", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-tax-calculated-slice" }, ' +
     '{ "description":"freehold-tax-calculated-slab", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-tax-calculated-slab" }, ' +
     '{ "description":"freehold-tax-calculated-zero", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "freehold-tax-calculated-zero" }, ' +
@@ -270,6 +275,12 @@ var userProfiles = '[' +
     '{ "description":"SDLT schema validation failure (400)", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "schema-invalid" }, ' +
     '{ "description":"Missing submission context", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "missing-context" }, ' +
     '{ "description":"Re-submittable; delete error detail 500", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "delete-error-detail-error" }, ' +
+    '{ "description":"Submission status STARTED", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "started" }, ' +
+    '{ "description":"Submission status PENDING", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "pending" }, ' +
+    '{ "description":"Submission status FATAL_ERROR", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "fatal" }, ' +
+    '{ "description":"Submission status SUBMITTED with UTRN", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "departmental" }, ' +
+    '{ "description":"No submission block - returnInfo status STARTED", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "submitted" }, ' +
+    '{ "description":"No submission block - same fixture as submitted", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "acknowledged" }, ' +
 
     '{ "divider":"End To End" }, ' +
     '{ "description":"UK Residency to Tax Calculation journey", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "e2e-from-uk-residency-to-tax-calculation" } ' +
