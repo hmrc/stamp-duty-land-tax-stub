@@ -95,6 +95,7 @@ var userProfiles = '[' +
     '{ "description":"98 lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "98-lands" }, ' +
     '{ "description":"99 lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "99-lands" }, ' +
     '{ "description":"5 lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "5-lands" }, ' +
+    '{ "description":"Prelim Land with no postcode", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "land-no-postcode" }, ' +
 
     '{ "divider":"Prelim Transactions" }, ' +
     '{ "description":"Prelim Only", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "prelim-only" }, ' +
