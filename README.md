@@ -121,6 +121,7 @@ matching dropdown entry, so adding a new fixture directory means adding it to th
 | `5-lands` | 5 lands |
 | `98-lands` | 98 lands |
 | `99-lands` | 99 lands |
+| `land-no-postcode` | Prelim Land with no postcode |
 
 ### Prelim transactions
 
