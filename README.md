@@ -212,60 +212,63 @@ matching dropdown entry, so adding a new fixture directory means adding it to th
 
 ### Crossflow errors
 
-| Return ID | Scenario |
-|-----------|----------|
-| `f17-welsh6996-before-wales-act` | F17: Welsh auth code 6996 before the Wales Act |
-| `f17-welsh6996-before-wales-act-multi` | F17: Welsh auth code 6996 before the Wales Act, multiple lands |
-| `f17-6996-missingeffdate` | F17: 6996, missing effective date |
-| `f17-6996-preact` | F17: 6996, pre Wales Act |
-| `f17-6997-preact` | F17: 6997, pre Wales Act |
-| `f17-6998-bothdates` | F17: 6998, both dates present |
-| `f17-6998-contractdate-postact` | F17: 6998, contract date after the Wales Act |
-| `f17-6998-effdate-preact` | F17: 6998, effective date pre Wales Act |
-| `f17-6998-nocontractdate` | F17: 6998, no contract date |
-| `f17-6999-bothdates` | F17: 6999, both dates present |
-| `f17-6999-contractdate-afterwalesact` | F17: 6999, contract date after the Wales Act |
-| `f17-6999-effdate-preact` | F17: 6999, effective date pre Wales Act |
-| `f17-6999-nocontractdate` | F17: 6999, no contract date |
-| `f17-regularwelsh-postact` | F17: regular Welsh auth code after the Wales Act |
-| `f18-dummy8998-precr223` | F18: dummy code 8998 before CR223 |
-| `f18-dummy8998-contractpostcr223` | F18: dummy code 8998, contract date after CR223 |
-| `f18-dummy8998-nocontractdate` | F18: dummy code 8998, no contract date |
-| `f18-dummy8999-precr223` | F18: dummy code 8999 before CR223 |
-| `f18-dummy8999-contractafterscotact` | F18: dummy code 8999, contract date after the Scotland Act |
-| `f18-dummy8999-nocontractdate` | F18: dummy code 8999, no contract date |
-| `f18-scottishcode-postcr223` | F18: Scottish auth code after CR223 |
-| `f18-scottishpostcode-edinburgh` | F18: Scottish postcode - Edinburgh |
-| `f18-scottishpostcode-glasgow` | F18: Scottish postcode - Glasgow |
-| `all-f17-and-f18-predate` | All F17 and F18 codes, dates before the acts |
-| `all-f17-and-f18-postdate` | All F17 and F18 codes, dates after the acts |
-| `f23-32-fail-property-not-residential` | F23/32: fails, property not residential |
-| `f23-33-fail-property-not-allowed` | F23/33: fails, property type not allowed |
-| `f23-34-fail-date-before-2013` | F23/34: fails, date before 2013 |
-| `f23-35-fail-date-before-2013` | F23/35: fails, date before 2013 |
-| `f23-36-fail-before-window` | F23/36: fails, date before the relief window |
-| `f23-36-pass-inside-window` | F23/36: passes, date inside the relief window |
-| `f23-36-fail-after-window` | F23/36: fails, date after the relief window |
-| `f23-37-fail-before-window` | F23/37: fails, date before the relief window |
-| `f23-37-fail-after-window` | F23/37: fails, date after the relief window |
-| `f23-38-fail-date-before-2025-03-19` | F23/38: fails, date before 19 Mar 2025 |
-| `f24-additional-res` | F24: additional residential |
-| `f25-fail-contract-date-null` | F25: fails, contract date null |
-| `f25-fail-contract-date-on-cutoff` | F25: fails, contract date on the cut off |
-| `f25-fail-contract-date-after-cutoff` | F25: fails, contract date after the cut off |
-| `f25-fail-effective-date-on-cutoff` | F25: fails, effective date on the cut off |
-| `f25-fail-effective-date-after-cutoff` | F25: fails, effective date after the cut off |
-| `f28-cap500k-original-window-fail` | F28: fails, 500k cap in the original window |
-| `f28-cap625k-middle-window-fail` | F28: fails, 625k cap in the middle window |
-| `f28-cap500k-post-2025-fail` | F28: fails, 500k cap post 2025 |
-| `F30-Cf-5a` | F30: crossflow check 5a |
-| `F30-Cf-5b` | F30: crossflow check 5b |
-| `F30-Cf-5c` | F30: crossflow check 5c |
-| `F30-CF6` | F30: crossflow check 6 |
-| `F30-CF6-with-cf5a` | F30: crossflow check 6 combined with 5a |
-| `F30-CF6-with-CF17` | F30: crossflow check 6 combined with CF17 |
-| `CF-17` | Crossflow check 17 |
-| `full-lease-transaction-type-f` | Full lease, transaction type F - **no fixture exists, returns 404** |
+| Return ID                                             | Scenario                                                               |
+|-------------------------------------------------------|------------------------------------------------------------------------|
+| `f17-welsh6996-before-wales-act`                      | F17: Welsh auth code 6996 before the Wales Act                         |
+| `f17-welsh6996-before-wales-act-multi`                | F17: Welsh auth code 6996 before the Wales Act, multiple lands         |
+| `f17-6996-missingeffdate`                             | F17: 6996, missing effective date                                      |
+| `f17-6996-preact`                                     | F17: 6996, pre Wales Act                                               |
+| `f17-6997-preact`                                     | F17: 6997, pre Wales Act                                               |
+| `f17-6998-bothdates`                                  | F17: 6998, both dates present                                          |
+| `f17-6998-contractdate-postact`                       | F17: 6998, contract date after the Wales Act                           |
+| `f17-6998-effdate-preact`                             | F17: 6998, effective date pre Wales Act                                |
+| `f17-6998-nocontractdate`                             | F17: 6998, no contract date                                            |
+| `f17-6999-bothdates`                                  | F17: 6999, both dates present                                          |
+| `f17-6999-contractdate-afterwalesact`                 | F17: 6999, contract date after the Wales Act                           |
+| `f17-6999-effdate-preact`                             | F17: 6999, effective date pre Wales Act                                |
+| `f17-6999-nocontractdate`                             | F17: 6999, no contract date                                            |
+| `f17-regularwelsh-postact`                            | F17: regular Welsh auth code after the Wales Act                       |
+| `f18-dummy8998-precr223`                              | F18: dummy code 8998 before CR223                                      |
+| `f18-dummy8998-contractpostcr223`                     | F18: dummy code 8998, contract date after CR223                        |
+| `f18-dummy8998-nocontractdate`                        | F18: dummy code 8998, no contract date                                 |
+| `f18-dummy8999-precr223`                              | F18: dummy code 8999 before CR223                                      |
+| `f18-dummy8999-contractafterscotact`                  | F18: dummy code 8999, contract date after the Scotland Act             |
+| `f18-dummy8999-nocontractdate`                        | F18: dummy code 8999, no contract date                                 |
+| `f18-scottishcode-postcr223`                          | F18: Scottish auth code after CR223                                    |
+| `f18-scottishpostcode-edinburgh`                      | F18: Scottish postcode - Edinburgh                                     |
+| `f18-scottishpostcode-glasgow`                        | F18: Scottish postcode - Glasgow                                       |
+| `all-f17-and-f18-predate`                             | All F17 and F18 codes, dates before the acts                           |
+| `all-f17-and-f18-postdate`                            | All F17 and F18 codes, dates after the acts                            |
+| `f23-32-fail-property-not-residential`                | F23/32: fails, property not residential                                |
+| `f23-33-fail-property-not-allowed`                    | F23/33: fails, property type not allowed                               |
+| `f23-34-fail-date-before-2013`                        | F23/34: fails, date before 2013                                        |
+| `f23-35-fail-date-before-2013`                        | F23/35: fails, date before 2013                                        |
+| `f23-36-fail-before-window`                           | F23/36: fails, date before the relief window                           |
+| `f23-36-pass-inside-window`                           | F23/36: passes, date inside the relief window                          |
+| `f23-36-fail-after-window`                            | F23/36: fails, date after the relief window                            |
+| `f23-37-fail-before-window`                           | F23/37: fails, date before the relief window                           |
+| `f23-37-fail-after-window`                            | F23/37: fails, date after the relief window                            |
+| `f23-38-fail-date-before-2025-03-19`                  | F23/38: fails, date before 19 Mar 2025                                 |
+| `f24-additional-res`                                  | F24: additional residential                                            |
+| `f25-fail-contract-date-null`                         | F25: fails, contract date null                                         |
+| `f25-fail-contract-date-on-cutoff`                    | F25: fails, contract date on the cut off                               |
+| `f25-fail-contract-date-after-cutoff`                 | F25: fails, contract date after the cut off                            |
+| `f25-fail-effective-date-on-cutoff`                   | F25: fails, effective date on the cut off                              |
+| `f25-fail-effective-date-after-cutoff`                | F25: fails, effective date after the cut off                           |
+| `f28-cap500k-original-window-fail`                    | F28: fails, total premium payable over 500k cap in the original window |
+| `f28-cap625k-middle-window-fail`                      | F28: fails, total premium payable over 625k cap in the middle window   |
+| `f28-cap500k-post-2025-fail`                          | F28: fails, total premium payable over 500k cap post 2025              |
+| `f28-cap500k-original-window-fail-totalConsideration` | F28: fails, total consideration over 500k cap in the original window   |
+| `f28-cap625k-middle-window-fail-totalConsideration`   | F28: fails, total consideration over 625k cap in the middle window     |
+| `f28-cap500k-post-2025-fail-totalConsideration`       | F28: fails, total consideration over 500k cap post 2025                |
+| `F30-Cf-5a`                                           | F30: crossflow check 5a                                                |
+| `F30-Cf-5b`                                           | F30: crossflow check 5b                                                |
+| `F30-Cf-5c`                                           | F30: crossflow check 5c                                                |
+| `F30-CF6`                                             | F30: crossflow check 6                                                 |
+| `F30-CF6-with-cf5a`                                   | F30: crossflow check 6 combined with 5a                                |
+| `F30-CF6-with-CF17`                                   | F30: crossflow check 6 combined with CF17                              |
+| `CF-17`                                               | Crossflow check 17                                                     |
+| `full-lease-transaction-type-f`                       | Full lease, transaction type F - **no fixture exists, returns 404**    |
 
 ### PDF generation
 
