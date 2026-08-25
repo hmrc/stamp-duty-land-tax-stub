@@ -176,6 +176,7 @@ matching dropdown entry, so adding a new fixture directory means adding it to th
 | `leasehold-tax-calculated` | Tax calculated |
 | `leasehold-tax-calculated-zeroPenalty` | Tax calculated, zero penalty |
 | `leasehold-tax-calculated-withReliefReason` | Tax calculated, with relief reason |
+| `leasehold-tax-calculated-firstTimeBuyerRelief` | Tax calculated, first time buyer relief |
 | `res-no-uk-res-ans-after-1-Apr-21-L` | Residential, no UK residency answer after 1 Apr 21 - type L (SDLTC validation fails) |
 | `res-no-uk-res-ans-after-1-Apr-21-tax-calc-answered-L` | Residential, no UK residency answer after 1 Apr 21 - type L (tax calc answered) |
 
