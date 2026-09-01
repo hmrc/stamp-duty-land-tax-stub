@@ -1,24 +1,113 @@
 {
-  "stornId": "STORN123456",
-  "returnResourceRef": "123456",
+  "stornId": "STN001",
+  "returnResourceRef": "111",
   "sdltOrganisation": {
-    "isReturnUser": "true",
-    "doNotDisplayWelcomePage": "false",
-    "storn": "STORN123456",
-    "version": "1.0"
+    "storn": "STN001",
+    "version": "0"
   },
   "returnInfo": {
-    "returnID": "RET123456789",
-    "storn": "STORN123456",
-    "purchaserCounter": "0",
+    "returnID": "383089225",
+    "storn": "STN001",
+    "purchaserCounter": "1",
     "vendorCounter": "0",
-    "landCounter": "0",
-    "purgeDate": "2026-12-31",
-    "version": "1.0",
-    "IRMarkGenerated": "true",
-    "landCertForEachProp": "false",
-    "returnResourceRef": "123456",
-    "declaration": "true",
-    "status": "SUBMITTED"
+    "landCounter": "1",
+    "purgeDate": "2026-11-30 11:45:55",
+    "version": "0",
+    "mainPurchaserID": "383089226",
+    "mainLandID": "383089227",
+    "returnResourceRef": "111",
+    "status": "STARTED"
+  },
+  "purchaser": [
+    {
+      "purchaserID": "383089226",
+      "returnID": "383089225",
+      "isCompany": "no",
+      "surname": "test",
+      "purchaserResourceRef": "1",
+      "createDate": "2026-09-01 11:45:55",
+      "lastUpdateDate": "2026-09-01 11:45:55"
+    }
+  ],
+  "land": [
+    {
+      "landID": "383089227",
+      "returnID": "383089225",
+      "address1": "2 Silkmore Crescent",
+      "address2": "Stafford",
+      "postcode": "ST17 4JL",
+      "landResourceRef": "1",
+      "lastUpdateDate": "2026-09-01 11:45:55"
+    }
+  ],
+  "transaction": {
+    "transactionID": "383089228",
+    "returnID": "383089225",
+    "transactionDescription": "F",
+    "newTransactionDescription": "F"
+  },
+  "agent": [
+    {
+      "agentId": "382976951",
+      "storn": "STN001",
+      "name": "Holloway Legal Co.",
+      "address1": "14 studdon walk, kenton",
+      "postcode": "NE3 3YR",
+      "agentResourceReference": "12"
+    },
+    {
+      "agentId": "382895861",
+      "storn": "STN001",
+      "name": "TestQa",
+      "address1": "Test line 1",
+      "address2": "Test line 2",
+      "address3": "Test line 3",
+      "address4": "Town",
+      "postcode": "ZZ3 4ZZ",
+      "agentResourceReference": "6"
+    },
+    {
+      "agentId": "382976949",
+      "storn": "STN001",
+      "name": "test",
+      "address1": "test3",
+      "address2": "test4",
+      "postcode": "SD4 5HF",
+      "agentResourceReference": "10"
+    },
+    {
+      "agentId": "382976948",
+      "storn": "STN001",
+      "name": "Jones & Co Leeds",
+      "address1": "Kings Cross",
+      "address2": "London",
+      "postcode": "SW17 7RX",
+      "agentResourceReference": "9"
+    },
+    {
+      "agentId": "382976950",
+      "storn": "STN001",
+      "name": "Holloway Legal Co.",
+      "address1": "14 studdon walk, kenton",
+      "postcode": "NE3 3YR",
+      "agentResourceReference": "11"
+    },
+    {
+      "agentId": "382920573",
+      "storn": "STN001",
+      "name": "Sunrise Realty",
+      "address1": "10 Leeds Road",
+      "address2": "Methley",
+      "address3": "Leeds",
+      "postcode": "LS26 9EQ",
+      "agentResourceReference": "7"
+    }
+  ],
+  "taxCalculation": {
+    "taxCalculationID": "383089230",
+    "returnID": "383089225"
+  },
+  "residency": {
+    "residencyID": "383089229"
   }
 }
