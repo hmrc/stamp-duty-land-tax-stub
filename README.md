@@ -188,6 +188,20 @@ matching dropdown entry, so adding a new fixture directory means adding it to th
 | `res-no-uk-res-ans-after-1-Apr-21-L` | Residential, no UK residency answer after 1 Apr 21 - type L (SDLTC validation fails) |
 | `res-no-uk-res-ans-after-1-Apr-21-tax-calc-answered-L` | Residential, no UK residency answer after 1 Apr 21 - type L (tax calc answered) |
 
+### NRSDLT – 2% tax calc surcharge
+| Return ID | Scenario |
+|----------|----------|
+| `nrsdlt-applies-close-company` | Applies: isCloseCompany = yes |
+| `nrsdlt-applies-conveyance-with-lease` | Applies: leaseType = A &amp; leaseTerm &gt;= 7 years |
+| `nrsdlt-applies-relief-code` | Applies: non-exempt relief code |
+| `nrsdlt-applies-grant-of-lease-leaseTerm` | Applies: leaseType = L &amp; leaseTerm &gt;= 7 years |
+| `nrsdlt-applies-grant-of-lease-premium-and-rent` | Applies: leaseType = L, premium &gt;= 40000 &amp; annualRent &gt;= 1000 |
+| `nrsdlt-exempt-conveyance-with-lease` | Exempt: leaseType = A &amp; leaseTerm &lt; 7 years |
+| `nrsdlt-exempt-crown-relief` | Exempt: isCrownRelief = yes |
+| `nrsdlt-exempt-relief-code` | Exempt: exempt relief code |
+| `nrsdlt-exempt-grant-of-lease-leaseTerm` | Exempt: leaseType = L &amp; leaseTerm &lt; 7 years |
+| `nrsdlt-exempt-grant-of-lease-premium-and-rent` | Exempt: leaseType = L, premium &lt; 40000 &amp; annualRent &lt; 1000 |
+
 ### UK residency
 
 | Return ID | Scenario |
