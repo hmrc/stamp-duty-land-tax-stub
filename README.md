@@ -276,6 +276,7 @@ matching dropdown entry, so adding a new fixture directory means adding it to th
 | `F30-CF6-with-cf5a`                                   | F30: crossflow check 6 combined with 5a                                |
 | `F30-CF6-with-CF17`                                   | F30: crossflow check 6 combined with CF17                              |
 | `CF-17`                                               | Crossflow check 17                                                     |
+| `CF-18`                                               | Crossflow check 18                                                     |
 | `full-lease-transaction-type-f`                       | Full lease, transaction type F - **no fixture exists, returns 404**    |
 
 ### PDF generation
