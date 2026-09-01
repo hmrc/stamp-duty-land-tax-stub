@@ -3,7 +3,14 @@
 
 This is a repository used to stub https://github.com/hmrc/formp-proxy
 
-To start the server locally on `port 10914`: `sbt 'run 10914'`
+## Running the service
+Before starting, you will need to have  [service-manager](https://github.com/hmrc/service-manager) installed/configured
+
+### Running locally:
+Service Manager:
+- Start dependent services `sm2 --start SDLT_ALL`
+- Stop this service `sm2 --stop STAMP-DUTY-LAND-TAX-STUB`
+- Start the server locally on `port 10914` with `sbt run`
 
 ## SDLT Stub data
 
@@ -285,19 +292,22 @@ matching dropdown entry, so adding a new fixture directory means adding it to th
 
 ### Task list
 
-| Return ID | Scenario |
-|-----------|----------|
-| `all-sections-incomplete` | All sections incomplete |
-| `all-sections-in-progress` | All sections in progress |
-| `all-sections-complete-individual` | All sections complete, Individual type |
-| `all-sections-complete-company` | All sections complete, Company type |
-| `all-sections-complete-uk-residency` | All sections complete, with UK residency |
-| `only-mandatory-sections-complete` | Only mandatory sections complete |
-| `only-mandatory-sections-incomplete` | Only mandatory sections incomplete |
-| `section-agent-incomplete` | Agents incomplete - represented by agent |
-| `section-agent-complete-yes` | Agents complete - represented by agent |
-| `section-agent-complete-no` | Agents complete - not represented by agent, without agent details |
-| `section-agent-complete-no-with-agent-details` | Agents complete - not represented by agent, with agent details |
+| Return ID                                         | Scenario                                                          |
+|---------------------------------------------------|-------------------------------------------------------------------|
+| `all-sections-incomplete`                         | All sections incomplete                                           |
+| `all-sections-in-progress`                        | All sections in progress                                          |
+| `all-sections-complete-individual`                | All sections complete, Individual type                            |
+| `all-sections-complete-company`                   | All sections complete, Company type                               |
+| `all-sections-complete-landCrossFlowError`        | All sections complete, with land authority code error             |
+| `all-sections-complete-transactionCrossFlowError` | All sections complete, with land authority code error             |
+| `all-sections-complete-multipleCrossFlowError`    | All sections complete, with land and transaction error            |
+| `all-sections-complete-uk-residency`              | All sections complete, with UK residency                          |
+| `only-mandatory-sections-complete`                | Only mandatory sections complete                                  |
+| `only-mandatory-sections-incomplete`              | Only mandatory sections incomplete                                |
+| `section-agent-incomplete`                        | Agents incomplete - represented by agent                          |
+| `section-agent-complete-yes`                      | Agents complete - represented by agent                            |
+| `section-agent-complete-no`                       | Agents complete - not represented by agent, without agent details |
+| `section-agent-complete-no-with-agent-details`    | Agents complete - not represented by agent, with agent details    |
 
 ### Submission
 
