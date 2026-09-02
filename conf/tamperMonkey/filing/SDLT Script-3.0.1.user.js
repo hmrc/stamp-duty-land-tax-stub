@@ -28,6 +28,7 @@ var userProfiles = '[' +
     '{ "divider":"Vendors" }, ' +
     '{ "description":"No return agent, no vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-return-agent-and-no-vendor" }, ' +
     '{ "description":"No vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-vendor" }, ' +
+    '{ "description":"Multiple incomplete Vendors", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "4-incomplete-vendors" },' +
     '{ "description":"1 vendor", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "one-vendor" }, ' +
     '{ "description":"5 vendors", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "5-vendors" }, ' +
     '{ "description":"97 vendors, 1 purchaser", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "97-vendors-1-purchaser" }, ' +
@@ -50,6 +51,7 @@ var userProfiles = '[' +
     '{ "description":"Refresh Created Return", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "firstJson" },' +
     '{ "description":"Incomplete Purchaser of type Company", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "incomplete-purchaser" },' +
     '{ "description":"Incomplete Purchaser of type Individual", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "incomplete-purchaser-individual" },' +
+    '{ "description":"Multiple incomplete purchaser", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "4-incomplete-purchasers" },' +
     '{ "description":"Full Purchaser with address line 1", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser" },' +
     '{ "description":"Full Purchaser with return agent", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "full-purchaser-with-agent" },' +
     '{ "description":"One Purchaser of type Company", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "one-purchaser-company" },' +
@@ -91,6 +93,7 @@ var userProfiles = '[' +
     '{ "divider":"Lands" }, ' +
     '{ "description":"No land", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "no-land" }, ' +
     '{ "description":"1 land with mixed property type", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "1-land-mixed-property-type" }, ' +
+    '{ "description":"Multiple incomplete lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "4-incomplete-lands" },' +
     '{ "description":"1 land with residential property type", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "1-land-residential-property-type" }, ' +
     '{ "description":"98 lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "98-lands" }, ' +
     '{ "description":"99 lands", "enrolmentKey":"IR-SDLT-ORG", "identifierName":"STORN", "identifierValue":"STORN123456", "enrolmentStatus":"Activated", "affinityGroup":"Organisation", "returnId": "99-lands" }, ' +
