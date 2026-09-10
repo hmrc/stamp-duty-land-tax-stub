@@ -20,6 +20,7 @@ Service Manager:
 | STN002    | 0          | 31                      | 0                     | 11                  |
 | STN003    | 25         | 0                       | 62                    | 0                   |
 | STN004    | 24         | 0                       | 0                     | 0                   |
+| STN005    | 9          | 0                       | 0                     | 0                   |
 
 
 ## Return IDs and scenarios
