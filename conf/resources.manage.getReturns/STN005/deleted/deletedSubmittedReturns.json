@@ -1,0 +1,11 @@
+{
+  "storn": "STN005",
+  "returnSummaryCount": 5,
+  "returnSummaryList": [
+    { "returnReference": "123456",   "status": "SUBMITTED",              "utrn": "UTRN0003",    "purchaserName": "Jones, Grace",       "address": "3 Example Road, City" },
+    { "returnReference": "123456",   "status": "SUBMITTED_NO_RECEIPT",   "utrn": "UTRN0006",    "purchaserName": "Smith, James",       "address": "6 Example Road, City",                                               "agentReference": "ARN001"},
+    { "returnReference": "123456",   "status": "FATAL_ERROR",            "utrn": null,    "purchaserName": "Johnson, Emily",       "address": "9 Example Road, City" },
+    { "returnReference": "123456",   "status": "DEPARTMENTAL_ERROR",     "utrn": null,    "purchaserName": "Williams, Daniel",       "address": "18 Green Lane, Reading" },
+    { "returnReference": "123456",   "status": "SUBMITTED",              "utrn": "UTRN0015",    "purchaserName": "Garcia, Sophie",       "address": "10 Wharf Road, Newcastle",                                           "agentReference": "ARN002"}
+  ]
+}
