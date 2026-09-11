@@ -1,0 +1,41 @@
+{
+  "storn": "STN005",
+  "returnSummaryCount": 5,
+  "returnSummaryList": [
+    {
+      "returnReference": "123456",
+      "status": "ACCEPTED",
+      "purchaserName": "Brown, Michael",
+      "address": "44 Oxford Road, Manchester",
+      "agentReference": "ARN003"
+    },
+    {
+      "returnReference": "123456",
+      "status": "STARTED",
+      "purchaserName": "Taylor, Daniel",
+      "address": "72 King Street, Glasgow",
+      "agentReference": "ARN006"
+    },
+    {
+      "returnReference": "123456",
+      "status": "ACCEPTED",
+      "purchaserName": "Harris, Olivia",
+      "address": "11 Church Street, Nottingham",
+      "agentReference": "ARN009"
+    },
+    {
+      "returnReference": "123456",
+      "status": "STARTED",
+      "purchaserName": "Walker, Lucas",
+      "address": "18 Green Lane, Reading",
+      "agentReference": "ARN012"
+    },
+    {
+      "returnReference": "123456",
+      "status": "STARTED",
+      "purchaserName": "Young, Henry",
+      "address": "10 Wharf Road, Newcastle",
+      "agentReference": "ARN015"
+    }
+  ]
+}

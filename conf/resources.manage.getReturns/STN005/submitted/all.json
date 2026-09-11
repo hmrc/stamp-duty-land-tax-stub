@@ -1,0 +1,11 @@
+{
+  "storn": "STN005",
+  "returnSummaryCount": 5,
+  "returnSummaryList": [
+    { "returnReference": "123456", "utrn": "UTRN000051", "status": "SUBMITTED", "dateSubmitted": "2025-10-19", "purchaserName": "Morgan, Isla", "address": "3 Elm Street, Leicester" },
+    { "returnReference": "123456", "utrn": null, "status": "SUBMITTED_NO_RECEIPT", "dateSubmitted": "2025-10-11", "purchaserName": "Foster, Harper", "address": "12 Regent Street, Plymouth", "agentReference": "Falcon Legal" },
+    { "returnReference": "123456", "utrn": null, "status": "FATAL_ERROR", "dateSubmitted": "2025-10-13", "purchaserName": "Murphy, Joseph", "address": "99 Station Road, Reading", "agentReference": "Redwood Property Legal" },
+    { "returnReference": "123456", "utrn": null, "status": "DEPARTMENTAL_ERROR", "dateSubmitted": "2025-10-13", "purchaserName": "Patel, Zara", "address": "14 Crescent Road, Slough" },
+    { "returnReference": "123456", "utrn": null, "status": "SUBMITTED_NO_RECEIPT", "dateSubmitted": "2025-10-15", "purchaserName": "Walsh, Ruby", "address": "4 Victoria Crescent, Blackpool" }
+  ]
+}

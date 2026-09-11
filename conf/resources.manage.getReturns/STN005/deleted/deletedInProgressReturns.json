@@ -1,0 +1,11 @@
+{
+  "storn": "STN005",
+  "returnSummaryCount": 5,
+  "returnSummaryList": [
+    { "returnReference": "123456", "status": "ACCEPTED", "purchaserName": "Carter, Oliver",    "address": "12 Brookside Avenue, Manchester" },
+    { "returnReference": "123456", "status": "STARTED", "purchaserName": "Foster, Hannah",    "address": "44 Westbury Road, Bristol",             "agentReference": "ARN001" },
+    { "returnReference": "123456", "status": "ACCEPTED", "purchaserName": "Green, Samuel",     "address": "7 Cherry Lane, Nottingham" },
+    { "returnReference": "123456", "status": "ACCEPTED", "purchaserName": "Evans, Charlotte",  "address": "58 Marlborough Street, Cardiff" },
+    { "returnReference": "123456", "status": "ACCEPTED", "purchaserName": "Morris, Daniel",    "address": "9 Riverside Walk, Cambridge" }
+  ]
+}
