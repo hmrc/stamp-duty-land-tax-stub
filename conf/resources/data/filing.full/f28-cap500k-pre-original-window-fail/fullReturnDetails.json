@@ -1,0 +1,113 @@
+{
+  "taxCalculation": {
+    "taxCalculationID": "221110174",
+    "returnID": "221110168"
+  },
+  "stornId": "STORN123456",
+  "sdltOrganisation": {
+    "storn": "STORN123456",
+    "version": "0"
+  },
+  "returnInfo": {
+    "storn": "STORN123456",
+    "vendorCounter": "0",
+    "purgeDate": "2026-02-07 19:53:34",
+    "mainLandID": "221110171",
+    "mainPurchaserID": "221110169",
+    "purchaserCounter": "1",
+    "version": "0",
+    "returnID": "221110168",
+    "status": "STARTED",
+    "landCounter": "1",
+    "returnResourceRef": "4"
+  },
+  "returnResourceRef": "4",
+  "residency": {
+    "residencyID": "221110173"
+  },
+  "transaction": {
+    "transactionID": "221110172",
+    "returnID": "221110168",
+    "transactionDescription": "L",
+    "newTransactionDescription": "L",
+    "claimingRelief": "yes",
+    "reliefReason": "32",
+    "effectiveDate": "21/11/2017",
+    "contractDate": "15/05/2020",
+    "totalConsideration": "750000.00"
+  },
+  "purchaser": [
+    {
+      "createDate": "2025-11-09 19:53:34",
+      "companyName": "Stub Company name",
+      "isCompany": "YES",
+      "lastUpdateDate": "2025-11-09 19:53:34",
+      "purchaserResourceRef": "1",
+      "returnID": "221110168",
+      "purchaserID": "221110169",
+      "address1": "test address"
+    }
+  ],
+  "companyDetails": {
+    "companyDetailsID": "221110170",
+    "returnID": "221110168",
+    "purchaserID": "221110169"
+  },
+  "land": [
+    {
+      "postcode": "TE11 7HE",
+      "address2": "stafford",
+      "landResourceRef": "1",
+      "returnID": "221110168",
+      "landID": "221110171",
+      "address1": "test",
+      "propertyType": "01"
+    }
+  ],
+  "lease": {
+    "leaseType": "R",
+    "contractEndDate": "02/02/2026",
+    "contractStartDate": "07/07/2000",
+    "rentFreePeriod": "3 months",
+    "startingRent": "12345.00",
+    "startingRentEndDate": "01/08/2024",
+    "laterRentKnown": "no",
+    "totalPremiumPayable": "500000",
+    "netPresentValue": "456.00",
+    "isAnnualRentOver1000": "no",
+    "leaseID": "LSE001",
+    "returnID": "RET123456789",
+    "breakClauseType": null,
+    "breakClauseDate": null,
+    "leaseContReservedRent": null,
+    "firstReviewDate": null,
+    "marketRent": null,
+    "optionToRenew": null,
+    "rentChargeDate": null,
+    "reviewClauseType": null,
+    "rentReviewFrequency": null,
+    "serviceCharge": null,
+    "serviceChargeFrequency": null,
+    "termsSurrendered": null,
+    "considToLndlrdBuild": null,
+    "considToLndlrdContin": null,
+    "considToLndlrdDebt": null,
+    "considToLndlrdEmploy": null,
+    "considToLndlrdOther": null,
+    "considToLndlrdLand": null,
+    "considToLndlrdServices": null,
+    "considToLndlrdSharedQTD": null,
+    "considToLndlrdSharedUNQTD": null,
+    "considToTenantBuild": null,
+    "considToTenantContin": null,
+    "considToTenantEmploy": null,
+    "considToTenantOther": null,
+    "considToTenantLand": null,
+    "considToTenantServices": null,
+    "considToTenantSharesQTD": null,
+    "considToTenantSharesUNQTD": null,
+    "turnoverRent": null,
+    "unasertainableRent": null,
+    "VATAmount": "10000.00"
+  }
+}
