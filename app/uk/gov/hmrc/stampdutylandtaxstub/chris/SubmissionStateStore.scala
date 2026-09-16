@@ -18,6 +18,7 @@ package uk.gov.hmrc.stampdutylandtaxstub.chris
 
 import play.api.libs.json.{JsObject, Json}
 
+import java.time.{Duration, Instant}
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Singleton
 
@@ -28,24 +29,49 @@ import javax.inject.Singleton
  * "return is being submitted" poll complete once the backend has written a
  * terminal status. Cleared at the start of a fresh submit (`createSubmission`).
  *
+ * Entries expire one minute after their last write, so a completed submission
+ * drops back to the fixture's pre-submit state and the journey can be re-run
+ * without a manual reset or restart.
+ *
  * In-memory only: a stub restart resets everything.
  */
 @Singleton
 class SubmissionStateStore:
 
-  private val byRef = new ConcurrentHashMap[String, JsObject]()
+  private val Ttl = Duration.ofMinutes(30)
+
+  private final case class Entry(submission: JsObject, writtenAt: Instant)
+
+  private val byRef = new ConcurrentHashMap[String, Entry]()
+
+  protected def now(): Instant = Instant.now()
 
   private def key(ref: String): String = ref.trim
 
-  /** Merge new fields into the stored submission view for this ref. */
+  private def expired(e: Entry): Boolean = e.writtenAt.plus(Ttl).isBefore(now())
+
+  /** Merge new fields into the stored submission view for this ref.
+   * An expired entry is replaced rather than merged into. */
   def merge(ref: String, submission: JsObject): Unit =
     if ref.trim.nonEmpty then
-      byRef.merge(key(ref), submission, (existing, incoming) => existing ++ incoming)
-  
+      byRef.compute(
+        key(ref),
+        (_, existing) =>
+          if existing == null || expired(existing) then Entry(submission, now())
+          else Entry(existing.submission ++ submission, now())
+      )
+
   def seedSubmissionId(ref: String, submissionId: String): Unit =
     if ref.trim.nonEmpty && submissionId.trim.nonEmpty then
       merge(ref, Json.obj("submissionID" -> submissionId.trim))
 
-  def get(ref: String): Option[JsObject] = Option(byRef.get(key(ref)))
+  /** The stored view, or None if absent or expired (expired entries are evicted). */
+  def get(ref: String): Option[JsObject] =
+    Option(byRef.get(key(ref))) match
+      case Some(e) if expired(e) =>
+        byRef.remove(key(ref), e)
+        None
+      case other =>
+        other.map(_.submission)
 
   def clear(ref: String): Unit = byRef.remove(key(ref))
