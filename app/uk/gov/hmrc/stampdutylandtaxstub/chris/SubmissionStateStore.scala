@@ -38,7 +38,7 @@ import javax.inject.Singleton
 @Singleton
 class SubmissionStateStore:
 
-  private val Ttl = Duration.ofMinutes(30)
+  private val Ttl = Duration.ofSeconds(30)
 
   private final case class Entry(submission: JsObject, writtenAt: Instant)
 
