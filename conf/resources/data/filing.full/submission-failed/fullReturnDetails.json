@@ -22,7 +22,7 @@
     "landCertForEachProp": "YES",
     "returnResourceRef": "123456",
     "declaration": null,
-    "status": "STARTED"
+    "status": "DEPARTMENTAL_ERROR"
   },
   "purchaser": [
     {
@@ -264,29 +264,31 @@
     "storn": "STORN123456",
     "submissionStatus": "DEPARTMENTAL_ERROR",
     "govtalkMessageClass": "HMRC-STAMP-SDLT",
-    "UTRN": "23456789MCe",
-    "irmarkReceived": "IRMARK-RCV-001",
-    "submissionReceipt": "RECEIPT-001",
+    "UTRN": null,
+    "irmarkReceived": null,
+    "submissionReceipt": null,
     "govtalkErrorCode": null,
-    "govtalkErrorType": null,
-    "govtalkErrorMessage": null,
+    "govtalkErrorType": "departmentalError",
+    "govtalkErrorMessage": "The STORN supplied either is not of the correct length or type (10 numeric).",
     "numPolls": "3",
     "createDate": "2024-10-15T10:30:00",
     "lastUpdateDate": "2024-10-15T11:00:00",
-    "acceptedDate": null,
+    "acceptedDate": "2024-10-15T10:30:00",
     "submittedDate": "2024-10-15T10:30:00",
     "email": "john.smith@email.com",
     "submissionRequestDate": "2024-10-15T10:15:00Z",
     "irmarkSent": "IRMARK-SENT-001"
   },
-  "submissionErrorDetails": {
-    "errorDetailID": "ERR001",
-    "returnID": "382966898",
-    "position": "01",
-    "errorMessage": "The STORN supplied either is not of the correct length or type (10 numeric).",
-    "storn": "STORN123456",
-    "submissionID": "SUB001"
-  },
+  "submissionErrorDetails": [
+    {
+      "errorDetailID": "ERR001",
+      "returnID": "382966898",
+      "position": "0",
+      "errorMessage": "The STORN supplied either is not of the correct length or type (10 numeric).",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    }
+  ],
   "residency": {
     "residencyID": "382966904",
     "isNonUkResidents": "yes",

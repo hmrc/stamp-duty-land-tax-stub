@@ -23,29 +23,55 @@ import scala.xml.{Elem, NodeSeq}
 
 /** Everything the templates need from the inbound request. */
 final case class ChrisRequestContext(
-  clazz:         String,   // echoed MessageDetails/Class (SDLT = IR-SDLT-LTR)
-  correlationId: String,   // echoed CorrelationID
-  envelope:      Elem      // the parsed inbound GovTalk envelope
-):
+                                      clazz:         String,   // echoed MessageDetails/Class (SDLT = IR-SDLT-LTR)
+                                      correlationId: String,   // echoed CorrelationID
+                                      envelope:      Elem      // the parsed inbound GovTalk envelope
+                                    ):
   def classOrDefault: String = if clazz.nonEmpty then clazz else "IR-SDLT-LTR"
 
 /** Renders a [[StubReply]] for a scenario, echoing request-derived values and
-  * injecting a generated UTRN / IRmark / timestamp where required.
-  *
-  * Stateless and thread-safe: every value the templates need is passed as a
-  * method parameter.
-  */
+ * injecting a generated UTRN / IRmark / timestamp where required.
+ *
+ * Message shapes follow the Transaction Engine Document Submission Protocol v2.0:
+ *   - SUBMISSION_RESPONSE     §3.6.1
+ *   - business error response §3.6.2 (RaisedBy Department; 3000 fatal / 3001 business;
+ *                                      3001 detail in Body per the Appendix C ErrorResponse schema)
+ *   - SUBMISSION_ERROR        §3.5   (RaisedBy Gateway, Type fatal, Location mandatory, Body empty)
+ *   - DELETE_RESPONSE         §3.8
+ * Error texts follow Appendix A.
+ *
+ * Stateless and thread-safe: every value the templates need is passed as a
+ * method parameter.
+ */
 @Singleton
 class GovTalkResponseBuilder @Inject() (
-  config:        ChrisStubConfig,
-  utrnGenerator: UtrnGenerator,
-  irMarkHandler: IrMarkHandler
-):
+                                         config:        ChrisStubConfig,
+                                         utrnGenerator: UtrnGenerator,
+                                         irMarkHandler: IrMarkHandler
+                                       ):
 
   private val timestampFmt: DateTimeFormatter =
     DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS")
 
   private def now(): String = ZonedDateTime.now(ZoneOffset.UTC).format(timestampFmt)
+
+  // ----- departmental business rejection (§3.6.2) ---------------------------
+  // GovTalkErrors carries the single 3001 header error; the Body carries the
+  // individual business-rule failures. Add entries to BusinessRuleErrors to
+  // return more.
+
+  private val DepartmentalBusinessError: GovTalkErrorXml =
+    GovTalkErrorXml("Department", "3001", "business",
+      "The submission of this document has failed due to departmental specific business logic in the Body tag.", None)
+
+  private val BusinessRuleErrors: Seq[GovTalkErrorXml] = Seq(
+    GovTalkErrorXml("Department", "421", "Business Rule",
+      "As Box 52 part 2 has been completed No or left blank, part 4 must be left blank. Please delete",
+      Some("CrownEmployeeRelief")),
+    GovTalkErrorXml("System", "5005", "business",
+      "Keys in the GovTalkDetails do not match those in the IRheader.",
+      Some("/hd:GovTalkMessage[1]/hd:Body[1]/MTR:IRenvelope[1]/MTR:IRheader[1]/MTR:Keys[1]/MTR:Key[1]"))
+  )
 
   // ----- submit leg ---------------------------------------------------------
 
@@ -65,10 +91,9 @@ class GovTalkResponseBuilder @Inject() (
         StubReply.Xml(200, acknowledgementEnvelope(ctx))
 
       case BusinessReject =>
-        StubReply.Xml(200, errorEnvelope(ctx, "submit", Seq(
-          GovTalkErrorXml("Department", "3001", "business",
-            "The submission of this document has failed due to departmental specific business logic in the Body element.",
-            Some("/hd:GovTalkMessage[1]/hd:Body[1]")))))
+        StubReply.Xml(200, errorEnvelope(ctx, "submit",
+          Seq(DepartmentalBusinessError),
+          body = businessErrorResponse(BusinessRuleErrors)))
 
       case Recoverable1000 =>
         StubReply.Xml(200, errorEnvelope(ctx, "submit", Seq(
@@ -78,12 +103,12 @@ class GovTalkResponseBuilder @Inject() (
       case Recoverable2005 =>
         StubReply.Xml(200, errorEnvelope(ctx, "submit", Seq(
           GovTalkErrorXml("Gateway", "2005", "fatal",
-            "The Transaction Engine has not received an acknowledgement of your submission within the permitted timescale. Either resubmit or contact the appropriate organisation directly.", None))))
+            "The Transaction Engine has not received an acknowledgement of your submission from the back-end system within the permitted timescale. Either resubmit or contact the appropriate organisation directly to determine if your submission has been accepted.", None))))
 
       case Recoverable3000 =>
         StubReply.Xml(200, errorEnvelope(ctx, "submit", Seq(
-          GovTalkErrorXml("Gateway", "3000", "fatal",
-            "The processing of your document submission failed. Please re-submit.", None))))
+          GovTalkErrorXml("Department", "3000", "fatal",
+            "The processing of your document submission failed. Please re-submit", None))))
 
       case SchemaError1001 =>
         StubReply.Xml(200, errorEnvelope(ctx, "submit", Seq(
@@ -96,8 +121,12 @@ class GovTalkResponseBuilder @Inject() (
 
       case MultiError =>
         StubReply.Xml(200, errorEnvelope(ctx, "submit", Seq(
-          GovTalkErrorXml("Gateway", "1001", "fatal", "Element failed schema validation.", Some("/hd:GovTalkMessage[1]/hd:Body[1]/sdlt:purchaser[1]")),
-          GovTalkErrorXml("Gateway", "1040", "fatal", "The submitted document contains an inconsistent value entry for the specified method.", Some("/hd:GovTalkMessage[1]/hd:Body[1]/sdlt:transaction[1]")))))
+          GovTalkErrorXml("Gateway", "1001", "fatal",
+            "The submitted XML document either failed to validate against the GovTalk schema for this class of document or its body was badly formed.",
+            Some("/hd:GovTalkMessage[1]/hd:Body[1]/sdlt:purchaser[1]")),
+          GovTalkErrorXml("Gateway", "1040", "fatal",
+            "The submitted document contains an inconsistent value entry for the specified method.",
+            Some("/hd:GovTalkMessage[1]/hd:Body[1]/sdlt:transaction[1]")))))
 
       case HttpRetryable503 =>
         StubReply.Raw(503, "")
@@ -123,7 +152,7 @@ class GovTalkResponseBuilder @Inject() (
       case Scenario.DeleteNotFound =>
         StubReply.Xml(200, errorEnvelope(ctx, "delete", Seq(
           GovTalkErrorXml("Gateway", "2000", "fatal",
-            "The Transaction Engine could not locate a record for the supplied correlation ID.", None))))
+            "The Transaction Engine could not locate a record for the supplied correlation ID: the submission may have been deleted or the correlation ID may be invalid. If you have not received a response you should resubmit the document.", None))))
 
       case _ =>
         StubReply.Xml(200, deleteResponseEnvelope(ctx))
@@ -180,7 +209,12 @@ class GovTalkResponseBuilder @Inject() (
       <Body/>
     </GovTalkMessage>
 
-  private def errorEnvelope(ctx: ChrisRequestContext, function: String, errors: Seq[GovTalkErrorXml]): Elem =
+  private def errorEnvelope(
+                             ctx:      ChrisRequestContext,
+                             function: String,
+                             errors:   Seq[GovTalkErrorXml],
+                             body:     NodeSeq = NodeSeq.Empty
+                           ): Elem =
     <GovTalkMessage xmlns="http://www.govtalk.gov.uk/CM/envelope">
       <EnvelopeVersion>2.0</EnvelopeVersion>
       <Header>
@@ -193,22 +227,36 @@ class GovTalkResponseBuilder @Inject() (
           {errors.map(_.toXml)}
         </GovTalkErrors>
       </GovTalkDetails>
-      <Body/>
+      <Body>{body}</Body>
     </GovTalkMessage>
+
+  /** Body of a §3.6.2 business error response, per the Appendix C ErrorResponse schema. */
+  private def businessErrorResponse(errors: Seq[GovTalkErrorXml]): Elem =
+    <ErrorResponse xmlns="http://www.govtalk.gov.uk/CM/errorresponse" SchemaVersion="2.0">
+      <Application>
+        <MessageCount>{errors.size}</MessageCount>
+      </Application>
+      {errors.map(_.toXml)}
+    </ErrorResponse>
 
 /** Small holder for a GovTalk Error element. */
 final case class GovTalkErrorXml(
-  raisedBy:  String,
-  number:    String,
-  errorType: String,
-  text:      String,
-  location:  Option[String]
-):
+                                  raisedBy:  String,
+                                  number:    String,
+                                  errorType: String,
+                                  text:      String,
+                                  location:  Option[String]
+                                ):
+  /** Location is mandatory (may be empty) on a Gateway SUBMISSION_ERROR (§3.5)
+   * and optional everywhere else, so only Gateway errors always emit it. */
   def toXml: Elem =
     <Error>
       <RaisedBy>{raisedBy}</RaisedBy>
       <Number>{number}</Number>
       <Type>{errorType}</Type>
       <Text>{text}</Text>
-      {location.map(l => <Location>{l}</Location>).getOrElse(scala.xml.NodeSeq.Empty)}
+      {location match
+      case Some(l)                       => <Location>{l}</Location>
+      case None if raisedBy == "Gateway" => <Location/>
+      case None                          => NodeSeq.Empty}
     </Error>

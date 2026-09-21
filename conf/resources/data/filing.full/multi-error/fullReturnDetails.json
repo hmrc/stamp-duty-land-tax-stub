@@ -1,6 +1,6 @@
 {
   "stornId": "STORN123456",
-  "returnResourceRef": "multi-error",
+  "returnResourceRef": "123456",
   "sdltOrganisation": {
     "isReturnUser": null,
     "doNotDisplayWelcomePage": "no",
@@ -20,9 +20,9 @@
     "mainLandID": "382966901",
     "IRMarkGenerated": null,
     "landCertForEachProp": "YES",
-    "returnResourceRef": "multi-error",
+    "returnResourceRef": "123456",
     "declaration": null,
-    "status": "STARTED"
+    "status": "DEPARTMENTAL_ERROR"
   },
   "purchaser": [
     {
@@ -212,7 +212,7 @@
     "optionToRenew": null,
     "totalPremiumPayable": "456.00",
     "rentChargeDate": null,
-    "rentFreePeriod": "05",
+    "rentFreePeriod": "5",
     "reviewClauseType": null,
     "serviceCharge": null,
     "serviceChargeFrequency": null,
@@ -258,6 +258,101 @@
     "calcTotalPremiumTax": null,
     "honestyDeclaration": null
   },
+  "submission": {
+    "submissionID": "SUB001",
+    "returnID": "382966898",
+    "storn": "STORN123456",
+    "submissionStatus": "DEPARTMENTAL_ERROR",
+    "govtalkMessageClass": "HMRC-STAMP-SDLT",
+    "UTRN": null,
+    "irmarkReceived": null,
+    "submissionReceipt": null,
+    "govtalkErrorCode": "3001",
+    "govtalkErrorType": "departmentalError",
+    "govtalkErrorMessage": "Your submission failed due to business validation errors. Please see below for details.",
+    "numPolls": "3",
+    "createDate": "2024-10-15T10:30:00",
+    "lastUpdateDate": "2024-10-15T11:00:00",
+    "acceptedDate": "2024-10-15T10:30:00",
+    "submittedDate": "2024-10-15T10:30:00",
+    "email": "john.smith@email.com",
+    "submissionRequestDate": "2024-10-15T10:15:00Z",
+    "irmarkSent": "IRMARK-SENT-001"
+  },
+  "submissionErrorDetails": [
+    {
+      "errorDetailID": "ERR001",
+      "returnID": "382966898",
+      "position": "0",
+      "errorMessage": "3001: Your submission failed due to business validation errors. Please see below for details.",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    },
+    {
+      "errorDetailID": "ERR002",
+      "returnID": "382966898",
+      "position": "1",
+      "errorMessage": "421: As Box 52 part 2 has been completed No or left blank, part 4 must be left blank. Please delete",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    },
+    {
+      "errorDetailID": "ERR003",
+      "returnID": "382966898",
+      "position": "2",
+      "errorMessage": "422: The amount of relief claimed must not be greater than the total consideration.",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    },
+    {
+      "errorDetailID": "ERR004",
+      "returnID": "382966898",
+      "position": "3",
+      "errorMessage": "423: As the purchaser is an individual, a National Insurance number or another form of identification must be provided.",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    },
+    {
+      "errorDetailID": "ERR005",
+      "returnID": "382966898",
+      "position": "4",
+      "errorMessage": "424: The local authority number is not valid for the postcode of the property.",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    },
+    {
+      "errorDetailID": "ERR006",
+      "returnID": "382966898",
+      "position": "5",
+      "errorMessage": "425: The total consideration must not be less than the VAT amount included in it.",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    },
+    {
+      "errorDetailID": "ERR007",
+      "returnID": "382966898",
+      "position": "6",
+      "errorMessage": "426: The end date of the starting rent must be on or after the lease start date.",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    },
+    {
+      "errorDetailID": "ERR008",
+      "returnID": "382966898",
+      "position": "7",
+      "errorMessage": "427: As the transaction is linked, the total consideration of linked transactions must be greater than the consideration for this transaction.",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    },
+    {
+      "errorDetailID": "ERR009",
+      "returnID": "382966898",
+      "position": "8",
+      "errorMessage": "428: The STORN supplied either is not of the correct length or type (10 numeric).",
+      "storn": "STORN123456",
+      "submissionID": "SUB001"
+    }
+  ],
   "residency": {
     "residencyID": "382966904",
     "isNonUkResidents": "yes",
