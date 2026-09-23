@@ -32,6 +32,7 @@ class ManageResidencyController @Inject()(
 ) extends BackendController(cc) with StubResource with Logging {
 
   def createResidency(): Action[JsValue] = Action.async(parse.json) { implicit request =>
+    logger.info(s"Residency request: ${request.body}")
     request.body.validate[CreateResidencyRequest].fold(
       invalid => Future.successful(BadRequest(Json.obj("message" -> s"Invalid payload: $invalid"))),
       _ => {

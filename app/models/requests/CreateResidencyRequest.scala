@@ -20,8 +20,8 @@ import play.api.libs.json.{Json, OFormat}
 
 case class ResidencyPayload(
   isNonUkResidents: String,
-  isCompany: String,
-  isCrownRelief: String
+  isCompany: Option[String],
+  isCrownRelief: Option[String]
 )
 
 object ResidencyPayload {
