@@ -38,8 +38,8 @@ class ManageResidencyControllerSpec extends AnyFreeSpec
 
   private val validResidencyPayload = ResidencyPayload(
     isNonUkResidents = "true",
-    isCompany = "false",
-    isCrownRelief = "false"
+    isCompany = Some("false"),
+    isCrownRelief = Some("false")
   )
 
   "ManageResidencyController" - {
